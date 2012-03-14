@@ -14,16 +14,12 @@ import java.util.logging.Logger;
  */
 public class MySqlConnection implements DbConnectable {
     
-    private static java.sql.Connection connection;
-    private String url;
-    private String username;
-    private String password;
+        
+    public static String CONNECTION_URL = "jdbc:mysql://localhost:3306/carhire";
+    public static String USERNAME = "root";
+    public static String PASSWORD = "sujand";
     
-    public MySqlConnection(String url, String username, String password){
-        this.url = url;
-        this.username=username;
-        this.password=password;
-    }
+    private static java.sql.Connection connection;
 
     static
     {
@@ -39,7 +35,7 @@ public class MySqlConnection implements DbConnectable {
         try {
                 if(connection==null || connection.isClosed()) {
 
-                        connection = DriverManager.getConnection(this.url, this.username, this.password);
+                        connection = DriverManager.getConnection(CONNECTION_URL, USERNAME, PASSWORD);
 
                 }     
         } catch (Exception ex) {

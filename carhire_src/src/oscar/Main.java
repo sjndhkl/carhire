@@ -6,7 +6,7 @@ package oscar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import oscar.model.CategoryModel;
+import oscar.model.BranchModel;
 import oscar.persistance.DbRecord;
 
 
@@ -18,7 +18,7 @@ public class Main {
     
     public static void main(String... args){
 
-        CategoryModel record = new CategoryModel();
+        BranchModel record = new BranchModel();
         //record.setTable("topics");
         try{
             int count = record.count();

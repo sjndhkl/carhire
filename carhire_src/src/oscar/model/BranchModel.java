@@ -10,13 +10,13 @@ import oscar.persistance.DbRecord;
  *
  * @author sujan
  */
-public class CategoryModel extends DbRecord {
+public class BranchModel extends DbRecord {
     
-    public CategoryModel(){
-        super("categories");
+    public BranchModel(){
+        super("branch");
     }
     
-    public CategoryModel(String table){
+    public BranchModel(String table){
         super(table);
     }
     

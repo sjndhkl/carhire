@@ -7,7 +7,7 @@ package oscar.test;
 import java.util.ArrayList;
 import java.util.HashMap;
 import junit.framework.TestCase;
-import oscar.model.CategoryModel;
+import oscar.model.BranchModel;
 import oscar.persistance.DbRecord;
 
 /**
@@ -19,23 +19,23 @@ public class CarHireModelTest extends TestCase {
 
     public void testFindOneBy(){
         
-        CategoryModel model = new CategoryModel();
-        HashMap<String,String> record = model.findOneBy("id","1");
-        assertEquals("1", record.get("id"));
+        BranchModel model = new BranchModel();
+        HashMap<String,String> record = model.findOneBy("branchId","1");
+        assertEquals("1", record.get("branchId"));
         
         
     }
     
     public void testFindOneByColumnType(){
-        CategoryModel model = new CategoryModel();
-        HashMap<String,String> record = model.findOneBy("name","cakephp", DbRecord.ColumnType.STRING);
-        assertEquals("cakephp", record.get("name"));
+        BranchModel model = new BranchModel();
+        HashMap<String,String> record = model.findOneBy("country","UK", DbRecord.ColumnType.STRING);
+        assertEquals("UK", record.get("country"));
     }
     
     public void testDeleteBy(){
         
-        CategoryModel model = new CategoryModel();
-        assertEquals(false, model.deleteBy("name", "regular expression", DbRecord.ColumnType.STRING));
+        BranchModel model = new BranchModel();
+        assertEquals(false, model.deleteBy("country", "regular expression", DbRecord.ColumnType.STRING));
         
     }
     

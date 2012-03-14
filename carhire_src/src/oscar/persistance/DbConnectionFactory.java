@@ -10,20 +10,16 @@ package oscar.persistance;
  */
 public class DbConnectionFactory {
     
-    public static String CONNECTION_URL = "jdbc:mysql://localhost:3306/wiki";
-    public static String DB_USERNAME = "root";
-    public static String DB_PASSWORD = "sujand";
-    
     public enum Database{
         MYSQL
     }
     
     
     
-    public static MySqlConnection connect(Database dbType){
+    public static DbConnectable connect(Database dbType){
         
         switch(dbType){
-            case MYSQL: return new MySqlConnection(CONNECTION_URL, DB_USERNAME, DB_PASSWORD); 
+            case MYSQL: return new MySqlConnection(); 
         }
         return null;
     }
