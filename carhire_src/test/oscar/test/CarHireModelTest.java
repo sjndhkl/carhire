@@ -32,5 +32,12 @@ public class CarHireModelTest extends TestCase {
         assertEquals("cakephp", record.get("name"));
     }
     
+    public void testDeleteBy(){
+        
+        CategoryModel model = new CategoryModel();
+        assertEquals(false, model.deleteBy("name", "regular expression", DbRecord.ColumnType.STRING));
+        
+    }
+    
     
 }

@@ -19,12 +19,12 @@ public class Main {
     public static void main(String... args){
 
         CategoryModel record = new CategoryModel();
-        record.setTable("topics");
+        //record.setTable("topics");
         try{
-            int count = (Integer) record.find(DbRecord.FindAction.COUNT);
+            int count = record.count();
             System.out.println("Total Records were : "+count);
             
-            ArrayList<HashMap<String,String>> rs = (ArrayList<HashMap<String,String>>) record.find(DbRecord.FindAction.ALL);
+            ArrayList<HashMap<String,String>> rs = record.findAll();
             
            // System.out.println("No. of Records :"+rs.size());
             
