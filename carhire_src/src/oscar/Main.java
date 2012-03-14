@@ -4,7 +4,9 @@
  */
 package oscar;
 
-import oscar.persistance.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import oscar.model.CategoryModel;
 
 
 /**
@@ -14,12 +16,24 @@ import oscar.persistance.Connection;
 public class Main {
     
     public static void main(String... args){
-        
-        java.sql.Connection conn = Connection.connect(Connection.Database.MYSQL);
-        if(conn!=null){
-            System.out.println("connected");
-        }else{
-            System.out.println("Not connected");
+
+        CategoryModel record = new CategoryModel();
+        try{
+            ArrayList<HashMap<String,String>> rs = record.query("select * from "+CategoryModel.useTable);
+            
+            System.out.println("No. of Records :"+rs.size());
+            
+            for(HashMap<String,String> row:rs){
+                
+                for(String key:row.keySet()){
+                    System.out.println(key +" : "+row.get(key));
+                }
+                
+            }
+            rs = null;
+            
+        }catch(Exception e){
+            System.out.println(e.getCause());
         }
         
     }
