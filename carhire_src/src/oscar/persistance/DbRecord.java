@@ -178,6 +178,3 @@ public abstract class DbRecord {
 
     public abstract boolean add(Object obj);
 }
-
-
-//~ Formatted by Jindent --- http://www.jindent.com
