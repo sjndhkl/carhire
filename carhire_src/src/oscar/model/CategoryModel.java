@@ -4,6 +4,8 @@
  */
 package oscar.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import oscar.persistance.DbRecord;
 
 /**
@@ -12,11 +14,40 @@ import oscar.persistance.DbRecord;
  */
 public class CategoryModel extends DbRecord {
     
-    public static String useTable = "categories";
-
+    private String useTable = "categories";
+    
+    public String getTable(){
+        return this.useTable;
+    }
+    
+    public void setTable(String newTable){
+        this.useTable = newTable;
+    }
+    
     @Override
-    public Object find() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Object find(){
+        return this.find(FindAction.ALL);
+    }
+
+   
+    public Object find(FindAction action) {
+        ArrayList<HashMap<String,String>> rs = null;
+        switch(action){
+            case ALL:
+                    rs = this.query("select * from "+this.useTable);
+                    return rs;
+            case COUNT:
+                    rs = this.query("select count(*) as count from "+this.useTable);
+                    for(HashMap<String,String> row:rs){
+
+                        return Integer.parseInt(row.get("count"));
+
+                    }
+                    break;
+        }
+        
+        return null;
+        
     }
 
     @Override

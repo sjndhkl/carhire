@@ -18,6 +18,8 @@ public abstract class DbRecord {
     
     protected DbConnectable connectionObject;
     
+    public enum FindAction { ALL,COUNT }
+    
     public DbRecord(){
          this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
     }

@@ -7,6 +7,7 @@ package oscar;
 import java.util.ArrayList;
 import java.util.HashMap;
 import oscar.model.CategoryModel;
+import oscar.persistance.DbRecord;
 
 
 /**
@@ -19,9 +20,12 @@ public class Main {
 
         CategoryModel record = new CategoryModel();
         try{
-            ArrayList<HashMap<String,String>> rs = record.query("select * from "+CategoryModel.useTable);
+            int count = (Integer) record.find(DbRecord.FindAction.COUNT);
+            System.out.println("Total Records were : "+count);
             
-            System.out.println("No. of Records :"+rs.size());
+            ArrayList<HashMap<String,String>> rs = (ArrayList<HashMap<String,String>>) record.find();
+            
+           // System.out.println("No. of Records :"+rs.size());
             
             for(HashMap<String,String> row:rs){
                 
