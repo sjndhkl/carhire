@@ -7,7 +7,6 @@ package oscar;
 import java.util.ArrayList;
 import java.util.HashMap;
 import oscar.model.BranchModel;
-import oscar.persistance.DbRecord;
 
 
 /**

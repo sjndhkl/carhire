@@ -4,7 +4,6 @@
  */
 package oscar.test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import junit.framework.TestCase;
 import oscar.model.BranchModel;
@@ -19,7 +18,7 @@ public class CarHireModelTest extends TestCase {
 
     public void testFindOneBy(){
         
-        BranchModel model = new BranchModel();
+        DbRecord model = new DbRecord("branch");
         HashMap<String,String> record = model.findOneBy("branchId","1");
         assertEquals("1", record.get("branchId"));
         
@@ -27,16 +26,31 @@ public class CarHireModelTest extends TestCase {
     }
     
     public void testFindOneByColumnType(){
-        BranchModel model = new BranchModel();
+        DbRecord model = new DbRecord("branch");
         HashMap<String,String> record = model.findOneBy("country","UK", DbRecord.ColumnType.STRING);
         assertEquals("UK", record.get("country"));
     }
     
     public void testDeleteBy(){
         
-        BranchModel model = new BranchModel();
+        DbRecord model = new DbRecord("branch");
         assertEquals(false, model.deleteBy("country", "regular expression", DbRecord.ColumnType.STRING));
         
+    }
+    
+    public void testAdd(){
+        BranchModel model = new BranchModel(0, "Location test", "UK");
+        assertEquals(true, model.add(model.toHashMap()));
+    }
+    
+    
+    public void testUpdate()
+    {
+        DbRecord model = new DbRecord("branch");
+        HashMap<String,String> row = model.findOneBy("branchId", "8");
+        row.put("location", "new location");
+        row.put("country","italy");
+        assertEquals(true, model.updateBy(row, "branchId", "8"));
     }
     
     

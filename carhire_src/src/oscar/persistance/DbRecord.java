@@ -16,7 +16,7 @@ import java.util.HashMap;
  *
  * @author sujan
  */
-public abstract class DbRecord {
+public class DbRecord {
 
     protected DbConnectable connectionObject;
     protected String useTable;
@@ -29,6 +29,14 @@ public abstract class DbRecord {
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
+    }
+
+    public String getTable() {
+        return this.useTable;
+    }
+
+    public void setTable(String newTable) {
+        this.useTable = newTable;
     }
 
     public ArrayList<HashMap<String, String>> query(String sql) {
@@ -134,18 +142,15 @@ public abstract class DbRecord {
 
         return this.findAllBy(colName, qValue, 1).get(0);
     }
-
-    /*
-     * deletes record based on the column name and its value
-     */
-    public boolean deleteBy(String colName, String value) {
-        boolean status = false;
+    
+    public boolean nonQuery(String sql){
+         boolean status = false;
         int queryStatus = -1;
 
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
 
-            queryStatus = stmt.executeUpdate("delete from " + this.useTable + " where " + colName + " = " + value);
+            queryStatus = stmt.executeUpdate(sql);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -155,6 +160,13 @@ public abstract class DbRecord {
                 : false;
 
         return status;
+    }
+
+    /*
+     * deletes record based on the column name and its value
+     */
+    public boolean deleteBy(String colName, String value) {
+       return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
     }
 
     public boolean deleteBy(String colName, String value, ColumnType type) {
@@ -173,8 +185,48 @@ public abstract class DbRecord {
 
         return this.deleteBy(colName, qValue);
     }
+    
+    /*
+     * Update records based on Column name and value specified
+     */
 
-    public abstract boolean update(Object obj);
+    public boolean updateBy(HashMap<String, String> objHashMap,String colName,String value){
+        String updateString = "";
+                int num_cols = objHashMap.size();
+        int i = 1;
+        for (String key : objHashMap.keySet()) {
 
-    public abstract boolean add(Object obj);
+           updateString +=key+" = '"+objHashMap.get(key)+"'";
+            if (i != num_cols) {
+                updateString += ",";
+            }
+
+            i++;
+        }
+        String query = "update "+this.useTable+" set "+updateString+" where "+colName+" = '"+value+"'";
+        
+        return this.nonQuery(query);
+    }
+
+    public boolean add(HashMap<String, String> objHashMap) {
+
+        String cols = "";
+        String values = "";
+        int num_cols = objHashMap.size();
+        int i = 1;
+        for (String key : objHashMap.keySet()) {
+
+            cols += key;
+            values += "'"+objHashMap.get(key)+"'";
+            if (i != num_cols) {
+                cols += ",";
+                values += ",";
+            }
+
+            i++;
+        }
+        String query = "insert into " + this.useTable + "(" + cols + ") values(" + values + ")";
+        //System.out.println(query);
+        return this.nonQuery(query);
+    }
 }

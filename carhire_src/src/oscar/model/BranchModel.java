@@ -4,6 +4,7 @@
  */
 package oscar.model;
 
+import java.util.HashMap;
 import oscar.persistance.DbRecord;
 
 /**
@@ -12,30 +13,42 @@ import oscar.persistance.DbRecord;
  */
 public class BranchModel extends DbRecord {
     
+    private int branchId;
+
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    private String location;
+    private String country;
+    private static String TABLE = "branch";
+    
     public BranchModel(){
-        super("branch");
+        super(TABLE);
     }
     
-    public BranchModel(String table){
-        super(table);
+    public BranchModel(int branchId, String location, String country) {
+            super(TABLE);
+            this.branchId = branchId;
+            this.location = location;
+            this.country = country;
     }
     
-    public String getTable(){
-        return this.useTable;
+    public HashMap<String,String> toHashMap(){
+        HashMap<String,String> recordHashMap = new HashMap<String, String>();
+        if(this.branchId>0)
+            recordHashMap.put("branchId", this.branchId+"");
+        recordHashMap.put("location", this.location);
+        recordHashMap.put("country",this.country);        
+        return recordHashMap;
     }
-    
-    public void setTable(String newTable){
-        this.useTable = newTable;
-    }
-
-    @Override
-    public boolean update(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean add(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+   
     
 }
