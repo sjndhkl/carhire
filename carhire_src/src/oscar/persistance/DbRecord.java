@@ -142,9 +142,9 @@ public class DbRecord {
 
         return this.findAllBy(colName, qValue, 1).get(0);
     }
-    
-    public boolean nonQuery(String sql){
-         boolean status = false;
+
+    public boolean nonQuery(String sql) {
+        boolean status = false;
         int queryStatus = -1;
 
         try {
@@ -166,7 +166,7 @@ public class DbRecord {
      * deletes record based on the column name and its value
      */
     public boolean deleteBy(String colName, String value) {
-       return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
+        return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
     }
 
     public boolean deleteBy(String colName, String value, ColumnType type) {
@@ -185,26 +185,25 @@ public class DbRecord {
 
         return this.deleteBy(colName, qValue);
     }
-    
+
     /*
      * Update records based on Column name and value specified
      */
-
-    public boolean updateBy(HashMap<String, String> objHashMap,String colName,String value){
+    public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
         String updateString = "";
-                int num_cols = objHashMap.size();
+        int num_cols = objHashMap.size();
         int i = 1;
         for (String key : objHashMap.keySet()) {
 
-           updateString +=key+" = '"+objHashMap.get(key)+"'";
+            updateString += key + " = '" + objHashMap.get(key) + "'";
             if (i != num_cols) {
                 updateString += ",";
             }
 
             i++;
         }
-        String query = "update "+this.useTable+" set "+updateString+" where "+colName+" = '"+value+"'";
-        
+        String query = "update " + this.useTable + " set " + updateString + " where " + colName + " = '" + value + "'";
+
         return this.nonQuery(query);
     }
 
@@ -217,7 +216,7 @@ public class DbRecord {
         for (String key : objHashMap.keySet()) {
 
             cols += key;
-            values += "'"+objHashMap.get(key)+"'";
+            values += "'" + objHashMap.get(key) + "'";
             if (i != num_cols) {
                 cols += ",";
                 values += ",";

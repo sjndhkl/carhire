@@ -6,7 +6,7 @@ package oscar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import oscar.model.BranchModel;
+import oscar.model.Branch;
 
 
 /**
@@ -17,7 +17,7 @@ public class Main {
     
     public static void main(String... args){
 
-        BranchModel record = new BranchModel();
+        Branch record = new Branch();
         //record.setTable("topics");
         try{
             int count = record.count();
