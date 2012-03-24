@@ -8,8 +8,9 @@ package oscar.persistance;
  *
  * @author sujan
  */
-public interface Connectable {
+public interface DbConnectable {
 
-    java.sql.Connection getConnection(String url,String username,String password);
+    java.sql.Connection getConnection();
+    void closeConnection();
     
 }
