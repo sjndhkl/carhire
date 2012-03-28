@@ -31,16 +31,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="oldDateLbl" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="oldDateDP" pref="164" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="newDateLbl" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="newDateDP" min="-2" pref="164" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="oldDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="newDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="newDateDP" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="oldDateDP" alignment="0" pref="154" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -171,8 +168,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Hire">
-                <Property name="tabTitle" type="java.lang.String" value="Hire"/>
+              <JTabbedPaneConstraints tabName="Noleggio">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="hirePanel.TabConstraints.tabTitle"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -189,7 +186,9 @@
                               <Component id="carPanel" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="370" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="hireBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -206,7 +205,10 @@
                           <Component id="carPanel" alignment="0" max="32767" attributes="2"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="hireBtn" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="hireBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -215,6 +217,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="hireBtn">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="hireBtn.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="hireBtn.text"/>
                 <Property name="name" type="java.lang.String" value="hireBtn" noResource="true"/>
               </Properties>
@@ -235,7 +238,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="personLoadBtn" alignment="0" pref="411" max="32767" attributes="0"/>
+                              <Component id="personLoadBtn" alignment="0" pref="374" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -247,12 +250,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane1" pref="315" max="32767" attributes="0"/>
-                                      <Component id="nameTxt" alignment="0" pref="315" max="32767" attributes="0"/>
-                                      <Component id="surnameTxt" alignment="0" pref="315" max="32767" attributes="0"/>
-                                      <Component id="dateOfBirthDP" alignment="0" pref="315" max="32767" attributes="0"/>
-                                      <Component id="phoneTxt" alignment="0" pref="315" max="32767" attributes="0"/>
-                                      <Component id="emailTxt" alignment="0" pref="315" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="268" max="32767" attributes="0"/>
+                                      <Component id="nameTxt" alignment="0" pref="268" max="32767" attributes="0"/>
+                                      <Component id="surnameTxt" alignment="0" pref="268" max="32767" attributes="0"/>
+                                      <Component id="dateOfBirthDP" alignment="0" pref="268" max="32767" attributes="0"/>
+                                      <Component id="phoneTxt" alignment="0" pref="268" max="32767" attributes="0"/>
+                                      <Component id="emailTxt" alignment="0" pref="268" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -293,7 +296,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="addressLbl" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="346" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="336" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -411,18 +414,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="refCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="refCodeTxt" pref="232" max="32767" attributes="0"/>
+                          <Component id="refCodeTxt" pref="294" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="refCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" alignment="0" pref="434" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" alignment="0" pref="471" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                  <Component id="jScrollPane2" pref="412" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="449" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
@@ -442,6 +445,8 @@
                                   <Component id="classCB" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="chauffeuredCB" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="chauffeuredCB1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -474,9 +479,10 @@
                               <Component id="classLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="classCB" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="chauffeuredCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="chauffeuredCB1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" pref="399" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" pref="389" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -568,9 +574,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="refCodeSearchBtn">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="0" name="null"/>
-                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="refCodeSearchBtn.icon"/>
                     <Property name="text" type="java.lang.String" resourceKey="refCodeSearchBtn.text"/>
                     <Property name="name" type="java.lang.String" value="refCodeSearchBtn" noResource="true"/>
                   </Properties>
@@ -580,8 +584,21 @@
                     <Property name="name" type="java.lang.String" value="jSeparator1" noResource="true"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JCheckBox" name="chauffeuredCB1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" resourceKey="chauffeuredCB1.text"/>
+                    <Property name="name" type="java.lang.String" value="chauffeuredCB1" noResource="true"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="jButton1.icon"/>
+                <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
+                <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="returnPanel">
@@ -590,7 +607,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Return">
+              <JTabbedPaneConstraints tabName="Ritorno">
                 <Property name="tabTitle" type="java.lang.String" resourceKey="returnPanel.TabConstraints.tabTitle"/>
               </JTabbedPaneConstraints>
             </Constraint>
@@ -603,7 +620,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="730" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="734" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -771,9 +788,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="usernameLbl">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="0" name="null"/>
-        </Property>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="usernameLbl.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="usernameLbl.text"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">

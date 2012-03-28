@@ -8,7 +8,7 @@
  *
  * Created on Mar 21, 2012, 2:29:56 PM
  */
-package carhire;
+package oscar.view;
 
 /**
  *
@@ -69,6 +69,8 @@ public class StaffView extends javax.swing.JFrame {
         refCodeTxt = new javax.swing.JTextField();
         refCodeSearchBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        chauffeuredCB1 = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
         returnPanel = new javax.swing.JPanel();
         carSearchPanel = new javax.swing.JPanel();
         refCodeLbl2 = new javax.swing.JLabel();
@@ -84,7 +86,7 @@ public class StaffView extends javax.swing.JFrame {
         jXTable1 = new org.jdesktop.swingx.JXTable();
         usernameLbl = new javax.swing.JLabel();
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(carhire.CarhireApp.class).getContext().getResourceMap(StaffView.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(oscar.Main.class).getContext().getResourceMap(StaffView.class);
         extensionDlg.setTitle(resourceMap.getString("extensionDlg.title")); // NOI18N
         extensionDlg.setAlwaysOnTop(true);
         extensionDlg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -119,14 +121,12 @@ public class StaffView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, extensionDlgLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(extensionDlgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(extensionDlgLayout.createSequentialGroup()
-                                .addComponent(oldDateLbl)
-                                .addGap(23, 23, 23)
-                                .addComponent(oldDateDP, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-                            .addGroup(extensionDlgLayout.createSequentialGroup()
-                                .addComponent(newDateLbl)
-                                .addGap(18, 18, 18)
-                                .addComponent(newDateDP, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(oldDateLbl)
+                            .addComponent(newDateLbl))
+                        .addGap(23, 23, 23)
+                        .addGroup(extensionDlgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(newDateDP, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(oldDateDP, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
                     .addGroup(extensionDlgLayout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(Extendsbtn)))
@@ -159,6 +159,7 @@ public class StaffView extends javax.swing.JFrame {
 
         hirePanel.setName("hirePanel"); // NOI18N
 
+        hireBtn.setIcon(resourceMap.getIcon("hireBtn.icon")); // NOI18N
         hireBtn.setText(resourceMap.getString("hireBtn.text")); // NOI18N
         hireBtn.setName("hireBtn"); // NOI18N
 
@@ -215,7 +216,7 @@ public class StaffView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(personLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                    .addComponent(personLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
                     .addGroup(personPanelLayout.createSequentialGroup()
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameLbl)
@@ -226,12 +227,12 @@ public class StaffView extends javax.swing.JFrame {
                             .addComponent(dateOfBirthLbl))
                         .addGap(35, 35, 35)
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(surnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(phoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(surnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         personPanelLayout.setVerticalGroup(
@@ -262,7 +263,7 @@ public class StaffView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addressLbl)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -309,11 +310,14 @@ public class StaffView extends javax.swing.JFrame {
 
         refCodeTxt.setName("refCodeTxt"); // NOI18N
 
-        refCodeSearchBtn.setIcon(null);
+        refCodeSearchBtn.setIcon(resourceMap.getIcon("refCodeSearchBtn.icon")); // NOI18N
         refCodeSearchBtn.setText(resourceMap.getString("refCodeSearchBtn.text")); // NOI18N
         refCodeSearchBtn.setName("refCodeSearchBtn"); // NOI18N
 
         jSeparator1.setName("jSeparator1"); // NOI18N
+
+        chauffeuredCB1.setText(resourceMap.getString("chauffeuredCB1.text")); // NOI18N
+        chauffeuredCB1.setName("chauffeuredCB1"); // NOI18N
 
         javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
         carPanel.setLayout(carPanelLayout);
@@ -323,17 +327,17 @@ public class StaffView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(refCodeLbl)
                 .addGap(18, 18, 18)
-                .addComponent(refCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                .addComponent(refCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(refCodeSearchBtn)
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
             .addGroup(carPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carPanelLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE))
                     .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanelLayout.createSequentialGroup()
                             .addComponent(toLbl)
@@ -348,7 +352,9 @@ public class StaffView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(classCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(chauffeuredCB)))
+                        .addComponent(chauffeuredCB)
+                        .addGap(18, 18, 18)
+                        .addComponent(chauffeuredCB1)))
                 .addContainerGap())
         );
         carPanelLayout.setVerticalGroup(
@@ -373,11 +379,16 @@ public class StaffView extends javax.swing.JFrame {
                 .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(classLbl)
                     .addComponent(classCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chauffeuredCB))
+                    .addComponent(chauffeuredCB)
+                    .addComponent(chauffeuredCB1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jButton1.setIcon(resourceMap.getIcon("jButton1.icon")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
 
         javax.swing.GroupLayout hirePanelLayout = new javax.swing.GroupLayout(hirePanel);
         hirePanel.setLayout(hirePanelLayout);
@@ -391,7 +402,9 @@ public class StaffView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(carPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(hirePanelLayout.createSequentialGroup()
-                        .addGap(370, 370, 370)
+                        .addGap(279, 279, 279)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
                         .addComponent(hireBtn)))
                 .addContainerGap())
         );
@@ -403,11 +416,13 @@ public class StaffView extends javax.swing.JFrame {
                     .addComponent(personPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(carPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24)
-                .addComponent(hireBtn)
+                .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hireBtn)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Hire", hirePanel);
+        tabPanel.addTab(resourceMap.getString("hirePanel.TabConstraints.tabTitle"), hirePanel); // NOI18N
 
         returnPanel.setName("returnPanel"); // NOI18N
 
@@ -512,7 +527,7 @@ public class StaffView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
                 .addContainerGap())
         );
         returnPanelLayout.setVerticalGroup(
@@ -527,7 +542,7 @@ public class StaffView extends javax.swing.JFrame {
 
         tabPanel.addTab(resourceMap.getString("returnPanel.TabConstraints.tabTitle"), returnPanel); // NOI18N
 
-        usernameLbl.setIcon(null);
+        usernameLbl.setIcon(resourceMap.getIcon("usernameLbl.icon")); // NOI18N
         usernameLbl.setText(resourceMap.getString("usernameLbl.text")); // NOI18N
         usernameLbl.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         usernameLbl.setName("usernameLbl"); // NOI18N
@@ -603,6 +618,7 @@ public class StaffView extends javax.swing.JFrame {
     private javax.swing.JPanel carSearchPanel;
     private org.jdesktop.swingx.JXTable carTbl;
     private javax.swing.JCheckBox chauffeuredCB;
+    private javax.swing.JCheckBox chauffeuredCB1;
     private javax.swing.JComboBox classCB;
     private javax.swing.JLabel classLbl;
     private javax.swing.JButton clearBtn3;
@@ -616,6 +632,7 @@ public class StaffView extends javax.swing.JFrame {
     private javax.swing.JLabel fromLbl;
     private javax.swing.JButton hireBtn;
     private javax.swing.JPanel hirePanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
