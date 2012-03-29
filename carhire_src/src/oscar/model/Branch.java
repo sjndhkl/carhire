@@ -76,7 +76,6 @@ public class Branch extends DbRecord implements DbRecordable {
             return false;
         return this.deleteBy("branchId", this.branchId+"");
     }
-    
     /*
      * update record
      */
@@ -85,5 +84,10 @@ public class Branch extends DbRecord implements DbRecordable {
        if(this.branchId<=0)
             return false;
        return this.updateBy(this.toHashMap(), "branchId", this.branchId+"");
+    }
+
+    @Override
+    public Object toObject(HashMap<String,String> objHashMap) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

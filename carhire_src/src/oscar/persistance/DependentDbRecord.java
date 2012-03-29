@@ -25,40 +25,36 @@ public class DependentDbRecord extends DbRecord {
          this.dependentTable = table;
      }
      
+     //primary hasmap is for the current object's association and secondary is dependent table
      public boolean add(HashMap<String, String> primaryHashMap,HashMap<String, String> secondaryHashMap) throws SQLException {
-
+         if(this.dependentTable.equals("")){
+             System.out.println("No Dependent Table Set");
+             return false;
+         }
          try{
              
              this.connectionObject.getConnection().setAutoCommit(false);  
+            // Statement stmt = this.connectionObject.getConnection().prepareStatement(useTable);
+             
+             //insert into dependent table then into current one
+             HashMap<String,String> insertParamSecondary = this.getInsertParams(primaryHashMap);
+             String sqlSecondary = "insert into "+this.dependentTable+" ("+insertParamSecondary.get("cols")+") values("+insertParamSecondary.get("values")+")";
+             Statement stmt = this.connectionObject.getConnection().prepareStatement(sqlSecondary,Statement.RETURN_GENERATED_KEYS);
+             int primaryKeyValue = stmt.executeUpdate(sqlSecondary);
              
              
+             HashMap<String,String> insertParamPrimary = this.getInsertParams(primaryHashMap);
+             String sqlPrimary = "insert into "+this.useTable+" ("+this.primaryKey+","+insertParamPrimary.get("cols")+") values("+primaryKeyValue+","+insertParamPrimary.get("values")+")";
+             stmt = this.connectionObject.getConnection().prepareStatement(sqlSecondary,Statement.RETURN_GENERATED_KEYS);
+             stmt.executeUpdate(sqlPrimary);
              
-             Statement stmt = this.connectionObject.getConnection().createStatement();
              this.connectionObject.getConnection().commit();
          }catch(Exception e){
              this.connectionObject.getConnection().rollback();
-         }finally{
              this.connectionObject.getConnection().close();
+             return false;
          }
-         
-        String cols = "";
-        String values = "";
-        int num_cols = objHashMap.size();
-        int i = 1;
-        for (String key : objHashMap.keySet()) {
-
-            cols += key;
-            values += "'" + objHashMap.get(key) + "'";
-            if (i != num_cols) {
-                cols += ",";
-                values += ",";
-            }
-
-            i++;
-        }
-        String query = "insert into " + this.useTable + "(" + cols + ") values(" + values + ")";
-        //System.out.println(query);
-        return this.nonQuery(query);
+         return true;
     }
      
     

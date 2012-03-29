@@ -195,7 +195,7 @@ public class DbRecord {
     }
     
     protected String getUpdateParams(HashMap<String, String> objHashMap){
-         String updateString = "";
+        String updateString = "";
         int num_cols = objHashMap.size();
         int i = 1;
         for (String key : objHashMap.keySet()) {
@@ -249,4 +249,6 @@ public class DbRecord {
         //System.out.println(query);
         return this.nonQuery(query);
     }
+    
+    
 }

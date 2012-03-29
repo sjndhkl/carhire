@@ -15,4 +15,5 @@ public interface DbRecordable {
     boolean delete();
     boolean update();
     HashMap<String, String> toHashMap();
+    Object toObject(HashMap<String, String> hashMap);
 }
