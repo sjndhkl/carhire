@@ -1,17 +1,26 @@
+package oscar.model;
+
+import oscar.persistance.DbRecord;
+
 /**
  * @author Stefano
  * 
  * Class of a generic person. Will be inherited by WebCustomer and Staff,
  * plus it will represents a customer not registered in the website
  */
-public class Person {
-	private int personid;
-	private String name;
-	private String surname;
-	private String dateOfBirth;
-	private String email;
-	private String address;
-	private String phone;
+public class Person extends DbRecord {
+	protected int personid;
+	protected String name;
+	protected String surname;
+	protected String dateOfBirth;
+	protected String email;
+	protected String address;
+	protected String phone;
+        protected static String TABLE ="person";
+        
+        public Person(){
+            super(TABLE);
+        }
 	/**
 	 * @param personid
 	 * @param name
@@ -23,7 +32,7 @@ public class Person {
 	 */
 	public Person(int personid, String name, String surname,
 			String dateOfBirth, String email, String address, String phone) {
-		super();
+		super(TABLE);
 		this.personid = personid;
 		this.name = name;
 		this.surname = surname;

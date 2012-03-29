@@ -2,12 +2,13 @@ package oscar.model;
 
 import java.util.HashMap;
 import oscar.persistance.DbRecord;
+import oscar.persistance.DbRecordable;
 
 /**
  *
  * @author sujan
  */
-public class Branch extends DbRecord {
+public class Branch extends DbRecord implements DbRecordable {
 
     private int branchId;
     private String location;
@@ -47,6 +48,7 @@ public class Branch extends DbRecord {
     /*
      * convert object to hashmap
      */
+    @Override
     public HashMap<String, String> toHashMap() {
         HashMap<String, String> recordHashMap = new HashMap<String, String>();
         if (this.branchId > 0) {
@@ -60,6 +62,7 @@ public class Branch extends DbRecord {
     /*
      * add record
      */
+    @Override
     public boolean add(){
         return this.add(this.toHashMap());
     }
@@ -67,6 +70,7 @@ public class Branch extends DbRecord {
     /*
      * delete record
      */
+    @Override
     public boolean delete(){
         if(this.branchId<=0)
             return false;
@@ -76,6 +80,7 @@ public class Branch extends DbRecord {
     /*
      * update record
      */
+    @Override
     public boolean update(){
        if(this.branchId<=0)
             return false;
