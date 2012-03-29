@@ -19,6 +19,7 @@ public class DbRecord {
 
     protected DbConnectable connectionObject;
     protected String useTable;
+    protected String primaryKey;
 
     public enum ColumnType {
 
@@ -28,10 +29,11 @@ public class DbRecord {
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
-        "SELECT column_name FROM information_schema.key_column_usage"
+        //todo: find primary key and set the primaryKey attribute
+        /*"SELECT column_name FROM information_schema.key_column_usage"
             + "WHERE table_schema = schema()             -- only look in the current db"
             + "AND constraint_name = 'PRIMARY'         -- always 'PRIMARY' for PRIMARY KEY constraints"
-            + "AND table_name = " + table + "    -- specify your table."
+            + "AND table_name = " + table + "    -- specify your table."*/
 
 
     }
