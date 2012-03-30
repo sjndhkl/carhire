@@ -8,6 +8,7 @@ package oscar.persistance;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,8 @@ public class DbRecord {
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
+<<<<<<< HEAD
+=======
         //todo: find primary key and set the primaryKey attribute
         /*"SELECT column_name FROM information_schema.key_column_usage"
             + "WHERE table_schema = schema()             -- only look in the current db"
@@ -37,6 +40,7 @@ public class DbRecord {
             + "AND table_name = " + table + "    -- specify your table."*/
 
 
+>>>>>>> f392a38c094d979ee7ddd26563587122194faecb
     }
 
     public String getTable() {
@@ -132,6 +136,29 @@ public class DbRecord {
         return this.findAllBy(colName, value, 1).get(0);
     }
 
+
+    /*
+     * returns single row of data based on column and value specified along with
+     * column type
+     */
+    
+    public HashMap<String, String> findByPK(String value) {
+        String PK = "SELECT column_name FROM information_schema.key_column_usage"
+            + "WHERE table_schema = schema()             -- only look in the current db"
+            + "AND constraint_name = 'PRIMARY'         -- always 'PRIMARY' for PRIMARY KEY constraints"
+            + "AND table_name = " + this.useTable + "    -- specify your table.";
+
+        return this.findOneBy(PK, value);
+    }
+    
+    /*
+     * Populate the hashmap with the DB record
+     */
+    public boolean populate () {
+        
+        return true;
+    }
+    
     /*
      * returns single row of data based on column and value specified along with
      * column type
