@@ -1,17 +1,20 @@
 package oscar.model;
 
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
-import oscar.persistance.DbRecordable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Stefano
  * 
  * Class Staff for staff members
  */
-public class Staff extends Person implements DbRecordable {
+public class Staff extends Person {
 
     private String username;
     private boolean isAdmin;
@@ -78,6 +81,34 @@ public class Staff extends Person implements DbRecordable {
 
     @Override
     public HashMap<String, String> toHashMap() {
+        Class currentClass = this.getClass();
+        Field[] fields = currentClass.getDeclaredFields();
+        HashMap<String, String> objHashMap = new HashMap<String, String>();
+        for (Field f : fields) {
+
+            if (!Modifier.isStatic(f.getModifiers())) {
+
+                // switch(g.get)
+                String type = f.getType().getSimpleName();
+                try {
+                    if (type.equals("String")) {
+
+                        Object obj = f.get(this);
+                        if (obj != null) {
+                            objHashMap.put(f.getName(), obj.toString());
+                        }
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(Person.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        }
+        return objHashMap;
+    }
+
+    @Override
+    public Object toObject(HashMap<String,String> objHashMap) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

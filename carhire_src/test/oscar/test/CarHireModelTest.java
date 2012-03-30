@@ -5,7 +5,6 @@
 package oscar.test;
 
 import java.util.HashMap;
-import junit.framework.TestCase;
 import oscar.model.Branch;
 import oscar.persistance.DbRecord;
 
@@ -13,7 +12,7 @@ import oscar.persistance.DbRecord;
  *
  * @author sujan
  */
-public class CarHireModelTest extends TestCase {
+public class CarHireModelTest extends BaseTestCase {
 
     public void testFindOneBy() {
 

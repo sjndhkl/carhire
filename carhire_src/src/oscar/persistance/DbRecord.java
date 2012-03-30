@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -20,6 +21,7 @@ public class DbRecord {
 
     protected DbConnectable connectionObject;
     protected String useTable;
+    protected String primaryKey;
 
     public enum ColumnType {
 
@@ -29,6 +31,16 @@ public class DbRecord {
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
+<<<<<<< HEAD
+=======
+        //todo: find primary key and set the primaryKey attribute
+        /*"SELECT column_name FROM information_schema.key_column_usage"
+            + "WHERE table_schema = schema()             -- only look in the current db"
+            + "AND constraint_name = 'PRIMARY'         -- always 'PRIMARY' for PRIMARY KEY constraints"
+            + "AND table_name = " + table + "    -- specify your table."*/
+
+
+>>>>>>> f392a38c094d979ee7ddd26563587122194faecb
     }
 
     public String getTable() {
@@ -129,6 +141,7 @@ public class DbRecord {
      * returns single row of data based on column and value specified along with
      * column type
      */
+    
     public HashMap<String, String> findByPK(String value) {
         String PK = "SELECT column_name FROM information_schema.key_column_usage"
             + "WHERE table_schema = schema()             -- only look in the current db"
@@ -207,11 +220,8 @@ public class DbRecord {
 
         return this.deleteBy(colName, qValue);
     }
-
-    /*
-     * Update records based on Column name and value specified
-     */
-    public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
+    
+    protected String getUpdateParams(HashMap<String, String> objHashMap){
         String updateString = "";
         int num_cols = objHashMap.size();
         int i = 1;
@@ -224,14 +234,21 @@ public class DbRecord {
 
             i++;
         }
-        String query = "update " + this.useTable + " set " + updateString + " where " + colName + " = '" + value + "'";
+        return updateString;
+    }
+
+    /*
+     * Update records based on Column name and value specified
+     */
+    public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
+       
+        String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap) + " where " + colName + " = '" + value + "'";
 
         return this.nonQuery(query);
     }
-
-    public boolean add(HashMap<String, String> objHashMap) {
-
-        String cols = "";
+    
+    protected HashMap<String,String> getInsertParams(Map<String,String> objHashMap){
+         String cols = "";
         String values = "";
         int num_cols = objHashMap.size();
         int i = 1;
@@ -246,8 +263,19 @@ public class DbRecord {
 
             i++;
         }
-        String query = "insert into " + this.useTable + "(" + cols + ") values(" + values + ")";
+        HashMap<String,String> insertParams = new HashMap<String, String>();
+        insertParams.put("cols", cols);
+        insertParams.put("values", values);
+        return insertParams;
+    }
+
+    public boolean add(HashMap<String, String> objHashMap) {
+
+       HashMap<String,String> insertParams = this.getInsertParams(objHashMap);
+        String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
         //System.out.println(query);
         return this.nonQuery(query);
     }
+    
+    
 }
