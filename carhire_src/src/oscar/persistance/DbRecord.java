@@ -15,28 +15,52 @@ import java.util.Map;
  */
 public class DbRecord {
 
+    /** Database connection*/
     protected DbConnectable connectionObject;
+    /** Table on which the record is stored in the database*/
     protected String useTable;
+    /** Pimary key of the table*/
     protected String primaryKey;
 
+    /** Possible type of columns*/
     public enum ColumnType {
 
-        STRING, INT
+        /** String type */
+        STRING,
+        /** Integer type*/
+        INT
     }
 
+    /**
+     *  Constructor of the class
+     * @param table table where the record is stored
+     */
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
     }
 
+    /**
+     * Getter of the table
+     * @return table where the record is stored
+     */
     public String getTable() {
         return this.useTable;
     }
 
+    /**
+     * Change the table where the record is stored
+     * @param newTable table where the record is stored
+     */
     public void setTable(String newTable) {
         this.useTable = newTable;
     }
 
+    /**
+     * Perform a query on this record
+     * @param sql query sting
+     * @return List of HashMap representing the records
+     */
     public ArrayList<HashMap<String, String>> query(String sql) {
         ArrayList<HashMap<String, String>> result = new ArrayList<HashMap<String, String>>();
 
@@ -65,6 +89,10 @@ public class DbRecord {
         return result;
     }
 
+    /**
+     * Count the record of this table
+     * @return the number of record of this table
+     */
     public int count() {
         ArrayList<HashMap<String, String>> rs = this.query("select count(*) as count from " + this.useTable);
 
@@ -74,24 +102,41 @@ public class DbRecord {
         return 0;
     }
 
-    /*
-     * returns all the data inside the table
+    /**
+     * Returns all the data inside the table
+     * @return List of HashMap representing all the records
      */
     public ArrayList<HashMap<String, String>> findAll() {
         return this.query("select * from " + this.useTable);
     }
 
+    /**
+     * Returns a certain number of record inside the table
+     * @param limit maximum number of results
+     * @return List of HashMap representing the records
+     */
     public ArrayList<HashMap<String, String>> findAll(int limit) {
         return this.query("select * from " + this.useTable + " limit 0," + limit);
     }
 
+    /**
+     * Returns a certain number of record inside the table
+     * starting from a specified record
+     * @param startAt record number to start from
+     * @param limit maximum number of records
+     * @return List of HashMap representing the records
+     */
     public ArrayList<HashMap<String, String>> findAll(int startAt, int limit) {
         return this.query("select * from " + this.useTable + " limit " + startAt + "," + limit);
     }
 
-    /*
+    /**
      * returns all the data inside the table depending on column name and value
      * specified
+     * @param colName column to search in
+     * @param value value to search for
+     * @param limit maximum number of results
+     * @return List of HashMap representing the records
      */
     public ArrayList<HashMap<String, String>> findAllBy(String colName, String value, int limit) {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
@@ -104,6 +149,15 @@ public class DbRecord {
         return null;
     }
 
+    /**
+     * returns all the data inside the table depending on column name, value,
+     * maximum results and starting record specified
+     * @param colName  column to search in
+     * @param value value to search for
+     * @param startAt record to start at
+     * @param limit maximum number of results
+     * @return List of HashMap representing the records
+     */
     public ArrayList<HashMap<String, String>> findAllBy(String colName, String value, int startAt, int limit) {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
                 + " = " + value + " limit " + startAt + "," + limit);
@@ -115,19 +169,21 @@ public class DbRecord {
         return null;
     }
 
-    /*
+    /**
      * returns single row of data based on column and value specified
+     * @param colName  column to search in
+     * @param value value to search for
+     * @return List of HashMap representing the records
      */
     public HashMap<String, String> findOneBy(String colName, String value) {
         return this.findAllBy(colName, value, 1).get(0);
     }
-
-
-    /*
-     * returns single row of data based on column and value specified along with
-     * column type
-     */
     
+    /**
+     * returns single row of data based on column and value specified along with
+     * @param value value to search for
+     * @return List of HashMap representing the records
+     */
     public HashMap<String, String> findByPK(String value) {
         String PK = "SELECT column_name FROM information_schema.key_column_usage"
             + "WHERE table_schema = schema()             -- only look in the current db"
@@ -137,17 +193,22 @@ public class DbRecord {
         return this.findOneBy(PK, value);
     }
     
-    /*
+    /**
      * Populate the hashmap with the DB record
+     * @return
      */
-    public boolean populate () {
+    /*public boolean populate () {
         
         return true;
-    }
+    }*/
     
-    /*
+    /**
      * returns single row of data based on column and value specified along with
      * column type
+     * @param colName column name
+     * @param value value to search for
+     * @param type type of value to search
+     * @return List of HashMap representing the records
      */
     public HashMap<String, String> findOneBy(String colName, String value, ColumnType type) {
         String qValue = "";
@@ -164,6 +225,11 @@ public class DbRecord {
         return this.findAllBy(colName, qValue, 1).get(0);
     }
 
+    /**
+     * Execute an sql command
+     * @param sql sql string to execute
+     * @return the success of the command
+     */
     public boolean nonQuery(String sql) {
         boolean status = false;
         int queryStatus = -1;
@@ -183,13 +249,23 @@ public class DbRecord {
         return status;
     }
 
-    /*
+    /**
      * deletes record based on the column name and its value
+     * @param colName column name
+     * @param value value to search for
+     * @return the success of the query
      */
     public boolean deleteBy(String colName, String value) {
         return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
     }
 
+    /**
+     * deletes record based on the column name, its value and type of column
+     * @param colName column name
+     * @param value value to search for
+     * @param type the type of the value
+     * @return the success of the query
+     */
     public boolean deleteBy(String colName, String value, ColumnType type) {
         String qValue = "";
 
@@ -207,6 +283,12 @@ public class DbRecord {
         return this.deleteBy(colName, qValue);
     }
     
+    // TODO complete the javadoc of this method
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     protected String getUpdateParams(HashMap<String, String> objHashMap){
         String updateString = "";
         int num_cols = objHashMap.size();
@@ -223,8 +305,12 @@ public class DbRecord {
         return updateString;
     }
 
-    /*
+    /**
      * Update records based on Column name and value specified
+     * @param objHashMap the new data to update
+     * @param colName column name
+     * @param value value to search for
+     * @return The success of the query
      */
     public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
        
@@ -233,6 +319,13 @@ public class DbRecord {
         return this.nonQuery(query);
     }
     
+    
+    // TODO complete the javadoc
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     protected HashMap<String,String> getInsertParams(Map<String,String> objHashMap){
          String cols = "";
         String values = "";
@@ -255,6 +348,12 @@ public class DbRecord {
         return insertParams;
     }
 
+    //TODO complete this javadoc
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     public boolean add(HashMap<String, String> objHashMap) {
 
        HashMap<String,String> insertParams = this.getInsertParams(objHashMap);

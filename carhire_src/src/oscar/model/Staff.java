@@ -19,11 +19,16 @@ public class Staff extends Person {
     private boolean isAdmin;
     private boolean isChauffeur;
     
+    /**
+     * Class contructor
+     * @param username
+     */
     public Staff(String username){
         this.username = username;
     }
 
     /**
+     * Class contructo
      * @param personid
      * @param name
      * @param surname
@@ -44,6 +49,12 @@ public class Staff extends Person {
         this.isChauffeur = isChauffeur;
     }
 
+    /**
+     * 
+     * @param password inputed password
+     * @return whether the password match the one in the database
+     * @throws NoSuchAlgorithmException
+     */
     public boolean authorize(String password) throws NoSuchAlgorithmException {
         HashMap hm = this.findOneBy("username", this.username);
 
@@ -63,21 +74,37 @@ public class Staff extends Person {
 
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean add() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean delete() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public HashMap<String, String> toHashMap() {
         Class currentClass = this.getClass();
@@ -106,6 +133,11 @@ public class Staff extends Person {
         return objHashMap;
     }
 
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     @Override
     public Object toObject(HashMap<String,String> objHashMap) {
         throw new UnsupportedOperationException("Not supported yet.");

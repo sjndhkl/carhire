@@ -7,18 +7,18 @@ import org.jdesktop.application.SingleFrameApplication;
 import oscar.view.LoginView;
 import oscar.view.StaffView;
 
-
 /**
  *
  * @author sujan
  */
 public class Main extends SingleFrameApplication {
-    
-     /**
+
+    /**
      * At startup create and show the main frame of the application.
      */
-    @Override protected void startup() {
-       // show(new AdminView(this));
+    @Override
+    protected void startup() {
+        // show(new AdminView(this));
         show(new LoginView());
     }
 
@@ -26,8 +26,10 @@ public class Main extends SingleFrameApplication {
      * This method is to initialize the specified window by injecting resources.
      * Windows shown in our application come fully initialized from the GUI
      * builder, so this additional configuration is not needed.
+     * @param root 
      */
-    @Override protected void configureWindow(java.awt.Window root) {
+    @Override
+    protected void configureWindow(java.awt.Window root) {
     }
 
     /**
@@ -40,6 +42,7 @@ public class Main extends SingleFrameApplication {
 
     /**
      * Main method launching the application.
+     * @param args 
      */
     public static void main(String[] args) {
         launch(Main.class, args);
@@ -72,10 +75,6 @@ public class Main extends SingleFrameApplication {
         }catch(Exception e){
             System.out.println(e.getCause());
         }
-         * 
-        
     }
 */
-    
-    
 }

@@ -1,13 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * LoginView.java
- *
- * Created on 28-Mar-2012, 15:18:24
- */
 package oscar.view;
 
 import java.security.NoSuchAlgorithmException;
@@ -18,6 +8,10 @@ import oscar.model.Staff;
 /**
  *
  * @author sujan
+ * 
+ * LoginView.java
+ *
+ * Created on 28-Mar-2012, 15:18:24
  */
 public class LoginView extends javax.swing.JFrame {
 
@@ -107,7 +101,6 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-// TODO add your handling code here:
     //System.out.append(evt.getActionCommand());
     oscar.model.Staff staff = new Staff(this.txtUserName.getText());
         try {

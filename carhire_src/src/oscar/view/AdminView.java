@@ -14,6 +14,10 @@ import java.awt.event.ActionListener;
  */
 public class AdminView extends FrameView implements ActionListener {
 
+    /**
+     * Class constructor
+     * @param app The application
+     */
     public AdminView(SingleFrameApplication app) {
         super(app);
 

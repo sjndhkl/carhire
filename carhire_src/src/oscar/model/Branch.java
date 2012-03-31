@@ -16,9 +16,8 @@ public class Branch extends DbRecord implements DbRecordable {
     private static String TABLE = "branch";
     
     /*
-     * setters and getters
+     * Setter and getters
      */
-
     public void setBranchId(int branchId) {
         this.branchId = branchId;
     }
@@ -31,13 +30,19 @@ public class Branch extends DbRecord implements DbRecordable {
         this.location = location;
     }
 
-    /*
+    /**
      * setup constructor
      */
     public Branch() {
         super(TABLE);
     }
 
+    /**
+     * Class contuctor
+     * @param branchId branch id
+     * @param location location 
+     * @param country country
+     */
     public Branch(int branchId, String location, String country) {
         super(TABLE);
         this.branchId = branchId;
@@ -45,8 +50,9 @@ public class Branch extends DbRecord implements DbRecordable {
         this.country = country;
     }
 
-    /*
+    /**
      * convert object to hashmap
+     * @return The object represented with an HasMap
      */
     @Override
     public HashMap<String, String> toHashMap() {
@@ -59,16 +65,18 @@ public class Branch extends DbRecord implements DbRecordable {
         return recordHashMap;
     }
     
-    /*
+    /**
      * add record
+     * @return The success of the operation
      */
     @Override
     public boolean add(){
         return this.add(this.toHashMap());
     }
     
-    /*
+    /**
      * delete record
+     * @return The success of the operation
      */
     @Override
     public boolean delete(){
@@ -76,8 +84,9 @@ public class Branch extends DbRecord implements DbRecordable {
             return false;
         return this.deleteBy("branchId", this.branchId+"");
     }
-    /*
+    /**
      * update record
+     * @return The success of the operation
      */
     @Override
     public boolean update(){
@@ -86,6 +95,11 @@ public class Branch extends DbRecord implements DbRecordable {
        return this.updateBy(this.toHashMap(), "branchId", this.branchId+"");
     }
 
+    /**
+     * Converts HashMap to object
+     * @param objHashMap
+     * @return the converted object
+     */
     @Override
     public Object toObject(HashMap<String,String> objHashMap) {
         throw new UnsupportedOperationException("Not supported yet.");

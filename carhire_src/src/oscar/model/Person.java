@@ -16,6 +16,7 @@ import oscar.persistance.DependentDbRecord;
  */
 public class Person extends DependentDbRecord implements DbRecordable {
 
+    /** Record id*/
     protected int personid;
     protected String name;
     protected String surname;
@@ -23,14 +24,19 @@ public class Person extends DependentDbRecord implements DbRecordable {
     protected String email;
     protected String address;
     protected String phone;
+    /** Databse table name*/
     protected static String TABLE = "person";
 
+    /**
+     * Class contructor
+     */
     public Person() {
         super(TABLE);
     }
 
     /**
-     * @param personid
+     * Class contructor
+     * @param personid record id
      * @param name
      * @param surname
      * @param dateOfBirth
@@ -50,6 +56,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
         this.phone = phone;
     }
 
+    /* Setters and getters */
     public void setAddress(String address) {
         this.address = address;
     }
@@ -78,21 +85,40 @@ public class Person extends DependentDbRecord implements DbRecordable {
         this.surname = surname;
     }
 
+    /**
+     * 
+     * @return The success of the operation
+     */
+    // TODO implement this operation
     @Override
     public boolean add() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return The success of the operation
+     */
+    // TODO implement this operation
     @Override
     public boolean delete() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return The success of the operation
+     */
+    // TODO implement this operation
     @Override
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public HashMap<String, String> toHashMap() {
         Class currentClass = this.getClass();
@@ -121,6 +147,11 @@ public class Person extends DependentDbRecord implements DbRecordable {
         return objHashMap;
     }
 
+    /**
+     * 
+     * @param hashMap
+     * @return
+     */
     @Override
     public Object toObject(HashMap<String,String> hashMap) {
         throw new UnsupportedOperationException("Not supported yet.");
