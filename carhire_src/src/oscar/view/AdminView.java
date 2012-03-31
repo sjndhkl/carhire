@@ -33,7 +33,6 @@ public class AdminView extends FrameView implements ActionListener {
         mainPanel = new javax.swing.JPanel();
         tabPanel = new javax.swing.JTabbedPane();
         startPanel = new javax.swing.JPanel();
-        jXGraph1 = new org.jdesktop.swingx.JXGraph();
         staffPanel = new javax.swing.JPanel();
         carClassSearchPanel1 = new javax.swing.JPanel();
         plateLbl2 = new javax.swing.JLabel();
@@ -42,8 +41,6 @@ public class AdminView extends FrameView implements ActionListener {
         plateTxt2 = new javax.swing.JTextField();
         addBtn4 = new javax.swing.JButton();
         clearBtn4 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jXTable4 = new org.jdesktop.swingx.JXTable();
         bookingPanel = new javax.swing.JPanel();
         carClassSearchPanel2 = new javax.swing.JPanel();
         refCodeLbl = new javax.swing.JLabel();
@@ -51,15 +48,11 @@ public class AdminView extends FrameView implements ActionListener {
         surnameLbl = new javax.swing.JLabel();
         surnameTxt = new javax.swing.JTextField();
         rentalDateLbl = new javax.swing.JLabel();
-        rentalDateDP = new org.jdesktop.swingx.JXDatePicker();
         returnDateLbl = new javax.swing.JLabel();
-        returnDateDP = new org.jdesktop.swingx.JXDatePicker();
         isBookingCB = new javax.swing.JCheckBox();
         clearBtn2 = new javax.swing.JButton();
         addBtn2 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jXTable5 = new org.jdesktop.swingx.JXTable();
         carPanel = new javax.swing.JPanel();
         carSearchPanel = new javax.swing.JPanel();
         plateLbl = new javax.swing.JLabel();
@@ -78,8 +71,6 @@ public class AdminView extends FrameView implements ActionListener {
         statusCB = new javax.swing.JComboBox();
         addBtn3 = new javax.swing.JButton();
         clearBtn3 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jXTable3 = new org.jdesktop.swingx.JXTable();
         carClassPanel = new javax.swing.JPanel();
         carClassSearchPanel = new javax.swing.JPanel();
         plateLbl1 = new javax.swing.JLabel();
@@ -88,10 +79,6 @@ public class AdminView extends FrameView implements ActionListener {
         brandTxt1 = new javax.swing.JTextField();
         clearBtn1 = new javax.swing.JButton();
         addBtn1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jXTable1 = new org.jdesktop.swingx.JXTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jXTable2 = new org.jdesktop.swingx.JXTable();
         logoutBtn = new javax.swing.JButton();
         usernameLbl = new javax.swing.JLabel();
         carDialog = new javax.swing.JDialog();
@@ -121,7 +108,6 @@ public class AdminView extends FrameView implements ActionListener {
         branchDlgLbl = new javax.swing.JLabel();
         lastServiceMileageDlgTxt = new javax.swing.JTextField();
         lastServiceMileageDlgLbl = new javax.swing.JLabel();
-        lastServiceDlgDP = new org.jdesktop.swingx.JXDatePicker();
         lastServiceDlgLbl = new javax.swing.JLabel();
         serviceMilesDlgLbl = new javax.swing.JLabel();
         serviceMilesDlgTxt = new javax.swing.JTextField();
@@ -160,7 +146,6 @@ public class AdminView extends FrameView implements ActionListener {
         dateOfBirthDlgLbl = new javax.swing.JLabel();
         emailDlgLbl = new javax.swing.JLabel();
         PhoneDlgLbl = new javax.swing.JLabel();
-        dateOfBirthDP = new org.jdesktop.swingx.JXDatePicker();
         emailDlgTxt = new javax.swing.JTextField();
         phoneDlgTxt = new javax.swing.JTextField();
 
@@ -170,34 +155,15 @@ public class AdminView extends FrameView implements ActionListener {
 
         startPanel.setName("startPanel"); // NOI18N
 
-        jXGraph1.setName("jXGraph1"); // NOI18N
-
-        javax.swing.GroupLayout jXGraph1Layout = new javax.swing.GroupLayout(jXGraph1);
-        jXGraph1.setLayout(jXGraph1Layout);
-        jXGraph1Layout.setHorizontalGroup(
-            jXGraph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jXGraph1Layout.setVerticalGroup(
-            jXGraph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout startPanelLayout = new javax.swing.GroupLayout(startPanel);
         startPanel.setLayout(startPanelLayout);
         startPanelLayout.setHorizontalGroup(
             startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startPanelLayout.createSequentialGroup()
-                .addContainerGap(314, Short.MAX_VALUE)
-                .addComponent(jXGraph1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 723, Short.MAX_VALUE)
         );
         startPanelLayout.setVerticalGroup(
             startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(startPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jXGraph1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+            .addGap(0, 570, Short.MAX_VALUE)
         );
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(AdminView.class);
@@ -266,22 +232,6 @@ public class AdminView extends FrameView implements ActionListener {
                 .addComponent(addBtn4))
         );
 
-        jScrollPane5.setName("jScrollPane5"); // NOI18N
-
-        jXTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable4.setName("jXTable4"); // NOI18N
-        jScrollPane5.setViewportView(jXTable4);
-
         javax.swing.GroupLayout staffPanelLayout = new javax.swing.GroupLayout(staffPanel);
         staffPanel.setLayout(staffPanelLayout);
         staffPanelLayout.setHorizontalGroup(
@@ -289,18 +239,14 @@ public class AdminView extends FrameView implements ActionListener {
             .addGroup(staffPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(575, Short.MAX_VALUE))
         );
         staffPanelLayout.setVerticalGroup(
             staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(staffPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(423, Short.MAX_VALUE))
         );
 
         tabPanel.addTab(resourceMap.getString("staffPanel.TabConstraints.tabTitle"), staffPanel); // NOI18N
@@ -322,17 +268,8 @@ public class AdminView extends FrameView implements ActionListener {
         rentalDateLbl.setText(resourceMap.getString("rentalDateLbl.text")); // NOI18N
         rentalDateLbl.setName("rentalDateLbl"); // NOI18N
 
-        rentalDateDP.setName("rentalDateDP"); // NOI18N
-
         returnDateLbl.setText(resourceMap.getString("returnDateLbl.text")); // NOI18N
         returnDateLbl.setName("returnDateLbl"); // NOI18N
-
-        returnDateDP.setName("returnDateDP"); // NOI18N
-        returnDateDP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnDateDPActionPerformed(evt);
-            }
-        });
 
         isBookingCB.setText(resourceMap.getString("isBookingCB.text")); // NOI18N
         isBookingCB.setName("isBookingCB"); // NOI18N
@@ -368,16 +305,8 @@ public class AdminView extends FrameView implements ActionListener {
                     .addComponent(clearBtn2)
                     .addComponent(addBtn2)
                     .addComponent(jButton2)
-                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rentalDateLbl)
-                            .addComponent(returnDateLbl))
-                        .addGap(14, 14, 14)
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                                .addComponent(rentalDateDP, javax.swing.GroupLayout.PREFERRED_SIZE, 118, Short.MAX_VALUE)
-                                .addGap(4, 4, 4))
-                            .addComponent(returnDateDP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, Short.MAX_VALUE))))
+                    .addComponent(rentalDateLbl)
+                    .addComponent(returnDateLbl))
                 .addGap(0, 0, 0))
         );
         carClassSearchPanel2Layout.setVerticalGroup(
@@ -391,13 +320,9 @@ public class AdminView extends FrameView implements ActionListener {
                     .addComponent(surnameLbl)
                     .addComponent(surnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rentalDateLbl)
-                    .addComponent(rentalDateDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(rentalDateLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(returnDateLbl)
-                    .addComponent(returnDateDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(returnDateLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(isBookingCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -408,22 +333,6 @@ public class AdminView extends FrameView implements ActionListener {
                 .addComponent(jButton2))
         );
 
-        jScrollPane7.setName("jScrollPane7"); // NOI18N
-
-        jXTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable5.setName("jXTable5"); // NOI18N
-        jScrollPane7.setViewportView(jXTable5);
-
         javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
         bookingPanel.setLayout(bookingPanelLayout);
         bookingPanelLayout.setHorizontalGroup(
@@ -431,18 +340,14 @@ public class AdminView extends FrameView implements ActionListener {
             .addGroup(bookingPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(514, Short.MAX_VALUE))
         );
         bookingPanelLayout.setVerticalGroup(
             bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookingPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
         tabPanel.addTab(resourceMap.getString("bookingPanel.TabConstraints.tabTitle"), bookingPanel); // NOI18N
@@ -571,22 +476,6 @@ public class AdminView extends FrameView implements ActionListener {
                 .addComponent(addBtn3))
         );
 
-        jScrollPane4.setName("jScrollPane4"); // NOI18N
-
-        jXTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable3.setName("jXTable3"); // NOI18N
-        jScrollPane4.setViewportView(jXTable3);
-
         javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
         carPanel.setLayout(carPanelLayout);
         carPanelLayout.setHorizontalGroup(
@@ -594,18 +483,14 @@ public class AdminView extends FrameView implements ActionListener {
             .addGroup(carPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(588, Short.MAX_VALUE))
         );
         carPanelLayout.setVerticalGroup(
             carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
         tabPanel.addTab(resourceMap.getString("carPanel.TabConstraints.tabTitle"), carPanel); // NOI18N
@@ -672,38 +557,6 @@ public class AdminView extends FrameView implements ActionListener {
                 .addComponent(addBtn1))
         );
 
-        jScrollPane2.setName("jScrollPane2"); // NOI18N
-
-        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable1.setName("jXTable1"); // NOI18N
-        jScrollPane2.setViewportView(jXTable1);
-
-        jScrollPane3.setName("jScrollPane3"); // NOI18N
-
-        jXTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable2.setName("jXTable2"); // NOI18N
-        jScrollPane3.setViewportView(jXTable2);
-
         javax.swing.GroupLayout carClassPanelLayout = new javax.swing.GroupLayout(carClassPanel);
         carClassPanel.setLayout(carClassPanelLayout);
         carClassPanelLayout.setHorizontalGroup(
@@ -711,18 +564,14 @@ public class AdminView extends FrameView implements ActionListener {
             .addGroup(carClassPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(564, Short.MAX_VALUE))
         );
         carClassPanelLayout.setVerticalGroup(
             carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carClassPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(423, Short.MAX_VALUE))
         );
 
         tabPanel.addTab(resourceMap.getString("carClassPanel.TabConstraints.tabTitle"), carClassPanel); // NOI18N
@@ -744,7 +593,7 @@ public class AdminView extends FrameView implements ActionListener {
                 .addComponent(usernameLbl)
                 .addGap(18, 18, 18)
                 .addComponent(logoutBtn))
-            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,8 +754,6 @@ public class AdminView extends FrameView implements ActionListener {
         lastServiceMileageDlgLbl.setText(resourceMap.getString("lastServiceMileageDlgLbl.text")); // NOI18N
         lastServiceMileageDlgLbl.setName("lastServiceMileageDlgLbl"); // NOI18N
 
-        lastServiceDlgDP.setName("lastServiceDlgDP"); // NOI18N
-
         lastServiceDlgLbl.setText(resourceMap.getString("lastServiceDlgLbl.text")); // NOI18N
         lastServiceDlgLbl.setName("lastServiceDlgLbl"); // NOI18N
 
@@ -937,7 +784,6 @@ public class AdminView extends FrameView implements ActionListener {
                     .addComponent(serviceMilesDlgTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lastServiceDlgDP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, Short.MAX_VALUE)
                             .addComponent(lastServiceMileageDlgTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                             .addComponent(milieageDlgTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
                         .addGap(1, 1, 1))
@@ -957,12 +803,8 @@ public class AdminView extends FrameView implements ActionListener {
                         .addGap(6, 6, 6)
                         .addComponent(lastServiceMileageDlgLbl))
                     .addComponent(lastServiceMileageDlgTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lastServiceDlgLbl))
-                    .addComponent(lastServiceDlgDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE)
+                .addComponent(lastServiceDlgLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1240,8 +1082,6 @@ public class AdminView extends FrameView implements ActionListener {
         PhoneDlgLbl.setText(resourceMap.getString("PhoneDlgLbl.text")); // NOI18N
         PhoneDlgLbl.setName("PhoneDlgLbl"); // NOI18N
 
-        dateOfBirthDP.setName("dateOfBirthDP"); // NOI18N
-
         emailDlgTxt.setName("emailDlgTxt"); // NOI18N
 
         phoneDlgTxt.setText(resourceMap.getString("phoneDlgTxt.text")); // NOI18N
@@ -1260,7 +1100,6 @@ public class AdminView extends FrameView implements ActionListener {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(emailDlgTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                     .addComponent(phoneDlgTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1268,9 +1107,7 @@ public class AdminView extends FrameView implements ActionListener {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateOfBirthDlgLbl)
-                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(dateOfBirthDlgLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailDlgLbl)
@@ -1378,7 +1215,6 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JTextField colorDlgTxt;
     private javax.swing.JLabel colorLbl;
     private javax.swing.JTextField colorTxt;
-    private org.jdesktop.swingx.JXDatePicker dateOfBirthDP;
     private javax.swing.JLabel dateOfBirthDlgLbl;
     private javax.swing.JButton deleteDlgBtn;
     private javax.swing.JButton deleteDlgBtn1;
@@ -1396,20 +1232,8 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea1;
-    private org.jdesktop.swingx.JXGraph jXGraph1;
-    private org.jdesktop.swingx.JXTable jXTable1;
-    private org.jdesktop.swingx.JXTable jXTable2;
-    private org.jdesktop.swingx.JXTable jXTable3;
-    private org.jdesktop.swingx.JXTable jXTable4;
-    private org.jdesktop.swingx.JXTable jXTable5;
-    private org.jdesktop.swingx.JXDatePicker lastServiceDlgDP;
     private javax.swing.JLabel lastServiceDlgLbl;
     private javax.swing.JLabel lastServiceMileageDlgLbl;
     private javax.swing.JTextField lastServiceMileageDlgTxt;
@@ -1438,9 +1262,7 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JTextField priceDlgTxt;
     private javax.swing.JLabel refCodeLbl;
     private javax.swing.JTextField refCodeTxt;
-    private org.jdesktop.swingx.JXDatePicker rentalDateDP;
     private javax.swing.JLabel rentalDateLbl;
-    private org.jdesktop.swingx.JXDatePicker returnDateDP;
     private javax.swing.JLabel returnDateLbl;
     private javax.swing.JButton saveDlgBtn;
     private javax.swing.JButton saveDlgBtn1;

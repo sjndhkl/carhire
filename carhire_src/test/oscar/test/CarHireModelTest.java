@@ -1,8 +1,10 @@
+
+package oscar.test;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package oscar.test;
 
 import java.util.HashMap;
 import oscar.model.Branch;
