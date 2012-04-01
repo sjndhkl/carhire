@@ -56,6 +56,25 @@ public class Person extends DependentDbRecord implements DbRecordable {
         this.phone = phone;
     }
 
+    /**
+     * Class constructor
+     * @param PkValue Value of the primary key
+     */
+    public Person(int PkValue) {
+        super(TABLE);
+        this.useTable = TABLE;
+        HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
+
+        this.personid = PkValue;
+        this.name = attributes.get("name");
+        this.surname = attributes.get("surname");
+        this.dateOfBirth = attributes.get("dateOfBirth");
+        this.email = attributes.get("email");
+        this.address = attributes.get("address");
+        this.phone = attributes.get("phone");
+        
+    }
+
     /* Setters and getters */
     public void setAddress(String address) {
         this.address = address;

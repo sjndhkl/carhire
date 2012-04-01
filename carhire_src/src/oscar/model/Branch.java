@@ -18,6 +18,9 @@ public class Branch extends DbRecord implements DbRecordable {
     /*
      * Setter and getters
      */
+    public int getBranchId() {
+        return branchId;
+    }
     public void setBranchId(int branchId) {
         this.branchId = branchId;
     }
@@ -30,15 +33,37 @@ public class Branch extends DbRecord implements DbRecordable {
         this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
     /**
      * setup constructor
      */
     public Branch() {
         super(TABLE);
+        this.useTable = TABLE;
     }
 
     /**
-     * Class contuctor
+     * setup constructor
+     * @param PkValue Value of the primary key
+     */
+    public Branch(String PkValue) {
+        super(TABLE);
+        this.useTable = TABLE;
+        HashMap<String, String> attributes = this.findByPK(PkValue);
+        this.branchId = Integer.parseInt(PkValue);
+        this.location = attributes.get("location");
+        this.country = attributes.get("country");        
+    }
+
+    /**
+     * Class constructor
      * @param branchId branch id
      * @param location location 
      * @param country country
@@ -57,11 +82,11 @@ public class Branch extends DbRecord implements DbRecordable {
     @Override
     public HashMap<String, String> toHashMap() {
         HashMap<String, String> recordHashMap = new HashMap<String, String>();
-        if (this.branchId > 0) {
-            recordHashMap.put("branchId", this.branchId + "");
+        if (this.getBranchId() > 0) {
+            recordHashMap.put("branchId", this.getBranchId() + "");
         }
-        recordHashMap.put("location", this.location);
-        recordHashMap.put("country", this.country);
+        recordHashMap.put("location", this.getLocation());
+        recordHashMap.put("country", this.getCountry());
         return recordHashMap;
     }
     
@@ -80,9 +105,9 @@ public class Branch extends DbRecord implements DbRecordable {
      */
     @Override
     public boolean delete(){
-        if(this.branchId<=0)
+        if(this.getBranchId()<=0)
             return false;
-        return this.deleteBy("branchId", this.branchId+"");
+        return this.deleteBy("branchId", this.getBranchId()+"");
     }
     /**
      * update record
@@ -90,9 +115,9 @@ public class Branch extends DbRecord implements DbRecordable {
      */
     @Override
     public boolean update(){
-       if(this.branchId<=0)
+       if(this.getBranchId()<=0)
             return false;
-       return this.updateBy(this.toHashMap(), "branchId", this.branchId+"");
+       return this.updateBy(this.toHashMap(), "branchId", this.getBranchId()+"");
     }
 
     /**

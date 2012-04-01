@@ -5,8 +5,10 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,17 +16,15 @@ import java.util.Map;
  * @author sujan
  */
 public class DbRecord {
-
     /** Database connection*/
     protected DbConnectable connectionObject;
     /** Table on which the record is stored in the database*/
     protected String useTable;
-    /** Pimary key of the table*/
+    /** Primary key of the table*/
     protected String primaryKey;
 
     /** Possible type of columns*/
     public enum ColumnType {
-
         /** String type */
         STRING,
         /** Integer type*/
@@ -38,6 +38,17 @@ public class DbRecord {
     public DbRecord(String table) {
         this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
         this.useTable = table;
+    }
+
+    /**
+     *  Constructor of the class
+     * @param table table where the record is stored
+     */
+    // TODO: Complete this implementation
+    public DbRecord(String table, String PkValue) {
+        this.connectionObject = DbConnectionFactory.connect(DbConnectionFactory.Database.MYSQL);
+        this.useTable = table;
+        HashMap<String, String> objectAttributes = this.findByPK(PkValue);
     }
 
     /**
@@ -140,9 +151,9 @@ public class DbRecord {
      */
     public ArrayList<HashMap<String, String>> findAllBy(String colName, String value, int limit) {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
-                + " = " + value + " limit 0," + limit);
-
-        if (records.size() >= 1) {
+                + "='" + value + "' limit 0," + limit);
+        if (records != null
+            && records.size() >= 1) {
             return records;    // return row
         }
 
@@ -178,30 +189,40 @@ public class DbRecord {
     public HashMap<String, String> findOneBy(String colName, String value) {
         return this.findAllBy(colName, value, 1).get(0);
     }
-    
+
     /**
      * returns single row of data based on column and value specified along with
      * @param value value to search for
      * @return List of HashMap representing the records
      */
     public HashMap<String, String> findByPK(String value) {
-        String PK = "SELECT column_name FROM information_schema.key_column_usage"
-            + "WHERE table_schema = schema()             -- only look in the current db"
-            + "AND constraint_name = 'PRIMARY'         -- always 'PRIMARY' for PRIMARY KEY constraints"
-            + "AND table_name = " + this.useTable + "    -- specify your table.";
-
-        return this.findOneBy(PK, value);
+        String PK;
+        try {
+            Statement stmt = this.connectionObject.getConnection().createStatement();
+            // TODO: make the database name softcoded
+            ResultSet rs = stmt.executeQuery("SHOW INDEX FROM carhire."
+                    + this.useTable + " WHERE Key_name = 'PRIMARY'");
+            /*"SELECT column_name FROM information_schema.key_column_usage"
+            + " WHERE table_schema = schema()             -- only look in the current db"
+            + " AND constraint_name = 'PRIMARY'         -- always 'PRIMARY' for PRIMARY KEY constraints"
+            + " AND table_name = " + this.useTable + "    -- specify your table.");*/
+            rs.next();
+            PK = rs.getString("Column_name");
+            return this.findOneBy(PK, value);
+        } catch (SQLException sQLException) {
+            System.err.println("Mysql Exception :" + sQLException.getMessage());
+            return null;
+        }
     }
-    
+
     /**
      * Populate the hashmap with the DB record
      * @return
      */
     /*public boolean populate () {
-        
-        return true;
-    }*/
     
+    return true;
+    }*/
     /**
      * returns single row of data based on column and value specified along with
      * column type
@@ -282,14 +303,14 @@ public class DbRecord {
 
         return this.deleteBy(colName, qValue);
     }
-    
+
     // TODO complete the javadoc of this method
     /**
      * 
      * @param objHashMap
      * @return
      */
-    protected String getUpdateParams(HashMap<String, String> objHashMap){
+    protected String getUpdateParams(HashMap<String, String> objHashMap) {
         String updateString = "";
         int num_cols = objHashMap.size();
         int i = 1;
@@ -313,21 +334,20 @@ public class DbRecord {
      * @return The success of the query
      */
     public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
-       
+
         String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap) + " where " + colName + " = '" + value + "'";
 
         return this.nonQuery(query);
     }
-    
-    
+
     // TODO complete the javadoc
     /**
      * 
      * @param objHashMap
      * @return
      */
-    protected HashMap<String,String> getInsertParams(Map<String,String> objHashMap){
-         String cols = "";
+    protected HashMap<String, String> getInsertParams(Map<String, String> objHashMap) {
+        String cols = "";
         String values = "";
         int num_cols = objHashMap.size();
         int i = 1;
@@ -342,7 +362,7 @@ public class DbRecord {
 
             i++;
         }
-        HashMap<String,String> insertParams = new HashMap<String, String>();
+        HashMap<String, String> insertParams = new HashMap<String, String>();
         insertParams.put("cols", cols);
         insertParams.put("values", values);
         return insertParams;
@@ -356,11 +376,9 @@ public class DbRecord {
      */
     public boolean add(HashMap<String, String> objHashMap) {
 
-       HashMap<String,String> insertParams = this.getInsertParams(objHashMap);
+        HashMap<String, String> insertParams = this.getInsertParams(objHashMap);
         String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
         //System.out.println(query);
         return this.nonQuery(query);
     }
-    
-    
 }

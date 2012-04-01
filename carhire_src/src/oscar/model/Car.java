@@ -1,11 +1,15 @@
 package oscar.model;
 
+import java.util.HashMap;
+import oscar.persistance.DbRecord;
+
 /**
  * @author Stefano
  * 
  * Class Car for the cars to hire
  */
-public class Car {
+public class Car extends DbRecord {
+    private static String TABLE = "car";
     /** The PK of the table */
     private String plateNumber;
     private String brand;
@@ -39,7 +43,7 @@ public class Car {
     private CarStatus status;
 
     /**
-     * Class contructor
+     * Class constructor
      * @param plateNumber
      * @param brand
      * @param model
@@ -58,7 +62,7 @@ public class Car {
             int mileage, int lastServiceMileage, String lastServiceDate,
             int carClass, String color, int branch, String servicePeriod,
             int serviceMiles, CarStatus status) {
-        super();
+        super(TABLE);
         this.plateNumber = plateNumber;
         this.brand = brand;
         this.model = model;
@@ -72,5 +76,28 @@ public class Car {
         this.servicePeriod = servicePeriod;
         this.serviceMiles = serviceMiles;
         this.status = status;
+    }
+
+    /**
+     * setup constructor
+     * @param PkValue Value of the primary key
+     */
+    public Car(String PkValue) {
+        super(TABLE);
+        HashMap<String, String> attributes = this.findByPK(PkValue);
+        
+        this.plateNumber = PkValue;
+        this.brand = attributes.get("brand");
+        this.model = attributes.get("model");
+        this.year = Integer.parseInt(attributes.get("year"));
+        this.mileage = Integer.parseInt(attributes.get("mileage"));
+        this.lastServiceMileage = Integer.parseInt(attributes.get("lastServiceMileage"));
+        this.lastServiceDate = attributes.get("lastServiceDate");
+        this.carClass = Integer.parseInt(attributes.get("carClass"));
+        this.color = attributes.get("color");
+        this.branch = Integer.parseInt(attributes.get("branch"));
+        this.servicePeriod = attributes.get("servicePeriod");
+        this.serviceMiles = Integer.parseInt(attributes.get("serviceMiles"));
+        this.status = CarStatus.valueOf(attributes.get("status"));
     }
 }
