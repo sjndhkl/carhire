@@ -1,738 +1,7 @@
 <?xml version="1.1" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.7">
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JPanel" name="mainPanel">
-      <Properties>
-        <Property name="name" type="java.lang.String" value="mainPanel" noResource="true"/>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="541" max="-2" attributes="0"/>
-                  <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Component id="tabPanel" alignment="1" pref="728" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="logoutBtn" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="usernameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tabPanel" pref="598" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="tabPanel">
-          <Properties>
-            <Property name="name" type="java.lang.String" value="panel" noResource="true"/>
-          </Properties>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="startPanel">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="startPanel" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Start">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="startPanel.TabConstraints.tabTitle"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="723" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="570" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-            </Container>
-            <Container class="javax.swing.JPanel" name="staffPanel">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="staffPanel" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Staff">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="staffPanel.TabConstraints.tabTitle"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="575" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="423" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="carClassSearchPanel1">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="carClassSearchPanel1" noResource="true"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="plateLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
-                                          <Component id="plateTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="clearBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="plateLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="brandLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn4" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="plateLbl2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateLbl2.text"/>
-                        <Property name="name" type="java.lang.String" value="plateLbl2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="brandLbl2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandLbl2.text"/>
-                        <Property name="name" type="java.lang.String" value="brandLbl2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt2">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="brandTxt2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt2">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="plateTxt2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="addBtn4">
-                      <Properties>
-                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn4.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn4.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn4" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn4ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn4">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="clearBtn4.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn4.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn4" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="bookingPanel">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="bookingPanel" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Bookings">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="bookingPanel.TabConstraints.tabTitle"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="514" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="330" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="carClassSearchPanel2">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="carClassSearchPanel2" noResource="true"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="surnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="refCodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="refCodeTxt" pref="116" max="32767" attributes="2"/>
-                                          <Component id="surnameTxt" alignment="0" pref="116" max="32767" attributes="2"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="isBookingCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="clearBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="refCodeLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="refCodeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="surnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="surnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rentalDateLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="returnDateLbl" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="isBookingCB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="clearBtn2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="refCodeLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="refCodeLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="refCodeLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="refCodeTxt">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="refCodeTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="surnameLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="surnameLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="surnameLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="surnameTxt">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="surnameTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="rentalDateLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="rentalDateLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="rentalDateLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="returnDateLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="returnDateLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="returnDateLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JCheckBox" name="isBookingCB">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="isBookingCB.text"/>
-                        <Property name="name" type="java.lang.String" value="isBookingCB" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn2">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="clearBtn2.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn2.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="addBtn2">
-                      <Properties>
-                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn2.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn2.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButton2">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton2.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="jButton2.text"/>
-                        <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="carPanel">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="carPanel" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Cars">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="carPanel.TabConstraints.tabTitle"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="588" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="293" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="carSearchPanel">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="carSearchPanel" noResource="true"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="plateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="modelLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="classLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="yearLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="colorLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="statusLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="statusCB" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="colorTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="yearTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="classTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="modelTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="brandTxt" pref="66" max="32767" attributes="1"/>
-                                          <Component id="plateTxt" alignment="0" pref="66" max="32767" attributes="1"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="clearBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="plateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="brandLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="modelLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="modelTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="classLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="classTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="yearLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="yearTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="colorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="colorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="statusLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="statusCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="plateLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="plateLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="brandLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="brandLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="modelLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="modelLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="modelLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="classLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="classLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="classLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="yearLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="yearLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="yearLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="colorLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="colorLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="colorLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="statusLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="statusLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="statusLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="plateTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="brandTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="modelTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="modelTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="modelTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="classTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="classTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="classTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="yearTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="yearTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="yearTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="colorTxt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="colorTxt.text"/>
-                        <Property name="name" type="java.lang.String" value="colorTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="statusCB">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="statusCB" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="addBtn3">
-                      <Properties>
-                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn3.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn3.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn3" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn3ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn3">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="clearBtn3.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn3.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn3" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="carClassPanel">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="carClassPanel" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Classes">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="carClassPanel.TabConstraints.tabTitle"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="564" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="423" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JPanel" name="carClassSearchPanel">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="carClassSearchPanel" noResource="true"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="plateLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="plateTxt1" pref="72" max="32767" attributes="1"/>
-                                          <Component id="brandTxt1" alignment="0" pref="72" max="32767" attributes="1"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="clearBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="plateLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="brandLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="plateLbl1">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="plateLbl1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="brandLbl1">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="brandLbl1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt1">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="plateTxt1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt1">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="brandTxt1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn1">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="clearBtn1.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn1.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="addBtn1">
-                      <Properties>
-                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
-                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
-                        </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn1.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn1.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn1" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn1ActionPerformed"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Component class="javax.swing.JButton" name="logoutBtn">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" resourceKey="logout.icon"/>
-            <Property name="text" type="java.lang.String" resourceKey="logoutBtn.text"/>
-            <Property name="name" type="java.lang.String" value="logoutBtn" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="usernameLbl">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" resourceKey="usernameLbl.icon"/>
-            <Property name="text" type="java.lang.String" resourceKey="usernameLbl.text"/>
-            <Property name="name" type="java.lang.String" value="usernameLbl" noResource="true"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Container class="javax.swing.JDialog" name="carDialog">
       <Properties>
         <Property name="alwaysOnTop" type="boolean" value="true"/>
@@ -745,9 +14,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jPanel4" max="32767" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -771,8 +40,8 @@
               <Group type="102" alignment="0" max="-2" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" max="-2" attributes="0">
@@ -788,19 +57,19 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="saveDlgBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="saveDlgBtn.text"/>
+            <Property name="text" type="java.lang.String" value="Save"/>
             <Property name="name" type="java.lang.String" value="saveDlgBtn" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="deleteDlgBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="deleteDlgBtn.text"/>
+            <Property name="text" type="java.lang.String" value="Delete"/>
             <Property name="name" type="java.lang.String" value="deleteDlgBtn" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="cancelDlgBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="cancelDlgBtn.text"/>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
             <Property name="name" type="java.lang.String" value="cancelDlgBtn" noResource="true"/>
           </Properties>
         </Component>
@@ -820,7 +89,7 @@
                           <Component id="classDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="colorDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="statusDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="brandDlgLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="brandDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -913,39 +182,34 @@
             </Component>
             <Component class="javax.swing.JLabel" name="yearDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="yearDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Year"/>
                 <Property name="name" type="java.lang.String" value="yearDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="modelDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="modelDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="modelDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="classDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="classDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Class"/>
                 <Property name="name" type="java.lang.String" value="classDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="colorDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="colorDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="colorDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="yearDlgSpn">
               <Properties>
-                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="212" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                </Property>
                 <Property name="name" type="java.lang.String" value="yearDlgSpn" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="colorDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="colorDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Color"/>
                 <Property name="name" type="java.lang.String" value="colorDlgLbl" noResource="true"/>
               </Properties>
             </Component>
@@ -964,37 +228,35 @@
             </Component>
             <Component class="javax.swing.JLabel" name="statusDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="statusDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Status"/>
                 <Property name="name" type="java.lang.String" value="statusDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="plateDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="plateDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Plate"/>
                 <Property name="name" type="java.lang.String" value="plateDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="plateDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="plateDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="plateDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="brandDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="brandDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Brand"/>
                 <Property name="name" type="java.lang.String" value="brandDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="modelDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="modelDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Model"/>
                 <Property name="name" type="java.lang.String" value="modelDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="brandDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="brandDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="brandDlgTxt" noResource="true"/>
               </Properties>
             </Component>
@@ -1014,7 +276,7 @@
                           <Component id="branchDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="serviceMonthDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="serviceMilesDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lastServiceMileageDlgLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="lastServiceMileageDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="mileageDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -1037,11 +299,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="mileageDlgLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="milieageDlgTxt" min="-2" max="-2" attributes="0"/>
+                          <Component id="milieageDlgTxt" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1062,11 +324,11 @@
                           <Component id="branchCB" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="serviceMonthDlgLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="serviceMonthDlgSpn" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1086,21 +348,17 @@
           <SubComponents>
             <Component class="javax.swing.JSpinner" name="serviceMonthDlgSpn">
               <Properties>
-                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
-                </Property>
                 <Property name="name" type="java.lang.String" value="serviceMonthDlgSpn" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="milieageDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="milieageDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="milieageDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="mileageDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="mileageDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Mileage"/>
                 <Property name="name" type="java.lang.String" value="mileageDlgLbl" noResource="true"/>
               </Properties>
             </Component>
@@ -1119,43 +377,41 @@
             </Component>
             <Component class="javax.swing.JLabel" name="branchDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="branchDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Branch"/>
                 <Property name="name" type="java.lang.String" value="branchDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="lastServiceMileageDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="lastServiceMileageDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="lastServiceMileageDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lastServiceMileageDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="lastServiceMileageDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Mileage of the last service"/>
                 <Property name="name" type="java.lang.String" value="lastServiceMileageDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lastServiceDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="lastServiceDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Date of the last service"/>
                 <Property name="name" type="java.lang.String" value="lastServiceDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="serviceMilesDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="serviceMilesDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Miles betwen services"/>
                 <Property name="name" type="java.lang.String" value="serviceMilesDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="serviceMilesDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="serviceMilesDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="serviceMilesDlgTxt" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="serviceMonthDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="serviceMonthDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Months between services"/>
                 <Property name="name" type="java.lang.String" value="serviceMonthDlgLbl" noResource="true"/>
               </Properties>
             </Component>
@@ -1179,7 +435,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -1232,7 +488,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane1" pref="140" max="32767" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" max="-2" attributes="0">
@@ -1241,7 +497,7 @@
                               <Component id="saveDlgBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="descriptionDlgLbl" min="-2" max="-2" attributes="0"/>
+                      <Component id="descriptionDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
@@ -1251,7 +507,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="nameDlgLbl">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="nameDlgLbl.text"/>
+            <Property name="text" type="java.lang.String" value="Name"/>
             <Property name="name" type="java.lang.String" value="nameDlgLbl" noResource="true"/>
           </Properties>
         </Component>
@@ -1262,7 +518,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="displayNameDlgLbl">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="displayNameDlgLbl.text"/>
+            <Property name="text" type="java.lang.String" value="Display name"/>
             <Property name="name" type="java.lang.String" value="displayNameDlgLbl" noResource="true"/>
           </Properties>
         </Component>
@@ -1273,7 +529,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="priceDlgLbl">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="priceDlgLbl.text"/>
+            <Property name="text" type="java.lang.String" value="Price"/>
             <Property name="name" type="java.lang.String" value="priceDlgLbl" noResource="true"/>
           </Properties>
         </Component>
@@ -1284,25 +540,25 @@
         </Component>
         <Component class="javax.swing.JButton" name="saveDlgBtn1">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="saveDlgBtn1.text"/>
+            <Property name="text" type="java.lang.String" value="Save"/>
             <Property name="name" type="java.lang.String" value="saveDlgBtn1" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="deleteDlgBtn1">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="deleteDlgBtn1.text"/>
+            <Property name="text" type="java.lang.String" value="Delete"/>
             <Property name="name" type="java.lang.String" value="deleteDlgBtn1" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="cancelDlgBtn1">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="cancelDlgBtn1.text"/>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
             <Property name="name" type="java.lang.String" value="cancelDlgBtn1" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descriptionDlgLbl">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="descriptionDlgLbl.text"/>
+            <Property name="text" type="java.lang.String" value="Description"/>
             <Property name="name" type="java.lang.String" value="descriptionDlgLbl" noResource="true"/>
           </Properties>
         </Component>
@@ -1359,10 +615,10 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -1380,19 +636,19 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="saveDlgBtn2">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="saveDlgBtn2.text"/>
+            <Property name="text" type="java.lang.String" value="Save"/>
             <Property name="name" type="java.lang.String" value="saveDlgBtn2" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="deleteDlgBtn2">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="deleteDlgBtn2.text"/>
+            <Property name="text" type="java.lang.String" value="Delete"/>
             <Property name="name" type="java.lang.String" value="deleteDlgBtn2" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="cancelDlgBtn2">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="cancelDlgBtn2.text"/>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
             <Property name="name" type="java.lang.String" value="cancelDlgBtn2" noResource="true"/>
           </Properties>
         </Component>
@@ -1453,31 +709,30 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="staffNameDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="staffNameDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Name"/>
                 <Property name="name" type="java.lang.String" value="staffNameDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="surnameDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="surnameDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Surname"/>
                 <Property name="name" type="java.lang.String" value="surnameDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="usernameDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="usernameDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Username"/>
                 <Property name="name" type="java.lang.String" value="usernameDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="passwordDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="passwordDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Password"/>
                 <Property name="name" type="java.lang.String" value="passwordDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="passwordPwd">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="passwordPwd.text"/>
                 <Property name="name" type="java.lang.String" value="passwordPwd" noResource="true"/>
               </Properties>
             </Component>
@@ -1517,7 +772,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -1555,7 +810,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="addressDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="addressDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Address"/>
                 <Property name="name" type="java.lang.String" value="addressDlgLbl" noResource="true"/>
               </Properties>
             </Component>
@@ -1569,7 +824,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="dateOfBirthDlgLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1608,19 +863,19 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="dateOfBirthDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="dateOfBirthDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Date of birth"/>
                 <Property name="name" type="java.lang.String" value="dateOfBirthDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="emailDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="emailDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Email"/>
                 <Property name="name" type="java.lang.String" value="emailDlgLbl" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="PhoneDlgLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="PhoneDlgLbl.text"/>
+                <Property name="text" type="java.lang.String" value="Phone"/>
                 <Property name="name" type="java.lang.String" value="PhoneDlgLbl" noResource="true"/>
               </Properties>
             </Component>
@@ -1631,7 +886,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="phoneDlgTxt">
               <Properties>
-                <Property name="text" type="java.lang.String" resourceKey="phoneDlgTxt.text"/>
                 <Property name="name" type="java.lang.String" value="phoneDlgTxt" noResource="true"/>
               </Properties>
             </Component>
@@ -1641,12 +895,13 @@
     </Container>
   </NonVisualComponents>
   <Properties>
-    <Property name="component" type="javax.swing.JComponent" editor="org.netbeans.modules.form.ComponentChooserEditor">
-      <ComponentRef name="mainPanel"/>
-    </Property>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
   <AuxValues>
-    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
@@ -1655,6 +910,904 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,121,0,0,2,-40"/>
   </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="728" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Component id="mainPanel" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="633" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Component id="mainPanel" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="mainPanel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="mainPanel" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="541" max="-2" attributes="0"/>
+                  <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Component id="tabPanel" alignment="1" pref="728" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="logoutBtn" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="usernameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="tabPanel" pref="598" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JTabbedPane" name="tabPanel">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="tabPanel" noResource="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="startPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="startPanel" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Start">
+                    <Property name="tabTitle" type="java.lang.String" value="Start"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="723" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="570" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
+            <Container class="javax.swing.JPanel" name="staffPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="staffPanel" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Staff">
+                    <Property name="tabTitle" type="java.lang.String" value="Staff"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane5" pref="555" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane5" alignment="0" pref="548" max="32767" attributes="0"/>
+                              <Component id="carClassSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="carClassSearchPanel1">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="carClassSearchPanel1" noResource="true"/>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="brandLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="plateLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="brandTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
+                                          <Component id="plateTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="clearBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="plateLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="plateTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="brandLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brandTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="clearBtn4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addBtn4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="plateLbl2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Name"/>
+                        <Property name="name" type="java.lang.String" value="plateLbl2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="brandLbl2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Surname"/>
+                        <Property name="name" type="java.lang.String" value="brandLbl2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="brandTxt2">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="brandTxt2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="plateTxt2">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="plateTxt2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="addBtn4">
+                      <Properties>
+                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Add"/>
+                        <Property name="name" type="java.lang.String" value="addBtn4" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn4ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="clearBtn4">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/clean.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Clear fields"/>
+                        <Property name="name" type="java.lang.String" value="clearBtn4" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jScrollPane5" noResource="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="org.jdesktop.swingx.JXTable" name="staffTbl">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="staffTbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="bookingPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="bookingPanel" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Bookings">
+                    <Property name="tabTitle" type="java.lang.String" value="Bookings"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" pref="511" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="carClassSearchPanel2" min="-2" pref="229" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="1" pref="548" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="carClassSearchPanel2">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="carClassSearchPanel2" noResource="true"/>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="surnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="refCodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="refCodeTxt" pref="107" max="32767" attributes="2"/>
+                                          <Component id="surnameTxt" alignment="0" pref="107" max="32767" attributes="2"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="isBookingCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="clearBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="refCodeLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="surnameLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="rentalDateLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="returnDateLbl" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="isBookingCB" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="refCodeTxt" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="surnameTxt" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="clearBtn2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addBtn2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="refCodeLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Ref. code"/>
+                        <Property name="name" type="java.lang.String" value="refCodeLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="refCodeTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="refCodeTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="surnameLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Surname"/>
+                        <Property name="name" type="java.lang.String" value="surnameLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="surnameTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="surnameTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="rentalDateLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Rental date"/>
+                        <Property name="name" type="java.lang.String" value="rentalDateLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="returnDateLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Return date"/>
+                        <Property name="name" type="java.lang.String" value="returnDateLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="isBookingCB">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Booking"/>
+                        <Property name="name" type="java.lang.String" value="isBookingCB" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="clearBtn2">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/clean.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Clear fields"/>
+                        <Property name="name" type="java.lang.String" value="clearBtn2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="addBtn2">
+                      <Properties>
+                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Add"/>
+                        <Property name="name" type="java.lang.String" value="addBtn2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton2">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/delete.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Delete"/>
+                        <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jScrollPane2" noResource="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="org.jdesktop.swingx.JXTable" name="bookingsTbl">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="bookingsTbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="carPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="carPanel" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Cars">
+                    <Property name="tabTitle" type="java.lang.String" value="Cars"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" pref="568" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane3" alignment="0" pref="548" max="32767" attributes="0"/>
+                              <Component id="carSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="carSearchPanel">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="carSearchPanel" noResource="true"/>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="brandLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="plateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="modelLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="classLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="yearLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="colorLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="statusLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="statusCB" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="colorTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="yearTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="classTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="modelTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="brandTxt" alignment="0" pref="66" max="32767" attributes="1"/>
+                                          <Component id="plateTxt" alignment="0" pref="66" max="32767" attributes="1"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="clearBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="plateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="plateTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="brandLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brandTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="modelLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="modelTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="classLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="classTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="yearLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="yearTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="colorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="colorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="statusLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="statusCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="clearBtn3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addBtn3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="plateLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Plate"/>
+                        <Property name="name" type="java.lang.String" value="plateLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="brandLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Brand"/>
+                        <Property name="name" type="java.lang.String" value="brandLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="modelLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Model"/>
+                        <Property name="name" type="java.lang.String" value="modelLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="classLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Class"/>
+                        <Property name="name" type="java.lang.String" value="classLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="yearLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Year"/>
+                        <Property name="name" type="java.lang.String" value="yearLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="colorLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Color"/>
+                        <Property name="name" type="java.lang.String" value="colorLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="statusLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Status"/>
+                        <Property name="name" type="java.lang.String" value="statusLbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="plateTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="plateTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="brandTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="brandTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="modelTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="modelTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="classTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="classTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="yearTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="yearTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="colorTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="colorTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="statusCB">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="statusCB" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="addBtn3">
+                      <Properties>
+                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Add"/>
+                        <Property name="name" type="java.lang.String" value="addBtn3" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn3ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="clearBtn3">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/clean.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Clear fields"/>
+                        <Property name="name" type="java.lang.String" value="clearBtn3" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jScrollPane3" noResource="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="org.jdesktop.swingx.JXTable" name="carTbl">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="carTbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="carClassPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="carClassPanel" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Classes">
+                    <Property name="tabTitle" type="java.lang.String" value="Classes"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane4" pref="544" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane4" alignment="0" pref="548" max="32767" attributes="0"/>
+                              <Component id="carClassSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="carClassSearchPanel">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="carClassSearchPanel" noResource="true"/>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="brandLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="plateLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="plateTxt1" alignment="0" pref="72" max="32767" attributes="1"/>
+                                          <Component id="brandTxt1" alignment="0" pref="72" max="32767" attributes="1"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="clearBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="plateLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="plateTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="brandLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brandTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="clearBtn1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="addBtn1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="plateLbl1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Name"/>
+                        <Property name="name" type="java.lang.String" value="plateLbl1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="brandLbl1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Display name"/>
+                        <Property name="name" type="java.lang.String" value="brandLbl1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="plateTxt1">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="plateTxt1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="brandTxt1">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="brandTxt1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="clearBtn1">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/clean.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Clear fields"/>
+                        <Property name="name" type="java.lang.String" value="clearBtn1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="addBtn1">
+                      <Properties>
+                        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                          <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
+                        </Property>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Add"/>
+                        <Property name="name" type="java.lang.String" value="addBtn1" noResource="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn1ActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jScrollPane4" noResource="true"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="org.jdesktop.swingx.JXTable" name="carClassTbl">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="carClassTbl" noResource="true"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="logoutBtn">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/oscar/view/resources/logout.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Logout"/>
+            <Property name="name" type="java.lang.String" value="logoutBtn" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="usernameLbl">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/oscar/view/resources/user.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Username"/>
+            <Property name="name" type="java.lang.String" value="usernameLbl" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
 </Form>

@@ -39,7 +39,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Component id="jLabel3" pref="96" max="32767" attributes="0"/>
+                      <Component id="jLabel3" pref="92" max="32767" attributes="0"/>
                       <EmptySpace min="74" pref="74" max="74" attributes="0"/>
                   </Group>
               </Group>

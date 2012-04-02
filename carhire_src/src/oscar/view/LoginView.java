@@ -78,7 +78,7 @@ public class LoginView extends javax.swing.JFrame {
                             .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                         .addGap(74, 74, 74)))
                 .addContainerGap())
         );
@@ -113,11 +113,16 @@ private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             this.txtPassword.setText("");
             // hides the login view
             this.setVisible(false);
-            if (staff.isAdmin()) ;
-            // TODO: finish to implement login
-            // shows the staff view
-            StaffView view = new StaffView();
-            view.setVisible(true);
+            //Starts a view 
+            StaffView staffView;
+            AdminView adminView;
+            if (staff.isAdmin()) {
+                adminView = new AdminView();
+                adminView.setVisible(true);
+            } else {
+                staffView = new StaffView();
+                staffView.setVisible(true);
+            }
         }
     } catch (NoSuchAlgorithmException ex) {
         Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
