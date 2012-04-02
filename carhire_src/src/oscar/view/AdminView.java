@@ -1,27 +1,23 @@
 /*
- * CarhireView.java
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 
+/*
+ * AdminVie.java
+ *
+ * Created on Apr 2, 2012, 12:32:06 PM
+ */
 package oscar.view;
 
-import org.jdesktop.application.SingleFrameApplication;
-import org.jdesktop.application.FrameView;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
- * The application's main frame.
+ *
+ * @author schiodin
  */
-public class AdminView extends FrameView implements ActionListener {
+public class AdminView extends javax.swing.JFrame {
 
-    /**
-     * Class constructor
-     * @param app The application
-     */
-    public AdminView(SingleFrameApplication app) {
-        super(app);
-
-        // init netbeans generated vars
+    /** Creates new form AdminVie */
+    public AdminView() {
         initComponents();
     }
 
@@ -34,57 +30,6 @@ public class AdminView extends FrameView implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainPanel = new javax.swing.JPanel();
-        tabPanel = new javax.swing.JTabbedPane();
-        startPanel = new javax.swing.JPanel();
-        staffPanel = new javax.swing.JPanel();
-        carClassSearchPanel1 = new javax.swing.JPanel();
-        plateLbl2 = new javax.swing.JLabel();
-        brandLbl2 = new javax.swing.JLabel();
-        brandTxt2 = new javax.swing.JTextField();
-        plateTxt2 = new javax.swing.JTextField();
-        addBtn4 = new javax.swing.JButton();
-        clearBtn4 = new javax.swing.JButton();
-        bookingPanel = new javax.swing.JPanel();
-        carClassSearchPanel2 = new javax.swing.JPanel();
-        refCodeLbl = new javax.swing.JLabel();
-        refCodeTxt = new javax.swing.JTextField();
-        surnameLbl = new javax.swing.JLabel();
-        surnameTxt = new javax.swing.JTextField();
-        rentalDateLbl = new javax.swing.JLabel();
-        returnDateLbl = new javax.swing.JLabel();
-        isBookingCB = new javax.swing.JCheckBox();
-        clearBtn2 = new javax.swing.JButton();
-        addBtn2 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        carPanel = new javax.swing.JPanel();
-        carSearchPanel = new javax.swing.JPanel();
-        plateLbl = new javax.swing.JLabel();
-        brandLbl = new javax.swing.JLabel();
-        modelLbl = new javax.swing.JLabel();
-        classLbl = new javax.swing.JLabel();
-        yearLbl = new javax.swing.JLabel();
-        colorLbl = new javax.swing.JLabel();
-        statusLbl = new javax.swing.JLabel();
-        plateTxt = new javax.swing.JTextField();
-        brandTxt = new javax.swing.JTextField();
-        modelTxt = new javax.swing.JTextField();
-        classTxt = new javax.swing.JTextField();
-        yearTxt = new javax.swing.JTextField();
-        colorTxt = new javax.swing.JTextField();
-        statusCB = new javax.swing.JComboBox();
-        addBtn3 = new javax.swing.JButton();
-        clearBtn3 = new javax.swing.JButton();
-        carClassPanel = new javax.swing.JPanel();
-        carClassSearchPanel = new javax.swing.JPanel();
-        plateLbl1 = new javax.swing.JLabel();
-        brandLbl1 = new javax.swing.JLabel();
-        plateTxt1 = new javax.swing.JTextField();
-        brandTxt1 = new javax.swing.JTextField();
-        clearBtn1 = new javax.swing.JButton();
-        addBtn1 = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
-        usernameLbl = new javax.swing.JLabel();
         carDialog = new javax.swing.JDialog();
         saveDlgBtn = new javax.swing.JButton();
         deleteDlgBtn = new javax.swing.JButton();
@@ -152,474 +97,77 @@ public class AdminView extends FrameView implements ActionListener {
         PhoneDlgLbl = new javax.swing.JLabel();
         emailDlgTxt = new javax.swing.JTextField();
         phoneDlgTxt = new javax.swing.JTextField();
-
-        mainPanel.setName("mainPanel"); // NOI18N
-
-        tabPanel.setName("panel"); // NOI18N
-
-        startPanel.setName("startPanel"); // NOI18N
-
-        javax.swing.GroupLayout startPanelLayout = new javax.swing.GroupLayout(startPanel);
-        startPanel.setLayout(startPanelLayout);
-        startPanelLayout.setHorizontalGroup(
-            startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
-        );
-        startPanelLayout.setVerticalGroup(
-            startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(AdminView.class);
-        tabPanel.addTab(resourceMap.getString("startPanel.TabConstraints.tabTitle"), startPanel); // NOI18N
-
-        staffPanel.setName("staffPanel"); // NOI18N
-
-        carClassSearchPanel1.setName("carClassSearchPanel1"); // NOI18N
-
-        plateLbl2.setText(resourceMap.getString("plateLbl2.text")); // NOI18N
-        plateLbl2.setName("plateLbl2"); // NOI18N
-
-        brandLbl2.setText(resourceMap.getString("brandLbl2.text")); // NOI18N
-        brandLbl2.setName("brandLbl2"); // NOI18N
-
-        brandTxt2.setName("brandTxt2"); // NOI18N
-
-        plateTxt2.setName("plateTxt2"); // NOI18N
-
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
-        addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn4.setIcon(resourceMap.getIcon("addBtn4.icon")); // NOI18N
-        addBtn4.setText(resourceMap.getString("addBtn4.text")); // NOI18N
-        addBtn4.setName("addBtn4"); // NOI18N
-        addBtn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn4ActionPerformed(evt);
-            }
-        });
-
-        clearBtn4.setIcon(resourceMap.getIcon("clearBtn4.icon")); // NOI18N
-        clearBtn4.setText(resourceMap.getString("clearBtn4.text")); // NOI18N
-        clearBtn4.setName("clearBtn4"); // NOI18N
-
-        javax.swing.GroupLayout carClassSearchPanel1Layout = new javax.swing.GroupLayout(carClassSearchPanel1);
-        carClassSearchPanel1.setLayout(carClassSearchPanel1Layout);
-        carClassSearchPanel1Layout.setHorizontalGroup(
-            carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
-                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandLbl2)
-                            .addComponent(plateLbl2))
-                        .addGap(18, 18, 18)
-                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                            .addComponent(plateTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
-                    .addComponent(clearBtn4)
-                    .addComponent(addBtn4))
-                .addContainerGap())
-        );
-        carClassSearchPanel1Layout.setVerticalGroup(
-            carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plateLbl2)
-                    .addComponent(plateTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLbl2)
-                    .addComponent(brandTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(clearBtn4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn4))
-        );
-
-        javax.swing.GroupLayout staffPanelLayout = new javax.swing.GroupLayout(staffPanel);
-        staffPanel.setLayout(staffPanelLayout);
-        staffPanelLayout.setHorizontalGroup(
-            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(staffPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(575, Short.MAX_VALUE))
-        );
-        staffPanelLayout.setVerticalGroup(
-            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(staffPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(423, Short.MAX_VALUE))
-        );
-
-        tabPanel.addTab(resourceMap.getString("staffPanel.TabConstraints.tabTitle"), staffPanel); // NOI18N
-
-        bookingPanel.setName("bookingPanel"); // NOI18N
-
-        carClassSearchPanel2.setName("carClassSearchPanel2"); // NOI18N
-
-        refCodeLbl.setText(resourceMap.getString("refCodeLbl.text")); // NOI18N
-        refCodeLbl.setName("refCodeLbl"); // NOI18N
-
-        refCodeTxt.setName("refCodeTxt"); // NOI18N
-
-        surnameLbl.setText(resourceMap.getString("surnameLbl.text")); // NOI18N
-        surnameLbl.setName("surnameLbl"); // NOI18N
-
-        surnameTxt.setName("surnameTxt"); // NOI18N
-
-        rentalDateLbl.setText(resourceMap.getString("rentalDateLbl.text")); // NOI18N
-        rentalDateLbl.setName("rentalDateLbl"); // NOI18N
-
-        returnDateLbl.setText(resourceMap.getString("returnDateLbl.text")); // NOI18N
-        returnDateLbl.setName("returnDateLbl"); // NOI18N
-
-        isBookingCB.setText(resourceMap.getString("isBookingCB.text")); // NOI18N
-        isBookingCB.setName("isBookingCB"); // NOI18N
-
-        clearBtn2.setIcon(resourceMap.getIcon("clearBtn2.icon")); // NOI18N
-        clearBtn2.setText(resourceMap.getString("clearBtn2.text")); // NOI18N
-        clearBtn2.setName("clearBtn2"); // NOI18N
-
-        addBtn2.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn2.setIcon(resourceMap.getIcon("addBtn2.icon")); // NOI18N
-        addBtn2.setText(resourceMap.getString("addBtn2.text")); // NOI18N
-        addBtn2.setName("addBtn2"); // NOI18N
-
-        jButton2.setIcon(resourceMap.getIcon("jButton2.icon")); // NOI18N
-        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
-        jButton2.setName("jButton2"); // NOI18N
-
-        javax.swing.GroupLayout carClassSearchPanel2Layout = new javax.swing.GroupLayout(carClassSearchPanel2);
-        carClassSearchPanel2.setLayout(carClassSearchPanel2Layout);
-        carClassSearchPanel2Layout.setHorizontalGroup(
-            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(surnameLbl)
-                            .addComponent(refCodeLbl))
-                        .addGap(36, 36, 36)
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(refCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .addComponent(surnameTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
-                    .addComponent(isBookingCB)
-                    .addComponent(clearBtn2)
-                    .addComponent(addBtn2)
-                    .addComponent(jButton2)
-                    .addComponent(rentalDateLbl)
-                    .addComponent(returnDateLbl))
-                .addGap(0, 0, 0))
-        );
-        carClassSearchPanel2Layout.setVerticalGroup(
-            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refCodeLbl)
-                    .addComponent(refCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(surnameLbl)
-                    .addComponent(surnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rentalDateLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(returnDateLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(isBookingCB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clearBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2))
-        );
-
-        javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
-        bookingPanel.setLayout(bookingPanelLayout);
-        bookingPanelLayout.setHorizontalGroup(
-            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookingPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(514, Short.MAX_VALUE))
-        );
-        bookingPanelLayout.setVerticalGroup(
-            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookingPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
-        );
-
-        tabPanel.addTab(resourceMap.getString("bookingPanel.TabConstraints.tabTitle"), bookingPanel); // NOI18N
-
-        carPanel.setName("carPanel"); // NOI18N
-
-        carSearchPanel.setName("carSearchPanel"); // NOI18N
-
-        plateLbl.setText(resourceMap.getString("plateLbl.text")); // NOI18N
-        plateLbl.setName("plateLbl"); // NOI18N
-
-        brandLbl.setText(resourceMap.getString("brandLbl.text")); // NOI18N
-        brandLbl.setName("brandLbl"); // NOI18N
-
-        modelLbl.setText(resourceMap.getString("modelLbl.text")); // NOI18N
-        modelLbl.setName("modelLbl"); // NOI18N
-
-        classLbl.setText(resourceMap.getString("classLbl.text")); // NOI18N
-        classLbl.setName("classLbl"); // NOI18N
-
-        yearLbl.setText(resourceMap.getString("yearLbl.text")); // NOI18N
-        yearLbl.setName("yearLbl"); // NOI18N
-
-        colorLbl.setText(resourceMap.getString("colorLbl.text")); // NOI18N
-        colorLbl.setName("colorLbl"); // NOI18N
-
-        statusLbl.setText(resourceMap.getString("statusLbl.text")); // NOI18N
-        statusLbl.setName("statusLbl"); // NOI18N
-
-        plateTxt.setText(resourceMap.getString("plateTxt.text")); // NOI18N
-        plateTxt.setName("plateTxt"); // NOI18N
-
-        brandTxt.setText(resourceMap.getString("brandTxt.text")); // NOI18N
-        brandTxt.setName("brandTxt"); // NOI18N
-
-        modelTxt.setText(resourceMap.getString("modelTxt.text")); // NOI18N
-        modelTxt.setName("modelTxt"); // NOI18N
-
-        classTxt.setText(resourceMap.getString("classTxt.text")); // NOI18N
-        classTxt.setName("classTxt"); // NOI18N
-
-        yearTxt.setText(resourceMap.getString("yearTxt.text")); // NOI18N
-        yearTxt.setName("yearTxt"); // NOI18N
-
-        colorTxt.setText(resourceMap.getString("colorTxt.text")); // NOI18N
-        colorTxt.setName("colorTxt"); // NOI18N
-
-        statusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        statusCB.setName("statusCB"); // NOI18N
-
-        addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn3.setIcon(resourceMap.getIcon("addBtn3.icon")); // NOI18N
-        addBtn3.setText(resourceMap.getString("addBtn3.text")); // NOI18N
-        addBtn3.setName("addBtn3"); // NOI18N
-        addBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn3ActionPerformed(evt);
-            }
-        });
-
-        clearBtn3.setIcon(resourceMap.getIcon("clearBtn3.icon")); // NOI18N
-        clearBtn3.setText(resourceMap.getString("clearBtn3.text")); // NOI18N
-        clearBtn3.setName("clearBtn3"); // NOI18N
-
-        javax.swing.GroupLayout carSearchPanelLayout = new javax.swing.GroupLayout(carSearchPanel);
-        carSearchPanel.setLayout(carSearchPanelLayout);
-        carSearchPanelLayout.setHorizontalGroup(
-            carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carSearchPanelLayout.createSequentialGroup()
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carSearchPanelLayout.createSequentialGroup()
-                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandLbl)
-                            .addComponent(plateLbl)
-                            .addComponent(modelLbl)
-                            .addComponent(classLbl)
-                            .addComponent(yearLbl)
-                            .addComponent(colorLbl)
-                            .addComponent(statusLbl))
-                        .addGap(18, 18, 18)
-                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statusCB, 0, 66, Short.MAX_VALUE)
-                            .addComponent(colorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(yearTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(classTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(modelTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(brandTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(plateTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)))
-                    .addComponent(clearBtn3)
-                    .addComponent(addBtn3))
-                .addContainerGap())
-        );
-        carSearchPanelLayout.setVerticalGroup(
-            carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carSearchPanelLayout.createSequentialGroup()
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plateLbl)
-                    .addComponent(plateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLbl)
-                    .addComponent(brandTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modelLbl)
-                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(classLbl)
-                    .addComponent(classTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(yearLbl)
-                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(colorLbl)
-                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(statusLbl)
-                    .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(clearBtn3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn3))
-        );
-
-        javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
-        carPanel.setLayout(carPanelLayout);
-        carPanelLayout.setHorizontalGroup(
-            carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(588, Short.MAX_VALUE))
-        );
-        carPanelLayout.setVerticalGroup(
-            carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
-        );
-
-        tabPanel.addTab(resourceMap.getString("carPanel.TabConstraints.tabTitle"), carPanel); // NOI18N
-
-        carClassPanel.setName("carClassPanel"); // NOI18N
-
-        carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
-
-        plateLbl1.setText(resourceMap.getString("plateLbl1.text")); // NOI18N
-        plateLbl1.setName("plateLbl1"); // NOI18N
-
-        brandLbl1.setText(resourceMap.getString("brandLbl1.text")); // NOI18N
-        brandLbl1.setName("brandLbl1"); // NOI18N
-
-        plateTxt1.setName("plateTxt1"); // NOI18N
-
-        brandTxt1.setName("brandTxt1"); // NOI18N
-
-        clearBtn1.setIcon(resourceMap.getIcon("clearBtn1.icon")); // NOI18N
-        clearBtn1.setText(resourceMap.getString("clearBtn1.text")); // NOI18N
-        clearBtn1.setName("clearBtn1"); // NOI18N
-
-        addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn1.setIcon(resourceMap.getIcon("addBtn1.icon")); // NOI18N
-        addBtn1.setText(resourceMap.getString("addBtn1.text")); // NOI18N
-        addBtn1.setName("addBtn1"); // NOI18N
-        addBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
-        carClassSearchPanel.setLayout(carClassSearchPanelLayout);
-        carClassSearchPanelLayout.setHorizontalGroup(
-            carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanelLayout.createSequentialGroup()
-                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carClassSearchPanelLayout.createSequentialGroup()
-                        .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandLbl1)
-                            .addComponent(plateLbl1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(plateTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(brandTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
-                    .addComponent(clearBtn1)
-                    .addComponent(addBtn1))
-                .addContainerGap())
-        );
-        carClassSearchPanelLayout.setVerticalGroup(
-            carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanelLayout.createSequentialGroup()
-                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plateLbl1)
-                    .addComponent(plateTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLbl1)
-                    .addComponent(brandTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(clearBtn1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn1))
-        );
-
-        javax.swing.GroupLayout carClassPanelLayout = new javax.swing.GroupLayout(carClassPanel);
-        carClassPanel.setLayout(carClassPanelLayout);
-        carClassPanelLayout.setHorizontalGroup(
-            carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(564, Short.MAX_VALUE))
-        );
-        carClassPanelLayout.setVerticalGroup(
-            carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(423, Short.MAX_VALUE))
-        );
-
-        tabPanel.addTab(resourceMap.getString("carClassPanel.TabConstraints.tabTitle"), carClassPanel); // NOI18N
-
-        logoutBtn.setIcon(resourceMap.getIcon("logout.icon")); // NOI18N
-        logoutBtn.setText(resourceMap.getString("logoutBtn.text")); // NOI18N
-        logoutBtn.setName("logoutBtn"); // NOI18N
-
-        usernameLbl.setIcon(resourceMap.getIcon("usernameLbl.icon")); // NOI18N
-        usernameLbl.setText(resourceMap.getString("usernameLbl.text")); // NOI18N
-        usernameLbl.setName("usernameLbl"); // NOI18N
-
-        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
-        mainPanelLayout.setHorizontalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGap(541, 541, 541)
-                .addComponent(usernameLbl)
-                .addGap(18, 18, 18)
-                .addComponent(logoutBtn))
-            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
-        );
-        mainPanelLayout.setVerticalGroup(
-            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
-        );
+        mainPanel = new javax.swing.JPanel();
+        tabPanel = new javax.swing.JTabbedPane();
+        startPanel = new javax.swing.JPanel();
+        staffPanel = new javax.swing.JPanel();
+        carClassSearchPanel1 = new javax.swing.JPanel();
+        plateLbl2 = new javax.swing.JLabel();
+        brandLbl2 = new javax.swing.JLabel();
+        brandTxt2 = new javax.swing.JTextField();
+        plateTxt2 = new javax.swing.JTextField();
+        addBtn4 = new javax.swing.JButton();
+        clearBtn4 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        staffTbl = new org.jdesktop.swingx.JXTable();
+        bookingPanel = new javax.swing.JPanel();
+        carClassSearchPanel2 = new javax.swing.JPanel();
+        refCodeLbl = new javax.swing.JLabel();
+        refCodeTxt = new javax.swing.JTextField();
+        surnameLbl = new javax.swing.JLabel();
+        surnameTxt = new javax.swing.JTextField();
+        rentalDateLbl = new javax.swing.JLabel();
+        returnDateLbl = new javax.swing.JLabel();
+        isBookingCB = new javax.swing.JCheckBox();
+        clearBtn2 = new javax.swing.JButton();
+        addBtn2 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        bookingsTbl = new org.jdesktop.swingx.JXTable();
+        carPanel = new javax.swing.JPanel();
+        carSearchPanel = new javax.swing.JPanel();
+        plateLbl = new javax.swing.JLabel();
+        brandLbl = new javax.swing.JLabel();
+        modelLbl = new javax.swing.JLabel();
+        classLbl = new javax.swing.JLabel();
+        yearLbl = new javax.swing.JLabel();
+        colorLbl = new javax.swing.JLabel();
+        statusLbl = new javax.swing.JLabel();
+        plateTxt = new javax.swing.JTextField();
+        brandTxt = new javax.swing.JTextField();
+        modelTxt = new javax.swing.JTextField();
+        classTxt = new javax.swing.JTextField();
+        yearTxt = new javax.swing.JTextField();
+        colorTxt = new javax.swing.JTextField();
+        statusCB = new javax.swing.JComboBox();
+        addBtn3 = new javax.swing.JButton();
+        clearBtn3 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        carTbl = new org.jdesktop.swingx.JXTable();
+        carClassPanel = new javax.swing.JPanel();
+        carClassSearchPanel = new javax.swing.JPanel();
+        plateLbl1 = new javax.swing.JLabel();
+        brandLbl1 = new javax.swing.JLabel();
+        plateTxt1 = new javax.swing.JTextField();
+        brandTxt1 = new javax.swing.JTextField();
+        clearBtn1 = new javax.swing.JButton();
+        addBtn1 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        carClassTbl = new org.jdesktop.swingx.JXTable();
+        logoutBtn = new javax.swing.JButton();
+        usernameLbl = new javax.swing.JLabel();
 
         carDialog.setAlwaysOnTop(true);
         carDialog.setMinimumSize(new java.awt.Dimension(550, 271));
         carDialog.setName("carDialog"); // NOI18N
 
-        saveDlgBtn.setText(resourceMap.getString("saveDlgBtn.text")); // NOI18N
+        saveDlgBtn.setText("Save");
         saveDlgBtn.setName("saveDlgBtn"); // NOI18N
 
-        deleteDlgBtn.setText(resourceMap.getString("deleteDlgBtn.text")); // NOI18N
+        deleteDlgBtn.setText("Delete");
         deleteDlgBtn.setName("deleteDlgBtn"); // NOI18N
 
-        cancelDlgBtn.setText(resourceMap.getString("cancelDlgBtn.text")); // NOI18N
+        cancelDlgBtn.setText("Cancel");
         cancelDlgBtn.setName("cancelDlgBtn"); // NOI18N
 
         jPanel4.setName("jPanel4"); // NOI18N
@@ -627,43 +175,38 @@ public class AdminView extends FrameView implements ActionListener {
         classCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         classCB.setName("classCB"); // NOI18N
 
-        yearDlgLbl.setText(resourceMap.getString("yearDlgLbl.text")); // NOI18N
+        yearDlgLbl.setText("Year");
         yearDlgLbl.setName("yearDlgLbl"); // NOI18N
 
-        modelDlgTxt.setText(resourceMap.getString("modelDlgTxt.text")); // NOI18N
         modelDlgTxt.setName("modelDlgTxt"); // NOI18N
 
-        classDlgLbl.setText(resourceMap.getString("classDlgLbl.text")); // NOI18N
+        classDlgLbl.setText("Class");
         classDlgLbl.setName("classDlgLbl"); // NOI18N
 
-        colorDlgTxt.setText(resourceMap.getString("colorDlgTxt.text")); // NOI18N
         colorDlgTxt.setName("colorDlgTxt"); // NOI18N
 
-        yearDlgSpn.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(212), null, null, Integer.valueOf(1)));
         yearDlgSpn.setName("yearDlgSpn"); // NOI18N
 
-        colorDlgLbl.setText(resourceMap.getString("colorDlgLbl.text")); // NOI18N
+        colorDlgLbl.setText("Color");
         colorDlgLbl.setName("colorDlgLbl"); // NOI18N
 
         statusDlgCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         statusDlgCB.setName("statusDlgCB"); // NOI18N
 
-        statusDlgLbl.setText(resourceMap.getString("statusDlgLbl.text")); // NOI18N
+        statusDlgLbl.setText("Status");
         statusDlgLbl.setName("statusDlgLbl"); // NOI18N
 
-        plateDlgLbl.setText(resourceMap.getString("plateDlgLbl.text")); // NOI18N
+        plateDlgLbl.setText("Plate");
         plateDlgLbl.setName("plateDlgLbl"); // NOI18N
 
-        plateDlgTxt.setText(resourceMap.getString("plateDlgTxt.text")); // NOI18N
         plateDlgTxt.setName("plateDlgTxt"); // NOI18N
 
-        brandDlgLbl.setText(resourceMap.getString("brandDlgLbl.text")); // NOI18N
+        brandDlgLbl.setText("Brand");
         brandDlgLbl.setName("brandDlgLbl"); // NOI18N
 
-        modelDlgLbl.setText(resourceMap.getString("modelDlgLbl.text")); // NOI18N
+        modelDlgLbl.setText("Model");
         modelDlgLbl.setName("modelDlgLbl"); // NOI18N
 
-        brandDlgTxt.setText(resourceMap.getString("brandDlgTxt.text")); // NOI18N
         brandDlgTxt.setName("brandDlgTxt"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -737,37 +280,33 @@ public class AdminView extends FrameView implements ActionListener {
 
         jPanel5.setName("jPanel5"); // NOI18N
 
-        serviceMonthDlgSpn.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
         serviceMonthDlgSpn.setName("serviceMonthDlgSpn"); // NOI18N
 
-        milieageDlgTxt.setText(resourceMap.getString("milieageDlgTxt.text")); // NOI18N
         milieageDlgTxt.setName("milieageDlgTxt"); // NOI18N
 
-        mileageDlgLbl.setText(resourceMap.getString("mileageDlgLbl.text")); // NOI18N
+        mileageDlgLbl.setText("Mileage");
         mileageDlgLbl.setName("mileageDlgLbl"); // NOI18N
 
         branchCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         branchCB.setName("branchCB"); // NOI18N
 
-        branchDlgLbl.setText(resourceMap.getString("branchDlgLbl.text")); // NOI18N
+        branchDlgLbl.setText("Branch");
         branchDlgLbl.setName("branchDlgLbl"); // NOI18N
 
-        lastServiceMileageDlgTxt.setText(resourceMap.getString("lastServiceMileageDlgTxt.text")); // NOI18N
         lastServiceMileageDlgTxt.setName("lastServiceMileageDlgTxt"); // NOI18N
 
-        lastServiceMileageDlgLbl.setText(resourceMap.getString("lastServiceMileageDlgLbl.text")); // NOI18N
+        lastServiceMileageDlgLbl.setText("Mileage of the last service");
         lastServiceMileageDlgLbl.setName("lastServiceMileageDlgLbl"); // NOI18N
 
-        lastServiceDlgLbl.setText(resourceMap.getString("lastServiceDlgLbl.text")); // NOI18N
+        lastServiceDlgLbl.setText("Date of the last service");
         lastServiceDlgLbl.setName("lastServiceDlgLbl"); // NOI18N
 
-        serviceMilesDlgLbl.setText(resourceMap.getString("serviceMilesDlgLbl.text")); // NOI18N
+        serviceMilesDlgLbl.setText("Miles betwen services");
         serviceMilesDlgLbl.setName("serviceMilesDlgLbl"); // NOI18N
 
-        serviceMilesDlgTxt.setText(resourceMap.getString("serviceMilesDlgTxt.text")); // NOI18N
         serviceMilesDlgTxt.setName("serviceMilesDlgTxt"); // NOI18N
 
-        serviceMonthDlgLbl.setText(resourceMap.getString("serviceMonthDlgLbl.text")); // NOI18N
+        serviceMonthDlgLbl.setText("Months between services");
         serviceMonthDlgLbl.setName("serviceMonthDlgLbl"); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -871,31 +410,31 @@ public class AdminView extends FrameView implements ActionListener {
         carClassDialog.setModal(true);
         carClassDialog.setName("carClassDialog"); // NOI18N
 
-        nameDlgLbl.setText(resourceMap.getString("nameDlgLbl.text")); // NOI18N
+        nameDlgLbl.setText("Name");
         nameDlgLbl.setName("nameDlgLbl"); // NOI18N
 
         nameDlgTxt.setName("nameDlgTxt"); // NOI18N
 
-        displayNameDlgLbl.setText(resourceMap.getString("displayNameDlgLbl.text")); // NOI18N
+        displayNameDlgLbl.setText("Display name");
         displayNameDlgLbl.setName("displayNameDlgLbl"); // NOI18N
 
         displayNameDlgTxt.setName("displayNameDlgTxt"); // NOI18N
 
-        priceDlgLbl.setText(resourceMap.getString("priceDlgLbl.text")); // NOI18N
+        priceDlgLbl.setText("Price");
         priceDlgLbl.setName("priceDlgLbl"); // NOI18N
 
         priceDlgTxt.setName("priceDlgTxt"); // NOI18N
 
-        saveDlgBtn1.setText(resourceMap.getString("saveDlgBtn1.text")); // NOI18N
+        saveDlgBtn1.setText("Save");
         saveDlgBtn1.setName("saveDlgBtn1"); // NOI18N
 
-        deleteDlgBtn1.setText(resourceMap.getString("deleteDlgBtn1.text")); // NOI18N
+        deleteDlgBtn1.setText("Delete");
         deleteDlgBtn1.setName("deleteDlgBtn1"); // NOI18N
 
-        cancelDlgBtn1.setText(resourceMap.getString("cancelDlgBtn1.text")); // NOI18N
+        cancelDlgBtn1.setText("Cancel");
         cancelDlgBtn1.setName("cancelDlgBtn1"); // NOI18N
 
-        descriptionDlgLbl.setText(resourceMap.getString("descriptionDlgLbl.text")); // NOI18N
+        descriptionDlgLbl.setText("Description");
         descriptionDlgLbl.setName("descriptionDlgLbl"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -967,30 +506,29 @@ public class AdminView extends FrameView implements ActionListener {
         staffDialog.setModal(true);
         staffDialog.setName("staffDialog"); // NOI18N
 
-        saveDlgBtn2.setText(resourceMap.getString("saveDlgBtn2.text")); // NOI18N
+        saveDlgBtn2.setText("Save");
         saveDlgBtn2.setName("saveDlgBtn2"); // NOI18N
 
-        deleteDlgBtn2.setText(resourceMap.getString("deleteDlgBtn2.text")); // NOI18N
+        deleteDlgBtn2.setText("Delete");
         deleteDlgBtn2.setName("deleteDlgBtn2"); // NOI18N
 
-        cancelDlgBtn2.setText(resourceMap.getString("cancelDlgBtn2.text")); // NOI18N
+        cancelDlgBtn2.setText("Cancel");
         cancelDlgBtn2.setName("cancelDlgBtn2"); // NOI18N
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        staffNameDlgLbl.setText(resourceMap.getString("staffNameDlgLbl.text")); // NOI18N
+        staffNameDlgLbl.setText("Name");
         staffNameDlgLbl.setName("staffNameDlgLbl"); // NOI18N
 
-        surnameDlgLbl.setText(resourceMap.getString("surnameDlgLbl.text")); // NOI18N
+        surnameDlgLbl.setText("Surname");
         surnameDlgLbl.setName("surnameDlgLbl"); // NOI18N
 
-        usernameDlgLbl.setText(resourceMap.getString("usernameDlgLbl.text")); // NOI18N
+        usernameDlgLbl.setText("Username");
         usernameDlgLbl.setName("usernameDlgLbl"); // NOI18N
 
-        passwordDlgLbl.setText(resourceMap.getString("passwordDlgLbl.text")); // NOI18N
+        passwordDlgLbl.setText("Password");
         passwordDlgLbl.setName("passwordDlgLbl"); // NOI18N
 
-        passwordPwd.setText(resourceMap.getString("passwordPwd.text")); // NOI18N
         passwordPwd.setName("passwordPwd"); // NOI18N
 
         usernameDlgTxt.setName("usernameDlgTxt"); // NOI18N
@@ -1048,7 +586,7 @@ public class AdminView extends FrameView implements ActionListener {
         addressDlgTA.setName("addressDlgTA"); // NOI18N
         jScrollPane6.setViewportView(addressDlgTA);
 
-        addressDlgLbl.setText(resourceMap.getString("addressDlgLbl.text")); // NOI18N
+        addressDlgLbl.setText("Address");
         addressDlgLbl.setName("addressDlgLbl"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1077,18 +615,17 @@ public class AdminView extends FrameView implements ActionListener {
 
         jPanel2.setName("jPanel2"); // NOI18N
 
-        dateOfBirthDlgLbl.setText(resourceMap.getString("dateOfBirthDlgLbl.text")); // NOI18N
+        dateOfBirthDlgLbl.setText("Date of birth");
         dateOfBirthDlgLbl.setName("dateOfBirthDlgLbl"); // NOI18N
 
-        emailDlgLbl.setText(resourceMap.getString("emailDlgLbl.text")); // NOI18N
+        emailDlgLbl.setText("Email");
         emailDlgLbl.setName("emailDlgLbl"); // NOI18N
 
-        PhoneDlgLbl.setText(resourceMap.getString("PhoneDlgLbl.text")); // NOI18N
+        PhoneDlgLbl.setText("Phone");
         PhoneDlgLbl.setName("PhoneDlgLbl"); // NOI18N
 
         emailDlgTxt.setName("emailDlgTxt"); // NOI18N
 
-        phoneDlgTxt.setText(resourceMap.getString("phoneDlgTxt.text")); // NOI18N
         phoneDlgTxt.setName("phoneDlgTxt"); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1157,26 +694,611 @@ public class AdminView extends FrameView implements ActionListener {
                 .addContainerGap())
         );
 
-        setComponent(mainPanel);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainPanel.setName("mainPanel"); // NOI18N
+
+        tabPanel.setName("tabPanel"); // NOI18N
+
+        startPanel.setName("startPanel"); // NOI18N
+
+        javax.swing.GroupLayout startPanelLayout = new javax.swing.GroupLayout(startPanel);
+        startPanel.setLayout(startPanelLayout);
+        startPanelLayout.setHorizontalGroup(
+            startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 723, Short.MAX_VALUE)
+        );
+        startPanelLayout.setVerticalGroup(
+            startPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 570, Short.MAX_VALUE)
+        );
+
+        tabPanel.addTab("Start", startPanel);
+
+        staffPanel.setName("staffPanel"); // NOI18N
+
+        carClassSearchPanel1.setName("carClassSearchPanel1"); // NOI18N
+
+        plateLbl2.setText("Name");
+        plateLbl2.setName("plateLbl2"); // NOI18N
+
+        brandLbl2.setText("Surname");
+        brandLbl2.setName("brandLbl2"); // NOI18N
+
+        brandTxt2.setName("brandTxt2"); // NOI18N
+
+        plateTxt2.setName("plateTxt2"); // NOI18N
+
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
+        addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
+        addBtn4.setText("Add");
+        addBtn4.setName("addBtn4"); // NOI18N
+        addBtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn4ActionPerformed(evt);
+            }
+        });
+
+        clearBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        clearBtn4.setText("Clear fields");
+        clearBtn4.setName("clearBtn4"); // NOI18N
+
+        javax.swing.GroupLayout carClassSearchPanel1Layout = new javax.swing.GroupLayout(carClassSearchPanel1);
+        carClassSearchPanel1.setLayout(carClassSearchPanel1Layout);
+        carClassSearchPanel1Layout.setHorizontalGroup(
+            carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
+                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
+                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brandLbl2)
+                            .addComponent(plateLbl2))
+                        .addGap(18, 18, 18)
+                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brandTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(plateTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
+                    .addComponent(clearBtn4)
+                    .addComponent(addBtn4))
+                .addContainerGap())
+        );
+        carClassSearchPanel1Layout.setVerticalGroup(
+            carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
+                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(plateLbl2)
+                    .addComponent(plateTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(brandLbl2)
+                    .addComponent(brandTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(clearBtn4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addBtn4))
+        );
+
+        jScrollPane5.setName("jScrollPane5"); // NOI18N
+
+        staffTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        staffTbl.setName("staffTbl"); // NOI18N
+        jScrollPane5.setViewportView(staffTbl);
+
+        javax.swing.GroupLayout staffPanelLayout = new javax.swing.GroupLayout(staffPanel);
+        staffPanel.setLayout(staffPanelLayout);
+        staffPanelLayout.setHorizontalGroup(
+            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        staffPanelLayout.setVerticalGroup(
+            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                    .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        tabPanel.addTab("Staff", staffPanel);
+
+        bookingPanel.setName("bookingPanel"); // NOI18N
+
+        carClassSearchPanel2.setName("carClassSearchPanel2"); // NOI18N
+
+        refCodeLbl.setText("Ref. code");
+        refCodeLbl.setName("refCodeLbl"); // NOI18N
+
+        refCodeTxt.setName("refCodeTxt"); // NOI18N
+
+        surnameLbl.setText("Surname");
+        surnameLbl.setName("surnameLbl"); // NOI18N
+
+        surnameTxt.setName("surnameTxt"); // NOI18N
+
+        rentalDateLbl.setText("Rental date");
+        rentalDateLbl.setName("rentalDateLbl"); // NOI18N
+
+        returnDateLbl.setText("Return date");
+        returnDateLbl.setName("returnDateLbl"); // NOI18N
+
+        isBookingCB.setText("Booking");
+        isBookingCB.setName("isBookingCB"); // NOI18N
+
+        clearBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        clearBtn2.setText("Clear fields");
+        clearBtn2.setName("clearBtn2"); // NOI18N
+
+        addBtn2.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
+        addBtn2.setText("Add");
+        addBtn2.setName("addBtn2"); // NOI18N
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
+        jButton2.setText("Delete");
+        jButton2.setName("jButton2"); // NOI18N
+
+        javax.swing.GroupLayout carClassSearchPanel2Layout = new javax.swing.GroupLayout(carClassSearchPanel2);
+        carClassSearchPanel2.setLayout(carClassSearchPanel2Layout);
+        carClassSearchPanel2Layout.setHorizontalGroup(
+            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
+                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
+                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(surnameLbl)
+                            .addComponent(refCodeLbl))
+                        .addGap(18, 18, 18)
+                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(refCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(surnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
+                    .addComponent(isBookingCB)
+                    .addComponent(clearBtn2)
+                    .addComponent(addBtn2)
+                    .addComponent(jButton2)
+                    .addComponent(rentalDateLbl)
+                    .addComponent(returnDateLbl))
+                .addContainerGap())
+        );
+        carClassSearchPanel2Layout.setVerticalGroup(
+            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
+                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
+                        .addComponent(refCodeLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(surnameLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rentalDateLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(returnDateLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(isBookingCB))
+                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
+                        .addComponent(refCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(surnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearBtn2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addBtn2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2))
+        );
+
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
+
+        bookingsTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        bookingsTbl.setName("bookingsTbl"); // NOI18N
+        jScrollPane2.setViewportView(bookingsTbl);
+
+        javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
+        bookingPanel.setLayout(bookingPanelLayout);
+        bookingPanelLayout.setHorizontalGroup(
+            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bookingPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        bookingPanelLayout.setVerticalGroup(
+            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bookingPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        tabPanel.addTab("Bookings", bookingPanel);
+
+        carPanel.setName("carPanel"); // NOI18N
+
+        carSearchPanel.setName("carSearchPanel"); // NOI18N
+
+        plateLbl.setText("Plate");
+        plateLbl.setName("plateLbl"); // NOI18N
+
+        brandLbl.setText("Brand");
+        brandLbl.setName("brandLbl"); // NOI18N
+
+        modelLbl.setText("Model");
+        modelLbl.setName("modelLbl"); // NOI18N
+
+        classLbl.setText("Class");
+        classLbl.setName("classLbl"); // NOI18N
+
+        yearLbl.setText("Year");
+        yearLbl.setName("yearLbl"); // NOI18N
+
+        colorLbl.setText("Color");
+        colorLbl.setName("colorLbl"); // NOI18N
+
+        statusLbl.setText("Status");
+        statusLbl.setName("statusLbl"); // NOI18N
+
+        plateTxt.setName("plateTxt"); // NOI18N
+
+        brandTxt.setName("brandTxt"); // NOI18N
+
+        modelTxt.setName("modelTxt"); // NOI18N
+
+        classTxt.setName("classTxt"); // NOI18N
+
+        yearTxt.setName("yearTxt"); // NOI18N
+
+        colorTxt.setName("colorTxt"); // NOI18N
+
+        statusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        statusCB.setName("statusCB"); // NOI18N
+
+        addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
+        addBtn3.setText("Add");
+        addBtn3.setName("addBtn3"); // NOI18N
+        addBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn3ActionPerformed(evt);
+            }
+        });
+
+        clearBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        clearBtn3.setText("Clear fields");
+        clearBtn3.setName("clearBtn3"); // NOI18N
+
+        javax.swing.GroupLayout carSearchPanelLayout = new javax.swing.GroupLayout(carSearchPanel);
+        carSearchPanel.setLayout(carSearchPanelLayout);
+        carSearchPanelLayout.setHorizontalGroup(
+            carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carSearchPanelLayout.createSequentialGroup()
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(carSearchPanelLayout.createSequentialGroup()
+                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brandLbl)
+                            .addComponent(plateLbl)
+                            .addComponent(modelLbl)
+                            .addComponent(classLbl)
+                            .addComponent(yearLbl)
+                            .addComponent(colorLbl)
+                            .addComponent(statusLbl))
+                        .addGap(18, 18, 18)
+                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(statusCB, 0, 66, Short.MAX_VALUE)
+                            .addComponent(colorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(yearTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(classTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(modelTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(brandTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(plateTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)))
+                    .addComponent(clearBtn3)
+                    .addComponent(addBtn3))
+                .addContainerGap())
+        );
+        carSearchPanelLayout.setVerticalGroup(
+            carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carSearchPanelLayout.createSequentialGroup()
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(plateLbl)
+                    .addComponent(plateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(brandLbl)
+                    .addComponent(brandTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modelLbl)
+                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(classLbl)
+                    .addComponent(classTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yearLbl)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(colorLbl)
+                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(statusLbl)
+                    .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(clearBtn3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addBtn3))
+        );
+
+        jScrollPane3.setName("jScrollPane3"); // NOI18N
+
+        carTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        carTbl.setName("carTbl"); // NOI18N
+        jScrollPane3.setViewportView(carTbl);
+
+        javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
+        carPanel.setLayout(carPanelLayout);
+        carPanelLayout.setHorizontalGroup(
+            carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        carPanelLayout.setVerticalGroup(
+            carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                    .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        tabPanel.addTab("Cars", carPanel);
+
+        carClassPanel.setName("carClassPanel"); // NOI18N
+
+        carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
+
+        plateLbl1.setText("Name");
+        plateLbl1.setName("plateLbl1"); // NOI18N
+
+        brandLbl1.setText("Display name");
+        brandLbl1.setName("brandLbl1"); // NOI18N
+
+        plateTxt1.setName("plateTxt1"); // NOI18N
+
+        brandTxt1.setName("brandTxt1"); // NOI18N
+
+        clearBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        clearBtn1.setText("Clear fields");
+        clearBtn1.setName("clearBtn1"); // NOI18N
+
+        addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
+        addBtn1.setText("Add");
+        addBtn1.setName("addBtn1"); // NOI18N
+        addBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
+        carClassSearchPanel.setLayout(carClassSearchPanelLayout);
+        carClassSearchPanelLayout.setHorizontalGroup(
+            carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanelLayout.createSequentialGroup()
+                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(carClassSearchPanelLayout.createSequentialGroup()
+                        .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brandLbl1)
+                            .addComponent(plateLbl1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(plateTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(brandTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
+                    .addComponent(clearBtn1)
+                    .addComponent(addBtn1))
+                .addContainerGap())
+        );
+        carClassSearchPanelLayout.setVerticalGroup(
+            carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassSearchPanelLayout.createSequentialGroup()
+                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(plateLbl1)
+                    .addComponent(plateTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(brandLbl1)
+                    .addComponent(brandTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(clearBtn1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addBtn1))
+        );
+
+        jScrollPane4.setName("jScrollPane4"); // NOI18N
+
+        carClassTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        carClassTbl.setName("carClassTbl"); // NOI18N
+        jScrollPane4.setViewportView(carClassTbl);
+
+        javax.swing.GroupLayout carClassPanelLayout = new javax.swing.GroupLayout(carClassPanel);
+        carClassPanel.setLayout(carClassPanelLayout);
+        carClassPanelLayout.setHorizontalGroup(
+            carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        carClassPanelLayout.setVerticalGroup(
+            carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(carClassPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                    .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        tabPanel.addTab("Classes", carClassPanel);
+
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/logout.png"))); // NOI18N
+        logoutBtn.setText("Logout");
+        logoutBtn.setName("logoutBtn"); // NOI18N
+
+        usernameLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/user.png"))); // NOI18N
+        usernameLbl.setText("Username");
+        usernameLbl.setName("usernameLbl"); // NOI18N
+
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addGap(541, 541, 541)
+                .addComponent(usernameLbl)
+                .addGap(18, 18, 18)
+                .addComponent(logoutBtn))
+            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
+        );
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 728, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 633, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+        );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn1ActionPerformed
-        carClassDialog.setVisible(true);
-    }//GEN-LAST:event_addBtn1ActionPerformed
+    private void addBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn4ActionPerformed
+
+        staffDialog.setVisible(true);     }//GEN-LAST:event_addBtn4ActionPerformed
 
     private void addBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn3ActionPerformed
-        carDialog.setVisible(true);
-    }//GEN-LAST:event_addBtn3ActionPerformed
 
-    private void addBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn4ActionPerformed
-        staffDialog.setVisible(true);
-    }//GEN-LAST:event_addBtn4ActionPerformed
+        carDialog.setVisible(true);     }//GEN-LAST:event_addBtn3ActionPerformed
 
-    private void returnDateDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnDateDPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_returnDateDPActionPerformed
+    private void addBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn1ActionPerformed
 
+        carClassDialog.setVisible(true);     }//GEN-LAST:event_addBtn1ActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                new AdminView().setVisible(true);
+            }
+        });
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PhoneDlgLbl;
     private javax.swing.JButton addBtn1;
@@ -1186,6 +1308,7 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JLabel addressDlgLbl;
     private javax.swing.JTextArea addressDlgTA;
     private javax.swing.JPanel bookingPanel;
+    private org.jdesktop.swingx.JXTable bookingsTbl;
     private javax.swing.JComboBox branchCB;
     private javax.swing.JLabel branchDlgLbl;
     private javax.swing.JLabel brandDlgLbl;
@@ -1204,9 +1327,11 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JPanel carClassSearchPanel;
     private javax.swing.JPanel carClassSearchPanel1;
     private javax.swing.JPanel carClassSearchPanel2;
+    private org.jdesktop.swingx.JXTable carClassTbl;
     private javax.swing.JDialog carDialog;
     private javax.swing.JPanel carPanel;
     private javax.swing.JPanel carSearchPanel;
+    private org.jdesktop.swingx.JXTable carTbl;
     private javax.swing.JComboBox classCB;
     private javax.swing.JLabel classDlgLbl;
     private javax.swing.JLabel classLbl;
@@ -1236,6 +1361,10 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lastServiceDlgLbl;
@@ -1279,6 +1408,7 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JLabel staffNameDlgLbl;
     private javax.swing.JTextField staffNameDlgTxt;
     private javax.swing.JPanel staffPanel;
+    private org.jdesktop.swingx.JXTable staffTbl;
     private javax.swing.JPanel startPanel;
     private javax.swing.JComboBox statusCB;
     private javax.swing.JComboBox statusDlgCB;
@@ -1297,8 +1427,4 @@ public class AdminView extends FrameView implements ActionListener {
     private javax.swing.JLabel yearLbl;
     private javax.swing.JTextField yearTxt;
     // End of variables declaration//GEN-END:variables
-
-    public void actionPerformed(ActionEvent e) {
-        carDialog.setVisible(true);
-    }
 }
