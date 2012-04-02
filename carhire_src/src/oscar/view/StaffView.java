@@ -16,7 +16,7 @@ import oscar.persistance.AbstractView;
  *
  * @author schiodin
  */
-public class StaffView extends AbstractView{
+public class StaffView extends AbstractView {
 
     /** Creates new form StaffView */
     public StaffView() {
@@ -151,7 +151,7 @@ public class StaffView extends AbstractView{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle(resourceMap.getString("Staff.title")); // NOI18N
         setName("Staff"); // NOI18N
 
@@ -589,12 +589,11 @@ public class StaffView extends AbstractView{
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-            }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(StaffView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -614,6 +613,10 @@ public class StaffView extends AbstractView{
                 new StaffView().setVisible(true);
             }
         });
+    }
+
+    public javax.swing.JButton getLogoutBtn() {
+        return logoutBtn;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Extendsbtn;

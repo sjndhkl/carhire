@@ -12,15 +12,22 @@ import oscar.view.AdminView;
 public class AdminController extends Controller implements ActionListener {
     private AdminView adminView;
 
-    @Override
-    public void start() {
+    public void run() {
         this.setName("Admin");
         adminView = new AdminView();
         this.addView(adminView);
+        adminView.getLogoutBtn().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (e.getSource().equals(adminView.getLogoutBtn()))
+            logout();
+    }
+
+    private void logout() {
+        adminView.getLogoutBtn().removeActionListener(this);
+        this.removeView(adminView);
+        new LoginController().start();
     }
 }

@@ -39,7 +39,8 @@ public class LoginView extends AbstractView {
         jLabel2 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("Staff"); // NOI18N
         setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 18));
@@ -49,6 +50,7 @@ public class LoginView extends AbstractView {
         jLabel1.setText("Username:");
         jLabel1.setName("jLabel1"); // NOI18N
 
+        txtUserName.setText("Draga");
         txtUserName.setName("txtUserName"); // NOI18N
 
         btnLogin.setText("Login");
@@ -62,6 +64,7 @@ public class LoginView extends AbstractView {
         jLabel2.setText("Password:");
         jLabel2.setName("jLabel2"); // NOI18N
 
+        txtPassword.setText("password");
         txtPassword.setName("txtPassword"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

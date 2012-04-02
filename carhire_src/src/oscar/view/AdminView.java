@@ -220,13 +220,14 @@ public class AdminView extends AbstractView  {
         carDialog.setMinimumSize(new java.awt.Dimension(550, 271));
         carDialog.setName("carDialog"); // NOI18N
 
-        saveDlgBtn.setText("Save");
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(AdminView.class);
+        saveDlgBtn.setText(resourceMap.getString("saveDlgBtn.text")); // NOI18N
         saveDlgBtn.setName("saveDlgBtn"); // NOI18N
 
-        deleteDlgBtn.setText("Delete");
+        deleteDlgBtn.setText(resourceMap.getString("deleteDlgBtn.text")); // NOI18N
         deleteDlgBtn.setName("deleteDlgBtn"); // NOI18N
 
-        cancelDlgBtn.setText("Cancel");
+        cancelDlgBtn.setText(resourceMap.getString("cancelDlgBtn.text")); // NOI18N
         cancelDlgBtn.setName("cancelDlgBtn"); // NOI18N
 
         jPanel4.setName("jPanel4"); // NOI18N
@@ -234,36 +235,36 @@ public class AdminView extends AbstractView  {
         classCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         classCB.setName("classCB"); // NOI18N
 
-        yearDlgLbl.setText("Year");
+        yearDlgLbl.setText(resourceMap.getString("yearDlgLbl.text")); // NOI18N
         yearDlgLbl.setName("yearDlgLbl"); // NOI18N
 
         modelDlgTxt.setName("modelDlgTxt"); // NOI18N
 
-        classDlgLbl.setText("Class");
+        classDlgLbl.setText(resourceMap.getString("classDlgLbl.text")); // NOI18N
         classDlgLbl.setName("classDlgLbl"); // NOI18N
 
         colorDlgTxt.setName("colorDlgTxt"); // NOI18N
 
         yearDlgSpn.setName("yearDlgSpn"); // NOI18N
 
-        colorDlgLbl.setText("Color");
+        colorDlgLbl.setText(resourceMap.getString("colorDlgLbl.text")); // NOI18N
         colorDlgLbl.setName("colorDlgLbl"); // NOI18N
 
         statusDlgCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         statusDlgCB.setName("statusDlgCB"); // NOI18N
 
-        statusDlgLbl.setText("Status");
+        statusDlgLbl.setText(resourceMap.getString("statusDlgLbl.text")); // NOI18N
         statusDlgLbl.setName("statusDlgLbl"); // NOI18N
 
-        plateDlgLbl.setText("Plate");
+        plateDlgLbl.setText(resourceMap.getString("plateDlgLbl.text")); // NOI18N
         plateDlgLbl.setName("plateDlgLbl"); // NOI18N
 
         plateDlgTxt.setName("plateDlgTxt"); // NOI18N
 
-        brandDlgLbl.setText("Brand");
+        brandDlgLbl.setText(resourceMap.getString("brandDlgLbl.text")); // NOI18N
         brandDlgLbl.setName("brandDlgLbl"); // NOI18N
 
-        modelDlgLbl.setText("Model");
+        modelDlgLbl.setText(resourceMap.getString("modelDlgLbl.text")); // NOI18N
         modelDlgLbl.setName("modelDlgLbl"); // NOI18N
 
         brandDlgTxt.setName("brandDlgTxt"); // NOI18N
@@ -343,29 +344,29 @@ public class AdminView extends AbstractView  {
 
         milieageDlgTxt.setName("milieageDlgTxt"); // NOI18N
 
-        mileageDlgLbl.setText("Mileage");
+        mileageDlgLbl.setText(resourceMap.getString("mileageDlgLbl.text")); // NOI18N
         mileageDlgLbl.setName("mileageDlgLbl"); // NOI18N
 
         branchCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         branchCB.setName("branchCB"); // NOI18N
 
-        branchDlgLbl.setText("Branch");
+        branchDlgLbl.setText(resourceMap.getString("branchDlgLbl.text")); // NOI18N
         branchDlgLbl.setName("branchDlgLbl"); // NOI18N
 
         lastServiceMileageDlgTxt.setName("lastServiceMileageDlgTxt"); // NOI18N
 
-        lastServiceMileageDlgLbl.setText("Mileage of the last service");
+        lastServiceMileageDlgLbl.setText(resourceMap.getString("lastServiceMileageDlgLbl.text")); // NOI18N
         lastServiceMileageDlgLbl.setName("lastServiceMileageDlgLbl"); // NOI18N
 
-        lastServiceDlgLbl.setText("Date of the last service");
+        lastServiceDlgLbl.setText(resourceMap.getString("lastServiceDlgLbl.text")); // NOI18N
         lastServiceDlgLbl.setName("lastServiceDlgLbl"); // NOI18N
 
-        serviceMilesDlgLbl.setText("Miles betwen services");
+        serviceMilesDlgLbl.setText(resourceMap.getString("serviceMilesDlgLbl.text")); // NOI18N
         serviceMilesDlgLbl.setName("serviceMilesDlgLbl"); // NOI18N
 
         serviceMilesDlgTxt.setName("serviceMilesDlgTxt"); // NOI18N
 
-        serviceMonthDlgLbl.setText("Months between services");
+        serviceMonthDlgLbl.setText(resourceMap.getString("serviceMonthDlgLbl.text")); // NOI18N
         serviceMonthDlgLbl.setName("serviceMonthDlgLbl"); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -469,31 +470,31 @@ public class AdminView extends AbstractView  {
         carClassDialog.setModal(true);
         carClassDialog.setName("carClassDialog"); // NOI18N
 
-        nameDlgLbl.setText("Name");
+        nameDlgLbl.setText(resourceMap.getString("nameDlgLbl.text")); // NOI18N
         nameDlgLbl.setName("nameDlgLbl"); // NOI18N
 
         nameDlgTxt.setName("nameDlgTxt"); // NOI18N
 
-        displayNameDlgLbl.setText("Display name");
+        displayNameDlgLbl.setText(resourceMap.getString("displayNameDlgLbl.text")); // NOI18N
         displayNameDlgLbl.setName("displayNameDlgLbl"); // NOI18N
 
         displayNameDlgTxt.setName("displayNameDlgTxt"); // NOI18N
 
-        priceDlgLbl.setText("Price");
+        priceDlgLbl.setText(resourceMap.getString("priceDlgLbl.text")); // NOI18N
         priceDlgLbl.setName("priceDlgLbl"); // NOI18N
 
         priceDlgTxt.setName("priceDlgTxt"); // NOI18N
 
-        saveDlgBtn1.setText("Save");
+        saveDlgBtn1.setText(resourceMap.getString("saveDlgBtn1.text")); // NOI18N
         saveDlgBtn1.setName("saveDlgBtn1"); // NOI18N
 
-        deleteDlgBtn1.setText("Delete");
+        deleteDlgBtn1.setText(resourceMap.getString("deleteDlgBtn1.text")); // NOI18N
         deleteDlgBtn1.setName("deleteDlgBtn1"); // NOI18N
 
-        cancelDlgBtn1.setText("Cancel");
+        cancelDlgBtn1.setText(resourceMap.getString("cancelDlgBtn1.text")); // NOI18N
         cancelDlgBtn1.setName("cancelDlgBtn1"); // NOI18N
 
-        descriptionDlgLbl.setText("Description");
+        descriptionDlgLbl.setText(resourceMap.getString("descriptionDlgLbl.text")); // NOI18N
         descriptionDlgLbl.setName("descriptionDlgLbl"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -565,27 +566,27 @@ public class AdminView extends AbstractView  {
         staffDialog.setModal(true);
         staffDialog.setName("staffDialog"); // NOI18N
 
-        saveDlgBtn2.setText("Save");
+        saveDlgBtn2.setText(resourceMap.getString("saveDlgBtn2.text")); // NOI18N
         saveDlgBtn2.setName("saveDlgBtn2"); // NOI18N
 
-        deleteDlgBtn2.setText("Delete");
+        deleteDlgBtn2.setText(resourceMap.getString("deleteDlgBtn2.text")); // NOI18N
         deleteDlgBtn2.setName("deleteDlgBtn2"); // NOI18N
 
-        cancelDlgBtn2.setText("Cancel");
+        cancelDlgBtn2.setText(resourceMap.getString("cancelDlgBtn2.text")); // NOI18N
         cancelDlgBtn2.setName("cancelDlgBtn2"); // NOI18N
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        staffNameDlgLbl.setText("Name");
+        staffNameDlgLbl.setText(resourceMap.getString("staffNameDlgLbl.text")); // NOI18N
         staffNameDlgLbl.setName("staffNameDlgLbl"); // NOI18N
 
-        surnameDlgLbl.setText("Surname");
+        surnameDlgLbl.setText(resourceMap.getString("surnameDlgLbl.text")); // NOI18N
         surnameDlgLbl.setName("surnameDlgLbl"); // NOI18N
 
-        usernameDlgLbl.setText("Username");
+        usernameDlgLbl.setText(resourceMap.getString("usernameDlgLbl.text")); // NOI18N
         usernameDlgLbl.setName("usernameDlgLbl"); // NOI18N
 
-        passwordDlgLbl.setText("Password");
+        passwordDlgLbl.setText(resourceMap.getString("passwordDlgLbl.text")); // NOI18N
         passwordDlgLbl.setName("passwordDlgLbl"); // NOI18N
 
         passwordPwd.setName("passwordPwd"); // NOI18N
@@ -645,7 +646,7 @@ public class AdminView extends AbstractView  {
         addressDlgTA.setName("addressDlgTA"); // NOI18N
         jScrollPane6.setViewportView(addressDlgTA);
 
-        addressDlgLbl.setText("Address");
+        addressDlgLbl.setText(resourceMap.getString("addressDlgLbl.text")); // NOI18N
         addressDlgLbl.setName("addressDlgLbl"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -674,13 +675,13 @@ public class AdminView extends AbstractView  {
 
         jPanel2.setName("jPanel2"); // NOI18N
 
-        dateOfBirthDlgLbl.setText("Date of birth");
+        dateOfBirthDlgLbl.setText(resourceMap.getString("dateOfBirthDlgLbl.text")); // NOI18N
         dateOfBirthDlgLbl.setName("dateOfBirthDlgLbl"); // NOI18N
 
-        emailDlgLbl.setText("Email");
+        emailDlgLbl.setText(resourceMap.getString("emailDlgLbl.text")); // NOI18N
         emailDlgLbl.setName("emailDlgLbl"); // NOI18N
 
-        PhoneDlgLbl.setText("Phone");
+        PhoneDlgLbl.setText(resourceMap.getString("PhoneDlgLbl.text")); // NOI18N
         PhoneDlgLbl.setName("PhoneDlgLbl"); // NOI18N
 
         emailDlgTxt.setName("emailDlgTxt"); // NOI18N
@@ -753,7 +754,7 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        extensionDlg.setTitle("Choose a new return date");
+        extensionDlg.setTitle(resourceMap.getString("extensionDlg.title")); // NOI18N
         extensionDlg.setAlwaysOnTop(true);
         extensionDlg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         extensionDlg.setIconImage(null);
@@ -763,19 +764,18 @@ public class AdminView extends AbstractView  {
         extensionDlg.setName("extensionDlg"); // NOI18N
         extensionDlg.setResizable(false);
 
-        oldDateLbl.setText("Old return date");
+        oldDateLbl.setText(resourceMap.getString("oldDateLbl.text")); // NOI18N
         oldDateLbl.setName("oldDateLbl"); // NOI18N
 
         oldDateDP.setEditable(false);
         oldDateDP.setName("oldDateDP"); // NOI18N
 
-        newDateLbl.setText("New return date");
+        newDateLbl.setText(resourceMap.getString("newDateLbl.text")); // NOI18N
         newDateLbl.setName("newDateLbl"); // NOI18N
 
         newDateDP.setName("newDateDP"); // NOI18N
 
-        Extendsbtn.setIcon(null);
-        Extendsbtn.setText("Extend");
+        Extendsbtn.setText(resourceMap.getString("Extendsbtn.text")); // NOI18N
         Extendsbtn.setName("Extendsbtn"); // NOI18N
 
         javax.swing.GroupLayout extensionDlgLayout = new javax.swing.GroupLayout(extensionDlg.getContentPane());
@@ -814,8 +814,8 @@ public class AdminView extends AbstractView  {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Admin");
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setName("Admin"); // NOI18N
 
         mainPanel.setName("mainPanel"); // NOI18N
 
@@ -834,16 +834,16 @@ public class AdminView extends AbstractView  {
             .addGap(0, 553, Short.MAX_VALUE)
         );
 
-        tabPanel.addTab("Start", startPanel);
+        tabPanel.addTab(resourceMap.getString("startPanel.TabConstraints.tabTitle"), startPanel); // NOI18N
 
         staffPanel.setName("staffPanel"); // NOI18N
 
         carClassSearchPanel1.setName("carClassSearchPanel1"); // NOI18N
 
-        plateLbl2.setText("Name");
+        plateLbl2.setText(resourceMap.getString("plateLbl2.text")); // NOI18N
         plateLbl2.setName("plateLbl2"); // NOI18N
 
-        brandLbl2.setText("Surname");
+        brandLbl2.setText(resourceMap.getString("brandLbl2.text")); // NOI18N
         brandLbl2.setName("brandLbl2"); // NOI18N
 
         brandTxt2.setName("brandTxt2"); // NOI18N
@@ -852,8 +852,6 @@ public class AdminView extends AbstractView  {
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
         addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn4.setText("Add");
         addBtn4.setName("addBtn4"); // NOI18N
         addBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -862,7 +860,7 @@ public class AdminView extends AbstractView  {
         });
 
         clearBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn4.setText("Clear fields");
+        clearBtn4.setText(resourceMap.getString("clearBtn4.text")); // NOI18N
         clearBtn4.setName("clearBtn4"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanel1Layout = new javax.swing.GroupLayout(carClassSearchPanel1);
@@ -936,42 +934,40 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Staff", staffPanel);
+        tabPanel.addTab(resourceMap.getString("staffPanel.TabConstraints.tabTitle"), staffPanel); // NOI18N
 
         bookingPanel.setName("bookingPanel"); // NOI18N
 
         carClassSearchPanel2.setName("carClassSearchPanel2"); // NOI18N
 
-        refCodeLbl.setText("Ref. code");
+        refCodeLbl.setText(resourceMap.getString("refCodeLbl.text")); // NOI18N
         refCodeLbl.setName("refCodeLbl"); // NOI18N
 
         refCodeTxt.setName("refCodeTxt"); // NOI18N
 
-        surnameLbl.setText("Surname");
+        surnameLbl.setText(resourceMap.getString("surnameLbl.text")); // NOI18N
         surnameLbl.setName("surnameLbl"); // NOI18N
 
         surnameTxt.setName("surnameTxt"); // NOI18N
 
-        rentalDateLbl.setText("Rental date");
+        rentalDateLbl.setText(resourceMap.getString("rentalDateLbl.text")); // NOI18N
         rentalDateLbl.setName("rentalDateLbl"); // NOI18N
 
-        returnDateLbl.setText("Return date");
+        returnDateLbl.setText(resourceMap.getString("returnDateLbl.text")); // NOI18N
         returnDateLbl.setName("returnDateLbl"); // NOI18N
 
-        isBookingCB.setText("Booking");
+        isBookingCB.setText(resourceMap.getString("isBookingCB.text")); // NOI18N
         isBookingCB.setName("isBookingCB"); // NOI18N
 
         clearBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn2.setText("Clear fields");
+        clearBtn2.setText(resourceMap.getString("clearBtn2.text")); // NOI18N
         clearBtn2.setName("clearBtn2"); // NOI18N
 
         addBtn2.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn2.setText("Add");
         addBtn2.setName("addBtn2"); // NOI18N
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
-        jButton2.setText("Delete");
+        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanel2Layout = new javax.swing.GroupLayout(carClassSearchPanel2);
@@ -1059,31 +1055,31 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Bookings", bookingPanel);
+        tabPanel.addTab(resourceMap.getString("bookingPanel.TabConstraints.tabTitle"), bookingPanel); // NOI18N
 
         carPanel.setName("carPanel"); // NOI18N
 
         carSearchPanel.setName("carSearchPanel"); // NOI18N
 
-        plateLbl.setText("Plate");
+        plateLbl.setText(resourceMap.getString("plateLbl.text")); // NOI18N
         plateLbl.setName("plateLbl"); // NOI18N
 
-        brandLbl.setText("Brand");
+        brandLbl.setText(resourceMap.getString("brandLbl.text")); // NOI18N
         brandLbl.setName("brandLbl"); // NOI18N
 
-        modelLbl.setText("Model");
+        modelLbl.setText(resourceMap.getString("modelLbl.text")); // NOI18N
         modelLbl.setName("modelLbl"); // NOI18N
 
-        classLbl.setText("Class");
+        classLbl.setText(resourceMap.getString("classLbl.text")); // NOI18N
         classLbl.setName("classLbl"); // NOI18N
 
-        yearLbl.setText("Year");
+        yearLbl.setText(resourceMap.getString("yearLbl.text")); // NOI18N
         yearLbl.setName("yearLbl"); // NOI18N
 
-        colorLbl.setText("Color");
+        colorLbl.setText(resourceMap.getString("colorLbl.text")); // NOI18N
         colorLbl.setName("colorLbl"); // NOI18N
 
-        statusLbl.setText("Status");
+        statusLbl.setText(resourceMap.getString("statusLbl.text")); // NOI18N
         statusLbl.setName("statusLbl"); // NOI18N
 
         plateTxt.setName("plateTxt"); // NOI18N
@@ -1102,8 +1098,6 @@ public class AdminView extends AbstractView  {
         statusCB.setName("statusCB"); // NOI18N
 
         addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn3.setText("Add");
         addBtn3.setName("addBtn3"); // NOI18N
         addBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1112,7 +1106,7 @@ public class AdminView extends AbstractView  {
         });
 
         clearBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn3.setText("Clear fields");
+        clearBtn3.setText(resourceMap.getString("clearBtn3.text")); // NOI18N
         clearBtn3.setName("clearBtn3"); // NOI18N
 
         javax.swing.GroupLayout carSearchPanelLayout = new javax.swing.GroupLayout(carSearchPanel);
@@ -1216,16 +1210,16 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Cars", carPanel);
+        tabPanel.addTab(resourceMap.getString("carPanel.TabConstraints.tabTitle"), carPanel); // NOI18N
 
         carClassPanel.setName("carClassPanel"); // NOI18N
 
         carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
 
-        plateLbl1.setText("Name");
+        plateLbl1.setText(resourceMap.getString("plateLbl1.text")); // NOI18N
         plateLbl1.setName("plateLbl1"); // NOI18N
 
-        brandLbl1.setText("Display name");
+        brandLbl1.setText(resourceMap.getString("brandLbl1.text")); // NOI18N
         brandLbl1.setName("brandLbl1"); // NOI18N
 
         plateTxt1.setName("plateTxt1"); // NOI18N
@@ -1233,12 +1227,10 @@ public class AdminView extends AbstractView  {
         brandTxt1.setName("brandTxt1"); // NOI18N
 
         clearBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn1.setText("Clear fields");
+        clearBtn1.setText(resourceMap.getString("clearBtn1.text")); // NOI18N
         clearBtn1.setName("clearBtn1"); // NOI18N
 
         addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn1.setText("Add");
         addBtn1.setName("addBtn1"); // NOI18N
         addBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1317,47 +1309,45 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Classes", carClassPanel);
+        tabPanel.addTab(resourceMap.getString("carClassPanel.TabConstraints.tabTitle"), carClassPanel); // NOI18N
 
         hirePanel.setName("hirePanel"); // NOI18N
 
-        hireBtn.setIcon(null);
-        hireBtn.setText("Hire");
+        hireBtn.setText(resourceMap.getString("hireBtn.text")); // NOI18N
         hireBtn.setName("hireBtn"); // NOI18N
 
         personPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         personPanel.setName("personPanel"); // NOI18N
 
-        personLoadBtn.setIcon(null);
-        personLoadBtn.setText("Type customer's details to search into the database");
+        personLoadBtn.setText(resourceMap.getString("personLoadBtn.text")); // NOI18N
         personLoadBtn.setName("personLoadBtn"); // NOI18N
 
-        nameLbl.setText("Name");
+        nameLbl.setText(resourceMap.getString("nameLbl.text")); // NOI18N
         nameLbl.setName("nameLbl"); // NOI18N
 
         nameTxt.setName("nameTxt"); // NOI18N
 
-        surnameLbl1.setText("Surname");
+        surnameLbl1.setText(resourceMap.getString("surnameLbl1.text")); // NOI18N
         surnameLbl1.setName("surnameLbl1"); // NOI18N
 
         surnameTxt1.setName("surnameTxt1"); // NOI18N
 
-        dateOfBirthLbl.setText("Date of birth");
+        dateOfBirthLbl.setText(resourceMap.getString("dateOfBirthLbl.text")); // NOI18N
         dateOfBirthLbl.setName("dateOfBirthLbl"); // NOI18N
 
         dateOfBirthDP.setName("dateOfBirthDP"); // NOI18N
 
-        emailLbl.setText("Email");
+        emailLbl.setText(resourceMap.getString("emailLbl.text")); // NOI18N
         emailLbl.setName("emailLbl"); // NOI18N
 
         emailTxt.setName("emailTxt"); // NOI18N
 
-        phoneLbl.setText("Phone");
+        phoneLbl.setText(resourceMap.getString("phoneLbl.text")); // NOI18N
         phoneLbl.setName("phoneLbl"); // NOI18N
 
         phoneTxt.setName("phoneTxt"); // NOI18N
 
-        addressLbl.setText("Address");
+        addressLbl.setText(resourceMap.getString("addressLbl.text")); // NOI18N
         addressLbl.setName("addressLbl"); // NOI18N
 
         jScrollPane7.setName("jScrollPane7"); // NOI18N
@@ -1421,30 +1411,30 @@ public class AdminView extends AbstractView  {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addressLbl)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         carPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         carPanel1.setName("carPanel1"); // NOI18N
 
-        fromLbl.setText("From");
+        fromLbl.setText(resourceMap.getString("fromLbl.text")); // NOI18N
         fromLbl.setName("fromLbl"); // NOI18N
 
         fromDP.setName("fromDP"); // NOI18N
 
-        toLbl.setText("To");
+        toLbl.setText(resourceMap.getString("toLbl.text")); // NOI18N
         toLbl.setName("toLbl"); // NOI18N
 
         toDP.setName("toDP"); // NOI18N
 
-        classLbl1.setText("Class");
+        classLbl1.setText(resourceMap.getString("classLbl1.text")); // NOI18N
         classLbl1.setName("classLbl1"); // NOI18N
 
         classCB1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         classCB1.setName("classCB1"); // NOI18N
 
-        chauffeuredCB.setText("Chauffeur");
+        chauffeuredCB.setText(resourceMap.getString("chauffeuredCB.text")); // NOI18N
         chauffeuredCB.setName("chauffeuredCB"); // NOI18N
 
         jScrollPane8.setName("jScrollPane8"); // NOI18N
@@ -1463,18 +1453,17 @@ public class AdminView extends AbstractView  {
         carTbl1.setName("carTbl1"); // NOI18N
         jScrollPane8.setViewportView(carTbl1);
 
-        refCodeLbl1.setText("Ref. Code:");
+        refCodeLbl1.setText(resourceMap.getString("refCodeLbl1.text")); // NOI18N
         refCodeLbl1.setName("refCodeLbl1"); // NOI18N
 
         refCodeTxt1.setName("refCodeTxt1"); // NOI18N
 
-        refCodeSearchBtn.setIcon(null);
-        refCodeSearchBtn.setText("Search");
+        refCodeSearchBtn.setText(resourceMap.getString("refCodeSearchBtn.text")); // NOI18N
         refCodeSearchBtn.setName("refCodeSearchBtn"); // NOI18N
 
         jSeparator1.setName("jSeparator1"); // NOI18N
 
-        chauffeuredCB1.setText("Insurance");
+        chauffeuredCB1.setText(resourceMap.getString("chauffeuredCB1.text")); // NOI18N
         chauffeuredCB1.setName("chauffeuredCB1"); // NOI18N
 
         javax.swing.GroupLayout carPanel1Layout = new javax.swing.GroupLayout(carPanel1);
@@ -1485,7 +1474,7 @@ public class AdminView extends AbstractView  {
                 .addContainerGap()
                 .addComponent(refCodeLbl1)
                 .addGap(18, 18, 18)
-                .addComponent(refCodeTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addComponent(refCodeTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(refCodeSearchBtn)
                 .addContainerGap())
@@ -1540,12 +1529,11 @@ public class AdminView extends AbstractView  {
                     .addComponent(chauffeuredCB)
                     .addComponent(chauffeuredCB1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jButton1.setIcon(null);
-        jButton1.setText("Clear form");
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
 
         javax.swing.GroupLayout hirePanelLayout = new javax.swing.GroupLayout(hirePanel);
@@ -1580,19 +1568,19 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Hire", hirePanel);
+        tabPanel.addTab(resourceMap.getString("hirePanel.TabConstraints.tabTitle"), hirePanel); // NOI18N
 
         returnPanel.setName("returnPanel"); // NOI18N
 
         carSearchPanel1.setName("carSearchPanel1"); // NOI18N
 
-        refCodeLbl2.setText("Ref. Code");
+        refCodeLbl2.setText(resourceMap.getString("refCodeLbl2.text")); // NOI18N
         refCodeLbl2.setName("refCodeLbl2"); // NOI18N
 
-        surnameLbl2.setText("Surname");
+        surnameLbl2.setText(resourceMap.getString("surnameLbl2.text")); // NOI18N
         surnameLbl2.setName("surnameLbl2"); // NOI18N
 
-        plateLbl3.setText("Plate");
+        plateLbl3.setText(resourceMap.getString("plateLbl3.text")); // NOI18N
         plateLbl3.setName("plateLbl3"); // NOI18N
 
         refCodeTxt2.setName("refCodeTxt2"); // NOI18N
@@ -1601,16 +1589,15 @@ public class AdminView extends AbstractView  {
 
         plateTxt3.setName("plateTxt3"); // NOI18N
 
-        clearBtn5.setIcon(null);
-        clearBtn5.setText("Clear fields");
+        clearBtn5.setText(resourceMap.getString("clearBtn5.text")); // NOI18N
         clearBtn5.setName("clearBtn5"); // NOI18N
 
         returnBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/return.png"))); // NOI18N
-        returnBtn.setText("Return");
+        returnBtn.setText(resourceMap.getString("returnBtn.text")); // NOI18N
         returnBtn.setName("returnBtn"); // NOI18N
 
         extendsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        extendsBtn.setText("Extend");
+        extendsBtn.setText(resourceMap.getString("extendsBtn.text")); // NOI18N
         extendsBtn.setName("extendsBtn"); // NOI18N
         extendsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1698,14 +1685,14 @@ public class AdminView extends AbstractView  {
                 .addContainerGap())
         );
 
-        tabPanel.addTab("Return and extend", returnPanel);
+        tabPanel.addTab(resourceMap.getString("returnPanel.TabConstraints.tabTitle"), returnPanel); // NOI18N
 
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/logout.png"))); // NOI18N
-        logoutBtn.setText("Logout");
+        logoutBtn.setText(resourceMap.getString("logoutBtn.text")); // NOI18N
         logoutBtn.setName("logoutBtn"); // NOI18N
 
         usernameLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/user.png"))); // NOI18N
-        usernameLbl.setText("Username");
+        usernameLbl.setText(resourceMap.getString("usernameLbl.text")); // NOI18N
         usernameLbl.setName("usernameLbl"); // NOI18N
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -1806,6 +1793,10 @@ public class AdminView extends AbstractView  {
                 new AdminView().setVisible(true);
             }
         });
+    }
+
+    public javax.swing.JButton getLogoutBtn() {
+        return logoutBtn;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Extendsbtn;

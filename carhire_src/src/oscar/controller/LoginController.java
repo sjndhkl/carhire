@@ -20,11 +20,12 @@ import oscar.view.StaffView;
  *
  * @author schiodin
  */
-public class LoginController extends Controller implements ActionListener {
+public class LoginController extends Controller implements ActionListener  {
 
     private LoginView loginView;
+    private AdminController adminController;
+    private StaffController staffController;
 
-    @Override
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
@@ -49,11 +50,13 @@ public class LoginController extends Controller implements ActionListener {
                 // hides the login view
                 this.removeView(loginView);
                 // launch staff contoller, if admin launches the admin one as well
-                if (staff.isAdmin())
-                    new AdminController().start();
-                else
-                    new StaffController().start();
-                //this.stop();
+                if (staff.isAdmin()) {
+                    adminController = new AdminController();
+                    adminController.start();
+                } else {
+                    staffController = new StaffController();
+                    staffController.start();
+                }
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
