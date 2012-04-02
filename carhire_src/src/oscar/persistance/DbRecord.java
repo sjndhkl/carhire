@@ -274,7 +274,10 @@ public class DbRecord {
         
         try {
             Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
-            return stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
                     
         } catch (Exception ex) {
             ex.printStackTrace();
