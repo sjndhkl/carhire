@@ -27,6 +27,7 @@ public class Staff extends Person {
      */
     public Staff(String colName,String value) {
         super(colName,value);
+        this.useTable = TABLE;
         HashMap<String, String> attributes =
                 this.findOneBy(colName, value);
         this.username = attributes.get("username");
