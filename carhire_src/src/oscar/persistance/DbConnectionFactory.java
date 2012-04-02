@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package oscar.persistance;
 
 /**
@@ -10,12 +6,18 @@ package oscar.persistance;
  */
 public class DbConnectionFactory {
     
+    /** Databse types*/
     public enum Database{
         MYSQL
     }
     
     
     
+    /**
+     * Returns the appropriate connection for the database type
+     * @param dbType type of databse
+     * @return the connectable
+     */
     public static DbConnectable connect(Database dbType){
         
         switch(dbType){

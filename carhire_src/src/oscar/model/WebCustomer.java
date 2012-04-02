@@ -1,4 +1,5 @@
 package oscar.model;
+
 /**
  * @author Stefano
  * 

@@ -1,6 +1,5 @@
 package oscar.model;
 
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.security.MessageDigest;
@@ -16,15 +15,40 @@ import java.util.logging.Logger;
  */
 public class Staff extends Person {
 
+    /** Database table name*/
+    protected static String TABLE = "staff";
     private String username;
     private boolean isAdmin;
     private boolean isChauffeur;
-    
-    public Staff(String username){
+
+    /**
+     * Class constructor
+     * @param username
+     */
+    public Staff(String username) {
         this.username = username;
+        this.useTable = TABLE;
+
+        HashMap<String, String> attributes =
+                this.findOneBy("username", username);
+        this.username = username;
+        this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
+        this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
+        this.personid = Integer.parseInt(attributes.get("personId"));
+        this.useTable = "person";
+        attributes =
+                findOneBy("personId", attributes.get("personId"));
+        this.useTable = TABLE;
+        this.name = attributes.get("name");
+        this.surname = attributes.get("surname");
+        this.dateOfBirth = attributes.get("dateOfBirth");
+        this.email = attributes.get("email");
+        this.address = attributes.get("address");
+        this.phone = attributes.get("phone");
     }
 
     /**
+     * Class constructor
      * @param personid
      * @param name
      * @param surname
@@ -45,8 +69,14 @@ public class Staff extends Person {
         this.isChauffeur = isChauffeur;
     }
 
+    /**
+     * 
+     * @param password inputed password
+     * @return whether the password match the one in the database
+     * @throws NoSuchAlgorithmException
+     */
     public boolean authorize(String password) throws NoSuchAlgorithmException {
-        HashMap hm = this.findOneBy("username", this.username);
+        HashMap<String, String> hm = this.findOneBy("username", this.username);
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         md.update(password.getBytes());
@@ -56,29 +86,46 @@ public class Staff extends Person {
         for (int i = 0; i < byteData.length; i++) {
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
-        System.out.println(sb.toString());
-        if (hm.get("password").equals(sb)) {
+
+        String dbPassword = hm.get("password");
+        String inputPassword = sb.toString();
+        if (dbPassword.equals(inputPassword)) {
             return true;
         }
         return false;
-
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean add() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean delete() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public HashMap<String, String> toHashMap() {
         
@@ -108,8 +155,17 @@ public class Staff extends Person {
         return objHashMap;
     }
 
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     @Override
-    public Object toObject(HashMap<String,String> objHashMap) {
+    public Object toObject(HashMap<String, String> objHashMap) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 }

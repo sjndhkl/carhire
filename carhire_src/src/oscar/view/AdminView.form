@@ -16,7 +16,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Component id="tabPanel" alignment="1" pref="738" max="32767" attributes="0"/>
+              <Component id="tabPanel" alignment="1" pref="728" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -55,43 +55,15 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="314" max="32767" attributes="0"/>
-                          <Component id="jXGraph1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="723" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXGraph1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="143" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="570" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
-              <SubComponents>
-                <Container class="org.jdesktop.swingx.JXGraph" name="jXGraph1">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jXGraph1" noResource="true"/>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="staffPanel">
               <Properties>
@@ -111,9 +83,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane5" pref="539" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="575" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -121,11 +91,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="carClassSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane5" alignment="0" pref="531" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="423" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -224,31 +191,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jScrollPane5" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="jXTable4">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="jXTable4" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="bookingPanel">
@@ -269,9 +211,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" pref="485" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="514" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -279,11 +219,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="carClassSearchPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" alignment="0" pref="531" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="330" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -314,20 +251,8 @@
                                   <Component id="clearBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="addBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="rentalDateDP" pref="118" max="32767" attributes="0"/>
-                                              <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                          </Group>
-                                          <Component id="returnDateDP" alignment="0" pref="122" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                           </Group>
@@ -346,15 +271,9 @@
                                   <Component id="surnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="rentalDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rentalDateDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="rentalDateLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="returnDateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="returnDateDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="returnDateLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="isBookingCB" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -396,24 +315,11 @@
                         <Property name="name" type="java.lang.String" value="rentalDateLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="org.jdesktop.swingx.JXDatePicker" name="rentalDateDP">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="rentalDateDP" noResource="true"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="returnDateLbl">
                       <Properties>
                         <Property name="text" type="java.lang.String" resourceKey="returnDateLbl.text"/>
                         <Property name="name" type="java.lang.String" value="returnDateLbl" noResource="true"/>
                       </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXDatePicker" name="returnDateDP">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="returnDateDP" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnDateDPActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="isBookingCB">
                       <Properties>
@@ -447,31 +353,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane7">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jScrollPane7" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="jXTable5">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="jXTable5" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="carPanel">
@@ -492,9 +373,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" pref="558" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="588" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -502,11 +381,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="carSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" alignment="0" pref="531" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="293" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -709,31 +585,6 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jScrollPane4" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="jXTable3">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="jXTable3" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="carClassPanel">
@@ -754,9 +605,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="513" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="564" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -764,11 +613,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="carClassSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" alignment="0" pref="531" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="423" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -864,56 +710,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn1ActionPerformed"/>
                       </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jScrollPane2" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="jXTable1">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="jXTable1" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="jScrollPane3" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="jXTable2">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="jXTable2" noResource="true"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1227,7 +1023,6 @@
                           <Component id="serviceMilesDlgTxt" alignment="0" pref="149" max="32767" attributes="2"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lastServiceDlgDP" alignment="0" pref="148" max="32767" attributes="2"/>
                                   <Component id="lastServiceMileageDlgTxt" alignment="0" pref="148" max="32767" attributes="2"/>
                                   <Component id="milieageDlgTxt" alignment="0" pref="148" max="32767" attributes="2"/>
                               </Group>
@@ -1257,13 +1052,7 @@
                           <Component id="lastServiceMileageDlgTxt" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="lastServiceDlgLbl" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lastServiceDlgDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lastServiceDlgLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -1344,11 +1133,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" resourceKey="lastServiceMileageDlgLbl.text"/>
                 <Property name="name" type="java.lang.String" value="lastServiceMileageDlgLbl" noResource="true"/>
-              </Properties>
-            </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="lastServiceDlgDP">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="lastServiceDlgDP" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lastServiceDlgLbl">
@@ -1795,7 +1579,6 @@
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="emailDlgTxt" alignment="1" pref="173" max="32767" attributes="2"/>
-                          <Component id="dateOfBirthDP" alignment="1" pref="173" max="32767" attributes="2"/>
                           <Component id="phoneDlgTxt" alignment="1" pref="173" max="32767" attributes="2"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1806,10 +1589,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="dateOfBirthDlgLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateOfBirthDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="dateOfBirthDlgLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="emailDlgLbl" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1842,11 +1622,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" resourceKey="PhoneDlgLbl.text"/>
                 <Property name="name" type="java.lang.String" value="PhoneDlgLbl" noResource="true"/>
-              </Properties>
-            </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="dateOfBirthDP">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="dateOfBirthDP" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="emailDlgTxt">
