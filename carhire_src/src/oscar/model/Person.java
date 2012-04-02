@@ -101,7 +101,6 @@ public class Person extends DependentDbRecord implements DbRecordable {
         for (Field f : fields) {
 
             if (!Modifier.isStatic(f.getModifiers())) {
-
                 // switch(g.get)
                 String type = f.getType().getSimpleName();
                 try {
@@ -123,6 +122,9 @@ public class Person extends DependentDbRecord implements DbRecordable {
 
     @Override
     public Object toObject(HashMap<String,String> hashMap) {
+        
+        
+        
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

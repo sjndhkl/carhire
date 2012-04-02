@@ -81,6 +81,7 @@ public class Staff extends Person {
 
     @Override
     public HashMap<String, String> toHashMap() {
+        
         Class currentClass = this.getClass();
         Field[] fields = currentClass.getDeclaredFields();
         HashMap<String, String> objHashMap = new HashMap<String, String>();
