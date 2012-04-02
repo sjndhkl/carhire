@@ -4,6 +4,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oscar.model.Staff;
+import oscar.persistance.AbstractView;
 
 /**
  *
@@ -13,7 +14,7 @@ import oscar.model.Staff;
  *
  * Created on 28-Mar-2012, 15:18:24
  */
-public class LoginView extends javax.swing.JFrame {
+public class LoginView extends AbstractView {
 
     /** Creates new form LoginView */
     public LoginView() {
@@ -37,9 +38,10 @@ public class LoginView extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 18));
-        jLabel3.setText("Staff Login");
+        jLabel3.setText("Login");
         jLabel3.setName("jLabel3"); // NOI18N
 
         jLabel1.setText("Username:");
@@ -72,14 +74,15 @@ public class LoginView extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPassword)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                             .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                        .addGap(74, 74, 74)))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                        .addGap(116, 116, 116)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,15 +108,22 @@ public class LoginView extends javax.swing.JFrame {
 
 private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
     //System.out.append(evt.getActionCommand());
-    oscar.model.Staff staff = new Staff("username",this.txtUserName.getText());
+    oscar.model.Staff staff = new Staff("username", this.getUsername());
     try {
-        if (staff.authorize(this.txtPassword.getText())) {
+        if (staff.authorize(this.getPassword())) {
             System.out.println("this is logged");
             // remove the password
-            this.txtPassword.setText("");
+            this.setPassword("");
             // hides the login view
             this.setVisible(false);
-            if (staff.isAdmin()) ;
+            // launch a new view
+            AdminView adminView;
+            StaffView staffView;
+            if (staff.isAdmin()) {
+                adminView = new AdminView();
+            } else {
+                staffView = new StaffView();
+            }
             // TODO: finish to implement login
             // shows the staff view
             StaffView view = new StaffView();
@@ -167,4 +177,32 @@ private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the btnLogin
+     */
+    public javax.swing.JButton getBtnLogin() {
+        return btnLogin;
+    }
+
+    /**
+     * @return the txtPassword
+     */
+    public String getPassword() {
+        return new String(txtPassword.getPassword());
+    }
+
+    /**
+     * @return the txtUserName
+     */
+    public String getUsername() {
+        return txtUserName.getText().toString();
+    }
+
+    /**
+     * @param txtPassword the txtPassword to set
+     */
+    public void setPassword(String password) {
+        this.txtPassword.setText(password);
+    }
 }

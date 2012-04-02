@@ -1116,10 +1116,6 @@
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Add"/>
                         <Property name="name" type="java.lang.String" value="addBtn4" noResource="true"/>
                       </Properties>
                       <Events>
@@ -1320,10 +1316,6 @@
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Add"/>
                         <Property name="name" type="java.lang.String" value="addBtn2" noResource="true"/>
                       </Properties>
                     </Component>
@@ -1577,10 +1569,6 @@
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Add"/>
                         <Property name="name" type="java.lang.String" value="addBtn3" noResource="true"/>
                       </Properties>
                       <Events>
@@ -1748,10 +1736,6 @@
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/oscar/view/resources/add.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Add"/>
                         <Property name="name" type="java.lang.String" value="addBtn1" noResource="true"/>
                       </Properties>
                       <Events>

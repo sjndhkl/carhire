@@ -2,6 +2,7 @@ package oscar;
 
 //import java.util.ArrayList;
 //import java.util.HashMap;
+import oscar.controller.LoginController;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
 import oscar.view.LoginView;
@@ -19,7 +20,8 @@ public class Main extends SingleFrameApplication {
     @Override
     protected void startup() {
         // show(new AdminView(this));
-        show(new LoginView());
+        LoginController loginController = new LoginController();
+        //show(new LoginView());
     }
 
     /**

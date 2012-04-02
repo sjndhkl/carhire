@@ -3,6 +3,7 @@ package oscar.model;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import oscar.util.Utility;
 
 /**
  * @author Stefano
@@ -26,7 +27,7 @@ public class Staff extends Person {
      * @param username
      */
     public Staff(String colName,String value) {
-        super(colName,value);
+        //super(colName,value);
         this.useTable = TABLE;
         HashMap<String, String> attributes =
                 this.findOneBy(colName, value);

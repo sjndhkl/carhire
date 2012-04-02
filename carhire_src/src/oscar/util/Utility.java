@@ -47,7 +47,7 @@ public class Utility {
     }
     
     
-    public static Object fill(HashMap<String,String> hashMap,Object ob){
+    public static void fill(HashMap<String,String> hashMap,Object ob){
         Class currentClass = ob.getClass();
         Method method = null;
         for(String key:hashMap.keySet()){
@@ -59,7 +59,6 @@ public class Utility {
                     Logger.getLogger(currentClass.getName()).log(Level.SEVERE, null, ex);
                 }
         }
-        return ob;
     }
 
     public static String ucFirst(String str) {

@@ -10,15 +10,22 @@
  */
 package oscar.view;
 
+import java.awt.Graphics;
+import java.awt.Shape;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Position.Bias;
+import oscar.persistance.AbstractView;
+
 /**
  *
  * @author schiodin
  */
-public class AdminView extends javax.swing.JFrame {
+public class AdminView extends AbstractView  {
 
     /** Creates new form AdminVie */
     public AdminView() {
         initComponents();
+        //this.setVisible(true);
     }
 
     /** This method is called from within the constructor to
@@ -731,8 +738,6 @@ public class AdminView extends javax.swing.JFrame {
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
         addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn4.setText("Add");
         addBtn4.setName("addBtn4"); // NOI18N
         addBtn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -845,8 +850,6 @@ public class AdminView extends javax.swing.JFrame {
         clearBtn2.setName("clearBtn2"); // NOI18N
 
         addBtn2.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn2.setText("Add");
         addBtn2.setName("addBtn2"); // NOI18N
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
@@ -981,8 +984,6 @@ public class AdminView extends javax.swing.JFrame {
         statusCB.setName("statusCB"); // NOI18N
 
         addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn3.setText("Add");
         addBtn3.setName("addBtn3"); // NOI18N
         addBtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1116,8 +1117,6 @@ public class AdminView extends javax.swing.JFrame {
         clearBtn1.setName("clearBtn1"); // NOI18N
 
         addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
-        addBtn1.setText("Add");
         addBtn1.setName("addBtn1"); // NOI18N
         addBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

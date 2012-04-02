@@ -168,7 +168,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Noleggio">
+              <JTabbedPaneConstraints tabName="Hire">
                 <Property name="tabTitle" type="java.lang.String" resourceKey="hirePanel.TabConstraints.tabTitle"/>
               </JTabbedPaneConstraints>
             </Constraint>
@@ -238,7 +238,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="personLoadBtn" alignment="0" pref="374" max="32767" attributes="0"/>
+                              <Component id="personLoadBtn" alignment="0" pref="362" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -250,12 +250,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane1" pref="268" max="32767" attributes="0"/>
-                                      <Component id="nameTxt" alignment="0" pref="268" max="32767" attributes="0"/>
-                                      <Component id="surnameTxt" alignment="0" pref="268" max="32767" attributes="0"/>
-                                      <Component id="dateOfBirthDP" alignment="0" pref="268" max="32767" attributes="0"/>
-                                      <Component id="phoneTxt" alignment="0" pref="268" max="32767" attributes="0"/>
-                                      <Component id="emailTxt" alignment="0" pref="268" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="266" max="32767" attributes="0"/>
+                                      <Component id="nameTxt" alignment="0" pref="266" max="32767" attributes="0"/>
+                                      <Component id="surnameTxt" alignment="0" pref="266" max="32767" attributes="0"/>
+                                      <Component id="dateOfBirthDP" alignment="0" pref="266" max="32767" attributes="0"/>
+                                      <Component id="phoneTxt" alignment="0" pref="266" max="32767" attributes="0"/>
+                                      <Component id="emailTxt" alignment="0" pref="266" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -414,18 +414,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="refCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="refCodeTxt" pref="294" max="32767" attributes="0"/>
+                          <Component id="refCodeTxt" pref="281" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="refCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" alignment="0" pref="471" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" alignment="0" pref="483" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                  <Component id="jScrollPane2" pref="449" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="461" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
@@ -607,7 +607,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Ritorno">
+              <JTabbedPaneConstraints tabName="Return and extend">
                 <Property name="tabTitle" type="java.lang.String" resourceKey="returnPanel.TabConstraints.tabTitle"/>
               </JTabbedPaneConstraints>
             </Constraint>
@@ -620,7 +620,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="734" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="730" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
