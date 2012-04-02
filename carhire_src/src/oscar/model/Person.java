@@ -1,12 +1,9 @@
 package oscar.model;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import oscar.persistance.DbRecord;
 import oscar.persistance.DbRecordable;
-import oscar.persistance.DependentDbRecord;
+import oscar.util.Utility;
 
 /**
  * @author Stefano
@@ -14,7 +11,7 @@ import oscar.persistance.DependentDbRecord;
  * Class of a generic person. Will be inherited by WebCustomer and Staff,
  * plus it will represents a customer not registered in the website
  */
-public class Person extends DependentDbRecord implements DbRecordable {
+public class Person extends DbRecord implements DbRecordable {
 
     /** Record id*/
     protected int personid;
@@ -26,6 +23,35 @@ public class Person extends DependentDbRecord implements DbRecordable {
     protected String phone;
     /** Databse table name*/
     protected static String TABLE = "person";
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPersonid() {
+        return personid;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
 
     /**
      * Class contructor
@@ -60,19 +86,17 @@ public class Person extends DependentDbRecord implements DbRecordable {
      * Class constructor
      * @param PkValue Value of the primary key
      */
+    public Person(String colName,String value) {
+        super(TABLE);
+        HashMap<String, String> attributes = this.findOneBy(colName, value);
+        //HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
+        Utility.fill(attributes, this);
+    }
+    
     public Person(int PkValue) {
         super(TABLE);
-        this.useTable = TABLE;
         HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
-
-        this.personid = PkValue;
-        this.name = attributes.get("name");
-        this.surname = attributes.get("surname");
-        this.dateOfBirth = attributes.get("dateOfBirth");
-        this.email = attributes.get("email");
-        this.address = attributes.get("address");
-        this.phone = attributes.get("phone");
-        
+        Utility.fill(attributes, this);
     }
 
     /* Setters and getters */
@@ -111,7 +135,13 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean add() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.add(Utility.convertToHashMap(this));
+    }
+    /*
+     * @param return key: 0,1
+     */
+    public int addPk() {
+        return this.addPk(Utility.convertToHashMap(this));
     }
 
     /**
@@ -134,47 +164,4 @@ public class Person extends DependentDbRecord implements DbRecordable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    /**
-     * 
-     * @return
-     */
-    @Override
-    public HashMap<String, String> toHashMap() {
-        Class currentClass = this.getClass();
-        Field[] fields = currentClass.getDeclaredFields();
-        HashMap<String, String> objHashMap = new HashMap<String, String>();
-        for (Field f : fields) {
-
-            if (!Modifier.isStatic(f.getModifiers())) {
-                // switch(g.get)
-                String type = f.getType().getSimpleName();
-                try {
-                    if (type.equals("String")) {
-
-                        Object obj = f.get(this);
-                        if (obj != null) {
-                            objHashMap.put(f.getName(), obj.toString());
-                        }
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(Person.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-        }
-        return objHashMap;
-    }
-
-    /**
-     * 
-     * @param hashMap
-     * @return
-     */
-    @Override
-    public Object toObject(HashMap<String,String> hashMap) {
-        
-        
-        
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }

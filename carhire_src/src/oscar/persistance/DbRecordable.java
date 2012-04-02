@@ -1,6 +1,4 @@
-package oscar.persistance;
-
-import java.util.HashMap;
+package oscar.persistance;;
 
 /**
  *
@@ -14,7 +12,4 @@ public interface DbRecordable {
     
     boolean update();
     
-    HashMap<String, String> toHashMap();
-
-    Object toObject(HashMap<String, String> hashMap);
 }

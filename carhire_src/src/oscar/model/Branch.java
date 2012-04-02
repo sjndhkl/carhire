@@ -3,6 +3,7 @@ package oscar.model;
 import java.util.HashMap;
 import oscar.persistance.DbRecord;
 import oscar.persistance.DbRecordable;
+import oscar.util.Utility;
 
 /**
  *
@@ -75,28 +76,14 @@ public class Branch extends DbRecord implements DbRecordable {
         this.country = country;
     }
 
-    /**
-     * convert object to hashmap
-     * @return The object represented with an HasMap
-     */
-    @Override
-    public HashMap<String, String> toHashMap() {
-        HashMap<String, String> recordHashMap = new HashMap<String, String>();
-        if (this.getBranchId() > 0) {
-            recordHashMap.put("branchId", this.getBranchId() + "");
-        }
-        recordHashMap.put("location", this.getLocation());
-        recordHashMap.put("country", this.getCountry());
-        return recordHashMap;
-    }
-    
+ 
     /**
      * add record
      * @return The success of the operation
      */
     @Override
     public boolean add(){
-        return this.add(this.toHashMap());
+        return this.add(Utility.convertToHashMap(this));
     }
     
     /**
@@ -117,16 +104,7 @@ public class Branch extends DbRecord implements DbRecordable {
     public boolean update(){
        if(this.getBranchId()<=0)
             return false;
-       return this.updateBy(this.toHashMap(), "branchId", this.getBranchId()+"");
+       return this.updateBy(Utility.convertToHashMap(this), "branchId", this.getBranchId()+"");
     }
 
-    /**
-     * Converts HashMap to object
-     * @param objHashMap
-     * @return the converted object
-     */
-    @Override
-    public Object toObject(HashMap<String,String> objHashMap) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }

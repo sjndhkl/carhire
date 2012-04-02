@@ -269,6 +269,18 @@ public class DbRecord {
 
         return status;
     }
+    
+    public int nonQueryPk(String sql) {
+        
+        try {
+            Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
+            return stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+                    
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return -1;
+    }
 
     /**
      * deletes record based on the column name and its value
@@ -380,5 +392,16 @@ public class DbRecord {
         String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
         //System.out.println(query);
         return this.nonQuery(query);
+    }
+    
+    /*
+     * adds record and returns last insert id of PK
+     */
+     public int addPk(HashMap<String, String> objHashMap) {
+
+        HashMap<String, String> insertParams = this.getInsertParams(objHashMap);
+        String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
+        //System.out.println(query);
+        return this.nonQueryPk(query);
     }
 }

@@ -15,12 +15,29 @@ import oscar.model.Person;
  */
 public class DependentDbRecordTest extends BaseTestCase {
     public void testAdd() {
+        
         Person person = new Person();
-
+        person.setName("Sujan");
+        person.setSurname("Dhakal");
+        person.setDateOfBirth("2011-1-1");
+        person.setPhone("2312312");
         person.setAddress("This is address");
         person.setEmail("sujan@dhakal.com");
-        printHashMap(person.toHashMap());
-        assertEquals("sujan@dhakal.com", person.toHashMap().get("email"));
+        
+        /*Staff staff = new Staff();
+        staff.setAddress("test@test.com");
+        staff.setName("Sujan");
+         * 
+         */
+       // staff.setDependentTable("person");
+        
+        
+        //printHashMap(person.toHashMap());
+       // HashMap<String,String> record = new HashMap<String, String>();
+        //record.put("email", "test@test.com");
+        //Utility.fill(record, person);
+        System.out.println(person.addPk());
+        //assertEquals(true, person.add() );
     }
 }
 

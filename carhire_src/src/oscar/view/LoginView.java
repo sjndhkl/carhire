@@ -105,7 +105,7 @@ public class LoginView extends javax.swing.JFrame {
 
 private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
     //System.out.append(evt.getActionCommand());
-    oscar.model.Staff staff = new Staff(this.txtUserName.getText());
+    oscar.model.Staff staff = new Staff("username",this.txtUserName.getText());
     try {
         if (staff.authorize(this.txtPassword.getText())) {
             System.out.println("this is logged");
