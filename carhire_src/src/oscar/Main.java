@@ -5,8 +5,6 @@ package oscar;
 import oscar.controller.LoginController;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
-import oscar.view.LoginView;
-import oscar.view.StaffView;
 
 /**
  *
@@ -20,7 +18,7 @@ public class Main extends SingleFrameApplication {
     @Override
     protected void startup() {
         // show(new AdminView(this));
-        LoginController loginController = new LoginController();
+        new LoginController().start();
         //show(new LoginView());
     }
 
@@ -28,7 +26,7 @@ public class Main extends SingleFrameApplication {
      * This method is to initialize the specified window by injecting resources.
      * Windows shown in our application come fully initialized from the GUI
      * builder, so this additional configuration is not needed.
-     * @param root 
+     * @param root
      */
     @Override
     protected void configureWindow(java.awt.Window root) {
@@ -44,13 +42,13 @@ public class Main extends SingleFrameApplication {
 
     /**
      * Main method launching the application.
-     * @param args 
+     * @param args
      */
     public static void main(String[] args) {
         launch(Main.class, args);
     }
-    
-    
+
+
     /*
     public static void main(String... args){
 
@@ -60,20 +58,20 @@ public class Main extends SingleFrameApplication {
         try{
             int count = record.count();
             System.out.println("Total Records were : "+count);
-            
+
             ArrayList<HashMap<String,String>> rs = record.findAll();
-            
+
            // System.out.println("No. of Records :"+rs.size());
-            
+
             for(HashMap<String,String> row:rs){
-                
+
                 for(String key:row.keySet()){
                     System.out.println(key +" : "+row.get(key));
                 }
-                
+
             }
             rs = null;
-            
+
         }catch(Exception e){
             System.out.println(e.getCause());
         }

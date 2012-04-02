@@ -11,8 +11,10 @@ import oscar.view.AdminView;
  */
 public class AdminController extends Controller implements ActionListener {
     private AdminView adminView;
-    
-    public AdminController() {
+
+    @Override
+    public void start() {
+        this.setName("Admin");
         adminView = new AdminView();
         this.addView(adminView);
     }

@@ -23,21 +23,20 @@ import oscar.view.StaffView;
 public class LoginController extends Controller implements ActionListener {
 
     private LoginView loginView;
-    private AdminView adminView;
-    private StaffView staffView;
 
-    public LoginController() {
+    @Override
+    public void run() {
+        this.setName("Login");
         loginView = new LoginView();
-        loginView.getBtnLogin().addActionListener(this);
         this.addView(loginView);
+        loginView.getBtnLogin().addActionListener(this);
         //.addModel(new Person());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(loginView.getBtnLogin())) {
+        if (e.getSource().equals(loginView.getBtnLogin()))
             login();
-        }
     }
 
     private void login() {
@@ -49,14 +48,12 @@ public class LoginController extends Controller implements ActionListener {
                 loginView.setPassword("");
                 // hides the login view
                 this.removeView(loginView);
-                // launch a new view
-                if (staff.isAdmin()) {
+                // launch staff contoller, if admin launches the admin one as well
+                if (staff.isAdmin())
                     new AdminController().start();
-                    //this.stop();
-                } else {
-                    staffView = new StaffView();
-                    this.addView(staffView);
-                }
+                else
+                    new StaffController().start();
+                //this.stop();
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);

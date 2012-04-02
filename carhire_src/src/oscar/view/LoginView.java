@@ -3,13 +3,15 @@ package oscar.view;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import oscar.controller.AdminController;
+import oscar.controller.StaffController;
 import oscar.model.Staff;
 import oscar.persistance.AbstractView;
 
 /**
  *
  * @author sujan
- * 
+ *
  * LoginView.java
  *
  * Created on 28-Mar-2012, 15:18:24
@@ -103,6 +105,8 @@ public class LoginView extends AbstractView {
                 .addContainerGap())
         );
 
+        getAccessibleContext().setAccessibleName("Login");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -117,13 +121,12 @@ private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             // hides the login view
             this.setVisible(false);
             // launch a new view
-            AdminView adminView;
-            StaffView staffView;
+            //AdminController adminController;
+            //StaffController staffController;
             if (staff.isAdmin()) {
-                adminView = new AdminView();
-            } else {
-                staffView = new StaffView();
+                new AdminController().start();
             }
+            new StaffController().start();
             // TODO: finish to implement login
             // shows the staff view
             StaffView view = new StaffView();
@@ -141,7 +144,7 @@ private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
