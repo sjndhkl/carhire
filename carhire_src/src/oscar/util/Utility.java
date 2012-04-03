@@ -7,6 +7,8 @@ package oscar.util;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,8 +56,8 @@ public class Utility {
         Class currentClass = ob.getClass();
         Class parentClass = currentClass.getSuperclass();
         HashMap<String, HashMap<String, String>> allHashMaps = new HashMap<String, HashMap<String, String>>();
-        allHashMaps.put(parentClass.getName(), hashMap(parentClass, ob));
         allHashMaps.put(currentClass.getName(), hashMap(currentClass, ob));
+        allHashMaps.put(parentClass.getName(), hashMap(parentClass, ob));
         return allHashMaps;
     }
 
@@ -98,5 +100,18 @@ public class Utility {
         char[] stringArray = str.toCharArray();
         stringArray[0] = Character.toUpperCase(stringArray[0]);
         return new String(stringArray);
+    }
+    
+    public static String encodeSHA256(String password) throws NoSuchAlgorithmException{
+        
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(password.getBytes());
+        byte byteData[] = md.digest();
+        //convert the byte to hex
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
     }
 }

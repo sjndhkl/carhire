@@ -1,8 +1,9 @@
 package oscar.model;
 
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oscar.util.Utility;
 
 /**
@@ -13,9 +14,11 @@ import oscar.util.Utility;
 public class Staff extends Person {
 
     /** Database table name*/
-    protected static String TABLE = "staff";
+    public static String TABLE = "staff";
+    public static String FK = "personId";
     
     private String username;
+    private String password;
     private boolean isAdmin;
     private boolean isChauffeur;
 
@@ -42,22 +45,30 @@ public class Staff extends Person {
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
-    
-    public Staff(){
-        
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        try {
+            this.password = Utility.encodeSHA256(password);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Staff() {
     }
 
     /**
      * Class constructor
      * @param username
      */
-    public Staff(String colName,String value) {
+    public Staff(String colName, String value) {
         //super(colName,value);
         this.useTable = TABLE;
-        HashMap<String, String> attributes =
-                this.findOneBy(colName, value);
+        HashMap<String, String> attributes = this.findOneBy(colName, value);
         this.username = attributes.get("username");
         this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
         this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
@@ -92,21 +103,15 @@ public class Staff extends Person {
      * @return whether the password match the one in the database
      * @throws NoSuchAlgorithmException
      */
-    public boolean authorize(String password) throws NoSuchAlgorithmException {
+    public boolean authorize(String password) {
         HashMap<String, String> hm = this.findOneBy("username", this.username);
-
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        md.update(password.getBytes());
-        byte byteData[] = md.digest();
-        //convert the byte to hex
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < byteData.length; i++) {
-            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        String inputPassword = "";
+        try {
+            inputPassword = Utility.encodeSHA256(password);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        String dbPassword = hm.get("password");
-        String inputPassword = sb.toString();
-        if (dbPassword.equals(inputPassword)) {
+        if (hm.get("password").equals(inputPassword)) {
             return true;
         }
         return false;

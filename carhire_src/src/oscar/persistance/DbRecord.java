@@ -194,7 +194,14 @@ public class DbRecord {
      * @return List of HashMap representing the records
      */
     public HashMap<String, String> findByPK(String value) {
-        String PK;
+        
+            return this.findOneBy(this.getPrimaryKey(), value);
+
+    }
+    
+    
+    public String getPrimaryKey(){
+        String PK="";
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
             // TODO: make the database name softcoded
@@ -206,11 +213,10 @@ public class DbRecord {
             + " AND table_name = " + this.useTable + "    -- specify your table.");*/
             rs.next();
             PK = rs.getString("Column_name");
-            return this.findOneBy(PK, value);
         } catch (SQLException sQLException) {
             System.err.println("Mysql Exception :" + sQLException.getMessage());
-            return null;
         }
+        return PK;
     }
 
     /**

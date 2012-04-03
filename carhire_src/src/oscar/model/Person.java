@@ -1,8 +1,9 @@
 package oscar.model;
 
 import java.util.HashMap;
-import oscar.persistance.DbRecord;
+//import oscar.persistance.DbRecord;
 import oscar.persistance.DbRecordable;
+import oscar.persistance.DependentDbRecord;
 import oscar.util.Utility;
 
 /**
@@ -11,7 +12,7 @@ import oscar.util.Utility;
  * Class of a generic person. Will be inherited by WebCustomer and Staff,
  * plus it will represents a customer not registered in the website
  */
-public class Person extends DbRecord implements DbRecordable {
+public class Person extends DependentDbRecord implements DbRecordable {
 
     /** Record id*/
     protected int personid;
@@ -22,8 +23,8 @@ public class Person extends DbRecord implements DbRecordable {
     protected String address;
     protected String phone;
     /** Databse table name*/
-    protected static String TABLE = "person";
-
+    public static String TABLE = "person";
+    
     public String getAddress() {
         return address;
     }
