@@ -1,21 +1,10 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import oscar.persistance.Controller;
 import oscar.view.AdminView;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import org.jdesktop.swingx.JXTable;
-import oscar.model.Person;
 import oscar.model.Staff;
-import oscar.persistance.DbRecord;
+import oscar.view.dialog.StaffDialog;
 
 /**
  *
@@ -24,6 +13,7 @@ import oscar.persistance.DbRecord;
 public class AdminController extends Controller {
 
     private AdminView adminView;
+    private StaffDialog staffDialog;
 
     @Override
     public void run() {
@@ -31,6 +21,8 @@ public class AdminController extends Controller {
         adminView = new AdminView();
         this.addView(adminView);
         this.addButtonListener(adminView.getLogoutBtn());
+        this.addButtonListener(adminView.getStaffClearBtn());
+        this.addButtonListener(adminView.getStaffAddBtn());
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
     }
 
@@ -38,10 +30,27 @@ public class AdminController extends Controller {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(adminView.getLogoutBtn()))
             actionLogout();
+        /* Staff Tab */
+        else if (e.getSource().equals(adminView.getStaffClearBtn()))
+            actionStaffClearFields();
+        else if (e.getSource().equals(adminView.getStaffAddBtn()))
+            actionStaffAdd();
+        /* Staff Dialog */
     }
 
     private void actionLogout() {
         this.safeStop();
         new LoginController().start();
+    }
+
+    private void actionStaffClearFields() {
+        adminView.getStaffNameTxt().setText("");
+        adminView.getStaffSurnameTxt().setText("");
+        // TODO: update table filters
+    }
+
+    private void actionStaffAdd() {
+        // TODO: finish implementation
+        staffDialog = new StaffDialog(adminView, true);
     }
 }

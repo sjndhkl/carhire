@@ -11,7 +11,7 @@ import oscar.util.Utility;
 
 /**
  * @author Stefano
- * 
+ *
  * Class Staff for staff members
  */
 public class Staff extends Person {
@@ -19,7 +19,6 @@ public class Staff extends Person {
     /** Database table name*/
     public static String TABLE = "staff";
     public static String FK = "personId";
-
     private String username;
     private String password;
     private boolean isAdmin;
@@ -48,6 +47,7 @@ public class Staff extends Person {
     public void setUsername(String username) {
         this.username = username;
     }
+
     public String getPassword() {
         return password;
     }
@@ -59,6 +59,7 @@ public class Staff extends Person {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public Staff() {
     }
 
@@ -99,7 +100,7 @@ public class Staff extends Person {
     }
 
     /**
-     * 
+     *
      * @param password inputed password
      * @return whether the password match the one in the database
      * @throws NoSuchAlgorithmException
@@ -112,14 +113,13 @@ public class Staff extends Person {
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (hm.get("password").equals(inputPassword)) {
+        if (hm.get("password").equals(inputPassword))
             return true;
-        }
         return false;
     }
 
     /**
-     * 
+     *
      * @return
      */
     @Override
@@ -128,7 +128,7 @@ public class Staff extends Person {
     }
 
     /**
-     * 
+     *
      * @return
      */
     @Override
@@ -137,7 +137,7 @@ public class Staff extends Person {
     }
 
     /**
-     * 
+     *
      * @return
      */
     @Override
@@ -154,7 +154,14 @@ public class Staff extends Person {
         ArrayList<HashMap<String, String>> map = this.findAll();
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
-        for (HashMap<String, String> row : map)
+        for (HashMap<String, String> row : map) {
+            /*System.out.println(row.get("personId")
+                    + row.get("name")
+                    + row.get("surname")
+                    + row.get("attributes")
+                    + row.get("username")
+                    + row.get("dateOfBirth")
+                    + row.get("email"));*/
             model.addRow(new Object[]{
                         row.get("personId"),
                         row.get("name"),
@@ -165,6 +172,7 @@ public class Staff extends Person {
                         row.get("dateOfBirth"),
                         row.get("email")
                     });
+        }
         return model;
     }
 }

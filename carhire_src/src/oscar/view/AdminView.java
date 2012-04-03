@@ -1,28 +1,16 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AdminVie.java
+ * AdminView.java
  *
  * Created on Apr 2, 2012, 12:32:06 PM
+ * @author schiodin
  */
 package oscar.view;
 
-import java.awt.Graphics;
-import java.awt.Shape;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Position.Bias;
 import oscar.persistance.AbstractView;
 
-/**
- *
- * @author schiodin
- */
-public class AdminView extends AbstractView  {
+public class AdminView extends AbstractView {
 
-    /** Creates new form AdminVie */
+    /** Creates new form AdminView */
     public AdminView() {
         initComponents();
         //this.setVisible(true);
@@ -115,12 +103,12 @@ public class AdminView extends AbstractView  {
         startPanel = new javax.swing.JPanel();
         staffPanel = new javax.swing.JPanel();
         carClassSearchPanel1 = new javax.swing.JPanel();
-        plateLbl2 = new javax.swing.JLabel();
-        brandLbl2 = new javax.swing.JLabel();
-        brandTxt2 = new javax.swing.JTextField();
-        plateTxt2 = new javax.swing.JTextField();
-        addBtn4 = new javax.swing.JButton();
-        clearBtn4 = new javax.swing.JButton();
+        staffNameLbl = new javax.swing.JLabel();
+        staffSurnameLbl = new javax.swing.JLabel();
+        staffNameTxt = new javax.swing.JTextField();
+        staffSurnameTxt = new javax.swing.JTextField();
+        staffAddBtn = new javax.swing.JButton();
+        staffClearBtn = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         staffTbl = new org.jdesktop.swingx.JXTable();
         bookingPanel = new javax.swing.JPanel();
@@ -565,12 +553,15 @@ public class AdminView extends AbstractView  {
         staffDialog.setModal(true);
         staffDialog.setName("staffDialog"); // NOI18N
 
+        saveDlgBtn2.setIcon(resourceMap.getIcon("saveDlgBtn2.icon")); // NOI18N
         saveDlgBtn2.setText(resourceMap.getString("saveDlgBtn2.text")); // NOI18N
         saveDlgBtn2.setName("saveDlgBtn2"); // NOI18N
 
+        deleteDlgBtn2.setIcon(resourceMap.getIcon("deleteDlgBtn2.icon")); // NOI18N
         deleteDlgBtn2.setText(resourceMap.getString("deleteDlgBtn2.text")); // NOI18N
         deleteDlgBtn2.setName("deleteDlgBtn2"); // NOI18N
 
+        cancelDlgBtn2.setIcon(resourceMap.getIcon("cancelDlgBtn2.icon")); // NOI18N
         cancelDlgBtn2.setText(resourceMap.getString("cancelDlgBtn2.text")); // NOI18N
         cancelDlgBtn2.setName("cancelDlgBtn2"); // NOI18N
 
@@ -729,13 +720,13 @@ public class AdminView extends AbstractView  {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(staffDialogLayout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(saveDlgBtn2)
+                .addGap(104, 104, 104)
+                .addComponent(saveDlgBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(deleteDlgBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(deleteDlgBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(cancelDlgBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addComponent(cancelDlgBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(108, 108, 108))
         );
         staffDialogLayout.setVerticalGroup(
             staffDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -839,25 +830,25 @@ public class AdminView extends AbstractView  {
 
         carClassSearchPanel1.setName("carClassSearchPanel1"); // NOI18N
 
-        plateLbl2.setText(resourceMap.getString("plateLbl2.text")); // NOI18N
-        plateLbl2.setName("plateLbl2"); // NOI18N
+        staffNameLbl.setText(resourceMap.getString("staffNameLbl.text")); // NOI18N
+        staffNameLbl.setName("staffNameLbl"); // NOI18N
 
-        brandLbl2.setText(resourceMap.getString("brandLbl2.text")); // NOI18N
-        brandLbl2.setName("brandLbl2"); // NOI18N
+        staffSurnameLbl.setText(resourceMap.getString("staffSurnameLbl.text")); // NOI18N
+        staffSurnameLbl.setName("staffSurnameLbl"); // NOI18N
 
-        brandTxt2.setName("brandTxt2"); // NOI18N
+        staffNameTxt.setName("staffNameTxt"); // NOI18N
 
-        plateTxt2.setName("plateTxt2"); // NOI18N
+        staffSurnameTxt.setName("staffSurnameTxt"); // NOI18N
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
-        addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn4.setIcon(resourceMap.getIcon("addBtn4.icon")); // NOI18N
-        addBtn4.setText(resourceMap.getString("addBtn4.text")); // NOI18N
-        addBtn4.setName("addBtn4"); // NOI18N
+        staffAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
+        staffAddBtn.setIcon(resourceMap.getIcon("staffAddBtn.icon")); // NOI18N
+        staffAddBtn.setText(resourceMap.getString("staffAddBtn.text")); // NOI18N
+        staffAddBtn.setName("staffAddBtn"); // NOI18N
 
-        clearBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn4.setText(resourceMap.getString("clearBtn4.text")); // NOI18N
-        clearBtn4.setName("clearBtn4"); // NOI18N
+        staffClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        staffClearBtn.setText(resourceMap.getString("staffClearBtn.text")); // NOI18N
+        staffClearBtn.setName("staffClearBtn"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanel1Layout = new javax.swing.GroupLayout(carClassSearchPanel1);
         carClassSearchPanel1.setLayout(carClassSearchPanel1Layout);
@@ -867,30 +858,30 @@ public class AdminView extends AbstractView  {
                 .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
                         .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandLbl2)
-                            .addComponent(plateLbl2))
+                            .addComponent(staffSurnameLbl)
+                            .addComponent(staffNameLbl))
                         .addGap(18, 18, 18)
                         .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                            .addComponent(plateTxt2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
-                    .addComponent(clearBtn4)
-                    .addComponent(addBtn4))
+                            .addComponent(staffNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(staffSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
+                    .addComponent(staffClearBtn)
+                    .addComponent(staffAddBtn))
                 .addContainerGap())
         );
         carClassSearchPanel1Layout.setVerticalGroup(
             carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
                 .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plateLbl2)
-                    .addComponent(plateTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(staffNameLbl)
+                    .addComponent(staffSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLbl2)
-                    .addComponent(brandTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(staffSurnameLbl)
+                    .addComponent(staffNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(clearBtn4)
+                .addComponent(staffClearBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn4))
+                .addComponent(staffAddBtn))
         );
 
         jScrollPane5.setName("jScrollPane5"); // NOI18N
@@ -1736,12 +1727,11 @@ public class AdminView extends AbstractView  {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-            }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -1771,7 +1761,6 @@ public class AdminView extends AbstractView  {
     private javax.swing.JLabel PhoneDlgLbl;
     private javax.swing.JButton addBtn1;
     private javax.swing.JButton addBtn3;
-    private javax.swing.JButton addBtn4;
     private javax.swing.JLabel addressDlgLbl;
     private javax.swing.JTextArea addressDlgTA;
     private javax.swing.JLabel addressLbl;
@@ -1784,10 +1773,8 @@ public class AdminView extends AbstractView  {
     private javax.swing.JTextField brandDlgTxt;
     private javax.swing.JLabel brandLbl;
     private javax.swing.JLabel brandLbl1;
-    private javax.swing.JLabel brandLbl2;
     private javax.swing.JTextField brandTxt;
     private javax.swing.JTextField brandTxt1;
-    private javax.swing.JTextField brandTxt2;
     private javax.swing.JButton cancelDlgBtn;
     private javax.swing.JButton cancelDlgBtn1;
     private javax.swing.JButton cancelDlgBtn2;
@@ -1815,7 +1802,6 @@ public class AdminView extends AbstractView  {
     private javax.swing.JButton clearBtn1;
     private javax.swing.JButton clearBtn2;
     private javax.swing.JButton clearBtn3;
-    private javax.swing.JButton clearBtn4;
     private javax.swing.JButton clearBtn5;
     private javax.swing.JLabel colorDlgLbl;
     private javax.swing.JTextField colorDlgTxt;
@@ -1890,11 +1876,9 @@ public class AdminView extends AbstractView  {
     private javax.swing.JTextField plateDlgTxt;
     private javax.swing.JLabel plateLbl;
     private javax.swing.JLabel plateLbl1;
-    private javax.swing.JLabel plateLbl2;
     private javax.swing.JLabel plateLbl3;
     private javax.swing.JTextField plateTxt;
     private javax.swing.JTextField plateTxt1;
-    private javax.swing.JTextField plateTxt2;
     private javax.swing.JTextField plateTxt3;
     private javax.swing.JLabel priceDlgLbl;
     private javax.swing.JTextField priceDlgTxt;
@@ -1916,10 +1900,16 @@ public class AdminView extends AbstractView  {
     private javax.swing.JTextField serviceMilesDlgTxt;
     private javax.swing.JLabel serviceMonthDlgLbl;
     private javax.swing.JSpinner serviceMonthDlgSpn;
+    private javax.swing.JButton staffAddBtn;
+    private javax.swing.JButton staffClearBtn;
     private javax.swing.JDialog staffDialog;
     private javax.swing.JLabel staffNameDlgLbl;
     private javax.swing.JTextField staffNameDlgTxt;
+    private javax.swing.JLabel staffNameLbl;
+    private javax.swing.JTextField staffNameTxt;
     private javax.swing.JPanel staffPanel;
+    private javax.swing.JLabel staffSurnameLbl;
+    private javax.swing.JTextField staffSurnameTxt;
     private org.jdesktop.swingx.JXTable staffTbl;
     private javax.swing.JPanel startPanel;
     private javax.swing.JComboBox statusCB;
@@ -1951,5 +1941,36 @@ public class AdminView extends AbstractView  {
      */
     public org.jdesktop.swingx.JXTable getStaffTbl() {
         return staffTbl;
+    }
+
+    public javax.swing.JButton getStaffAddBtn() {
+        return staffAddBtn;
+    }
+
+    public javax.swing.JButton getStaffClearBtn() {
+        return staffClearBtn;
+    }
+
+    public javax.swing.JTextField getStaffNameTxt() {
+        return staffNameTxt;
+    }
+    public javax.swing.JTextField getStaffSurnameTxt() {
+        return staffSurnameTxt;
+    }
+
+    public javax.swing.JDialog getCarClassDialog() {
+        return carClassDialog;
+    }
+
+    public javax.swing.JDialog getCarDialog() {
+        return carDialog;
+    }
+
+    public javax.swing.JDialog getExtensionDlg() {
+        return extensionDlg;
+    }
+
+    public javax.swing.JDialog getStaffDialog() {
+        return staffDialog;
     }
 }

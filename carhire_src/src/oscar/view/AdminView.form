@@ -603,13 +603,13 @@
                   <Component id="jPanel2" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                  <Component id="saveDlgBtn2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="deleteDlgBtn2" min="-2" pref="63" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="cancelDlgBtn2" min="-2" pref="65" max="-2" attributes="0"/>
-                  <EmptySpace pref="153" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                  <Component id="saveDlgBtn2" pref="85" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Component id="deleteDlgBtn2" pref="91" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Component id="cancelDlgBtn2" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -636,18 +636,21 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="saveDlgBtn2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="saveDlgBtn2.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="saveDlgBtn2.text"/>
             <Property name="name" type="java.lang.String" value="saveDlgBtn2" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="deleteDlgBtn2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="deleteDlgBtn2.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="deleteDlgBtn2.text"/>
             <Property name="name" type="java.lang.String" value="deleteDlgBtn2" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="cancelDlgBtn2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="cancelDlgBtn2.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="cancelDlgBtn2.text"/>
             <Property name="name" type="java.lang.String" value="cancelDlgBtn2" noResource="true"/>
           </Properties>
@@ -1154,17 +1157,17 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="plateLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="staffSurnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="staffNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
-                                          <Component id="plateTxt2" alignment="0" pref="68" max="32767" attributes="1"/>
+                                          <Component id="staffNameTxt" alignment="0" pref="68" max="32767" attributes="1"/>
+                                          <Component id="staffSurnameTxt" alignment="0" pref="68" max="32767" attributes="1"/>
                                       </Group>
                                   </Group>
-                                  <Component id="clearBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffAddBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1174,62 +1177,62 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="plateLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffSurnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="brandLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffSurnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn4" min="-2" max="-2" attributes="0"/>
+                              <Component id="staffClearBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn4" min="-2" max="-2" attributes="0"/>
+                              <Component id="staffAddBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="plateLbl2">
+                    <Component class="javax.swing.JLabel" name="staffNameLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateLbl2.text"/>
-                        <Property name="name" type="java.lang.String" value="plateLbl2" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="staffNameLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="staffNameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="brandLbl2">
+                    <Component class="javax.swing.JLabel" name="staffSurnameLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandLbl2.text"/>
-                        <Property name="name" type="java.lang.String" value="brandLbl2" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="staffSurnameLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="staffSurnameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt2">
+                    <Component class="javax.swing.JTextField" name="staffNameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="brandTxt2" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="staffNameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt2">
+                    <Component class="javax.swing.JTextField" name="staffSurnameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="plateTxt2" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="staffSurnameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn4">
+                    <Component class="javax.swing.JButton" name="staffAddBtn">
                       <Properties>
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn4.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn4.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn4" noResource="true"/>
+                        <Property name="icon" type="javax.swing.Icon" resourceKey="staffAddBtn.icon"/>
+                        <Property name="text" type="java.lang.String" resourceKey="staffAddBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="staffAddBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn4">
+                    <Component class="javax.swing.JButton" name="staffClearBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/clean.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn4.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn4" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="staffClearBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="staffClearBtn" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
