@@ -42,7 +42,6 @@ public class LoginController extends Controller {
 
     private void login() {
         Staff staff = new Staff("username", loginView.getUsername());
-        try {
             if (staff.authorize(loginView.getPassword())) {
                 System.out.println("this is logged");
                 // remove the password
@@ -54,8 +53,5 @@ public class LoginController extends Controller {
                 else
                     new StaffController().start();
             }
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
     } 
 }

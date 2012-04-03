@@ -1,8 +1,9 @@
 package oscar.model;
 
 import java.util.HashMap;
-import oscar.persistance.DbRecord;
+//import oscar.persistance.DbRecord;
 import oscar.persistance.DbRecordable;
+import oscar.persistance.DependentDbRecord;
 import oscar.util.Utility;
 
 /**
@@ -11,7 +12,8 @@ import oscar.util.Utility;
  * Class of a generic person. Will be inherited by WebCustomer and Staff,
  * plus it will represents a customer not registered in the website
  */
-public class Person extends DbRecord implements DbRecordable {
+public class Person extends DependentDbRecord implements DbRecordable {
+
     /** Record id*/
     protected int personid;
     protected String name;
@@ -21,7 +23,7 @@ public class Person extends DbRecord implements DbRecordable {
     protected String address;
     protected String phone;
     /** Database table name*/
-    protected static String TABLE = "person";
+    public static String TABLE = "person";
 
     public String getAddress() {
         return address;
@@ -50,7 +52,6 @@ public class Person extends DbRecord implements DbRecordable {
     public String getSurname() {
         return surname;
     }
-
 
     /**
      * Class contructor
@@ -85,13 +86,13 @@ public class Person extends DbRecord implements DbRecordable {
      * Class constructor
      * @param PkValue Value of the primary key
      */
-    public Person(String colName,String value) {
+    public Person(String colName, String value) {
         super(TABLE);
         HashMap<String, String> attributes = this.findOneBy(colName, value);
         //HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
         Utility.fill(attributes, this);
     }
-    
+
     public Person(int PkValue) {
         super(TABLE);
         HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
@@ -139,6 +140,7 @@ public class Person extends DbRecord implements DbRecordable {
     /*
      * return value for primary key
      */
+
     public int addPk() {
         return this.addPk(Utility.convertToHashMap(this));
     }
@@ -150,9 +152,9 @@ public class Person extends DbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean delete() {
-        if(this.personid<=0)
+        if (this.personid <= 0)
             return false;
-        return this.deleteBy("personId", this.getPersonid()+"");
+        return this.deleteBy("personId", this.getPersonid() + "");
     }
 
     /**
@@ -162,9 +164,8 @@ public class Person extends DbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean update() {
-        if(this.personid<=0)
+        if (this.personid <= 0)
             return false;
-        return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid()+"");
+        return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid() + "");
     }
-
 }
