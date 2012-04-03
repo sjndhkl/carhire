@@ -133,7 +133,6 @@ public class AdminView extends AbstractView  {
         returnDateLbl = new javax.swing.JLabel();
         isBookingCB = new javax.swing.JCheckBox();
         clearBtn2 = new javax.swing.JButton();
-        addBtn2 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         bookingsTbl = new org.jdesktop.swingx.JXTable();
@@ -852,12 +851,9 @@ public class AdminView extends AbstractView  {
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance().getContext().getActionMap(AdminView.class, this);
         addBtn4.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn4.setIcon(resourceMap.getIcon("addBtn4.icon")); // NOI18N
+        addBtn4.setText(resourceMap.getString("addBtn4.text")); // NOI18N
         addBtn4.setName("addBtn4"); // NOI18N
-        addBtn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn4ActionPerformed(evt);
-            }
-        });
 
         clearBtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
         clearBtn4.setText(resourceMap.getString("clearBtn4.text")); // NOI18N
@@ -963,9 +959,6 @@ public class AdminView extends AbstractView  {
         clearBtn2.setText(resourceMap.getString("clearBtn2.text")); // NOI18N
         clearBtn2.setName("clearBtn2"); // NOI18N
 
-        addBtn2.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn2.setName("addBtn2"); // NOI18N
-
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
         jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
@@ -986,10 +979,9 @@ public class AdminView extends AbstractView  {
                             .addComponent(surnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
                     .addComponent(isBookingCB)
                     .addComponent(clearBtn2)
-                    .addComponent(addBtn2)
-                    .addComponent(jButton2)
                     .addComponent(rentalDateLbl)
-                    .addComponent(returnDateLbl))
+                    .addComponent(returnDateLbl)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
         carClassSearchPanel2Layout.setVerticalGroup(
@@ -1012,9 +1004,7 @@ public class AdminView extends AbstractView  {
                         .addComponent(surnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clearBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2))
         );
 
@@ -1050,8 +1040,8 @@ public class AdminView extends AbstractView  {
             .addGroup(bookingPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
+                    .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1098,12 +1088,9 @@ public class AdminView extends AbstractView  {
         statusCB.setName("statusCB"); // NOI18N
 
         addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn3.setIcon(resourceMap.getIcon("addBtn3.icon")); // NOI18N
+        addBtn3.setText(resourceMap.getString("addBtn3.text")); // NOI18N
         addBtn3.setName("addBtn3"); // NOI18N
-        addBtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn3ActionPerformed(evt);
-            }
-        });
 
         clearBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
         clearBtn3.setText(resourceMap.getString("clearBtn3.text")); // NOI18N
@@ -1231,12 +1218,9 @@ public class AdminView extends AbstractView  {
         clearBtn1.setName("clearBtn1"); // NOI18N
 
         addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
+        addBtn1.setIcon(resourceMap.getIcon("addBtn1.icon")); // NOI18N
+        addBtn1.setText(resourceMap.getString("addBtn1.text")); // NOI18N
         addBtn1.setName("addBtn1"); // NOI18N
-        addBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtn1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
         carClassSearchPanel.setLayout(carClassSearchPanelLayout);
@@ -1319,6 +1303,7 @@ public class AdminView extends AbstractView  {
         personPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         personPanel.setName("personPanel"); // NOI18N
 
+        personLoadBtn.setIcon(resourceMap.getIcon("personLoadBtn.icon")); // NOI18N
         personLoadBtn.setText(resourceMap.getString("personLoadBtn.text")); // NOI18N
         personLoadBtn.setName("personLoadBtn"); // NOI18N
 
@@ -1364,7 +1349,7 @@ public class AdminView extends AbstractView  {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(personLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
+                    .addComponent(personLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(personPanelLayout.createSequentialGroup()
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameLbl)
@@ -1375,12 +1360,12 @@ public class AdminView extends AbstractView  {
                             .addComponent(dateOfBirthLbl))
                         .addGap(35, 35, 35)
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(surnameTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(phoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(surnameTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         personPanelLayout.setVerticalGroup(
@@ -1458,6 +1443,7 @@ public class AdminView extends AbstractView  {
 
         refCodeTxt1.setName("refCodeTxt1"); // NOI18N
 
+        refCodeSearchBtn.setIcon(resourceMap.getIcon("refCodeSearchBtn.icon")); // NOI18N
         refCodeSearchBtn.setText(resourceMap.getString("refCodeSearchBtn.text")); // NOI18N
         refCodeSearchBtn.setName("refCodeSearchBtn"); // NOI18N
 
@@ -1474,17 +1460,17 @@ public class AdminView extends AbstractView  {
                 .addContainerGap()
                 .addComponent(refCodeLbl1)
                 .addGap(18, 18, 18)
-                .addComponent(refCodeTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                .addComponent(refCodeTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(refCodeSearchBtn)
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
                     .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanel1Layout.createSequentialGroup()
                             .addComponent(toLbl)
@@ -1529,7 +1515,7 @@ public class AdminView extends AbstractView  {
                     .addComponent(chauffeuredCB)
                     .addComponent(chauffeuredCB1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1589,6 +1575,7 @@ public class AdminView extends AbstractView  {
 
         plateTxt3.setName("plateTxt3"); // NOI18N
 
+        clearBtn5.setIcon(resourceMap.getIcon("clearBtn5.icon")); // NOI18N
         clearBtn5.setText(resourceMap.getString("clearBtn5.text")); // NOI18N
         clearBtn5.setName("clearBtn5"); // NOI18N
 
@@ -1599,11 +1586,6 @@ public class AdminView extends AbstractView  {
         extendsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
         extendsBtn.setText(resourceMap.getString("extendsBtn.text")); // NOI18N
         extendsBtn.setName("extendsBtn"); // NOI18N
-        extendsBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                extendsBtnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout carSearchPanel1Layout = new javax.swing.GroupLayout(carSearchPanel1);
         carSearchPanel1.setLayout(carSearchPanel1Layout);
@@ -1742,22 +1724,6 @@ public class AdminView extends AbstractView  {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn4ActionPerformed
-
-        staffDialog.setVisible(true);     }//GEN-LAST:event_addBtn4ActionPerformed
-
-    private void addBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn3ActionPerformed
-
-        carDialog.setVisible(true);     }//GEN-LAST:event_addBtn3ActionPerformed
-
-    private void addBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn1ActionPerformed
-
-        carClassDialog.setVisible(true);     }//GEN-LAST:event_addBtn1ActionPerformed
-
-    private void extendsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extendsBtnActionPerformed
-
-        extensionDlg.setVisible(true);     }//GEN-LAST:event_extendsBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1802,7 +1768,6 @@ public class AdminView extends AbstractView  {
     private javax.swing.JButton Extendsbtn;
     private javax.swing.JLabel PhoneDlgLbl;
     private javax.swing.JButton addBtn1;
-    private javax.swing.JButton addBtn2;
     private javax.swing.JButton addBtn3;
     private javax.swing.JButton addBtn4;
     private javax.swing.JLabel addressDlgLbl;

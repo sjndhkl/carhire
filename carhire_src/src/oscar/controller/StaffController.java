@@ -9,7 +9,7 @@ import oscar.view.StaffView;
  *
  * @author Draga
  */
-public class StaffController extends Controller implements ActionListener {
+public class StaffController extends Controller {
     private StaffView staffView;
 
     public void run() {

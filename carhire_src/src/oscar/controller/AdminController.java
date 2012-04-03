@@ -9,7 +9,7 @@ import oscar.view.AdminView;
  *
  * @author schiodin
  */
-public class AdminController extends Controller implements ActionListener {
+public class AdminController extends Controller {
     private AdminView adminView;
 
     public void run() {

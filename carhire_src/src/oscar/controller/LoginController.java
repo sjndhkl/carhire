@@ -20,7 +20,7 @@ import oscar.view.StaffView;
  *
  * @author schiodin
  */
-public class LoginController extends Controller implements ActionListener  {
+public class LoginController extends Controller {
 
     private LoginView loginView;
     private AdminController adminController;
