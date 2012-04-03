@@ -6,6 +6,7 @@ package oscar.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,14 +49,13 @@ public class LoginController extends Controller {
                 loginView.setPassword("");
                 this.safeStop();
                 // launch staff contoller, if admin launches the admin one as well
-                if (staff.isAdmin()) {
+                if (staff.isAdmin())
                     new AdminController().start();
-                } else {
+                else
                     new StaffController().start();
-                }
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    } 
 }

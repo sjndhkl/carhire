@@ -2,7 +2,10 @@ package oscar.model;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import oscar.util.Utility;
 
 /**
@@ -14,7 +17,6 @@ public class Staff extends Person {
 
     /** Database table name*/
     protected static String TABLE = "staff";
-    
     private String username;
     private boolean isAdmin;
     private boolean isChauffeur;
@@ -42,18 +44,15 @@ public class Staff extends Person {
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
-    
-    public Staff(){
-        
+
+    public Staff() {
     }
 
     /**
      * Class constructor
      * @param username
      */
-    public Staff(String colName,String value) {
+    public Staff(String colName, String value) {
         //super(colName,value);
         this.useTable = TABLE;
         HashMap<String, String> attributes =
@@ -100,15 +99,13 @@ public class Staff extends Person {
         byte byteData[] = md.digest();
         //convert the byte to hex
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < byteData.length; i++) {
+        for (int i = 0; i < byteData.length; i++)
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-        }
 
         String dbPassword = hm.get("password");
         String inputPassword = sb.toString();
-        if (dbPassword.equals(inputPassword)) {
+        if (dbPassword.equals(inputPassword))
             return true;
-        }
         return false;
     }
 
@@ -141,5 +138,24 @@ public class Staff extends Person {
 
     public boolean isAdmin() {
         return isAdmin;
+    }
+
+    @Override
+    public TableModel getTableModel() {
+        ArrayList<HashMap<String, String>> map = this.findAll();
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
+        for (HashMap<String, String> row : map)
+            model.addRow(new Object[]{
+                        row.get("personId"),
+                        row.get("name"),
+                        row.get("surname"),
+                        (row.get("attributes").contains("admin")) ? true : false,
+                        (row.get("attributes").contains("chauffeur")) ? true : false,
+                        row.get("username"),
+                        row.get("dateOfBirth"),
+                        row.get("email")
+                    });
+        return model;
     }
 }

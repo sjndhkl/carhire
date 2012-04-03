@@ -12,7 +12,6 @@ import oscar.util.Utility;
  * plus it will represents a customer not registered in the website
  */
 public class Person extends DbRecord implements DbRecordable {
-
     /** Record id*/
     protected int personid;
     protected String name;
@@ -21,7 +20,7 @@ public class Person extends DbRecord implements DbRecordable {
     protected String email;
     protected String address;
     protected String phone;
-    /** Databse table name*/
+    /** Database table name*/
     protected static String TABLE = "person";
 
     public String getAddress() {

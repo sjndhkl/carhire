@@ -2,6 +2,7 @@ package oscar.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import oscar.persistance.Controller;
 import oscar.view.StaffView;
 
@@ -24,11 +25,11 @@ public class StaffController extends Controller {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(staffView.getLogoutBtn())) {
-            logout();
+            actionLogout();
         }
     }
 
-    private void logout() {
+    private void actionLogout() {
         new LoginController().start();
         this.safeStop();
     }

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -405,4 +406,6 @@ public class DbRecord {
         //System.out.println(query);
         return this.nonQueryPk(query);
     }
+     
+    public TableModel getTableModel() { return null;}
 }
