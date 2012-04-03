@@ -42,13 +42,14 @@ public abstract class Controller extends Thread implements ActionListener {
 
     public void removeAllView() {
         for (AbstractView v : registeredViews) {
-            this.removeView(v);
+            v.setVisible(false);
         }
+        this.registeredViews = new ArrayList<AbstractView>();
     }
 
     public void addButtonListener(JButton button) {
         this.registeredButtonListeners.add(button);
-        button.removeActionListener(this);
+        button.addActionListener(this);
     }
 
     public void removeButtonListener(JButton button) {
@@ -57,9 +58,10 @@ public abstract class Controller extends Thread implements ActionListener {
     }
 
     public void removeAllButtonListeners() {
-        for (JButton b : registeredButtonListeners) {
-            this.removeButtonListener(b);
+        for (JButton b : this.registeredButtonListeners) {
+            b.removeActionListener(this);
         }
+        this.registeredButtonListeners = new ArrayList<JButton>();
     }
 
     protected void safeStop() {

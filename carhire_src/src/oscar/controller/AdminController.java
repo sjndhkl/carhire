@@ -13,6 +13,7 @@ public class AdminController extends Controller {
 
     private AdminView adminView;
 
+    @Override
     public void run() {
         this.setName("Admin");
         adminView = new AdminView();
@@ -28,7 +29,7 @@ public class AdminController extends Controller {
     }
 
     private void logout() {
-        new LoginController().start();
         this.safeStop();
+        new LoginController().start();
     }
 }

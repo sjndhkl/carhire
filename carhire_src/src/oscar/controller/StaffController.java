@@ -13,6 +13,7 @@ public class StaffController extends Controller {
 
     private StaffView staffView;
 
+    @Override
     public void run() {
         this.setName("Staff");
         staffView = new StaffView();

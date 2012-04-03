@@ -39,7 +39,8 @@ public class LoginView extends AbstractView {
         jLabel2 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setName("Staff"); // NOI18N
         setResizable(false);
 
@@ -55,11 +56,6 @@ public class LoginView extends AbstractView {
 
         btnLogin.setText("Login");
         btnLogin.setName("btnLogin"); // NOI18N
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Password:");
         jLabel2.setName("jLabel2"); // NOI18N
@@ -108,37 +104,8 @@ public class LoginView extends AbstractView {
                 .addContainerGap())
         );
 
-        getAccessibleContext().setAccessibleName("Login");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-    //System.out.append(evt.getActionCommand());
-    oscar.model.Staff staff = new Staff("username", this.getUsername());
-    try {
-        if (staff.authorize(this.getPassword())) {
-            System.out.println("this is logged");
-            // remove the password
-            this.setPassword("");
-            // hides the login view
-            this.setVisible(false);
-            // launch a new view
-            //AdminController adminController;
-            //StaffController staffController;
-            if (staff.isAdmin()) {
-                new AdminController().start();
-            }
-            new StaffController().start();
-            // TODO: finish to implement login
-            // shows the staff view
-            StaffView view = new StaffView();
-            view.setVisible(true);
-        }
-    } catch (NoSuchAlgorithmException ex) {
-        Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments

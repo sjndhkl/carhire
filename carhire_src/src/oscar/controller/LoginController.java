@@ -23,9 +23,8 @@ import oscar.view.StaffView;
 public class LoginController extends Controller {
 
     private LoginView loginView;
-    private AdminController adminController;
-    private StaffController staffController;
 
+    @Override
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
@@ -41,21 +40,19 @@ public class LoginController extends Controller {
     }
 
     private void login() {
-        oscar.model.Staff staff = new Staff("username", loginView.getUsername());
+        Staff staff = new Staff("username", loginView.getUsername());
         try {
             if (staff.authorize(loginView.getPassword())) {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
+                this.safeStop();
                 // launch staff contoller, if admin launches the admin one as well
                 if (staff.isAdmin()) {
-                    adminController = new AdminController();
-                    adminController.start();
+                    new AdminController().start();
                 } else {
-                    staffController = new StaffController();
-                    staffController.start();
+                    new StaffController().start();
                 }
-                this.safeStop();
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
