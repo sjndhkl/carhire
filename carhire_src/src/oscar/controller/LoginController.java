@@ -5,16 +5,11 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import oscar.model.Person;
 import oscar.model.Staff;
 import oscar.persistance.Controller;
-import oscar.view.AdminView;
 import oscar.view.LoginView;
-import oscar.view.StaffView;
 
 /**
  *
@@ -54,7 +49,7 @@ public class LoginController extends Controller {
                     new StaffController().start();
                 }
             }
-        } catch (NoSuchAlgorithmException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
