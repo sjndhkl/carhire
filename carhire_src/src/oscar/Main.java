@@ -4,6 +4,7 @@ package oscar;
 //import java.util.HashMap;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
+import oscar.view.LoginView;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Main extends SingleFrameApplication {
     @Override
     protected void startup() {
         // show(new AdminView(this));
-        //show(new LoginView());
+        show(new LoginView());
     }
 
     /**

@@ -13,9 +13,36 @@ public class Staff extends Person {
 
     /** Database table name*/
     protected static String TABLE = "staff";
+    
     private String username;
     private boolean isAdmin;
     private boolean isChauffeur;
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(String isAdmin) {
+        this.isAdmin = isAdmin.equals("admin") ? true : false;
+    }
+
+    public boolean isIsChauffeur() {
+        return isChauffeur;
+    }
+
+    public void setIsChauffeur(String isChauffeur) {
+        this.isChauffeur = isChauffeur.equals("chauffeur") ? true : false;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     
     public Staff(){
         
@@ -26,7 +53,7 @@ public class Staff extends Person {
      * @param username
      */
     public Staff(String colName,String value) {
-        super(colName,value);
+        //super(colName,value);
         this.useTable = TABLE;
         HashMap<String, String> attributes =
                 this.findOneBy(colName, value);

@@ -138,7 +138,7 @@ public class Person extends DbRecord implements DbRecordable {
         return this.add(Utility.convertToHashMap(this));
     }
     /*
-     * @param return key: 0,1
+     * return value for primary key
      */
     public int addPk() {
         return this.addPk(Utility.convertToHashMap(this));
@@ -151,7 +151,9 @@ public class Person extends DbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if(this.personid<=0)
+            return false;
+        return this.deleteBy("personId", this.getPersonid()+"");
     }
 
     /**
@@ -161,7 +163,9 @@ public class Person extends DbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean update() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if(this.personid<=0)
+            return false;
+        return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid()+"");
     }
 
 }
