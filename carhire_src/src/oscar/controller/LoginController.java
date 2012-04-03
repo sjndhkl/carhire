@@ -30,7 +30,7 @@ public class LoginController extends Controller {
         this.setName("Login");
         loginView = new LoginView();
         this.addView(loginView);
-        loginView.getBtnLogin().addActionListener(this);
+        this.addButtonListener(loginView.getBtnLogin());
         //.addModel(new Person());
     }
 
@@ -47,8 +47,6 @@ public class LoginController extends Controller {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
-                // hides the login view
-                this.removeView(loginView);
                 // launch staff contoller, if admin launches the admin one as well
                 if (staff.isAdmin()) {
                     adminController = new AdminController();
@@ -57,6 +55,7 @@ public class LoginController extends Controller {
                     staffController = new StaffController();
                     staffController.start();
                 }
+                this.safeStop();
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);

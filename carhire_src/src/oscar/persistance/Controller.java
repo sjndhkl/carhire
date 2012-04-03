@@ -19,6 +19,7 @@ public abstract class Controller extends Thread implements ActionListener {
     public Controller() {
         this.registeredModels = new ArrayList<DbRecord>();
         this.registeredViews = new ArrayList<AbstractView>();
+        this.registeredButtonListeners = new ArrayList<JButton>();
     }
 
     public void addModel(DbRecord model) {
@@ -39,6 +40,12 @@ public abstract class Controller extends Thread implements ActionListener {
         view.setVisible(false);
     }
 
+    public void removeAllView() {
+        for (AbstractView v : registeredViews) {
+            this.removeView(v);
+        }
+    }
+
     public void addButtonListener(JButton button) {
         this.registeredButtonListeners.add(button);
         button.removeActionListener(this);
@@ -49,15 +56,16 @@ public abstract class Controller extends Thread implements ActionListener {
         this.registeredButtonListeners.remove(button);
     }
 
-    public void removeAllButtonListener() {
+    public void removeAllButtonListeners() {
         for (JButton b : registeredButtonListeners) {
-            b.removeActionListener(this);
-            this.registeredButtonListeners.remove(b);
+            this.removeButtonListener(b);
         }
     }
 
-    private void safeStop() {
+    protected void safeStop() {
         // handle deistantiation and stuff like that
-        this.stop();
+        this.removeAllButtonListeners();
+        this.removeAllView();
+        //this.stop();
     }
 }
