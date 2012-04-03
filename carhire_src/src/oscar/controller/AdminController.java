@@ -9,25 +9,27 @@ import oscar.view.AdminView;
  *
  * @author schiodin
  */
-public class AdminController extends Controller implements ActionListener {
+public class AdminController extends Controller {
+
     private AdminView adminView;
 
+    @Override
     public void run() {
         this.setName("Admin");
         adminView = new AdminView();
         this.addView(adminView);
-        adminView.getLogoutBtn().addActionListener(this);
+        this.addButtonListener(adminView.getLogoutBtn());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(adminView.getLogoutBtn()))
+        if (e.getSource().equals(adminView.getLogoutBtn())) {
             logout();
+        }
     }
 
     private void logout() {
-        adminView.getLogoutBtn().removeActionListener(this);
-        this.removeView(adminView);
+        this.safeStop();
         new LoginController().start();
     }
 }

@@ -20,17 +20,16 @@ import oscar.view.StaffView;
  *
  * @author schiodin
  */
-public class LoginController extends Controller implements ActionListener  {
+public class LoginController extends Controller {
 
     private LoginView loginView;
-    private AdminController adminController;
-    private StaffController staffController;
 
+    @Override
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
         this.addView(loginView);
-        loginView.getBtnLogin().addActionListener(this);
+        this.addButtonListener(loginView.getBtnLogin());
         //.addModel(new Person());
     }
 
@@ -41,21 +40,18 @@ public class LoginController extends Controller implements ActionListener  {
     }
 
     private void login() {
-        oscar.model.Staff staff = new Staff("username", loginView.getUsername());
+        Staff staff = new Staff("username", loginView.getUsername());
         try {
             if (staff.authorize(loginView.getPassword())) {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
-                // hides the login view
-                this.removeView(loginView);
+                this.safeStop();
                 // launch staff contoller, if admin launches the admin one as well
                 if (staff.isAdmin()) {
-                    adminController = new AdminController();
-                    adminController.start();
+                    new AdminController().start();
                 } else {
-                    staffController = new StaffController();
-                    staffController.start();
+                    new StaffController().start();
                 }
             }
         } catch (NoSuchAlgorithmException ex) {
