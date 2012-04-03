@@ -3,6 +3,7 @@ package oscar.model;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import oscar.util.Utility;
 
 /**
  * @author Stefano
