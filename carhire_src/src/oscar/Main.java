@@ -5,6 +5,7 @@ package oscar;
 import oscar.controller.LoginController;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
+import oscar.view.LoginView;
 
 /**
  *

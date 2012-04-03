@@ -19,6 +19,10 @@ public class Utility {
 
     public static HashMap<String, String> convertToHashMap(Object ob) {
         Class currentClass = ob.getClass();
+        return hashMap(currentClass, ob);
+    }
+
+    private static HashMap<String, String> hashMap(Class currentClass, Object ob) {
         Method method = null;
         Field[] fields = currentClass.getDeclaredFields();
         HashMap<String, String> objHashMap = new HashMap<String, String>();
@@ -31,8 +35,8 @@ public class Utility {
                 try {
                     if (type.equals("String")) {
 
-                        method = currentClass.getMethod("get"+ucFirst(f.getName()), new Class[] {});
-                        Object obj = method.invoke(ob, new Object[] {});
+                        method = currentClass.getMethod("get" + ucFirst(f.getName()), new Class[]{});
+                        Object obj = method.invoke(ob, new Object[]{});
                         if (obj != null) {
                             objHashMap.put(f.getName(), obj.toString());
                         }
@@ -45,19 +49,48 @@ public class Utility {
         }
         return objHashMap;
     }
-    
-    
-    public static void fill(HashMap<String,String> hashMap,Object ob){
+
+    public static HashMap<String, HashMap<String, String>> convertToHashMapWithParent(Object ob) {
+        Class currentClass = ob.getClass();
+        Class parentClass = currentClass.getSuperclass();
+        HashMap<String, HashMap<String, String>> allHashMaps = new HashMap<String, HashMap<String, String>>();
+        allHashMaps.put(parentClass.getName(), hashMap(parentClass, ob));
+        allHashMaps.put(currentClass.getName(), hashMap(currentClass, ob));
+        return allHashMaps;
+    }
+
+    public static void fillDependent(HashMap<String, HashMap<String, String>> hashMap, Object ob) {
+
         Class currentClass = ob.getClass();
         Method method = null;
-        for(String key:hashMap.keySet()){
+        for (String key : hashMap.keySet()) {
+
+            HashMap<String, String> record = hashMap.get(key);
+            for (String recordKey : record.keySet()) {
+
                 try {
-                        method = currentClass.getMethod("set"+ucFirst(key), new Class[] { String.class });
-                        method.invoke(ob, new Object[] { hashMap.get(key) });
-                   
+                    method = currentClass.getMethod("set" + ucFirst(recordKey), new Class[]{String.class});
+                    method.invoke(ob, new Object[]{hashMap.get(recordKey)});
+
                 } catch (Exception ex) {
                     Logger.getLogger(currentClass.getName()).log(Level.SEVERE, null, ex);
                 }
+
+            }
+        }
+    }
+
+    public static void fill(HashMap<String, String> hashMap, Object ob) {
+        Class currentClass = ob.getClass();
+        Method method = null;
+        for (String key : hashMap.keySet()) {
+            try {
+                method = currentClass.getMethod("set" + ucFirst(key), new Class[]{String.class});
+                method.invoke(ob, new Object[]{hashMap.get(key)});
+
+            } catch (Exception ex) {
+                Logger.getLogger(currentClass.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -66,5 +99,4 @@ public class Utility {
         stringArray[0] = Character.toUpperCase(stringArray[0]);
         return new String(stringArray);
     }
-
 }

@@ -4,11 +4,9 @@ package oscar.persistance;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -274,7 +272,10 @@ public class DbRecord {
         
         try {
             Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
-            return stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getInt(1);
                     
         } catch (Exception ex) {
             ex.printStackTrace();
