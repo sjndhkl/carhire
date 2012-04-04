@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -14,11 +15,13 @@ public abstract class Controller extends Thread implements ActionListener {
     private ArrayList<DbRecord> registeredModels;
     private ArrayList<AbstractView> registeredViews;
     private ArrayList<JButton> registeredButtonListeners;
+    private ArrayList<JTextField> registeredTextFieldListeners;
 
     public Controller() {
         this.registeredModels = new ArrayList<DbRecord>();
         this.registeredViews = new ArrayList<AbstractView>();
         this.registeredButtonListeners = new ArrayList<JButton>();
+        this.registeredTextFieldListeners = new ArrayList<JTextField>();
     }
 
     public void addModel(DbRecord model) {
@@ -61,6 +64,23 @@ public abstract class Controller extends Thread implements ActionListener {
             b.removeActionListener(this);
         }
         this.registeredButtonListeners = new ArrayList<JButton>();
+    }
+
+    public void addTextFieldListener(JTextField textField) {
+        this.registeredTextFieldListeners.add(textField);
+        textField.addActionListener(this);
+    }
+
+    public void removeTextFieldListener(JTextField textField) {
+        textField.removeActionListener(this);
+        this.registeredTextFieldListeners.remove(textField);
+    }
+
+    public void removeAllTextFieldListeners() {
+        for (JTextField b : this.registeredTextFieldListeners) {
+            b.removeActionListener(this);
+        }
+        this.registeredTextFieldListeners = new ArrayList<JTextField>();
     }
 
     protected void safeStop() {
