@@ -1,9 +1,12 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.util.Timer;
 import oscar.persistance.Controller;
 import oscar.view.AdminView;
 import oscar.model.Staff;
+import oscar.persistance.StaffUpdateTableTask;
 import oscar.view.dialog.StaffDialog;
 
 /**
@@ -14,6 +17,8 @@ public class AdminController extends Controller {
 
     private AdminView adminView;
     private StaffDialog staffDialog;
+    private Timer timer;
+    private StaffUpdateTableTask staffUpdateTableTask;
 
     @Override
     public void run() {
@@ -23,6 +28,10 @@ public class AdminController extends Controller {
         this.addButtonListener(adminView.getLogoutBtn());
         this.addButtonListener(adminView.getStaffClearBtn());
         this.addButtonListener(adminView.getStaffAddBtn());
+        this.addTextFieldListener(adminView.getStaffSurnameTxt());
+        this.addTextFieldListener(adminView.getStaffNameTxt());
+        timer = new Timer();
+        staffUpdateTableTask = new StaffUpdateTableTask();
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
     }
 
@@ -46,11 +55,35 @@ public class AdminController extends Controller {
     private void actionStaffClearFields() {
         adminView.getStaffNameTxt().setText("");
         adminView.getStaffSurnameTxt().setText("");
-        // TODO: update table filters
+        actionStaffUpdateTable();
     }
 
     private void actionStaffAdd() {
         // TODO: finish implementation
         staffDialog = new StaffDialog(adminView, true);
+    }
+
+    /*
+     * Handle Text Field Listeners calling specific actions
+     */
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (e.getSource().equals(adminView.getStaffNameTxt())
+                || e.getSource().equals(adminView.getStaffSurnameTxt()))
+            actionStaffUpdateTable();
+    }
+
+    private void actionStaffUpdateTable() {
+        staffUpdateTableTask.cancel();
+        staffUpdateTableTask = new StaffUpdateTableTask();
+        timer.schedule(staffUpdateTableTask, this.TABLE_FILTERING_DELAY);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
 }

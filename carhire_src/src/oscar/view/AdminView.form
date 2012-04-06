@@ -1050,12 +1050,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="tabPanel" alignment="1" pref="738" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="541" max="32767" attributes="0"/>
-                  <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="tabPanel" alignment="1" pref="718" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1068,8 +1072,9 @@
                       <Component id="logoutBtn" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="usernameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Component id="tabPanel" pref="581" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="tabPanel" pref="564" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1097,12 +1102,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="733" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="713" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="553" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="536" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1126,7 +1131,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane5" pref="565" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" pref="545" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1136,7 +1141,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane5" alignment="0" pref="531" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" alignment="0" pref="514" max="32767" attributes="0"/>
                               <Component id="carClassSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1285,7 +1290,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" pref="521" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" pref="501" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1296,7 +1301,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="carClassSearchPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" alignment="0" pref="531" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="514" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1471,7 +1476,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carSearchPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="578" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="558" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1481,7 +1486,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane3" alignment="0" pref="531" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" alignment="0" pref="514" max="32767" attributes="0"/>
                               <Component id="carSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1726,7 +1731,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carClassSearchPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" pref="554" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" pref="534" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1736,7 +1741,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane4" alignment="0" pref="531" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" alignment="0" pref="514" max="32767" attributes="0"/>
                               <Component id="carClassSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1997,7 +2002,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="addressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" alignment="0" pref="250" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane7" alignment="0" pref="233" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2111,18 +2116,18 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="refCodeLbl1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="refCodeTxt1" pref="168" max="32767" attributes="0"/>
+                              <Component id="refCodeTxt1" pref="148" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="refCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jSeparator1" alignment="0" pref="370" max="32767" attributes="0"/>
+                          <Component id="jSeparator1" alignment="0" pref="350" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                      <Component id="jScrollPane8" pref="348" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane8" pref="328" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="1">
@@ -2179,7 +2184,7 @@
                                   <Component id="chauffeuredCB1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" pref="303" max="32767" attributes="0"/>
+                              <Component id="jScrollPane8" pref="286" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2316,7 +2321,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="carSearchPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane9" pref="564" max="32767" attributes="0"/>
+                          <Component id="jScrollPane9" pref="544" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2326,7 +2331,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane9" alignment="0" pref="531" max="32767" attributes="0"/>
+                              <Component id="jScrollPane9" alignment="0" pref="514" max="32767" attributes="0"/>
                               <Component id="carSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>

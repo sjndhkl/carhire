@@ -10,12 +10,14 @@ import javax.swing.JTextField;
  *
  * @author schiodin
  */
-public abstract class Controller extends Thread implements ActionListener {
+public abstract class Controller extends Thread implements ActionListener, KeyListener {
 
     private ArrayList<DbRecord> registeredModels;
     private ArrayList<AbstractView> registeredViews;
     private ArrayList<JButton> registeredButtonListeners;
     private ArrayList<JTextField> registeredTextFieldListeners;
+
+    public static long TABLE_FILTERING_DELAY = 500;
 
     public Controller() {
         this.registeredModels = new ArrayList<DbRecord>();
@@ -68,17 +70,17 @@ public abstract class Controller extends Thread implements ActionListener {
 
     public void addTextFieldListener(JTextField textField) {
         this.registeredTextFieldListeners.add(textField);
-        textField.addActionListener(this);
+        textField.addKeyListener(this);
     }
 
     public void removeTextFieldListener(JTextField textField) {
-        textField.removeActionListener(this);
+        textField.removeKeyListener(this);
         this.registeredTextFieldListeners.remove(textField);
     }
 
     public void removeAllTextFieldListeners() {
         for (JTextField b : this.registeredTextFieldListeners) {
-            b.removeActionListener(this);
+            b.removeKeyListener(this);
         }
         this.registeredTextFieldListeners = new ArrayList<JTextField>();
     }
