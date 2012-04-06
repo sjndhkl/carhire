@@ -4,7 +4,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JTextField;
+import oscar.view.*;
+import oscar.view.dialog.*;
 
 /**
  *
@@ -12,83 +15,119 @@ import javax.swing.JTextField;
  */
 public abstract class Controller extends Thread implements ActionListener, KeyListener {
 
-    private ArrayList<DbRecord> registeredModels;
-    private ArrayList<AbstractView> registeredViews;
-    private ArrayList<JButton> registeredButtonListeners;
-    private ArrayList<JTextField> registeredTextFieldListeners;
-
     public static long TABLE_FILTERING_DELAY = 500;
+    /*private ArrayList<DbRecord> registeredModels;
+    private ArrayList<AbstractView> registeredViews;
+    private ArrayList<JDialog> registeredDialogs;
+    private ArrayList<JButton> registeredButtonListeners;
+    private ArrayList<JTextField> registeredTextFieldListeners;*/
+    private ArrayList<Object> elements;
 
     public Controller() {
-        this.registeredModels = new ArrayList<DbRecord>();
+        /*this.registeredModels = new ArrayList<DbRecord>();
         this.registeredViews = new ArrayList<AbstractView>();
         this.registeredButtonListeners = new ArrayList<JButton>();
         this.registeredTextFieldListeners = new ArrayList<JTextField>();
+        this.registeredDialogs = new ArrayList<JDialog>();*/
+
+        this.elements = new ArrayList<Object>();
     }
 
-    public void addModel(DbRecord model) {
-        this.registeredModels.add(model);
+    public void addElement(Object element) {
+        elements.add(element);
+        if (element.getClass().equals(JButton.class))
+            ((JButton) element).addActionListener(this);
+        else if (element.getClass().equals(JTextField.class))
+            ((JTextField) element).addKeyListener(this);
+        else if (element.getClass().equals(AdminView.class)
+                || element.getClass().equals(StaffView.class)
+                || element.getClass().equals(LoginView.class))
+            ((AbstractView) element).setVisible(true);
+        else if (element.getClass().equals(StaffDialog.class)
+                || element.getClass().equals(CarDialog.class)
+                || element.getClass().equals(CarClassDialog.class)
+                || element.getClass().equals(ExtensionDialog.class))
+            ((JDialog) element).setVisible(true);
+    }
+
+    public void removeAllElement() {
+        for (Object element : elements)
+            if (element.getClass().equals(JButton.class))
+                ((JButton) element).removeActionListener(this);
+            else if (element.getClass().equals(JTextField.class))
+                ((JTextField) element).removeKeyListener(this);
+            else if (element.getClass().equals(AdminView.class)
+                    || element.getClass().equals(StaffView.class)
+                    || element.getClass().equals(LoginView.class))
+                ((AbstractView) element).setVisible(false);
+            else if (element.getClass().equals(JDialog.class))
+                ((JDialog) element).setVisible(true);
+        elements = new ArrayList<Object>();
+    }
+
+    /*public void addModel(DbRecord model) {
+    this.registeredModels.add(model);
     }
 
     public void removeModel(DbRecord model) {
-        this.registeredModels.remove(model);
+    this.registeredModels.remove(model);
     }
 
     public void addView(AbstractView view) {
-        this.registeredViews.add(view);
-        view.setVisible(true);
+    this.registeredViews.add(view);
+    view.setVisible(true);
     }
 
     public void removeView(AbstractView view) {
-        this.registeredViews.remove(view);
-        view.setVisible(false);
+    this.registeredViews.remove(view);
+    view.setVisible(false);
     }
 
     public void removeAllView() {
-        for (AbstractView v : registeredViews) {
-            v.setVisible(false);
-        }
-        this.registeredViews = new ArrayList<AbstractView>();
+    for (AbstractView v : registeredViews)
+    v.setVisible(false);
+    this.registeredViews = new ArrayList<AbstractView>();
     }
 
     public void addButtonListener(JButton button) {
-        this.registeredButtonListeners.add(button);
-        button.addActionListener(this);
+    this.registeredButtonListeners.add(button);
+    button.addActionListener(this);
     }
 
     public void removeButtonListener(JButton button) {
-        button.removeActionListener(this);
-        this.registeredButtonListeners.remove(button);
+    button.removeActionListener(this);
+    this.registeredButtonListeners.remove(button);
     }
 
     public void removeAllButtonListeners() {
-        for (JButton b : this.registeredButtonListeners) {
-            b.removeActionListener(this);
-        }
-        this.registeredButtonListeners = new ArrayList<JButton>();
+    for (JButton b : this.registeredButtonListeners)
+    b.removeActionListener(this);
+    this.registeredButtonListeners = new ArrayList<JButton>();
     }
 
     public void addTextFieldListener(JTextField textField) {
-        this.registeredTextFieldListeners.add(textField);
-        textField.addKeyListener(this);
+    this.registeredTextFieldListeners.add(textField);
+    textField.addKeyListener(this);
     }
 
     public void removeTextFieldListener(JTextField textField) {
-        textField.removeKeyListener(this);
-        this.registeredTextFieldListeners.remove(textField);
+    textField.removeKeyListener(this);
+    this.registeredTextFieldListeners.remove(textField);
     }
 
     public void removeAllTextFieldListeners() {
-        for (JTextField b : this.registeredTextFieldListeners) {
-            b.removeKeyListener(this);
-        }
-        this.registeredTextFieldListeners = new ArrayList<JTextField>();
+    for (JTextField b : this.registeredTextFieldListeners)
+    b.removeKeyListener(this);
+    this.registeredTextFieldListeners = new ArrayList<JTextField>();
     }
 
     protected void safeStop() {
-        // handle deistantiation and stuff like that
-        this.removeAllButtonListeners();
-        this.removeAllView();
-        //this.stop();
+    // handle deistantiation and stuff like that
+
+    this.removeAllButtonListeners();
+    this.removeAllView();
+    this.removeAllTextFieldListeners();
+    //this.stop();
     }
+     */
 }

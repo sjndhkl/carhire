@@ -22,8 +22,10 @@ public class LoginController extends Controller {
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
-        this.addView(loginView);
-        this.addButtonListener(loginView.getBtnLogin());
+        /*this.addView(loginView);
+        this.addButtonListener(loginView.getBtnLogin());*/
+        this.addElement(loginView);
+        this.addElement(loginView.getBtnLogin());
         //.addModel(new Person());
     }
 
@@ -39,7 +41,7 @@ public class LoginController extends Controller {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
-                this.safeStop();
+                this.removeAllElement();
                 // launch staff contoller, if admin launches the admin one as well
                 if (staff.isAdmin())
                     new AdminController().start();

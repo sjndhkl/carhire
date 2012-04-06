@@ -24,15 +24,24 @@ public class AdminController extends Controller {
     public void run() {
         this.setName("Admin");
         adminView = new AdminView();
-        this.addView(adminView);
+        /*this.addView(adminView);
         this.addButtonListener(adminView.getLogoutBtn());
         this.addButtonListener(adminView.getStaffClearBtn());
         this.addButtonListener(adminView.getStaffAddBtn());
         this.addTextFieldListener(adminView.getStaffSurnameTxt());
-        this.addTextFieldListener(adminView.getStaffNameTxt());
+        this.addTextFieldListener(adminView.getStaffNameTxt());*/
+        this.addElement(adminView);
+        this.addElement(adminView.getLogoutBtn());
+        this.addElement(adminView.getStaffClearBtn());
+        this.addElement(adminView.getStaffAddBtn());
+        this.addElement(adminView.getStaffSurnameTxt());
+        this.addElement(adminView.getStaffNameTxt());
         timer = new Timer();
         staffUpdateTableTask = new StaffUpdateTableTask();
+        this.addElement(adminView);
+
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
+
     }
 
     @Override
@@ -48,7 +57,7 @@ public class AdminController extends Controller {
     }
 
     private void actionLogout() {
-        this.safeStop();
+        this.removeAllElement();
         new LoginController().start();
     }
 
@@ -60,7 +69,7 @@ public class AdminController extends Controller {
 
     private void actionStaffAdd() {
         // TODO: finish implementation
-        staffDialog = new StaffDialog(adminView, true);
+        this.addElement(new StaffDialog(adminView, true));
     }
 
     /*
