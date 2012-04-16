@@ -3,6 +3,7 @@ package oscar.persistance;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
@@ -24,6 +25,7 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
 
     public void addElement(Object element) {
         elements.add(element);
+        
         if (element.getClass().equals(JButton.class))
             ((JButton) element).addActionListener(this);
         else if (element.getClass().equals(JTextField.class))

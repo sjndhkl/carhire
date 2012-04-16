@@ -14,13 +14,14 @@ import javax.swing.table.TableModel;
  *
  * @author sujan
  */
-public class DbRecord {
+public abstract class DbRecord {
     /** Database connection*/
     protected DbConnectable connectionObject;
     /** Table on which the record is stored in the database*/
     protected String useTable;
     /** Primary key of the table*/
     protected String primaryKey;
+    protected HashMap<String,String> dependencies;
 
     /** Possible type of columns*/
     public enum ColumnType {
@@ -447,5 +448,5 @@ public class DbRecord {
         return this.nonQueryPk(query);
     }
      
-    public TableModel getTableModel() { return null;}
+    public abstract TableModel getTableModel();
 }
