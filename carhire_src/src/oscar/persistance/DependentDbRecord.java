@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -114,27 +115,22 @@ public class DependentDbRecord extends DbRecord {
     }
 
     public List findDependentBy(String colName, String value) {
-        if (this.dependentTable.equals("") || this.dependentTablePK.equals("")) {
-            System.out.println("Dependent Table Metadata Not Set");
-            return null;
-        }
-        if (this.foreignKey.equals("") || this.useTable.equals("")) {
+        if (this.useTable.equals("")) {
             System.out.println("Foreign Key Not Set OR table not Specified");
             return null;
         }
-
-        List list = null;
-        try {
-            String query = "select * from " + this.useTable + " inner join " + this.dependentTable + " on " + this.useTable + "." + this.foreignKey + " = " + this.dependentTable + "." + this.dependentTablePK + " where " + colName + " = '" + value + "'";
-            if (colName.equals("*")) {
-                query = "select * from " + this.useTable + " inner join " + this.dependentTable + " on " + this.useTable + "." + this.foreignKey + " = " + this.dependentTable + "." + this.dependentTablePK;
-            }
-            return this.query(query);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return list;
+        
+        ArrayList<HashMap<String,String>> dependencies = new ArrayList<HashMap<String, String>>();
+        
+        HashMap<String,String> personDep = new HashMap<String, String>();
+        
+        personDep.put("table", "person");
+        personDep.put("pk", "personId");
+        personDep.put("joinType", "inner join");
+        
+        //personDep.put("joinTo", "");
+        personDep.put("fk", "personId");
+        dependencies.add(personDep);
+        return this.queryDependent(dependencies, colName, value);
     }
 }

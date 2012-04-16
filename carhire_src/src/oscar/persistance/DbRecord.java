@@ -98,6 +98,40 @@ public class DbRecord {
 
         return result;
     }
+    
+    public ArrayList<HashMap<String,String>> queryDependent(ArrayList<HashMap<String,String>> dependencies,String colName,String value){
+        //ArrayList<HashMap<String,String>> records = new ArrayList<HashMap<String, String>>();
+        String joins = "";
+        String selections=this.useTable+".*,";
+        int i=1;
+        for(HashMap<String,String> tableInfo:dependencies){
+            
+           if(i<dependencies.size()){
+                selections += tableInfo.get("table")+".*" +",";
+            }else{
+                selections += tableInfo.get("table")+".*";
+            }
+           String joinTo = tableInfo.get("joinTo");
+           if(joinTo == null){
+               joinTo = this.useTable;
+           }
+           joins += tableInfo.get("joinType")+ " "+tableInfo.get("table") +" on "+joinTo+"."+tableInfo.get("fk")+" = "+tableInfo.get("table")+"."+tableInfo.get("pk")+" ";
+           i++;
+        }
+        
+        String sql = "";
+        if(colName.equals("*") && value.equals("*")){
+            sql = "select "+selections+" from "+this.useTable+" "+joins;
+        }else{
+            sql = "select "+selections+" from "+this.useTable+" "+joins+" where "+colName+" = '"+value+"'";
+        }
+        return this.query(sql);
+        
+    }
+    
+    
+    
+    
 
     /**
      * Count the record of this table
