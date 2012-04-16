@@ -4,7 +4,9 @@ import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -15,6 +17,8 @@ public class DependentDbRecord extends DbRecord {
 
     /** The table that depends to others*/
     protected String dependentTable;
+    protected String dependentTablePK;
+    protected String foreignKey;
 
     /**
      * Class constructor
@@ -22,6 +26,13 @@ public class DependentDbRecord extends DbRecord {
      */
     public DependentDbRecord(String table) {
         super(table);
+    }
+
+    public DependentDbRecord(String table, String dependentTable, String dependentTablePK, String foreignKey) {
+        super(table);
+        this.dependentTable = dependentTable;
+        this.dependentTablePK = dependentTablePK;
+        this.foreignKey = foreignKey;
     }
 
     /**
@@ -33,23 +44,14 @@ public class DependentDbRecord extends DbRecord {
     }
 
     /**
-     * primary hashmap is for the current object's association
-     * and secondary is dependent table
-     * @param primaryHashMap
-     * @param secondaryHashMap
+     * 
+     * @param records
      * @return
      * @throws SQLException
      */
     public boolean addDependent(HashMap<String, HashMap<String, String>> records) throws SQLException {
-        if (this.primaryKey.equals("")) {
-        System.out.println("Primary Key MIssing please specify");
-        return false;
-        }
         try {
-
             this.connectionObject.getConnection().setAutoCommit(false);
-            // Statement stmt = this.connectionObject.getConnection().prepareStatement(useTable);
-            //System.out.println("OOOK"+records.keySet().size());
             int primaryKeyValue = -1;
             int i = 0;
             for (String className : records.keySet()) {
@@ -57,33 +59,23 @@ public class DependentDbRecord extends DbRecord {
                 Class cls = Class.forName(className);
                 Field f = cls.getDeclaredField("TABLE");
                 Object table = f.get(null);
-                // String table = "";
-                //pK and fk must be scpecified
-                //else wont work
                 HashMap<String, String> insertParamSecondary = this.getInsertParams(records.get(className));
-                if (i == 1 && primaryKeyValue>0) {
+                if (i == 1 && primaryKeyValue > 0) {
                     //process the child
-                    String sqlPrimary = "insert into " + table.toString() + " (" + this.primaryKey + "," + insertParamSecondary.get("cols") + ") values(" + primaryKeyValue + "," + insertParamSecondary.get("values") + ")";
-                  // System.out.println(sqlPrimary);
+                    String sqlPrimary = "insert into " + table.toString() + " (" + this.foreignKey + "," + insertParamSecondary.get("cols") + ") values(" + primaryKeyValue + "," + insertParamSecondary.get("values") + ")";
                     Statement stmt = this.connectionObject.getConnection().prepareStatement(sqlPrimary);
                     stmt.executeUpdate(sqlPrimary);
-                } else if(i==0){
-                    //process parent
+                } else if (i == 0) {
                     String sql = "insert into " + table.toString() + " (" + insertParamSecondary.get("cols") + ") values(" + insertParamSecondary.get("values") + ")";
-                  // System.out.println(sql);
                     Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
-                    stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+                    stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
                     ResultSet rs = stmt.getGeneratedKeys();
                     rs.next();
-                    primaryKeyValue  = rs.getInt(1);
-                }else{
+                    primaryKeyValue = rs.getInt(1);
+                } else {
                     throw new Exception("Failed");
                 }
                 i++;
-                //  HashMap<String, String> insertParamPrimary = this.getInsertParams(primaryHashMap);
-                //  String sqlPrimary = "insert into " + this.useTable + " (" + this.primaryKey + "," + insertParamPrimary.get("cols") + ") values(" + primaryKeyValue + "," + insertParamPrimary.get("values") + ")";
-                //  stmt = this.connectionObject.getConnection().prepareStatement(sqlSecondary, Statement.RETURN_GENERATED_KEYS);
-                //  stmt.executeUpdate(sqlPrimary);
             }
 
             this.connectionObject.getConnection().commit();
@@ -94,5 +86,51 @@ public class DependentDbRecord extends DbRecord {
             return false;
         }
         return true;
+    }
+
+    /**
+     * the colName must be present in both the table;
+     */
+    public boolean updateDependentBy(HashMap<String, HashMap<String, String>> records, String colName, String value) throws SQLException {
+        try {
+            this.connectionObject.getConnection().setAutoCommit(false);
+            for (String className : records.keySet()) {
+
+                Class cls = Class.forName(className);
+                Field f = cls.getDeclaredField("TABLE");
+                Object table = f.get(null);
+                //HashMap<String, String> insertParamSecondary = this.getInsertParams(records.get(className));
+                String query = "update " + this.useTable + " set " + this.getUpdateParams(records.get(className)) + " where " + colName + " = '" + value + "'";
+                Statement stmt = this.connectionObject.getConnection().createStatement();
+                int status = stmt.executeUpdate(query);
+            }
+            this.connectionObject.getConnection().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            this.connectionObject.getConnection().rollback();
+            this.connectionObject.getConnection().close();
+            return false;
+        }
+        return true;
+    }
+
+    public List findDependentBy(String colName, String value) {
+        if (this.useTable.equals("")) {
+            System.out.println("Foreign Key Not Set OR table not Specified");
+            return null;
+        }
+        
+        ArrayList<HashMap<String,String>> dependencies = new ArrayList<HashMap<String, String>>();
+        
+        HashMap<String,String> personDep = new HashMap<String, String>();
+        
+        personDep.put("table", "person");
+        personDep.put("pk", "personId");
+        personDep.put("joinType", "inner join");
+        
+        //personDep.put("joinTo", "");
+        personDep.put("fk", "personId");
+        dependencies.add(personDep);
+        return this.queryDependent(dependencies, colName, value);
     }
 }

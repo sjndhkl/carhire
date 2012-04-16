@@ -1,6 +1,7 @@
 package oscar.model;
 
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
@@ -62,6 +63,8 @@ public class Staff extends Person implements DbRecordable  {
     }
 
     public Staff() {
+        this.useTable = TABLE;
+        this.initStaff();
     }
 
     /**
@@ -71,11 +74,19 @@ public class Staff extends Person implements DbRecordable  {
     public Staff(String colName, String value) {
         //super(colName,value);
         this.useTable = TABLE;
+        this.initStaff();
         HashMap<String, String> attributes = this.findOneBy(colName, value);
         this.username = attributes.get("username");
         this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
         this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
         this.personid = Integer.parseInt(attributes.get("personId"));
+    }
+    
+    
+    private void initStaff(){
+        this.dependentTable = "person";
+        this.dependentTablePK="personId";
+        this.foreignKey="personId";
     }
 
     /**
@@ -125,7 +136,13 @@ public class Staff extends Person implements DbRecordable  {
      */
     @Override
     public boolean add() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            HashMap<String, HashMap<String, String>> data = Utility.convertToHashMapWithParent(this);
+            return this.addDependent(data);
+        } catch (SQLException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
     /**

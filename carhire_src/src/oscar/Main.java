@@ -5,7 +5,6 @@ package oscar;
 import oscar.controller.LoginController;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
-import oscar.view.LoginView;
 
 /**
  *
@@ -49,7 +48,7 @@ public class Main extends SingleFrameApplication {
         launch(Main.class, args);
     }
 
-
+        
     /*
     public static void main(String... args){
 
