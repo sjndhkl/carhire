@@ -22,9 +22,9 @@ public class Person extends DependentDbRecord implements DbRecordable {
     protected String email;
     protected String address;
     protected String phone;
-    /** Databse table name*/
+    /** Database table name*/
     public static String TABLE = "person";
-    
+
     public String getAddress() {
         return address;
     }
@@ -52,7 +52,6 @@ public class Person extends DependentDbRecord implements DbRecordable {
     public String getSurname() {
         return surname;
     }
-
 
     /**
      * Class contructor
@@ -87,13 +86,13 @@ public class Person extends DependentDbRecord implements DbRecordable {
      * Class constructor
      * @param PkValue Value of the primary key
      */
-    public Person(String colName,String value) {
+    public Person(String colName, String value) {
         super(TABLE);
         HashMap<String, String> attributes = this.findOneBy(colName, value);
         //HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
         Utility.fill(attributes, this);
     }
-    
+
     public Person(int PkValue) {
         super(TABLE);
         HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
@@ -141,6 +140,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     /*
      * return value for primary key
      */
+
     public int addPk() {
         return this.addPk(Utility.convertToHashMap(this));
     }
@@ -152,9 +152,9 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean delete() {
-        if(this.personid<=0)
+        if (this.personid <= 0)
             return false;
-        return this.deleteBy("personId", this.getPersonid()+"");
+        return this.deleteBy("personId", this.getPersonid() + "");
     }
 
     /**
@@ -164,9 +164,8 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean update() {
-        if(this.personid<=0)
+        if (this.personid <= 0)
             return false;
-        return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid()+"");
+        return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid() + "");
     }
-
 }

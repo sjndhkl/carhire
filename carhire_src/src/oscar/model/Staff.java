@@ -1,7 +1,11 @@
 package oscar.model;
 
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oscar.util.Utility;
@@ -16,7 +20,7 @@ public class Staff extends Person {
     /** Database table name*/
     public static String TABLE = "staff";
     public static String FK = "personId";
-    
+
     private String username;
     private String password;
     private boolean isAdmin;
@@ -45,7 +49,6 @@ public class Staff extends Person {
     public void setUsername(String username) {
         this.username = username;
     }
-
     public String getPassword() {
         return password;
     }
@@ -57,8 +60,9 @@ public class Staff extends Person {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     public Staff() {
+        this.useTable = TABLE;
+        this.initStaff();
     }
 
     /**
@@ -68,11 +72,19 @@ public class Staff extends Person {
     public Staff(String colName, String value) {
         //super(colName,value);
         this.useTable = TABLE;
+        this.initStaff();
         HashMap<String, String> attributes = this.findOneBy(colName, value);
         this.username = attributes.get("username");
         this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
         this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
         this.personid = Integer.parseInt(attributes.get("personId"));
+    }
+    
+    
+    private void initStaff(){
+        this.dependentTable = "person";
+        this.dependentTablePK="personId";
+        this.foreignKey="personId";
     }
 
     /**
@@ -123,7 +135,13 @@ public class Staff extends Person {
      */
     @Override
     public boolean add() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            HashMap<String, HashMap<String, String>> data = Utility.convertToHashMapWithParent(this);
+            return this.addDependent(data);
+        } catch (SQLException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
     /**
@@ -146,5 +164,24 @@ public class Staff extends Person {
 
     public boolean isAdmin() {
         return isAdmin;
+    }
+
+    @Override
+    public TableModel getTableModel() {
+        ArrayList<HashMap<String, String>> map = this.findAll();
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
+        for (HashMap<String, String> row : map)
+            model.addRow(new Object[]{
+                        row.get("personId"),
+                        row.get("name"),
+                        row.get("surname"),
+                        (row.get("attributes").contains("admin")) ? true : false,
+                        (row.get("attributes").contains("chauffeur")) ? true : false,
+                        row.get("username"),
+                        row.get("dateOfBirth"),
+                        row.get("email")
+                    });
+        return model;
     }
 }

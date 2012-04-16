@@ -6,6 +6,7 @@
 package oscar.test;
 
 //~--- non-JDK imports --------------------------------------------------------
+import java.util.ArrayList;
 import java.util.HashMap;
 import oscar.model.Person;
 import oscar.model.Staff;
@@ -17,7 +18,7 @@ import oscar.util.Utility;
  */
 public class DependentDbRecordTest extends BaseTestCase {
 
-    public void testAdd() {
+    public void testShouldAdd() {
 
         Person person = new Person();
         person.setName("Sujan");
@@ -43,7 +44,7 @@ public class DependentDbRecordTest extends BaseTestCase {
         //assertEquals(true, person.add() );
     }
 
-    public void testUtility() {
+    public void disabledTestUtility() {
         Staff person = new Staff();
         person.setPrimaryKey("personId");
         
@@ -75,7 +76,15 @@ public class DependentDbRecordTest extends BaseTestCase {
 
 
     }
+    
+    public void testShouldReturnStaffRecords(){
+        
+        Staff staff = new Staff();
+        ArrayList<HashMap<String,String>> records = (ArrayList<HashMap<String,String>>) staff.findDependentBy("*", "*");
+        System.out.println("Records: "+records.size());
+        for(HashMap<String,String> record:records){
+            this.printHashMap(record);
+            System.out.println("---------------------------------------");
+        }
+    }
 }
-
-
-//~ Formatted by Jindent --- http://www.jindent.com

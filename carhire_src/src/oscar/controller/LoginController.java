@@ -5,8 +5,6 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oscar.model.Staff;
 import oscar.persistance.Controller;
 import oscar.view.LoginView;
@@ -36,21 +34,17 @@ public class LoginController extends Controller {
 
     private void login() {
         Staff staff = new Staff("username", loginView.getUsername());
-        try {
             if (staff.authorize(loginView.getPassword())) {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
                 this.safeStop();
                 // launch staff contoller, if admin launches the admin one as well
-                if (staff.isAdmin()) {
+                if (staff.isAdmin())
                     new AdminController().start();
-                } else {
+                else
                     new StaffController().start();
-                }
             }
-        } catch (Exception ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
+    
 }
