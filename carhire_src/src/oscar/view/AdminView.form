@@ -1326,15 +1326,14 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="refCodeTxt" pref="107" max="32767" attributes="2"/>
-                                          <Component id="surnameTxt" alignment="0" pref="107" max="32767" attributes="2"/>
+                                          <Component id="bookingRefCodeTxt" pref="107" max="32767" attributes="2"/>
+                                          <Component id="bookingSurnameTxt" alignment="0" pref="107" max="32767" attributes="2"/>
                                       </Group>
                                   </Group>
-                                  <Component id="isBookingCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="clearBtn2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bookingClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bookingDeleteBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1352,19 +1351,17 @@
                                       <Component id="rentalDateLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="returnDateLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="isBookingCB" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="refCodeTxt" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bookingRefCodeTxt" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="surnameTxt" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bookingSurnameTxt" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="bookingClearBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="clearBtn2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="bookingDeleteBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1376,9 +1373,9 @@
                         <Property name="name" type="java.lang.String" value="refCodeLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="refCodeTxt">
+                    <Component class="javax.swing.JTextField" name="bookingRefCodeTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="refCodeTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="bookingRefCodeTxt" noResource="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="surnameLbl">
@@ -1387,9 +1384,9 @@
                         <Property name="name" type="java.lang.String" value="surnameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="surnameTxt">
+                    <Component class="javax.swing.JTextField" name="bookingSurnameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="surnameTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="bookingSurnameTxt" noResource="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="rentalDateLbl">
@@ -1404,28 +1401,22 @@
                         <Property name="name" type="java.lang.String" value="returnDateLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="isBookingCB">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="isBookingCB.text"/>
-                        <Property name="name" type="java.lang.String" value="isBookingCB" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn2">
+                    <Component class="javax.swing.JButton" name="bookingClearBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/clean.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn2.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn2" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="bookingClearBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="bookingClearBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton2">
+                    <Component class="javax.swing.JButton" name="bookingDeleteBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/delete.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="jButton2.text"/>
-                        <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="bookingDeleteBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="bookingDeleteBtn" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1516,18 +1507,18 @@
                                           <Component id="statusLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="statusCB" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="colorTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="yearTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="classTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="modelTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                          <Component id="brandTxt" alignment="0" pref="66" max="32767" attributes="1"/>
-                                          <Component id="plateTxt" alignment="0" pref="66" max="32767" attributes="1"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="carStatusCB" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="carColorTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="carYearTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="carModelTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                          <Component id="carBrandTxt" alignment="0" pref="66" max="32767" attributes="1"/>
+                                          <Component id="carPlateTxt" alignment="0" pref="66" max="32767" attributes="1"/>
+                                          <Component id="carClassCb" alignment="1" pref="66" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="clearBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carAddBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1538,42 +1529,42 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="plateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carPlateTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="brandLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carBrandTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="modelLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="modelTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carModelTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="classLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="classTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassCb" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="yearLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="yearTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carYearTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="colorLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="colorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carColorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="statusLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="statusCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carStatusCB" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn3" min="-2" max="-2" attributes="0"/>
+                              <Component id="carClearBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn3" min="-2" max="-2" attributes="0"/>
+                              <Component id="carAddBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1621,37 +1612,22 @@
                         <Property name="name" type="java.lang.String" value="statusLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt">
+                    <Component class="javax.swing.JTextField" name="carPlateTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="plateTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carPlateTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt">
+                    <Component class="javax.swing.JTextField" name="carBrandTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="brandTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carBrandTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="modelTxt">
+                    <Component class="javax.swing.JTextField" name="carModelTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="modelTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carModelTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="classTxt">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="classTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="yearTxt">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="yearTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="colorTxt">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="colorTxt" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="statusCB">
+                    <Component class="javax.swing.JComboBox" name="carClassCb">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
@@ -1661,26 +1637,49 @@
                             <StringItem index="3" value="Item 4"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="statusCB" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carClassCb" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn3">
+                    <Component class="javax.swing.JTextField" name="carYearTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="carYearTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="carColorTxt">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="carColorTxt" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="carStatusCB">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="Item 1"/>
+                            <StringItem index="1" value="Item 2"/>
+                            <StringItem index="2" value="Item 3"/>
+                            <StringItem index="3" value="Item 4"/>
+                          </StringArray>
+                        </Property>
+                        <Property name="name" type="java.lang.String" value="carStatusCB" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="carAddBtn">
                       <Properties>
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn3.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn3.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn3" noResource="true"/>
+                        <Property name="icon" type="javax.swing.Icon" resourceKey="carAddBtn.icon"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carAddBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="carAddBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn3">
+                    <Component class="javax.swing.JButton" name="carClearBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/clean.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn3.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn3" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carClearBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="carClearBtn" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>

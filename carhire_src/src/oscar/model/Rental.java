@@ -10,14 +10,14 @@ import oscar.persistance.DbRecordable;
 /**
  * @author Stefano
  * 
- * Class Rental representing the car hire
+ * Class Rental representing the car hire and booking
  */
 public class Rental extends DbRecord implements DbRecordable  {
 
     /** Database table name*/
     public static String TABLE = "rental";
     //TODO: this entity has two FK in the DB
-    public static String FK = "personId";
+    public static String FK = "";
     private int rentalId;
     private String startDatetime;
     private String endDateTime;
@@ -74,14 +74,16 @@ public class Rental extends DbRecord implements DbRecordable  {
     public TableModel getTableModel() {
         ArrayList<HashMap<String, String>> map = this.findAll();
         DefaultTableModel model = new DefaultTableModel(
-                new Object[]{"Id", "Start", "End", "Car plate", "Chauffeur", "Insurance"}, 0);
+                new Object[]{"Id", "Start", "End", "Chauffeur", "Insurance"}, 0);
         for (HashMap<String, String> row : map) {
             model.addRow(new Object[]{
                         row.get("rentalId"),
                         row.get("startDatetime"),
                         row.get("endDatetime"),
-                        (row.get("attributes").contains("isInsured")) ? true : false,
-                        (row.get("attributes").contains("isChauffeur")) ? true : false,
+                        (row.get("isInsured").contains("1")) ? true : false,
+                        (row.get("isChauffeur").contains("1")) ? true : false,
+                        //row.get("isInsured"),
+                        //row.get("isChauffeur"),
                     });
         }
         return model;

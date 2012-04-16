@@ -114,14 +114,13 @@ public class AdminView extends AbstractView {
         bookingPanel = new javax.swing.JPanel();
         carClassSearchPanel2 = new javax.swing.JPanel();
         refCodeLbl = new javax.swing.JLabel();
-        refCodeTxt = new javax.swing.JTextField();
+        bookingRefCodeTxt = new javax.swing.JTextField();
         surnameLbl = new javax.swing.JLabel();
-        surnameTxt = new javax.swing.JTextField();
+        bookingSurnameTxt = new javax.swing.JTextField();
         rentalDateLbl = new javax.swing.JLabel();
         returnDateLbl = new javax.swing.JLabel();
-        isBookingCB = new javax.swing.JCheckBox();
-        clearBtn2 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bookingClearBtn = new javax.swing.JButton();
+        bookingDeleteBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         bookingTbl = new org.jdesktop.swingx.JXTable();
         carPanel = new javax.swing.JPanel();
@@ -133,15 +132,15 @@ public class AdminView extends AbstractView {
         yearLbl = new javax.swing.JLabel();
         colorLbl = new javax.swing.JLabel();
         statusLbl = new javax.swing.JLabel();
-        plateTxt = new javax.swing.JTextField();
-        brandTxt = new javax.swing.JTextField();
-        modelTxt = new javax.swing.JTextField();
-        classTxt = new javax.swing.JTextField();
-        yearTxt = new javax.swing.JTextField();
-        colorTxt = new javax.swing.JTextField();
-        statusCB = new javax.swing.JComboBox();
-        addBtn3 = new javax.swing.JButton();
-        clearBtn3 = new javax.swing.JButton();
+        carPlateTxt = new javax.swing.JTextField();
+        carBrandTxt = new javax.swing.JTextField();
+        carModelTxt = new javax.swing.JTextField();
+        carClassCb = new javax.swing.JComboBox();
+        carYearTxt = new javax.swing.JTextField();
+        carColorTxt = new javax.swing.JTextField();
+        carStatusCB = new javax.swing.JComboBox();
+        carAddBtn = new javax.swing.JButton();
+        carClearBtn = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         carTbl = new org.jdesktop.swingx.JXTable();
         carClassPanel = new javax.swing.JPanel();
@@ -932,12 +931,12 @@ public class AdminView extends AbstractView {
         refCodeLbl.setText(resourceMap.getString("refCodeLbl.text")); // NOI18N
         refCodeLbl.setName("refCodeLbl"); // NOI18N
 
-        refCodeTxt.setName("refCodeTxt"); // NOI18N
+        bookingRefCodeTxt.setName("bookingRefCodeTxt"); // NOI18N
 
         surnameLbl.setText(resourceMap.getString("surnameLbl.text")); // NOI18N
         surnameLbl.setName("surnameLbl"); // NOI18N
 
-        surnameTxt.setName("surnameTxt"); // NOI18N
+        bookingSurnameTxt.setName("bookingSurnameTxt"); // NOI18N
 
         rentalDateLbl.setText(resourceMap.getString("rentalDateLbl.text")); // NOI18N
         rentalDateLbl.setName("rentalDateLbl"); // NOI18N
@@ -945,16 +944,13 @@ public class AdminView extends AbstractView {
         returnDateLbl.setText(resourceMap.getString("returnDateLbl.text")); // NOI18N
         returnDateLbl.setName("returnDateLbl"); // NOI18N
 
-        isBookingCB.setText(resourceMap.getString("isBookingCB.text")); // NOI18N
-        isBookingCB.setName("isBookingCB"); // NOI18N
+        bookingClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        bookingClearBtn.setText(resourceMap.getString("bookingClearBtn.text")); // NOI18N
+        bookingClearBtn.setName("bookingClearBtn"); // NOI18N
 
-        clearBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn2.setText(resourceMap.getString("clearBtn2.text")); // NOI18N
-        clearBtn2.setName("clearBtn2"); // NOI18N
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
-        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
-        jButton2.setName("jButton2"); // NOI18N
+        bookingDeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
+        bookingDeleteBtn.setText(resourceMap.getString("bookingDeleteBtn.text")); // NOI18N
+        bookingDeleteBtn.setName("bookingDeleteBtn"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanel2Layout = new javax.swing.GroupLayout(carClassSearchPanel2);
         carClassSearchPanel2.setLayout(carClassSearchPanel2Layout);
@@ -968,13 +964,12 @@ public class AdminView extends AbstractView {
                             .addComponent(refCodeLbl))
                         .addGap(18, 18, 18)
                         .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(refCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                            .addComponent(surnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
-                    .addComponent(isBookingCB)
-                    .addComponent(clearBtn2)
+                            .addComponent(bookingRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(bookingSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
                     .addComponent(rentalDateLbl)
                     .addComponent(returnDateLbl)
-                    .addComponent(jButton2))
+                    .addComponent(bookingClearBtn)
+                    .addComponent(bookingDeleteBtn))
                 .addContainerGap())
         );
         carClassSearchPanel2Layout.setVerticalGroup(
@@ -988,17 +983,15 @@ public class AdminView extends AbstractView {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rentalDateLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(returnDateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(isBookingCB))
+                        .addComponent(returnDateLbl))
                     .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addComponent(refCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bookingRefCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(surnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bookingSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(bookingClearBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clearBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2))
+                .addComponent(bookingDeleteBtn))
         );
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
@@ -1065,29 +1058,30 @@ public class AdminView extends AbstractView {
         statusLbl.setText(resourceMap.getString("statusLbl.text")); // NOI18N
         statusLbl.setName("statusLbl"); // NOI18N
 
-        plateTxt.setName("plateTxt"); // NOI18N
+        carPlateTxt.setName("carPlateTxt"); // NOI18N
 
-        brandTxt.setName("brandTxt"); // NOI18N
+        carBrandTxt.setName("carBrandTxt"); // NOI18N
 
-        modelTxt.setName("modelTxt"); // NOI18N
+        carModelTxt.setName("carModelTxt"); // NOI18N
 
-        classTxt.setName("classTxt"); // NOI18N
+        carClassCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        carClassCb.setName("carClassCb"); // NOI18N
 
-        yearTxt.setName("yearTxt"); // NOI18N
+        carYearTxt.setName("carYearTxt"); // NOI18N
 
-        colorTxt.setName("colorTxt"); // NOI18N
+        carColorTxt.setName("carColorTxt"); // NOI18N
 
-        statusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        statusCB.setName("statusCB"); // NOI18N
+        carStatusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        carStatusCB.setName("carStatusCB"); // NOI18N
 
-        addBtn3.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn3.setIcon(resourceMap.getIcon("addBtn3.icon")); // NOI18N
-        addBtn3.setText(resourceMap.getString("addBtn3.text")); // NOI18N
-        addBtn3.setName("addBtn3"); // NOI18N
+        carAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
+        carAddBtn.setIcon(resourceMap.getIcon("carAddBtn.icon")); // NOI18N
+        carAddBtn.setText(resourceMap.getString("carAddBtn.text")); // NOI18N
+        carAddBtn.setName("carAddBtn"); // NOI18N
 
-        clearBtn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn3.setText(resourceMap.getString("clearBtn3.text")); // NOI18N
-        clearBtn3.setName("clearBtn3"); // NOI18N
+        carClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        carClearBtn.setText(resourceMap.getString("carClearBtn.text")); // NOI18N
+        carClearBtn.setName("carClearBtn"); // NOI18N
 
         javax.swing.GroupLayout carSearchPanelLayout = new javax.swing.GroupLayout(carSearchPanel);
         carSearchPanel.setLayout(carSearchPanelLayout);
@@ -1105,16 +1099,16 @@ public class AdminView extends AbstractView {
                             .addComponent(colorLbl)
                             .addComponent(statusLbl))
                         .addGap(18, 18, 18)
-                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statusCB, 0, 66, Short.MAX_VALUE)
-                            .addComponent(colorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(yearTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(classTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(modelTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(brandTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(plateTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)))
-                    .addComponent(clearBtn3)
-                    .addComponent(addBtn3))
+                        .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(carStatusCB, javax.swing.GroupLayout.Alignment.LEADING, 0, 66, Short.MAX_VALUE)
+                            .addComponent(carColorTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(carYearTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(carModelTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(carBrandTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(carPlateTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(carClassCb, 0, 66, Short.MAX_VALUE)))
+                    .addComponent(carClearBtn)
+                    .addComponent(carAddBtn))
                 .addContainerGap())
         );
         carSearchPanelLayout.setVerticalGroup(
@@ -1122,35 +1116,35 @@ public class AdminView extends AbstractView {
             .addGroup(carSearchPanelLayout.createSequentialGroup()
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(plateLbl)
-                    .addComponent(plateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carPlateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(brandLbl)
-                    .addComponent(brandTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carBrandTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modelLbl)
-                    .addComponent(modelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carModelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(classLbl)
-                    .addComponent(classTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carClassCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(yearLbl)
-                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carYearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(colorLbl)
-                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carColorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(statusLbl)
-                    .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carStatusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(clearBtn3)
+                .addComponent(carClearBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn3))
+                .addComponent(carAddBtn))
         );
 
         jScrollPane3.setName("jScrollPane3"); // NOI18N
@@ -1763,12 +1757,15 @@ public class AdminView extends AbstractView {
     private javax.swing.JButton Extendsbtn;
     private javax.swing.JLabel PhoneDlgLbl;
     private javax.swing.JButton addBtn1;
-    private javax.swing.JButton addBtn3;
     private javax.swing.JLabel addressDlgLbl;
     private javax.swing.JTextArea addressDlgTA;
     private javax.swing.JLabel addressLbl;
     private javax.swing.JTextArea addressTxt;
+    private javax.swing.JButton bookingClearBtn;
+    private javax.swing.JButton bookingDeleteBtn;
     private javax.swing.JPanel bookingPanel;
+    private javax.swing.JTextField bookingRefCodeTxt;
+    private javax.swing.JTextField bookingSurnameTxt;
     private org.jdesktop.swingx.JXTable bookingTbl;
     private javax.swing.JComboBox branchCB;
     private javax.swing.JLabel branchDlgLbl;
@@ -1776,24 +1773,32 @@ public class AdminView extends AbstractView {
     private javax.swing.JTextField brandDlgTxt;
     private javax.swing.JLabel brandLbl;
     private javax.swing.JLabel brandLbl1;
-    private javax.swing.JTextField brandTxt;
     private javax.swing.JTextField brandTxt1;
     private javax.swing.JButton cancelDlgBtn;
     private javax.swing.JButton cancelDlgBtn1;
     private javax.swing.JButton cancelDlgBtn2;
+    private javax.swing.JButton carAddBtn;
+    private javax.swing.JTextField carBrandTxt;
+    private javax.swing.JComboBox carClassCb;
     private javax.swing.JDialog carClassDialog;
     private javax.swing.JPanel carClassPanel;
     private javax.swing.JPanel carClassSearchPanel;
     private javax.swing.JPanel carClassSearchPanel1;
     private javax.swing.JPanel carClassSearchPanel2;
     private org.jdesktop.swingx.JXTable carClassTbl;
+    private javax.swing.JButton carClearBtn;
+    private javax.swing.JTextField carColorTxt;
     private javax.swing.JDialog carDialog;
+    private javax.swing.JTextField carModelTxt;
     private javax.swing.JPanel carPanel;
     private javax.swing.JPanel carPanel1;
+    private javax.swing.JTextField carPlateTxt;
     private javax.swing.JPanel carSearchPanel;
     private javax.swing.JPanel carSearchPanel1;
+    private javax.swing.JComboBox carStatusCB;
     private org.jdesktop.swingx.JXTable carTbl;
     private org.jdesktop.swingx.JXTable carTbl1;
+    private javax.swing.JTextField carYearTxt;
     private javax.swing.JCheckBox chauffeuredCB;
     private javax.swing.JCheckBox chauffeuredCB1;
     private javax.swing.JComboBox classCB;
@@ -1801,15 +1806,11 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel classDlgLbl;
     private javax.swing.JLabel classLbl;
     private javax.swing.JLabel classLbl1;
-    private javax.swing.JTextField classTxt;
     private javax.swing.JButton clearBtn1;
-    private javax.swing.JButton clearBtn2;
-    private javax.swing.JButton clearBtn3;
     private javax.swing.JButton clearBtn5;
     private javax.swing.JLabel colorDlgLbl;
     private javax.swing.JTextField colorDlgTxt;
     private javax.swing.JLabel colorLbl;
-    private javax.swing.JTextField colorTxt;
     private org.jdesktop.swingx.JXDatePicker dateOfBirthDP;
     private javax.swing.JLabel dateOfBirthDlgLbl;
     private javax.swing.JLabel dateOfBirthLbl;
@@ -1829,9 +1830,7 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel fromLbl;
     private javax.swing.JButton hireBtn;
     private javax.swing.JPanel hirePanel;
-    private javax.swing.JCheckBox isBookingCB;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1859,7 +1858,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel modelDlgLbl;
     private javax.swing.JTextField modelDlgTxt;
     private javax.swing.JLabel modelLbl;
-    private javax.swing.JTextField modelTxt;
     private javax.swing.JLabel nameDlgLbl;
     private javax.swing.JTextField nameDlgTxt;
     private javax.swing.JLabel nameLbl;
@@ -1880,7 +1878,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel plateLbl;
     private javax.swing.JLabel plateLbl1;
     private javax.swing.JLabel plateLbl3;
-    private javax.swing.JTextField plateTxt;
     private javax.swing.JTextField plateTxt1;
     private javax.swing.JTextField plateTxt3;
     private javax.swing.JLabel priceDlgLbl;
@@ -1889,7 +1886,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel refCodeLbl1;
     private javax.swing.JLabel refCodeLbl2;
     private javax.swing.JButton refCodeSearchBtn;
-    private javax.swing.JTextField refCodeTxt;
     private javax.swing.JTextField refCodeTxt1;
     private javax.swing.JTextField refCodeTxt2;
     private javax.swing.JLabel rentalDateLbl;
@@ -1915,7 +1911,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JTextField staffSurnameTxt;
     private org.jdesktop.swingx.JXTable staffTbl;
     private javax.swing.JPanel startPanel;
-    private javax.swing.JComboBox statusCB;
     private javax.swing.JComboBox statusDlgCB;
     private javax.swing.JLabel statusDlgLbl;
     private javax.swing.JLabel statusLbl;
@@ -1924,7 +1919,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel surnameLbl;
     private javax.swing.JLabel surnameLbl1;
     private javax.swing.JLabel surnameLbl2;
-    private javax.swing.JTextField surnameTxt;
     private javax.swing.JTextField surnameTxt1;
     private javax.swing.JTextField surnameTxt2;
     private javax.swing.JTabbedPane tabPanel;
@@ -1936,7 +1930,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel yearDlgLbl;
     private javax.swing.JSpinner yearDlgSpn;
     private javax.swing.JLabel yearLbl;
-    private javax.swing.JTextField yearTxt;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -2003,5 +1996,96 @@ public class AdminView extends AbstractView {
      */
     public org.jdesktop.swingx.JXTable getCarTbl() {
         return carTbl;
+    }
+
+    /**
+     * @return the bookingRefCodeTxt
+     */
+    public javax.swing.JTextField getBookingRefCodeTxt() {
+        return bookingRefCodeTxt;
+    }
+
+    /**
+     * @return the bookingSurnameTxt
+     */
+    public javax.swing.JTextField getBookingSurnameTxt() {
+        return bookingSurnameTxt;
+    }
+
+    /**
+     * @return the bookingClearBtn
+     */
+    public javax.swing.JButton getBookingClearBtn() {
+        return bookingClearBtn;
+    }
+
+    /**
+     * @return the bookingDeleteBtn
+     */
+    public javax.swing.JButton getBookingDeleteBtn() {
+        return bookingDeleteBtn;
+    }
+
+    /**
+     * @return the carAddBtn
+     */
+    public javax.swing.JButton getCarAddBtn() {
+        return carAddBtn;
+    }
+
+    /**
+     * @return the carBrandTxt
+     */
+    public javax.swing.JTextField getCarBrandTxt() {
+        return carBrandTxt;
+    }
+
+    /**
+     * @return the carClassCb
+     */
+    public javax.swing.JComboBox getCarClassCb() {
+        return carClassCb;
+    }
+
+    /**
+     * @return the carClearBtn
+     */
+    public javax.swing.JButton getCarClearBtn() {
+        return carClearBtn;
+    }
+
+    /**
+     * @return the carColorTxt
+     */
+    public javax.swing.JTextField getCarColorTxt() {
+        return carColorTxt;
+    }
+
+    /**
+     * @return the carModelTxt
+     */
+    public javax.swing.JTextField getCarModelTxt() {
+        return carModelTxt;
+    }
+
+    /**
+     * @return the carPlateTxt
+     */
+    public javax.swing.JTextField getCarPlateTxt() {
+        return carPlateTxt;
+    }
+
+    /**
+     * @return the carStatusCB
+     */
+    public javax.swing.JComboBox getCarStatusCB() {
+        return carStatusCB;
+    }
+
+    /**
+     * @return the carYearTxt
+     */
+    public javax.swing.JTextField getCarYearTxt() {
+        return carYearTxt;
     }
 }

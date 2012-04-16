@@ -16,20 +16,9 @@ import oscar.view.dialog.*;
 public abstract class Controller extends Thread implements ActionListener, KeyListener {
 
     public static long TABLE_FILTERING_DELAY = 500;
-    /*private ArrayList<DbRecord> registeredModels;
-    private ArrayList<AbstractView> registeredViews;
-    private ArrayList<JDialog> registeredDialogs;
-    private ArrayList<JButton> registeredButtonListeners;
-    private ArrayList<JTextField> registeredTextFieldListeners;*/
     private ArrayList<Object> elements;
 
     public Controller() {
-        /*this.registeredModels = new ArrayList<DbRecord>();
-        this.registeredViews = new ArrayList<AbstractView>();
-        this.registeredButtonListeners = new ArrayList<JButton>();
-        this.registeredTextFieldListeners = new ArrayList<JTextField>();
-        this.registeredDialogs = new ArrayList<JDialog>();*/
-
         this.elements = new ArrayList<Object>();
     }
 
