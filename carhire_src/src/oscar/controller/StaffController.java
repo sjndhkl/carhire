@@ -18,8 +18,10 @@ public class StaffController extends Controller {
     public void run() {
         this.setName("Staff");
         staffView = new StaffView();
-        this.addView(staffView);
-        this.addButtonListener(staffView.getLogoutBtn());
+        /*this.addView(staffView);
+        this.addButtonListener(staffView.getLogoutBtn());*/
+        this.addElement(staffView);
+        this.addElement(staffView.getLogoutBtn());
     }
 
     @Override
@@ -31,6 +33,21 @@ public class StaffController extends Controller {
 
     private void actionLogout() {
         new LoginController().start();
-        this.safeStop();
+        this.removeAllElement();
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

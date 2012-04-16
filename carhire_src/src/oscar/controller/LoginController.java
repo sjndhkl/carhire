@@ -5,6 +5,7 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import oscar.model.Staff;
 import oscar.persistance.Controller;
 import oscar.view.LoginView;
@@ -21,8 +22,10 @@ public class LoginController extends Controller {
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
-        this.addView(loginView);
-        this.addButtonListener(loginView.getBtnLogin());
+        /*this.addView(loginView);
+        this.addButtonListener(loginView.getBtnLogin());*/
+        this.addElement(loginView);
+        this.addElement(loginView.getBtnLogin());
         //.addModel(new Person());
     }
 
@@ -38,13 +41,28 @@ public class LoginController extends Controller {
                 System.out.println("this is logged");
                 // remove the password
                 loginView.setPassword("");
-                this.safeStop();
+                this.removeAllElement();
                 // launch staff contoller, if admin launches the admin one as well
                 if (staff.isAdmin())
                     new AdminController().start();
                 else
                     new StaffController().start();
             }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
