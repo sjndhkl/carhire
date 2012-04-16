@@ -123,7 +123,7 @@ public class AdminView extends AbstractView {
         clearBtn2 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        bookingsTbl = new org.jdesktop.swingx.JXTable();
+        bookingTbl = new org.jdesktop.swingx.JXTable();
         carPanel = new javax.swing.JPanel();
         carSearchPanel = new javax.swing.JPanel();
         plateLbl = new javax.swing.JLabel();
@@ -1003,7 +1003,7 @@ public class AdminView extends AbstractView {
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
-        bookingsTbl.setModel(new javax.swing.table.DefaultTableModel(
+        bookingTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1014,8 +1014,8 @@ public class AdminView extends AbstractView {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        bookingsTbl.setName("bookingsTbl"); // NOI18N
-        jScrollPane2.setViewportView(bookingsTbl);
+        bookingTbl.setName("bookingTbl"); // NOI18N
+        jScrollPane2.setViewportView(bookingTbl);
 
         javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
         bookingPanel.setLayout(bookingPanelLayout);
@@ -1769,7 +1769,7 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel addressLbl;
     private javax.swing.JTextArea addressTxt;
     private javax.swing.JPanel bookingPanel;
-    private org.jdesktop.swingx.JXTable bookingsTbl;
+    private org.jdesktop.swingx.JXTable bookingTbl;
     private javax.swing.JComboBox branchCB;
     private javax.swing.JLabel branchDlgLbl;
     private javax.swing.JLabel brandDlgLbl;
@@ -1975,5 +1975,33 @@ public class AdminView extends AbstractView {
 
     public javax.swing.JDialog getStaffDialog() {
         return staffDialog;
+    }
+
+    /**
+     * @return the bookingsTbl
+     */
+    public org.jdesktop.swingx.JXTable getBookingTbl() {
+        return bookingTbl;
+    }
+
+    /**
+     * @param bookingsTbl the bookingsTbl to set
+     */
+    public void setBookingsTbl(org.jdesktop.swingx.JXTable bookingsTbl) {
+        this.bookingTbl = bookingsTbl;
+    }
+
+    /**
+     * @return the carClassTbl
+     */
+    public org.jdesktop.swingx.JXTable getCarClassTbl() {
+        return carClassTbl;
+    }
+
+    /**
+     * @return the carTbl
+     */
+    public org.jdesktop.swingx.JXTable getCarTbl() {
+        return carTbl;
     }
 }

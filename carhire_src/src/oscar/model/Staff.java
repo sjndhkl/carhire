@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import oscar.persistance.DbRecordable;
 import oscar.util.Utility;
 
 /**
@@ -14,7 +15,7 @@ import oscar.util.Utility;
  *
  * Class Staff for staff members
  */
-public class Staff extends Person {
+public class Staff extends Person implements DbRecordable  {
 
     /** Database table name*/
     public static String TABLE = "staff";

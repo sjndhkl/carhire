@@ -3,6 +3,7 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
+import oscar.model.Rental;
 import oscar.persistance.Controller;
 import oscar.view.AdminView;
 import oscar.model.Staff;
@@ -41,6 +42,8 @@ public class AdminController extends Controller {
         this.addElement(adminView);
 
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
+
+        adminView.getBookingTbl().setModel(new Rental().getTableModel());
 
     }
 
