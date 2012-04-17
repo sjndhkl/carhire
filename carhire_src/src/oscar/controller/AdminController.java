@@ -1,6 +1,5 @@
 package oscar.controller;
 
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
@@ -14,7 +13,6 @@ import oscar.persistance.StaffUpdateTableTask;
 import oscar.persistance.BookingUpdateTableTask;
 import oscar.persistance.CarUpdateTableTask;
 import oscar.persistance.ClassUpdateTableTask;
-import oscar.persistance.HireUpdatePersonTask;
 import oscar.view.dialog.CarClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;

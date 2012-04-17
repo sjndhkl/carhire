@@ -3,13 +3,10 @@ package oscar.persistance;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
-import oscar.view.*;
-import oscar.view.dialog.*;
 
 /**
  *
@@ -19,6 +16,7 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
 
     public static long TABLE_FILTERING_DELAY = 500;
     private ArrayList<Object> elements;
+    private Object View;
 
     public Controller() {
         this.elements = new ArrayList<Object>();
@@ -33,14 +31,9 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
             ((JComboBox) element).addActionListener(this);
         else if (element.getClass().equals(JTextField.class))
             ((JTextField) element).addKeyListener(this);
-        else if (element.getClass().equals(AdminView.class)
-                || element.getClass().equals(StaffView.class)
-                || element.getClass().equals(LoginView.class))
+        else if (element.getClass().getSuperclass().equals(AbstractView.class))
             ((AbstractView) element).setVisible(true);
-        else if (element.getClass().equals(StaffDialog.class)
-                || element.getClass().equals(CarDialog.class)
-                || element.getClass().equals(CarClassDialog.class)
-                || element.getClass().equals(ExtensionDialog.class))
+        else if (element.getClass().getSuperclass().equals(JDialog.class))
             ((JDialog) element).setVisible(true);
     }
 
@@ -50,12 +43,10 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
                 ((JButton) element).removeActionListener(this);
             else if (element.getClass().equals(JTextField.class))
                 ((JTextField) element).removeKeyListener(this);
-            else if (element.getClass().equals(AdminView.class)
-                    || element.getClass().equals(StaffView.class)
-                    || element.getClass().equals(LoginView.class))
+            else if (element.getClass().getSuperclass().equals(AbstractView.class))
                 ((AbstractView) element).setVisible(false);
             else if (element.getClass().equals(JDialog.class))
-                ((JDialog) element).setVisible(true);
+                ((JDialog) element).setVisible(false);
         elements = new ArrayList<Object>();
     }
 
