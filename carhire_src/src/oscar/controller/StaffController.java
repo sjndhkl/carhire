@@ -13,15 +13,18 @@ import oscar.view.StaffView;
 public class StaffController extends Controller {
 
     private StaffView staffView;
+    // weather the controller is attached to the admin one
+    private boolean passive = false;
 
     @Override
     public void run() {
         this.setName("Staff");
-        staffView = new StaffView();
+        if (!passive)
+        {staffView = new StaffView();
         /*this.addView(staffView);
         this.addButtonListener(staffView.getLogoutBtn());*/
         this.addElement(staffView);
-        this.addElement(staffView.getLogoutBtn());
+        this.addElement(staffView.getLogoutBtn());}
     }
 
     @Override
@@ -49,5 +52,12 @@ public class StaffController extends Controller {
     @Override
     public void keyReleased(KeyEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    /**
+     * @param passive the passive to set
+     */
+    public void setPassive(boolean passive) {
+        this.passive = passive;
     }
 }

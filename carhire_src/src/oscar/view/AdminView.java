@@ -898,6 +898,7 @@ public class AdminView extends AbstractView {
         ));
         staffTbl.setColumnSelectionAllowed(true);
         staffTbl.setName("staffTbl"); // NOI18N
+        staffTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(staffTbl);
         staffTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -998,17 +999,17 @@ public class AdminView extends AbstractView {
 
         bookingTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        bookingTbl.setColumnSelectionAllowed(true);
         bookingTbl.setName("bookingTbl"); // NOI18N
+        bookingTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(bookingTbl);
+        bookingTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
         bookingPanel.setLayout(bookingPanelLayout);
@@ -1151,17 +1152,20 @@ public class AdminView extends AbstractView {
 
         carTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        carTbl.setColumnSelectionAllowed(true);
         carTbl.setName("carTbl"); // NOI18N
+        carTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(carTbl);
+        carTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout carPanelLayout = new javax.swing.GroupLayout(carPanel);
         carPanel.setLayout(carPanelLayout);
@@ -1247,17 +1251,20 @@ public class AdminView extends AbstractView {
 
         carClassTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        carClassTbl.setColumnSelectionAllowed(true);
         carClassTbl.setName("carClassTbl"); // NOI18N
+        carClassTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(carClassTbl);
+        carClassTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout carClassPanelLayout = new javax.swing.GroupLayout(carClassPanel);
         carClassPanel.setLayout(carClassPanelLayout);
@@ -1623,17 +1630,20 @@ public class AdminView extends AbstractView {
 
         jXTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        jXTable1.setColumnSelectionAllowed(true);
         jXTable1.setName("jXTable1"); // NOI18N
+        jXTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane9.setViewportView(jXTable1);
+        jXTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout returnPanelLayout = new javax.swing.GroupLayout(returnPanel);
         returnPanel.setLayout(returnPanelLayout);

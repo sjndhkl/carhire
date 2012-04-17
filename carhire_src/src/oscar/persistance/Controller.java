@@ -27,9 +27,10 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
     public void addElement(Object element) {
         elements.add(element);
 
-        if (element.getClass().equals(JButton.class)
-                || element.getClass().equals(JComboBox.class))
+        if (element.getClass().equals(JButton.class))
             ((JButton) element).addActionListener(this);
+        else if (element.getClass().equals(JComboBox.class))
+            ((JComboBox) element).addActionListener(this);
         else if (element.getClass().equals(JTextField.class))
             ((JTextField) element).addKeyListener(this);
         else if (element.getClass().equals(AdminView.class)

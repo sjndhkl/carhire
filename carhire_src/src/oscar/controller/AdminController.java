@@ -1,5 +1,6 @@
 package oscar.controller;
 
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
@@ -32,11 +33,14 @@ public class AdminController extends Controller {
     private CarUpdateTableTask carUpdateTableTask;
     private ClassUpdateTableTask classUpdateTableTask;
     private HireUpdatePersonTask hireUpdatePersonTask;
+    // The staff controller to handle staff tabs
+    private StaffController staffController;
 
     @Override
     public void run() {
         this.setName("Admin");
         adminView = new AdminView();
+        staffController = new StaffController();
         this.addElement(adminView);
         this.addElement(adminView.getLogoutBtn());
         // Staff tab
@@ -121,6 +125,15 @@ public class AdminController extends Controller {
             actionClassAdd();
         else if (e.getSource().equals(adminView.getCarClassClearBtn()))
             actionClassClearFields();
+        //Hire tab
+        else if (e.getSource().equals(adminView.getHireBtn()))
+            actionHire();
+        else if (e.getSource().equals(adminView.getHireClearBtn()))
+            actionHireClearFields();
+        else if (e.getSource().equals(adminView.getHirePersonLoadBtn()))
+            actionHireLoadPerson();
+        else if (e.getSource().equals(adminView.getHireRefCodeSearchBtn()))
+            actionHireSearchRefCode();
     }
 
     private void actionLogout() {
@@ -174,6 +187,33 @@ public class AdminController extends Controller {
         adminView.getCarClassDisplayTxt().setText("");
         adminView.getCarClassNameTxt().setText("");
         actionClassUpdateTable();
+    }
+
+    private void actionHire() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireSearchRefCode() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireLoadPerson() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireClearFields() {
+        adminView.getHireChauffeuredCB().setSelected(false);
+        adminView.getHireClassCB().setSelectedIndex(0);
+        adminView.getHireInsuranceCB().setSelected(false);
+        adminView.getHireDateOfBirthDP().setDate(null);
+        adminView.getHireFromDP().setDate(null);
+        adminView.getHireToDP().setDate(null);
+        adminView.getHireAddressTxt().setText("");
+        adminView.getHireEmailTxt().setText("");
+        adminView.getHireNameTxt().setText("");
+        adminView.getHirePhoneTxt().setText("");
+        adminView.getHireRefCodeTxt().setText("");
+        adminView.getHireSurnameTxt().setText("");
     }
 
     /*
