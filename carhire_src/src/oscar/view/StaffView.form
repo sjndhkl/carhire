@@ -295,9 +295,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="clearBtn5">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="0" name="null"/>
-                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="clearBtn5.icon"/>
                     <Property name="text" type="java.lang.String" resourceKey="clearBtn5.text"/>
                     <Property name="name" type="java.lang.String" value="clearBtn5" noResource="true"/>
                   </Properties>
@@ -403,9 +401,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="hireBtn">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="0" name="null"/>
-                </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="hireBtn.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="hireBtn.text"/>
                 <Property name="name" type="java.lang.String" value="hireBtn" noResource="true"/>
               </Properties>
@@ -426,7 +422,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="hirePersonLoadBtn" alignment="0" pref="402" max="32767" attributes="0"/>
+                              <Component id="hirePersonLoadBtn" alignment="0" pref="388" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="hireNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -438,12 +434,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane7" alignment="0" pref="306" max="32767" attributes="0"/>
-                                      <Component id="hireNameTxt" alignment="0" pref="306" max="32767" attributes="0"/>
-                                      <Component id="hireSurnameTxt" alignment="0" pref="306" max="32767" attributes="0"/>
-                                      <Component id="hireDateOfBirthDP" alignment="0" pref="306" max="32767" attributes="0"/>
-                                      <Component id="hirePhoneTxt" alignment="0" pref="306" max="32767" attributes="0"/>
-                                      <Component id="hireEmailTxt" alignment="0" pref="306" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane7" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="hireNameTxt" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="hireSurnameTxt" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="hireDateOfBirthDP" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="hirePhoneTxt" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="hireEmailTxt" alignment="0" pref="292" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -494,10 +490,9 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="hirePersonLoadBtn">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="0" name="null"/>
-                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="hirePersonLoadBtn.icon"/>
                     <Property name="text" type="java.lang.String" resourceKey="hirePersonLoadBtn.text"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="name" type="java.lang.String" value="hirePersonLoadBtn" noResource="true"/>
                   </Properties>
                 </Component>
@@ -600,18 +595,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="hireRefCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="hireRefCodeTxt" pref="241" max="32767" attributes="0"/>
+                          <Component id="hireRefCodeTxt" pref="255" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="hireRefCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" alignment="0" pref="443" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" alignment="0" pref="457" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                  <Component id="jScrollPane8" pref="421" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane8" pref="435" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
@@ -760,9 +755,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="hireRefCodeSearchBtn">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="0" name="null"/>
-                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="hireRefCodeSearchBtn.icon"/>
                     <Property name="text" type="java.lang.String" resourceKey="hireRefCodeSearchBtn.text"/>
                     <Property name="name" type="java.lang.String" value="hireRefCodeSearchBtn" noResource="true"/>
                   </Properties>
@@ -782,9 +775,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="hireClearBtn">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="0" name="null"/>
-                </Property>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="hireClearBtn.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="hireClearBtn.text"/>
                 <Property name="name" type="java.lang.String" value="hireClearBtn" noResource="true"/>
               </Properties>

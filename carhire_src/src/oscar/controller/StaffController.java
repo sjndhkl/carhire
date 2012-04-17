@@ -3,7 +3,9 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Timer;
 import oscar.persistance.Controller;
+import oscar.persistance.HireUpdatePersonTask;
 import oscar.view.StaffView;
 
 /**
@@ -13,30 +15,84 @@ import oscar.view.StaffView;
 public class StaffController extends Controller {
 
     private StaffView staffView;
-    // weather the controller is attached to the admin one
-    private boolean passive = false;
+    /*// weather the controller is attached to the admin one
+    private boolean passive = false;*/
+    private HireUpdatePersonTask hireUpdatePersonTask;
+    private Timer timer;
 
     @Override
     public void run() {
         this.setName("Staff");
-        if (!passive)
-        {staffView = new StaffView();
-        /*this.addView(staffView);
-        this.addButtonListener(staffView.getLogoutBtn());*/
+        staffView = new StaffView();
         this.addElement(staffView);
-        this.addElement(staffView.getLogoutBtn());}
+        this.addElement(staffView.getLogoutBtn());
+        // Hire tab
+        this.addElement(staffView.getHireAddressTxt());
+        this.addElement(staffView.getHireBtn());
+        this.addElement(staffView.getHireChauffeuredCB());
+        this.addElement(staffView.getHireClassCB());
+        this.addElement(staffView.getHireClearBtn());
+        this.addElement(staffView.getHireDateOfBirthDP());
+        this.addElement(staffView.getHireEmailTxt());
+        this.addElement(staffView.getHireFromDP());
+        this.addElement(staffView.getHireInsuranceCB());
+        this.addElement(staffView.getHireNameTxt());
+        this.addElement(staffView.getHirePersonLoadBtn());
+        this.addElement(staffView.getHirePhoneTxt());
+        this.addElement(staffView.getHireRefCodeSearchBtn());
+        this.addElement(staffView.getHireRefCodeTxt());
+        this.addElement(staffView.getHireSurnameTxt());
+        this.addElement(staffView.getHireToDP());
+        
+        timer = new Timer();
+        hireUpdatePersonTask = new HireUpdatePersonTask();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(staffView.getLogoutBtn())) {
+        if (e.getSource().equals(staffView.getLogoutBtn()))
             actionLogout();
-        }
+        //Hire tab
+        else if (e.getSource().equals(staffView.getHireBtn()))
+            actionHire();
+        else if (e.getSource().equals(staffView.getHireClearBtn()))
+            actionHireClearFields();
+        else if (e.getSource().equals(staffView.getHirePersonLoadBtn()))
+            actionHireLoadPerson();
+        else if (e.getSource().equals(staffView.getHireRefCodeSearchBtn()))
+            actionHireSearchRefCode();
     }
 
     private void actionLogout() {
         new LoginController().start();
         this.removeAllElement();
+    }
+
+    private void actionHire() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireSearchRefCode() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireLoadPerson() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionHireClearFields() {
+        staffView.getHireChauffeuredCB().setSelected(false);
+        staffView.getHireClassCB().setSelectedIndex(0);
+        staffView.getHireInsuranceCB().setSelected(false);
+        staffView.getHireDateOfBirthDP().setDate(null);
+        staffView.getHireFromDP().setDate(null);
+        staffView.getHireToDP().setDate(null);
+        staffView.getHireAddressTxt().setText("");
+        staffView.getHireEmailTxt().setText("");
+        staffView.getHireNameTxt().setText("");
+        staffView.getHirePhoneTxt().setText("");
+        staffView.getHireRefCodeTxt().setText("");
+        staffView.getHireSurnameTxt().setText("");
     }
 
     @Override
@@ -52,12 +108,5 @@ public class StaffController extends Controller {
     @Override
     public void keyReleased(KeyEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /**
-     * @param passive the passive to set
-     */
-    public void setPassive(boolean passive) {
-        this.passive = passive;
     }
 }

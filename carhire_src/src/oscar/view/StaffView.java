@@ -180,7 +180,7 @@ public class StaffView extends AbstractView {
 
         plateTxt3.setName("plateTxt3"); // NOI18N
 
-        clearBtn5.setIcon(null);
+        clearBtn5.setIcon(resourceMap.getIcon("clearBtn5.icon")); // NOI18N
         clearBtn5.setText(resourceMap.getString("clearBtn5.text")); // NOI18N
         clearBtn5.setName("clearBtn5"); // NOI18N
 
@@ -278,15 +278,16 @@ public class StaffView extends AbstractView {
 
         hirePanel.setName("hirePanel"); // NOI18N
 
-        hireBtn.setIcon(null);
+        hireBtn.setIcon(resourceMap.getIcon("hireBtn.icon")); // NOI18N
         hireBtn.setText(resourceMap.getString("hireBtn.text")); // NOI18N
         hireBtn.setName("hireBtn"); // NOI18N
 
         personPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         personPanel.setName("personPanel"); // NOI18N
 
-        hirePersonLoadBtn.setIcon(null);
+        hirePersonLoadBtn.setIcon(resourceMap.getIcon("hirePersonLoadBtn.icon")); // NOI18N
         hirePersonLoadBtn.setText(resourceMap.getString("hirePersonLoadBtn.text")); // NOI18N
+        hirePersonLoadBtn.setEnabled(false);
         hirePersonLoadBtn.setName("hirePersonLoadBtn"); // NOI18N
 
         hireNameLbl.setText(resourceMap.getString("hireNameLbl.text")); // NOI18N
@@ -331,7 +332,7 @@ public class StaffView extends AbstractView {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                    .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(personPanelLayout.createSequentialGroup()
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hireNameLbl)
@@ -342,12 +343,12 @@ public class StaffView extends AbstractView {
                             .addComponent(hireDateOfBirthLbl))
                         .addGap(35, 35, 35)
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(hireNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(hireSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(hirePhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(hireEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(hireNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(hireSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(hirePhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(hireEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         personPanelLayout.setVerticalGroup(
@@ -425,7 +426,7 @@ public class StaffView extends AbstractView {
 
         hireRefCodeTxt.setName("hireRefCodeTxt"); // NOI18N
 
-        hireRefCodeSearchBtn.setIcon(null);
+        hireRefCodeSearchBtn.setIcon(resourceMap.getIcon("hireRefCodeSearchBtn.icon")); // NOI18N
         hireRefCodeSearchBtn.setText(resourceMap.getString("hireRefCodeSearchBtn.text")); // NOI18N
         hireRefCodeSearchBtn.setName("hireRefCodeSearchBtn"); // NOI18N
 
@@ -442,17 +443,17 @@ public class StaffView extends AbstractView {
                 .addContainerGap()
                 .addComponent(hireRefCodeLbl)
                 .addGap(18, 18, 18)
-                .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(hireRefCodeSearchBtn)
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
                     .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanel1Layout.createSequentialGroup()
                             .addComponent(hireToLbl)
@@ -501,7 +502,7 @@ public class StaffView extends AbstractView {
                 .addContainerGap())
         );
 
-        hireClearBtn.setIcon(null);
+        hireClearBtn.setIcon(resourceMap.getIcon("hireClearBtn.icon")); // NOI18N
         hireClearBtn.setText(resourceMap.getString("hireClearBtn.text")); // NOI18N
         hireClearBtn.setName("hireClearBtn"); // NOI18N
 
@@ -606,6 +607,125 @@ public class StaffView extends AbstractView {
 
     public javax.swing.JButton getLogoutBtn() {
         return logoutBtn;
+    }
+
+    /**
+     * @return the hireAddressTxt
+     */
+    public javax.swing.JTextArea getHireAddressTxt() {
+        return hireAddressTxt;
+    }
+
+    /**
+     * @return the hireBtn
+     */
+    public javax.swing.JButton getHireBtn() {
+        return hireBtn;
+    }
+
+    /**
+     * @return the hireChauffeuredCB
+     */
+    public javax.swing.JCheckBox getHireChauffeuredCB() {
+        return hireChauffeuredCB;
+    }
+
+    /**
+     * @return the hireClassCB
+     */
+    public javax.swing.JComboBox getHireClassCB() {
+        return hireClassCB;
+    }
+
+    /**
+     * @return the hireClearBtn
+     */
+    public javax.swing.JButton getHireClearBtn() {
+        return hireClearBtn;
+    }
+
+    /**
+     * @return the hireDateOfBirthDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireDateOfBirthDP() {
+        return hireDateOfBirthDP;
+    }
+
+    /**
+     * @return the hireEmailTxt
+     */
+    public javax.swing.JTextField getHireEmailTxt() {
+        return hireEmailTxt;
+    }
+
+    /**
+     * @return the hireFromDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireFromDP() {
+        return hireFromDP;
+    }
+
+    /**
+     * @return the hireInsuranceCB
+     */
+    public javax.swing.JCheckBox getHireInsuranceCB() {
+        return hireInsuranceCB;
+    }
+
+    /**
+     * @return the hireNameTxt
+     */
+    public javax.swing.JTextField getHireNameTxt() {
+        return hireNameTxt;
+    }
+
+    /**
+     * @return the hirePersonLoadBtn
+     */
+    public javax.swing.JButton getHirePersonLoadBtn() {
+        return hirePersonLoadBtn;
+    }
+
+    /**
+     * @return the hirePhoneTxt
+     */
+    public javax.swing.JTextField getHirePhoneTxt() {
+        return hirePhoneTxt;
+    }
+
+    /**
+     * @return the hireRefCodeSearchBtn
+     */
+    public javax.swing.JButton getHireRefCodeSearchBtn() {
+        return hireRefCodeSearchBtn;
+    }
+
+    /**
+     * @return the hireRefCodeTxt
+     */
+    public javax.swing.JTextField getHireRefCodeTxt() {
+        return hireRefCodeTxt;
+    }
+
+    /**
+     * @return the hireSurnameTxt
+     */
+    public javax.swing.JTextField getHireSurnameTxt() {
+        return hireSurnameTxt;
+    }
+
+    /**
+     * @return the hireTbl
+     */
+    public org.jdesktop.swingx.JXTable getHireTbl() {
+        return hireTbl;
+    }
+
+    /**
+     * @return the hireToDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireToDP() {
+        return hireToDP;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Extendsbtn;

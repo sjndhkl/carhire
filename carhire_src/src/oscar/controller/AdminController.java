@@ -32,15 +32,11 @@ public class AdminController extends Controller {
     private BookingUpdateTableTask bookingUpdateTableTask;
     private CarUpdateTableTask carUpdateTableTask;
     private ClassUpdateTableTask classUpdateTableTask;
-    private HireUpdatePersonTask hireUpdatePersonTask;
-    // The staff controller to handle staff tabs
-    private StaffController staffController;
 
     @Override
     public void run() {
         this.setName("Admin");
         adminView = new AdminView();
-        staffController = new StaffController();
         this.addElement(adminView);
         this.addElement(adminView.getLogoutBtn());
         // Staff tab
@@ -67,23 +63,6 @@ public class AdminController extends Controller {
         this.addElement(adminView.getCarClassClearBtn());
         this.addElement(adminView.getCarClassDisplayTxt());
         this.addElement(adminView.getCarClassNameTxt());
-        // Hire tab
-        this.addElement(adminView.getHireAddressTxt());
-        this.addElement(adminView.getHireBtn());
-        this.addElement(adminView.getHireChauffeuredCB());
-        this.addElement(adminView.getHireClassCB());
-        this.addElement(adminView.getHireClearBtn());
-        this.addElement(adminView.getHireDateOfBirthDP());
-        this.addElement(adminView.getHireEmailTxt());
-        this.addElement(adminView.getHireFromDP());
-        this.addElement(adminView.getHireInsuranceCB());
-        this.addElement(adminView.getHireNameTxt());
-        this.addElement(adminView.getHirePersonLoadBtn());
-        this.addElement(adminView.getHirePhoneTxt());
-        this.addElement(adminView.getHireRefCodeSearchBtn());
-        this.addElement(adminView.getHireRefCodeTxt());
-        this.addElement(adminView.getHireSurnameTxt());
-        this.addElement(adminView.getHireToDP());
 
         // Filter timers
         timer = new Timer();
@@ -91,7 +70,6 @@ public class AdminController extends Controller {
         bookingUpdateTableTask = new BookingUpdateTableTask();
         carUpdateTableTask = new CarUpdateTableTask();
         classUpdateTableTask = new ClassUpdateTableTask();
-        hireUpdatePersonTask = new HireUpdatePersonTask();
 
         // Set up the tables
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
@@ -125,15 +103,6 @@ public class AdminController extends Controller {
             actionClassAdd();
         else if (e.getSource().equals(adminView.getCarClassClearBtn()))
             actionClassClearFields();
-        //Hire tab
-        else if (e.getSource().equals(adminView.getHireBtn()))
-            actionHire();
-        else if (e.getSource().equals(adminView.getHireClearBtn()))
-            actionHireClearFields();
-        else if (e.getSource().equals(adminView.getHirePersonLoadBtn()))
-            actionHireLoadPerson();
-        else if (e.getSource().equals(adminView.getHireRefCodeSearchBtn()))
-            actionHireSearchRefCode();
     }
 
     private void actionLogout() {
@@ -187,33 +156,6 @@ public class AdminController extends Controller {
         adminView.getCarClassDisplayTxt().setText("");
         adminView.getCarClassNameTxt().setText("");
         actionClassUpdateTable();
-    }
-
-    private void actionHire() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    private void actionHireSearchRefCode() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    private void actionHireLoadPerson() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    private void actionHireClearFields() {
-        adminView.getHireChauffeuredCB().setSelected(false);
-        adminView.getHireClassCB().setSelectedIndex(0);
-        adminView.getHireInsuranceCB().setSelected(false);
-        adminView.getHireDateOfBirthDP().setDate(null);
-        adminView.getHireFromDP().setDate(null);
-        adminView.getHireToDP().setDate(null);
-        adminView.getHireAddressTxt().setText("");
-        adminView.getHireEmailTxt().setText("");
-        adminView.getHireNameTxt().setText("");
-        adminView.getHirePhoneTxt().setText("");
-        adminView.getHireRefCodeTxt().setText("");
-        adminView.getHireSurnameTxt().setText("");
     }
 
     /*
