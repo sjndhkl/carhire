@@ -145,47 +145,47 @@ public class AdminView extends AbstractView {
         carTbl = new org.jdesktop.swingx.JXTable();
         carClassPanel = new javax.swing.JPanel();
         carClassSearchPanel = new javax.swing.JPanel();
-        plateLbl1 = new javax.swing.JLabel();
-        brandLbl1 = new javax.swing.JLabel();
-        plateTxt1 = new javax.swing.JTextField();
-        brandTxt1 = new javax.swing.JTextField();
-        clearBtn1 = new javax.swing.JButton();
-        addBtn1 = new javax.swing.JButton();
+        carClassNameLbl = new javax.swing.JLabel();
+        carClassDisplayLbl = new javax.swing.JLabel();
+        carClassNameTxt = new javax.swing.JTextField();
+        carClassDisplayTxt = new javax.swing.JTextField();
+        carClassClearBtn = new javax.swing.JButton();
+        carClassAddBtn = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         carClassTbl = new org.jdesktop.swingx.JXTable();
         hirePanel = new javax.swing.JPanel();
         hireBtn = new javax.swing.JButton();
         personPanel = new javax.swing.JPanel();
-        personLoadBtn = new javax.swing.JButton();
-        nameLbl = new javax.swing.JLabel();
-        nameTxt = new javax.swing.JTextField();
-        surnameLbl1 = new javax.swing.JLabel();
-        surnameTxt1 = new javax.swing.JTextField();
-        dateOfBirthLbl = new javax.swing.JLabel();
-        dateOfBirthDP = new org.jdesktop.swingx.JXDatePicker();
-        emailLbl = new javax.swing.JLabel();
-        emailTxt = new javax.swing.JTextField();
-        phoneLbl = new javax.swing.JLabel();
-        phoneTxt = new javax.swing.JTextField();
-        addressLbl = new javax.swing.JLabel();
+        hirePersonLoadBtn = new javax.swing.JButton();
+        hireNameLbl = new javax.swing.JLabel();
+        hireNameTxt = new javax.swing.JTextField();
+        hireSurnameLbl = new javax.swing.JLabel();
+        hireSurnameTxt = new javax.swing.JTextField();
+        hireDateOfBirthLbl = new javax.swing.JLabel();
+        hireDateOfBirthDP = new org.jdesktop.swingx.JXDatePicker();
+        hireEmailLbl = new javax.swing.JLabel();
+        hireEmailTxt = new javax.swing.JTextField();
+        hirePhoneLbl = new javax.swing.JLabel();
+        hirePhoneTxt = new javax.swing.JTextField();
+        hireAddressLbl = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        addressTxt = new javax.swing.JTextArea();
+        hireAddressTxt = new javax.swing.JTextArea();
         carPanel1 = new javax.swing.JPanel();
-        fromLbl = new javax.swing.JLabel();
-        fromDP = new org.jdesktop.swingx.JXDatePicker();
-        toLbl = new javax.swing.JLabel();
-        toDP = new org.jdesktop.swingx.JXDatePicker();
-        classLbl1 = new javax.swing.JLabel();
-        classCB1 = new javax.swing.JComboBox();
-        chauffeuredCB = new javax.swing.JCheckBox();
+        hireFromLbl = new javax.swing.JLabel();
+        hireFromDP = new org.jdesktop.swingx.JXDatePicker();
+        hireToLbl = new javax.swing.JLabel();
+        hireToDP = new org.jdesktop.swingx.JXDatePicker();
+        hireClassLbl = new javax.swing.JLabel();
+        hireClassCB = new javax.swing.JComboBox();
+        hireChauffeuredCB = new javax.swing.JCheckBox();
         jScrollPane8 = new javax.swing.JScrollPane();
-        carTbl1 = new org.jdesktop.swingx.JXTable();
-        refCodeLbl1 = new javax.swing.JLabel();
-        refCodeTxt1 = new javax.swing.JTextField();
-        refCodeSearchBtn = new javax.swing.JButton();
+        hireTbl = new org.jdesktop.swingx.JXTable();
+        hireRefCodeLbl = new javax.swing.JLabel();
+        hireRefCodeTxt = new javax.swing.JTextField();
+        hireRefCodeSearchBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        chauffeuredCB1 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        hireInsuranceCB = new javax.swing.JCheckBox();
+        hireClearBtn = new javax.swing.JButton();
         returnPanel = new javax.swing.JPanel();
         carSearchPanel1 = new javax.swing.JPanel();
         refCodeLbl2 = new javax.swing.JLabel();
@@ -1190,24 +1190,24 @@ public class AdminView extends AbstractView {
 
         carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
 
-        plateLbl1.setText(resourceMap.getString("plateLbl1.text")); // NOI18N
-        plateLbl1.setName("plateLbl1"); // NOI18N
+        carClassNameLbl.setText(resourceMap.getString("carClassNameLbl.text")); // NOI18N
+        carClassNameLbl.setName("carClassNameLbl"); // NOI18N
 
-        brandLbl1.setText(resourceMap.getString("brandLbl1.text")); // NOI18N
-        brandLbl1.setName("brandLbl1"); // NOI18N
+        carClassDisplayLbl.setText(resourceMap.getString("carClassDisplayLbl.text")); // NOI18N
+        carClassDisplayLbl.setName("carClassDisplayLbl"); // NOI18N
 
-        plateTxt1.setName("plateTxt1"); // NOI18N
+        carClassNameTxt.setName("carClassNameTxt"); // NOI18N
 
-        brandTxt1.setName("brandTxt1"); // NOI18N
+        carClassDisplayTxt.setName("carClassDisplayTxt"); // NOI18N
 
-        clearBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        clearBtn1.setText(resourceMap.getString("clearBtn1.text")); // NOI18N
-        clearBtn1.setName("clearBtn1"); // NOI18N
+        carClassClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        carClassClearBtn.setText(resourceMap.getString("carClassClearBtn.text")); // NOI18N
+        carClassClearBtn.setName("carClassClearBtn"); // NOI18N
 
-        addBtn1.setAction(actionMap.get("carDialog")); // NOI18N
-        addBtn1.setIcon(resourceMap.getIcon("addBtn1.icon")); // NOI18N
-        addBtn1.setText(resourceMap.getString("addBtn1.text")); // NOI18N
-        addBtn1.setName("addBtn1"); // NOI18N
+        carClassAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
+        carClassAddBtn.setIcon(resourceMap.getIcon("carClassAddBtn.icon")); // NOI18N
+        carClassAddBtn.setText(resourceMap.getString("carClassAddBtn.text")); // NOI18N
+        carClassAddBtn.setName("carClassAddBtn"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
         carClassSearchPanel.setLayout(carClassSearchPanelLayout);
@@ -1217,30 +1217,30 @@ public class AdminView extends AbstractView {
                 .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carClassSearchPanelLayout.createSequentialGroup()
                         .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(brandLbl1)
-                            .addComponent(plateLbl1))
+                            .addComponent(carClassDisplayLbl)
+                            .addComponent(carClassNameLbl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(plateTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(brandTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
-                    .addComponent(clearBtn1)
-                    .addComponent(addBtn1))
+                            .addComponent(carClassNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(carClassDisplayTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
+                    .addComponent(carClassClearBtn)
+                    .addComponent(carClassAddBtn))
                 .addContainerGap())
         );
         carClassSearchPanelLayout.setVerticalGroup(
             carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carClassSearchPanelLayout.createSequentialGroup()
                 .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plateLbl1)
-                    .addComponent(plateTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carClassNameLbl)
+                    .addComponent(carClassNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(brandLbl1)
-                    .addComponent(brandTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(carClassDisplayLbl)
+                    .addComponent(carClassDisplayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(clearBtn1)
+                .addComponent(carClassClearBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addBtn1))
+                .addComponent(carClassAddBtn))
         );
 
         jScrollPane4.setName("jScrollPane4"); // NOI18N
@@ -1284,50 +1284,51 @@ public class AdminView extends AbstractView {
 
         hirePanel.setName("hirePanel"); // NOI18N
 
+        hireBtn.setIcon(resourceMap.getIcon("hireBtn.icon")); // NOI18N
         hireBtn.setText(resourceMap.getString("hireBtn.text")); // NOI18N
         hireBtn.setName("hireBtn"); // NOI18N
 
         personPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         personPanel.setName("personPanel"); // NOI18N
 
-        personLoadBtn.setIcon(resourceMap.getIcon("personLoadBtn.icon")); // NOI18N
-        personLoadBtn.setText(resourceMap.getString("personLoadBtn.text")); // NOI18N
-        personLoadBtn.setName("personLoadBtn"); // NOI18N
+        hirePersonLoadBtn.setIcon(resourceMap.getIcon("hirePersonLoadBtn.icon")); // NOI18N
+        hirePersonLoadBtn.setText(resourceMap.getString("hirePersonLoadBtn.text")); // NOI18N
+        hirePersonLoadBtn.setName("hirePersonLoadBtn"); // NOI18N
 
-        nameLbl.setText(resourceMap.getString("nameLbl.text")); // NOI18N
-        nameLbl.setName("nameLbl"); // NOI18N
+        hireNameLbl.setText(resourceMap.getString("hireNameLbl.text")); // NOI18N
+        hireNameLbl.setName("hireNameLbl"); // NOI18N
 
-        nameTxt.setName("nameTxt"); // NOI18N
+        hireNameTxt.setName("hireNameTxt"); // NOI18N
 
-        surnameLbl1.setText(resourceMap.getString("surnameLbl1.text")); // NOI18N
-        surnameLbl1.setName("surnameLbl1"); // NOI18N
+        hireSurnameLbl.setText(resourceMap.getString("hireSurnameLbl.text")); // NOI18N
+        hireSurnameLbl.setName("hireSurnameLbl"); // NOI18N
 
-        surnameTxt1.setName("surnameTxt1"); // NOI18N
+        hireSurnameTxt.setName("hireSurnameTxt"); // NOI18N
 
-        dateOfBirthLbl.setText(resourceMap.getString("dateOfBirthLbl.text")); // NOI18N
-        dateOfBirthLbl.setName("dateOfBirthLbl"); // NOI18N
+        hireDateOfBirthLbl.setText(resourceMap.getString("hireDateOfBirthLbl.text")); // NOI18N
+        hireDateOfBirthLbl.setName("hireDateOfBirthLbl"); // NOI18N
 
-        dateOfBirthDP.setName("dateOfBirthDP"); // NOI18N
+        hireDateOfBirthDP.setName("hireDateOfBirthDP"); // NOI18N
 
-        emailLbl.setText(resourceMap.getString("emailLbl.text")); // NOI18N
-        emailLbl.setName("emailLbl"); // NOI18N
+        hireEmailLbl.setText(resourceMap.getString("hireEmailLbl.text")); // NOI18N
+        hireEmailLbl.setName("hireEmailLbl"); // NOI18N
 
-        emailTxt.setName("emailTxt"); // NOI18N
+        hireEmailTxt.setName("hireEmailTxt"); // NOI18N
 
-        phoneLbl.setText(resourceMap.getString("phoneLbl.text")); // NOI18N
-        phoneLbl.setName("phoneLbl"); // NOI18N
+        hirePhoneLbl.setText(resourceMap.getString("hirePhoneLbl.text")); // NOI18N
+        hirePhoneLbl.setName("hirePhoneLbl"); // NOI18N
 
-        phoneTxt.setName("phoneTxt"); // NOI18N
+        hirePhoneTxt.setName("hirePhoneTxt"); // NOI18N
 
-        addressLbl.setText(resourceMap.getString("addressLbl.text")); // NOI18N
-        addressLbl.setName("addressLbl"); // NOI18N
+        hireAddressLbl.setText(resourceMap.getString("hireAddressLbl.text")); // NOI18N
+        hireAddressLbl.setName("hireAddressLbl"); // NOI18N
 
         jScrollPane7.setName("jScrollPane7"); // NOI18N
 
-        addressTxt.setColumns(20);
-        addressTxt.setRows(5);
-        addressTxt.setName("addressTxt"); // NOI18N
-        jScrollPane7.setViewportView(addressTxt);
+        hireAddressTxt.setColumns(20);
+        hireAddressTxt.setRows(5);
+        hireAddressTxt.setName("hireAddressTxt"); // NOI18N
+        jScrollPane7.setViewportView(hireAddressTxt);
 
         javax.swing.GroupLayout personPanelLayout = new javax.swing.GroupLayout(personPanel);
         personPanel.setLayout(personPanelLayout);
@@ -1336,82 +1337,82 @@ public class AdminView extends AbstractView {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(personLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(personPanelLayout.createSequentialGroup()
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameLbl)
-                            .addComponent(surnameLbl1)
-                            .addComponent(emailLbl)
-                            .addComponent(phoneLbl)
-                            .addComponent(addressLbl)
-                            .addComponent(dateOfBirthLbl))
+                            .addComponent(hireNameLbl)
+                            .addComponent(hireSurnameLbl)
+                            .addComponent(hireEmailLbl)
+                            .addComponent(hirePhoneLbl)
+                            .addComponent(hireAddressLbl)
+                            .addComponent(hireDateOfBirthLbl))
                         .addGap(35, 35, 35)
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(nameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(surnameTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(phoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                            .addComponent(emailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))))
+                            .addComponent(hireNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(hireSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(hirePhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(hireEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         personPanelLayout.setVerticalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(personPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(personLoadBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameLbl)
-                    .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireNameLbl)
+                    .addComponent(hireNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(surnameLbl1)
-                    .addComponent(surnameTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireSurnameLbl)
+                    .addComponent(hireSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateOfBirthLbl)
-                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireDateOfBirthLbl)
+                    .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLbl)
-                    .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireEmailLbl)
+                    .addComponent(hireEmailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phoneLbl)
-                    .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hirePhoneLbl)
+                    .addComponent(hirePhoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addressLbl)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                    .addComponent(hireAddressLbl)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         carPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         carPanel1.setName("carPanel1"); // NOI18N
 
-        fromLbl.setText(resourceMap.getString("fromLbl.text")); // NOI18N
-        fromLbl.setName("fromLbl"); // NOI18N
+        hireFromLbl.setText(resourceMap.getString("hireFromLbl.text")); // NOI18N
+        hireFromLbl.setName("hireFromLbl"); // NOI18N
 
-        fromDP.setName("fromDP"); // NOI18N
+        hireFromDP.setName("hireFromDP"); // NOI18N
 
-        toLbl.setText(resourceMap.getString("toLbl.text")); // NOI18N
-        toLbl.setName("toLbl"); // NOI18N
+        hireToLbl.setText(resourceMap.getString("hireToLbl.text")); // NOI18N
+        hireToLbl.setName("hireToLbl"); // NOI18N
 
-        toDP.setName("toDP"); // NOI18N
+        hireToDP.setName("hireToDP"); // NOI18N
 
-        classLbl1.setText(resourceMap.getString("classLbl1.text")); // NOI18N
-        classLbl1.setName("classLbl1"); // NOI18N
+        hireClassLbl.setText(resourceMap.getString("hireClassLbl.text")); // NOI18N
+        hireClassLbl.setName("hireClassLbl"); // NOI18N
 
-        classCB1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        classCB1.setName("classCB1"); // NOI18N
+        hireClassCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        hireClassCB.setName("hireClassCB"); // NOI18N
 
-        chauffeuredCB.setText(resourceMap.getString("chauffeuredCB.text")); // NOI18N
-        chauffeuredCB.setName("chauffeuredCB"); // NOI18N
+        hireChauffeuredCB.setText(resourceMap.getString("hireChauffeuredCB.text")); // NOI18N
+        hireChauffeuredCB.setName("hireChauffeuredCB"); // NOI18N
 
         jScrollPane8.setName("jScrollPane8"); // NOI18N
 
-        carTbl1.setModel(new javax.swing.table.DefaultTableModel(
+        hireTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1422,22 +1423,22 @@ public class AdminView extends AbstractView {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        carTbl1.setName("carTbl1"); // NOI18N
-        jScrollPane8.setViewportView(carTbl1);
+        hireTbl.setName("hireTbl"); // NOI18N
+        jScrollPane8.setViewportView(hireTbl);
 
-        refCodeLbl1.setText(resourceMap.getString("refCodeLbl1.text")); // NOI18N
-        refCodeLbl1.setName("refCodeLbl1"); // NOI18N
+        hireRefCodeLbl.setText(resourceMap.getString("hireRefCodeLbl.text")); // NOI18N
+        hireRefCodeLbl.setName("hireRefCodeLbl"); // NOI18N
 
-        refCodeTxt1.setName("refCodeTxt1"); // NOI18N
+        hireRefCodeTxt.setName("hireRefCodeTxt"); // NOI18N
 
-        refCodeSearchBtn.setIcon(resourceMap.getIcon("refCodeSearchBtn.icon")); // NOI18N
-        refCodeSearchBtn.setText(resourceMap.getString("refCodeSearchBtn.text")); // NOI18N
-        refCodeSearchBtn.setName("refCodeSearchBtn"); // NOI18N
+        hireRefCodeSearchBtn.setIcon(resourceMap.getIcon("hireRefCodeSearchBtn.icon")); // NOI18N
+        hireRefCodeSearchBtn.setText(resourceMap.getString("hireRefCodeSearchBtn.text")); // NOI18N
+        hireRefCodeSearchBtn.setName("hireRefCodeSearchBtn"); // NOI18N
 
         jSeparator1.setName("jSeparator1"); // NOI18N
 
-        chauffeuredCB1.setText(resourceMap.getString("chauffeuredCB1.text")); // NOI18N
-        chauffeuredCB1.setName("chauffeuredCB1"); // NOI18N
+        hireInsuranceCB.setText(resourceMap.getString("hireInsuranceCB.text")); // NOI18N
+        hireInsuranceCB.setName("hireInsuranceCB"); // NOI18N
 
         javax.swing.GroupLayout carPanel1Layout = new javax.swing.GroupLayout(carPanel1);
         carPanel1.setLayout(carPanel1Layout);
@@ -1445,11 +1446,11 @@ public class AdminView extends AbstractView {
             carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(refCodeLbl1)
+                .addComponent(hireRefCodeLbl)
                 .addGap(18, 18, 18)
-                .addComponent(refCodeTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(refCodeSearchBtn)
+                .addComponent(hireRefCodeSearchBtn)
                 .addContainerGap())
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
             .addGroup(carPanel1Layout.createSequentialGroup()
@@ -1460,21 +1461,21 @@ public class AdminView extends AbstractView {
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE))
                     .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanel1Layout.createSequentialGroup()
-                            .addComponent(toLbl)
+                            .addComponent(hireToLbl)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(toDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(hireToDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanel1Layout.createSequentialGroup()
-                            .addComponent(fromLbl)
+                            .addComponent(hireFromLbl)
                             .addGap(18, 18, 18)
-                            .addComponent(fromDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(hireFromDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(carPanel1Layout.createSequentialGroup()
-                        .addComponent(classLbl1)
+                        .addComponent(hireClassLbl)
                         .addGap(18, 18, 18)
-                        .addComponent(classCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hireClassCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(chauffeuredCB)
+                        .addComponent(hireChauffeuredCB)
                         .addGap(18, 18, 18)
-                        .addComponent(chauffeuredCB1)))
+                        .addComponent(hireInsuranceCB)))
                 .addContainerGap())
         );
         carPanel1Layout.setVerticalGroup(
@@ -1482,32 +1483,33 @@ public class AdminView extends AbstractView {
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refCodeSearchBtn)
-                    .addComponent(refCodeTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refCodeLbl1))
+                    .addComponent(hireRefCodeSearchBtn)
+                    .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hireRefCodeLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fromLbl)
-                    .addComponent(fromDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireFromLbl)
+                    .addComponent(hireFromDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(toLbl)
-                    .addComponent(toDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hireToLbl)
+                    .addComponent(hireToDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(classLbl1)
-                    .addComponent(classCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chauffeuredCB)
-                    .addComponent(chauffeuredCB1))
+                    .addComponent(hireClassLbl)
+                    .addComponent(hireClassCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hireChauffeuredCB)
+                    .addComponent(hireInsuranceCB))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        hireClearBtn.setIcon(resourceMap.getIcon("hireClearBtn.icon")); // NOI18N
+        hireClearBtn.setText(resourceMap.getString("hireClearBtn.text")); // NOI18N
+        hireClearBtn.setName("hireClearBtn"); // NOI18N
 
         javax.swing.GroupLayout hirePanelLayout = new javax.swing.GroupLayout(hirePanel);
         hirePanel.setLayout(hirePanelLayout);
@@ -1522,7 +1524,7 @@ public class AdminView extends AbstractView {
                         .addComponent(carPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(hirePanelLayout.createSequentialGroup()
                         .addGap(279, 279, 279)
-                        .addComponent(jButton1)
+                        .addComponent(hireClearBtn)
                         .addGap(18, 18, 18)
                         .addComponent(hireBtn)))
                 .addContainerGap())
@@ -1537,7 +1539,7 @@ public class AdminView extends AbstractView {
                 .addGap(24, 24, 24)
                 .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hireBtn)
-                    .addComponent(jButton1))
+                    .addComponent(hireClearBtn))
                 .addContainerGap())
         );
 
@@ -1756,11 +1758,8 @@ public class AdminView extends AbstractView {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Extendsbtn;
     private javax.swing.JLabel PhoneDlgLbl;
-    private javax.swing.JButton addBtn1;
     private javax.swing.JLabel addressDlgLbl;
     private javax.swing.JTextArea addressDlgTA;
-    private javax.swing.JLabel addressLbl;
-    private javax.swing.JTextArea addressTxt;
     private javax.swing.JButton bookingClearBtn;
     private javax.swing.JButton bookingDeleteBtn;
     private javax.swing.JPanel bookingPanel;
@@ -1772,15 +1771,19 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel brandDlgLbl;
     private javax.swing.JTextField brandDlgTxt;
     private javax.swing.JLabel brandLbl;
-    private javax.swing.JLabel brandLbl1;
-    private javax.swing.JTextField brandTxt1;
     private javax.swing.JButton cancelDlgBtn;
     private javax.swing.JButton cancelDlgBtn1;
     private javax.swing.JButton cancelDlgBtn2;
     private javax.swing.JButton carAddBtn;
     private javax.swing.JTextField carBrandTxt;
+    private javax.swing.JButton carClassAddBtn;
     private javax.swing.JComboBox carClassCb;
+    private javax.swing.JButton carClassClearBtn;
     private javax.swing.JDialog carClassDialog;
+    private javax.swing.JLabel carClassDisplayLbl;
+    private javax.swing.JTextField carClassDisplayTxt;
+    private javax.swing.JLabel carClassNameLbl;
+    private javax.swing.JTextField carClassNameTxt;
     private javax.swing.JPanel carClassPanel;
     private javax.swing.JPanel carClassSearchPanel;
     private javax.swing.JPanel carClassSearchPanel1;
@@ -1797,23 +1800,15 @@ public class AdminView extends AbstractView {
     private javax.swing.JPanel carSearchPanel1;
     private javax.swing.JComboBox carStatusCB;
     private org.jdesktop.swingx.JXTable carTbl;
-    private org.jdesktop.swingx.JXTable carTbl1;
     private javax.swing.JTextField carYearTxt;
-    private javax.swing.JCheckBox chauffeuredCB;
-    private javax.swing.JCheckBox chauffeuredCB1;
     private javax.swing.JComboBox classCB;
-    private javax.swing.JComboBox classCB1;
     private javax.swing.JLabel classDlgLbl;
     private javax.swing.JLabel classLbl;
-    private javax.swing.JLabel classLbl1;
-    private javax.swing.JButton clearBtn1;
     private javax.swing.JButton clearBtn5;
     private javax.swing.JLabel colorDlgLbl;
     private javax.swing.JTextField colorDlgTxt;
     private javax.swing.JLabel colorLbl;
-    private org.jdesktop.swingx.JXDatePicker dateOfBirthDP;
     private javax.swing.JLabel dateOfBirthDlgLbl;
-    private javax.swing.JLabel dateOfBirthLbl;
     private javax.swing.JButton deleteDlgBtn;
     private javax.swing.JButton deleteDlgBtn1;
     private javax.swing.JButton deleteDlgBtn2;
@@ -1822,15 +1817,36 @@ public class AdminView extends AbstractView {
     private javax.swing.JTextField displayNameDlgTxt;
     private javax.swing.JLabel emailDlgLbl;
     private javax.swing.JTextField emailDlgTxt;
-    private javax.swing.JLabel emailLbl;
-    private javax.swing.JTextField emailTxt;
     private javax.swing.JButton extendsBtn;
     private javax.swing.JDialog extensionDlg;
-    private org.jdesktop.swingx.JXDatePicker fromDP;
-    private javax.swing.JLabel fromLbl;
+    private javax.swing.JLabel hireAddressLbl;
+    private javax.swing.JTextArea hireAddressTxt;
     private javax.swing.JButton hireBtn;
+    private javax.swing.JCheckBox hireChauffeuredCB;
+    private javax.swing.JComboBox hireClassCB;
+    private javax.swing.JLabel hireClassLbl;
+    private javax.swing.JButton hireClearBtn;
+    private org.jdesktop.swingx.JXDatePicker hireDateOfBirthDP;
+    private javax.swing.JLabel hireDateOfBirthLbl;
+    private javax.swing.JLabel hireEmailLbl;
+    private javax.swing.JTextField hireEmailTxt;
+    private org.jdesktop.swingx.JXDatePicker hireFromDP;
+    private javax.swing.JLabel hireFromLbl;
+    private javax.swing.JCheckBox hireInsuranceCB;
+    private javax.swing.JLabel hireNameLbl;
+    private javax.swing.JTextField hireNameTxt;
     private javax.swing.JPanel hirePanel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton hirePersonLoadBtn;
+    private javax.swing.JLabel hirePhoneLbl;
+    private javax.swing.JTextField hirePhoneTxt;
+    private javax.swing.JLabel hireRefCodeLbl;
+    private javax.swing.JButton hireRefCodeSearchBtn;
+    private javax.swing.JTextField hireRefCodeTxt;
+    private javax.swing.JLabel hireSurnameLbl;
+    private javax.swing.JTextField hireSurnameTxt;
+    private org.jdesktop.swingx.JXTable hireTbl;
+    private org.jdesktop.swingx.JXDatePicker hireToDP;
+    private javax.swing.JLabel hireToLbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1860,33 +1876,23 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel modelLbl;
     private javax.swing.JLabel nameDlgLbl;
     private javax.swing.JTextField nameDlgTxt;
-    private javax.swing.JLabel nameLbl;
-    private javax.swing.JTextField nameTxt;
     private org.jdesktop.swingx.JXDatePicker newDateDP;
     private javax.swing.JLabel newDateLbl;
     private org.jdesktop.swingx.JXDatePicker oldDateDP;
     private javax.swing.JLabel oldDateLbl;
     private javax.swing.JLabel passwordDlgLbl;
     private javax.swing.JPasswordField passwordPwd;
-    private javax.swing.JButton personLoadBtn;
     private javax.swing.JPanel personPanel;
     private javax.swing.JTextField phoneDlgTxt;
-    private javax.swing.JLabel phoneLbl;
-    private javax.swing.JTextField phoneTxt;
     private javax.swing.JLabel plateDlgLbl;
     private javax.swing.JTextField plateDlgTxt;
     private javax.swing.JLabel plateLbl;
-    private javax.swing.JLabel plateLbl1;
     private javax.swing.JLabel plateLbl3;
-    private javax.swing.JTextField plateTxt1;
     private javax.swing.JTextField plateTxt3;
     private javax.swing.JLabel priceDlgLbl;
     private javax.swing.JTextField priceDlgTxt;
     private javax.swing.JLabel refCodeLbl;
-    private javax.swing.JLabel refCodeLbl1;
     private javax.swing.JLabel refCodeLbl2;
-    private javax.swing.JButton refCodeSearchBtn;
-    private javax.swing.JTextField refCodeTxt1;
     private javax.swing.JTextField refCodeTxt2;
     private javax.swing.JLabel rentalDateLbl;
     private javax.swing.JButton returnBtn;
@@ -1917,13 +1923,9 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel surnameDlgLbl;
     private javax.swing.JTextField surnameDlgTxt;
     private javax.swing.JLabel surnameLbl;
-    private javax.swing.JLabel surnameLbl1;
     private javax.swing.JLabel surnameLbl2;
-    private javax.swing.JTextField surnameTxt1;
     private javax.swing.JTextField surnameTxt2;
     private javax.swing.JTabbedPane tabPanel;
-    private org.jdesktop.swingx.JXDatePicker toDP;
-    private javax.swing.JLabel toLbl;
     private javax.swing.JLabel usernameDlgLbl;
     private javax.swing.JTextField usernameDlgTxt;
     private javax.swing.JLabel usernameLbl;
@@ -2087,5 +2089,152 @@ public class AdminView extends AbstractView {
      */
     public javax.swing.JTextField getCarYearTxt() {
         return carYearTxt;
+    }
+
+    /**
+     * @return the carClassAddBtn
+     */
+    public javax.swing.JButton getCarClassAddBtn() {
+        return carClassAddBtn;
+    }
+
+    /**
+     * @return the carClassClearBtn
+     */
+    public javax.swing.JButton getCarClassClearBtn() {
+        return carClassClearBtn;
+    }
+
+    /**
+     * @return the carClassDisplayTxt
+     */
+    public javax.swing.JTextField getCarClassDisplayTxt() {
+        return carClassDisplayTxt;
+    }
+
+    /**
+     * @return the carClassNameTxt
+     */
+    public javax.swing.JTextField getCarClassNameTxt() {
+        return carClassNameTxt;
+    }
+
+    /**
+     * @return the hireAddressTxt
+     */
+    public javax.swing.JTextArea getHireAddressTxt() {
+        return hireAddressTxt;
+    }
+
+    /**
+     * @return the hireBtn
+     */
+    public javax.swing.JButton getHireBtn() {
+        return hireBtn;
+    }
+
+    /**
+     * @return the hireChauffeuredCB
+     */
+    public javax.swing.JCheckBox getHireChauffeuredCB() {
+        return hireChauffeuredCB;
+    }
+
+    /**
+     * @return the hireClassCB
+     */
+    public javax.swing.JComboBox getHireClassCB() {
+        return hireClassCB;
+    }
+
+    /**
+     * @return the hireClearBtn
+     */
+    public javax.swing.JButton getHireClearBtn() {
+        return hireClearBtn;
+    }
+
+    /**
+     * @return the hireDateOfBirthDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireDateOfBirthDP() {
+        return hireDateOfBirthDP;
+    }
+
+    /**
+     * @return the hireEmailTxt
+     */
+    public javax.swing.JTextField getHireEmailTxt() {
+        return hireEmailTxt;
+    }
+
+    /**
+     * @return the hireFromDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireFromDP() {
+        return hireFromDP;
+    }
+
+    /**
+     * @return the hireInsuranceCB
+     */
+    public javax.swing.JCheckBox getHireInsuranceCB() {
+        return hireInsuranceCB;
+    }
+
+    /**
+     * @return the hireNameTxt
+     */
+    public javax.swing.JTextField getHireNameTxt() {
+        return hireNameTxt;
+    }
+
+    /**
+     * @return the hirePersonLoadBtn
+     */
+    public javax.swing.JButton getHirePersonLoadBtn() {
+        return hirePersonLoadBtn;
+    }
+
+    /**
+     * @return the hirePhoneTxt
+     */
+    public javax.swing.JTextField getHirePhoneTxt() {
+        return hirePhoneTxt;
+    }
+
+    /**
+     * @return the hireRefCodeSearchBtn
+     */
+    public javax.swing.JButton getHireRefCodeSearchBtn() {
+        return hireRefCodeSearchBtn;
+    }
+
+    /**
+     * @return the hireRefCodeTxt
+     */
+    public javax.swing.JTextField getHireRefCodeTxt() {
+        return hireRefCodeTxt;
+    }
+
+    /**
+     * @return the hireSurnameTxt
+     */
+    public javax.swing.JTextField getHireSurnameTxt() {
+        return hireSurnameTxt;
+    }
+
+    /**
+     * @return the hireTbl
+     */
+    public org.jdesktop.swingx.JXTable getHireTbl() {
+        return hireTbl;
+    }
+
+    /**
+     * @return the hireToDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getHireToDP() {
+        return hireToDP;
     }
 }

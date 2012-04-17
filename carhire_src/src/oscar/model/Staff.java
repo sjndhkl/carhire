@@ -25,7 +25,7 @@ public class Staff extends Person implements DbRecordable {
     private String password;
     private boolean isAdmin;
     private boolean isChauffeur;
-    
+
     public Staff() {
         this.dependencies = new HashMap<String, String>();
         this.dependencies.put("person", "personId");
@@ -47,7 +47,7 @@ public class Staff extends Person implements DbRecordable {
         this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
         this.personid = Integer.parseInt(attributes.get("personId"));
     }
-    
+
     private void initStaff() {
         this.dependentTable = "person";
         this.dependentTablePK = "personId";
@@ -127,15 +127,15 @@ public class Staff extends Person implements DbRecordable {
     public boolean update() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
     public boolean isAdmin() {
         return isAdmin;
     }
-    
+
     @Override
     public TableModel getTableModel() {
-        ArrayList<HashMap<String, String>> map = this.findDependentBy(name, name)/*, name, name).findAll();*/
-       DefaultTableModel model = new DefaultTableModel(
+        ArrayList<HashMap<String, String>> map = this.findAll();
+        DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
         for (HashMap<String, String> row : map)
             model.addRow(new Object[]{
@@ -150,35 +150,35 @@ public class Staff extends Person implements DbRecordable {
                     });
         return model;
     }
-    
+
     public boolean isIsAdmin() {
         return isAdmin;
     }
-    
+
     public void setIsAdmin(String isAdmin) {
         this.isAdmin = isAdmin.equals("admin") ? true : false;
     }
-    
+
     public boolean isIsChauffeur() {
         return isChauffeur;
     }
-    
+
     public void setIsChauffeur(String isChauffeur) {
         this.isChauffeur = isChauffeur.equals("chauffeur") ? true : false;
     }
-    
+
     public String getUsername() {
         return username;
     }
-    
+
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
     public String getPassword() {
         return password;
     }
-    
+
     public void setPassword(String password) {
         try {
             this.password = Utility.encodeSHA256(password);

@@ -1,5 +1,4 @@
 package oscar.persistance;
-
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -132,5 +132,10 @@ public class DependentDbRecord extends DbRecord {
         personDep.put("fk", "personId");
         dependencies.add(personDep);
         return this.queryDependent(dependencies, colName, value);
+    }
+
+    @Override
+    public TableModel getTableModel() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

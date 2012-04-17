@@ -1,6 +1,9 @@
 package oscar.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import oscar.persistance.DbRecord;
 
 /**
@@ -15,6 +18,9 @@ public class CarClass extends DbRecord {
     private String description;
     private float price;
 
+    public CarClass() {
+        super(TABLE);
+    }
     /**
      * @param carClassId
      * @param name
@@ -42,5 +48,20 @@ public class CarClass extends DbRecord {
         this.name = attributes.get("name");
         this.description = attributes.get("description");
         this.price = Integer.parseInt(attributes.get("price"));
+    }
+
+    @Override
+    public TableModel getTableModel() {
+        ArrayList<HashMap<String, String>> map = this.findAll();
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Name", "Display name", "description", "price"}, 0);
+        for (HashMap<String, String> row : map)
+            model.addRow(new Object[]{
+                        row.get("className"),
+                        row.get("displayName"),
+                        row.get("description"),
+                        row.get("price"),
+                    });
+        return model;
     }
 }

@@ -1761,17 +1761,17 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="brandLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="plateLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="carClassDisplayLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="carClassNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="plateTxt1" alignment="0" pref="72" max="32767" attributes="1"/>
-                                          <Component id="brandTxt1" alignment="0" pref="72" max="32767" attributes="1"/>
+                                          <Component id="carClassNameTxt" alignment="0" pref="72" max="32767" attributes="1"/>
+                                          <Component id="carClassDisplayTxt" alignment="0" pref="72" max="32767" attributes="1"/>
                                       </Group>
                                   </Group>
-                                  <Component id="clearBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="addBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassAddBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1781,62 +1781,62 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="plateLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="plateTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="brandLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brandTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassDisplayLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carClassDisplayTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="clearBtn1" min="-2" max="-2" attributes="0"/>
+                              <Component id="carClassClearBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="addBtn1" min="-2" max="-2" attributes="0"/>
+                              <Component id="carClassAddBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="plateLbl1">
+                    <Component class="javax.swing.JLabel" name="carClassNameLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="plateLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="plateLbl1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carClassNameLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="carClassNameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="brandLbl1">
+                    <Component class="javax.swing.JLabel" name="carClassDisplayLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="brandLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="brandLbl1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carClassDisplayLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="carClassDisplayLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="plateTxt1">
+                    <Component class="javax.swing.JTextField" name="carClassNameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="plateTxt1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carClassNameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="brandTxt1">
+                    <Component class="javax.swing.JTextField" name="carClassDisplayTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="brandTxt1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="carClassDisplayTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="clearBtn1">
+                    <Component class="javax.swing.JButton" name="carClassClearBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/clean.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="clearBtn1.text"/>
-                        <Property name="name" type="java.lang.String" value="clearBtn1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carClassClearBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="carClassClearBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="addBtn1">
+                    <Component class="javax.swing.JButton" name="carClassAddBtn">
                       <Properties>
                         <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                           <action class="oscar.view.adminMainView" id="carDialog" methodName="carDialog"/>
                         </Property>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="addBtn1.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="addBtn1.text"/>
-                        <Property name="name" type="java.lang.String" value="addBtn1" noResource="true"/>
+                        <Property name="icon" type="javax.swing.Icon" resourceKey="carClassAddBtn.icon"/>
+                        <Property name="text" type="java.lang.String" resourceKey="carClassAddBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="carClassAddBtn" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1893,7 +1893,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireClearBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="hireBtn" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1913,7 +1913,7 @@
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="hireClearBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -1923,6 +1923,7 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="hireBtn">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="hireBtn.icon"/>
                     <Property name="text" type="java.lang.String" resourceKey="hireBtn.text"/>
                     <Property name="name" type="java.lang.String" value="hireBtn" noResource="true"/>
                   </Properties>
@@ -1943,24 +1944,24 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="personLoadBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="hirePersonLoadBtn" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="nameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="surnameLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="emailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="phoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="addressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="dateOfBirthLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireSurnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireEmailLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hirePhoneLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireAddressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireDateOfBirthLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jScrollPane7" alignment="0" pref="213" max="32767" attributes="0"/>
-                                          <Component id="nameTxt" alignment="0" pref="213" max="32767" attributes="0"/>
-                                          <Component id="surnameTxt1" alignment="0" pref="213" max="32767" attributes="0"/>
-                                          <Component id="dateOfBirthDP" alignment="0" pref="213" max="32767" attributes="0"/>
-                                          <Component id="phoneTxt" alignment="0" pref="213" max="32767" attributes="0"/>
-                                          <Component id="emailTxt" alignment="0" pref="213" max="32767" attributes="0"/>
+                                          <Component id="hireNameTxt" alignment="0" pref="213" max="32767" attributes="0"/>
+                                          <Component id="hireSurnameTxt" alignment="0" pref="213" max="32767" attributes="0"/>
+                                          <Component id="hireDateOfBirthDP" alignment="0" pref="213" max="32767" attributes="0"/>
+                                          <Component id="hirePhoneTxt" alignment="0" pref="213" max="32767" attributes="0"/>
+                                          <Component id="hireEmailTxt" alignment="0" pref="213" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1972,36 +1973,36 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="personLoadBtn" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="hirePersonLoadBtn" min="-2" pref="33" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="nameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="surnameLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="surnameTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireSurnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireSurnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="dateOfBirthLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dateOfBirthDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireDateOfBirthLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireDateOfBirthDP" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="emailLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireEmailLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireEmailTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="phoneLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="phoneTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hirePhoneLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hirePhoneTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="addressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" alignment="0" pref="233" max="32767" attributes="0"/>
+                                  <Component id="hireAddressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane7" alignment="0" pref="223" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -2009,72 +2010,72 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="personLoadBtn">
+                    <Component class="javax.swing.JButton" name="hirePersonLoadBtn">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="personLoadBtn.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="personLoadBtn.text"/>
-                        <Property name="name" type="java.lang.String" value="personLoadBtn" noResource="true"/>
+                        <Property name="icon" type="javax.swing.Icon" resourceKey="hirePersonLoadBtn.icon"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hirePersonLoadBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="hirePersonLoadBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="nameLbl">
+                    <Component class="javax.swing.JLabel" name="hireNameLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="nameLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="nameLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireNameLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireNameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="nameTxt">
+                    <Component class="javax.swing.JTextField" name="hireNameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="nameTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireNameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="surnameLbl1">
+                    <Component class="javax.swing.JLabel" name="hireSurnameLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="surnameLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="surnameLbl1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireSurnameLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireSurnameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="surnameTxt1">
+                    <Component class="javax.swing.JTextField" name="hireSurnameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="surnameTxt1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireSurnameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="dateOfBirthLbl">
+                    <Component class="javax.swing.JLabel" name="hireDateOfBirthLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="dateOfBirthLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="dateOfBirthLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireDateOfBirthLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireDateOfBirthLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="org.jdesktop.swingx.JXDatePicker" name="dateOfBirthDP">
+                    <Component class="org.jdesktop.swingx.JXDatePicker" name="hireDateOfBirthDP">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="dateOfBirthDP" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireDateOfBirthDP" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="emailLbl">
+                    <Component class="javax.swing.JLabel" name="hireEmailLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="emailLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="emailLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireEmailLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireEmailLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="emailTxt">
+                    <Component class="javax.swing.JTextField" name="hireEmailTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="emailTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireEmailTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="phoneLbl">
+                    <Component class="javax.swing.JLabel" name="hirePhoneLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="phoneLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="phoneLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hirePhoneLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hirePhoneLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="phoneTxt">
+                    <Component class="javax.swing.JTextField" name="hirePhoneTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="phoneTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hirePhoneTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="addressLbl">
+                    <Component class="javax.swing.JLabel" name="hireAddressLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="addressLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="addressLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireAddressLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireAddressLbl" noResource="true"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -2087,11 +2088,11 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="addressTxt">
+                        <Component class="javax.swing.JTextArea" name="hireAddressTxt">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
-                            <Property name="name" type="java.lang.String" value="addressTxt" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="hireAddressTxt" noResource="true"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2113,11 +2114,11 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="refCodeLbl1" min="-2" max="-2" attributes="0"/>
+                              <Component id="hireRefCodeLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="refCodeTxt1" pref="148" max="32767" attributes="0"/>
+                              <Component id="hireRefCodeTxt" pref="148" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="refCodeSearchBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="hireRefCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Component id="jSeparator1" alignment="0" pref="350" max="32767" attributes="0"/>
@@ -2130,24 +2131,24 @@
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="1">
-                                          <Component id="toLbl" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireToLbl" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="toDP" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireToDP" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="fromLbl" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireFromLbl" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="fromDP" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hireFromDP" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="classLbl1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="hireClassLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="classCB1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="hireClassCB" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="chauffeuredCB" min="-2" max="-2" attributes="0"/>
+                                      <Component id="hireChauffeuredCB" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="chauffeuredCB1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="hireInsuranceCB" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2159,66 +2160,66 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="refCodeSearchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="refCodeTxt1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="refCodeLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireRefCodeSearchBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireRefCodeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireRefCodeLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="fromLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="fromDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireFromLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireFromDP" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="toLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="toDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireToLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireToDP" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="classLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="classCB1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chauffeuredCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="chauffeuredCB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireClassLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireClassCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireChauffeuredCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hireInsuranceCB" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" pref="286" max="32767" attributes="0"/>
+                              <Component id="jScrollPane8" pref="276" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="fromLbl">
+                    <Component class="javax.swing.JLabel" name="hireFromLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="fromLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="fromLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireFromLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireFromLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="org.jdesktop.swingx.JXDatePicker" name="fromDP">
+                    <Component class="org.jdesktop.swingx.JXDatePicker" name="hireFromDP">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="fromDP" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireFromDP" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="toLbl">
+                    <Component class="javax.swing.JLabel" name="hireToLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="toLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="toLbl" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireToLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireToLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="org.jdesktop.swingx.JXDatePicker" name="toDP">
+                    <Component class="org.jdesktop.swingx.JXDatePicker" name="hireToDP">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="toDP" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireToDP" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="classLbl1">
+                    <Component class="javax.swing.JLabel" name="hireClassLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="classLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="classLbl1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireClassLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireClassLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="classCB1">
+                    <Component class="javax.swing.JComboBox" name="hireClassCB">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
@@ -2228,13 +2229,13 @@
                             <StringItem index="3" value="Item 4"/>
                           </StringArray>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="classCB1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireClassCB" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="chauffeuredCB">
+                    <Component class="javax.swing.JCheckBox" name="hireChauffeuredCB">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="chauffeuredCB.text"/>
-                        <Property name="name" type="java.lang.String" value="chauffeuredCB" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireChauffeuredCB.text"/>
+                        <Property name="name" type="java.lang.String" value="hireChauffeuredCB" noResource="true"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane8">
@@ -2247,7 +2248,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="org.jdesktop.swingx.JXTable" name="carTbl1">
+                        <Component class="org.jdesktop.swingx.JXTable" name="hireTbl">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="4" rowCount="4">
@@ -2257,27 +2258,27 @@
                                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
                               </Table>
                             </Property>
-                            <Property name="name" type="java.lang.String" value="carTbl1" noResource="true"/>
+                            <Property name="name" type="java.lang.String" value="hireTbl" noResource="true"/>
                           </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="refCodeLbl1">
+                    <Component class="javax.swing.JLabel" name="hireRefCodeLbl">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="refCodeLbl1.text"/>
-                        <Property name="name" type="java.lang.String" value="refCodeLbl1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireRefCodeLbl.text"/>
+                        <Property name="name" type="java.lang.String" value="hireRefCodeLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="refCodeTxt1">
+                    <Component class="javax.swing.JTextField" name="hireRefCodeTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="refCodeTxt1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="hireRefCodeTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="refCodeSearchBtn">
+                    <Component class="javax.swing.JButton" name="hireRefCodeSearchBtn">
                       <Properties>
-                        <Property name="icon" type="javax.swing.Icon" resourceKey="refCodeSearchBtn.icon"/>
-                        <Property name="text" type="java.lang.String" resourceKey="refCodeSearchBtn.text"/>
-                        <Property name="name" type="java.lang.String" value="refCodeSearchBtn" noResource="true"/>
+                        <Property name="icon" type="javax.swing.Icon" resourceKey="hireRefCodeSearchBtn.icon"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireRefCodeSearchBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="hireRefCodeSearchBtn" noResource="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -2285,18 +2286,19 @@
                         <Property name="name" type="java.lang.String" value="jSeparator1" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="chauffeuredCB1">
+                    <Component class="javax.swing.JCheckBox" name="hireInsuranceCB">
                       <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="chauffeuredCB1.text"/>
-                        <Property name="name" type="java.lang.String" value="chauffeuredCB1" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="hireInsuranceCB.text"/>
+                        <Property name="name" type="java.lang.String" value="hireInsuranceCB" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="hireClearBtn">
                   <Properties>
-                    <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
-                    <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="hireClearBtn.icon"/>
+                    <Property name="text" type="java.lang.String" resourceKey="hireClearBtn.text"/>
+                    <Property name="name" type="java.lang.String" value="hireClearBtn" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>

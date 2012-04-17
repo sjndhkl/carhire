@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
 import oscar.model.Car;
+import oscar.model.CarClass;
 import oscar.model.Rental;
 import oscar.persistance.Controller;
 import oscar.view.AdminView;
@@ -11,6 +12,9 @@ import oscar.model.Staff;
 import oscar.persistance.StaffUpdateTableTask;
 import oscar.persistance.BookingUpdateTableTask;
 import oscar.persistance.CarUpdateTableTask;
+import oscar.persistance.ClassUpdateTableTask;
+import oscar.persistance.HireUpdatePersonTask;
+import oscar.view.dialog.CarClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;
 
@@ -26,6 +30,8 @@ public class AdminController extends Controller {
     private StaffUpdateTableTask staffUpdateTableTask;
     private BookingUpdateTableTask bookingUpdateTableTask;
     private CarUpdateTableTask carUpdateTableTask;
+    private ClassUpdateTableTask classUpdateTableTask;
+    private HireUpdatePersonTask hireUpdatePersonTask;
 
     @Override
     public void run() {
@@ -33,17 +39,17 @@ public class AdminController extends Controller {
         adminView = new AdminView();
         this.addElement(adminView);
         this.addElement(adminView.getLogoutBtn());
-        // Staff
+        // Staff tab
         this.addElement(adminView.getStaffClearBtn());
         this.addElement(adminView.getStaffAddBtn());
         this.addElement(adminView.getStaffSurnameTxt());
         this.addElement(adminView.getStaffNameTxt());
-        // Booking
+        // Booking tab
         this.addElement(adminView.getBookingRefCodeTxt());
         this.addElement(adminView.getBookingSurnameTxt());
         this.addElement(adminView.getBookingClearBtn());
         this.addElement(adminView.getBookingDeleteBtn());
-        // Car
+        // Car tab
         this.addElement(adminView.getCarAddBtn());
         this.addElement(adminView.getCarClearBtn());
         this.addElement(adminView.getCarBrandTxt());
@@ -52,17 +58,42 @@ public class AdminController extends Controller {
         this.addElement(adminView.getCarModelTxt());
         this.addElement(adminView.getCarPlateTxt());
         this.addElement(adminView.getCarStatusCB());
+        // Class tab
+        this.addElement(adminView.getCarClassAddBtn());
+        this.addElement(adminView.getCarClassClearBtn());
+        this.addElement(adminView.getCarClassDisplayTxt());
+        this.addElement(adminView.getCarClassNameTxt());
+        // Hire tab
+        this.addElement(adminView.getHireAddressTxt());
+        this.addElement(adminView.getHireBtn());
+        this.addElement(adminView.getHireChauffeuredCB());
+        this.addElement(adminView.getHireClassCB());
+        this.addElement(adminView.getHireClearBtn());
+        this.addElement(adminView.getHireDateOfBirthDP());
+        this.addElement(adminView.getHireEmailTxt());
+        this.addElement(adminView.getHireFromDP());
+        this.addElement(adminView.getHireInsuranceCB());
+        this.addElement(adminView.getHireNameTxt());
+        this.addElement(adminView.getHirePersonLoadBtn());
+        this.addElement(adminView.getHirePhoneTxt());
+        this.addElement(adminView.getHireRefCodeSearchBtn());
+        this.addElement(adminView.getHireRefCodeTxt());
+        this.addElement(adminView.getHireSurnameTxt());
+        this.addElement(adminView.getHireToDP());
+
         // Filter timers
         timer = new Timer();
         staffUpdateTableTask = new StaffUpdateTableTask();
         bookingUpdateTableTask = new BookingUpdateTableTask();
         carUpdateTableTask = new CarUpdateTableTask();
+        classUpdateTableTask = new ClassUpdateTableTask();
+        hireUpdatePersonTask = new HireUpdatePersonTask();
 
         // Set up the tables
+        adminView.getStaffTbl().setModel(new Staff().getTableModel());
         adminView.getBookingTbl().setModel(new Rental().getTableModel());
         adminView.getCarTbl().setModel(new Car().getTableModel());
-        adminView.getStaffTbl().setModel(new Staff().getTableModel());
-
+        adminView.getCarClassTbl().setModel(new CarClass().getTableModel());
     }
 
     @Override
@@ -78,13 +109,18 @@ public class AdminController extends Controller {
         // Booking Tab
         else if (e.getSource().equals(adminView.getBookingClearBtn()))
             actionBookingClearFields();
-        else if (e.getSource().equals(adminView.getBookingDeleteBtn()))   
+        else if (e.getSource().equals(adminView.getBookingDeleteBtn()))
             actionBookingDelete();
         // Car Tab
         else if (e.getSource().equals(adminView.getCarClearBtn()))
             actionCarClearFields();
-        else if (e.getSource().equals(adminView.getCarAddBtn()))   
-            actionAddCar();
+        else if (e.getSource().equals(adminView.getCarAddBtn()))
+            actionCarAdd();
+        // Class tab
+        else if (e.getSource().equals(adminView.getCarClassAddBtn()))
+            actionClassAdd();
+        else if (e.getSource().equals(adminView.getCarClassClearBtn()))
+            actionClassClearFields();
     }
 
     private void actionLogout() {
@@ -124,9 +160,20 @@ public class AdminController extends Controller {
         actionBookingUpdateTable();
     }
 
-    private void actionAddCar() {
+    private void actionCarAdd() {
         // TODO: finish implementation
         this.addElement(new CarDialog(adminView, true));
+    }
+
+    private void actionClassAdd() {
+        // TODO: finish implementation
+        this.addElement(new CarClassDialog(adminView, true));
+    }
+
+    private void actionClassClearFields() {
+        adminView.getCarClassDisplayTxt().setText("");
+        adminView.getCarClassNameTxt().setText("");
+        actionClassUpdateTable();
     }
 
     /*
@@ -142,10 +189,14 @@ public class AdminController extends Controller {
         else if (e.getSource().equals(adminView.getBookingRefCodeTxt())
                 || e.getSource().equals(adminView.getBookingSurnameTxt()))
             actionBookingUpdateTable();
+        // Class
+        else if (e.getSource().equals(adminView.getCarClassDisplayTxt())
+                || e.getSource().equals(adminView.getCarClassNameTxt()))
+            actionClassUpdateTable();
     }
 
     private void actionStaffUpdateTable() {
-        staffUpdateTableTask.cancel(); 
+        staffUpdateTableTask.cancel();
         staffUpdateTableTask = new StaffUpdateTableTask();
         timer.schedule(staffUpdateTableTask, this.TABLE_FILTERING_DELAY);
     }
@@ -154,6 +205,12 @@ public class AdminController extends Controller {
         bookingUpdateTableTask.cancel();
         bookingUpdateTableTask = new BookingUpdateTableTask();
         timer.schedule(bookingUpdateTableTask, this.TABLE_FILTERING_DELAY);
+    }
+
+    private void actionClassUpdateTable() {
+        classUpdateTableTask.cancel();
+        classUpdateTableTask = new ClassUpdateTableTask();
+        timer.schedule(classUpdateTableTask, this.TABLE_FILTERING_DELAY);
     }
 
     @Override

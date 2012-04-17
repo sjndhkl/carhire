@@ -1,6 +1,7 @@
 package oscar.model;
 
 import java.util.HashMap;
+import javax.swing.table.TableModel;
 import oscar.persistance.DbRecord;
 import oscar.persistance.DbRecordable;
 import oscar.util.Utility;
@@ -105,6 +106,11 @@ public class Branch extends DbRecord implements DbRecordable {
        if(this.getBranchId()<=0)
             return false;
        return this.updateBy(Utility.convertToHashMap(this), "branchId", this.getBranchId()+"");
+    }
+
+    @Override
+    public TableModel getTableModel() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
