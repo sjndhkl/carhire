@@ -6,6 +6,7 @@
  */
 package oscar.view;
 
+import javax.swing.ListSelectionModel;
 import oscar.persistance.AbstractView;
 
 public class AdminView extends AbstractView {
@@ -13,6 +14,15 @@ public class AdminView extends AbstractView {
     /** Creates new form AdminView */
     public AdminView() {
         initComponents();
+        // TODO: fix the selection..........
+        staffTbl.setSelectionMode(
+                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        bookingTbl.setSelectionMode(
+                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        carTbl.setSelectionMode(
+                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        carClassTbl.setSelectionMode(
+                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         //this.setVisible(true);
     }
 
@@ -837,7 +847,6 @@ public class AdminView extends AbstractView {
         staffTbl.setAutoStartEditOnKeyStroke(false);
         staffTbl.setEditable(false);
         staffTbl.setName("staffTbl"); // NOI18N
-        staffTbl.setRowSelectionAllowed(true);
         staffTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(staffTbl);
         staffTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -945,7 +954,8 @@ public class AdminView extends AbstractView {
 
             }
         ));
-        bookingTbl.setColumnSelectionAllowed(true);
+        bookingTbl.setAutoStartEditOnKeyStroke(false);
+        bookingTbl.setEditable(false);
         bookingTbl.setName("bookingTbl"); // NOI18N
         bookingTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(bookingTbl);
@@ -1101,7 +1111,8 @@ public class AdminView extends AbstractView {
 
             }
         ));
-        carTbl.setColumnSelectionAllowed(true);
+        carTbl.setAutoStartEditOnKeyStroke(false);
+        carTbl.setEditable(false);
         carTbl.setName("carTbl"); // NOI18N
         carTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(carTbl);
@@ -1200,7 +1211,8 @@ public class AdminView extends AbstractView {
 
             }
         ));
-        carClassTbl.setColumnSelectionAllowed(true);
+        carClassTbl.setAutoStartEditOnKeyStroke(false);
+        carClassTbl.setEditable(false);
         carClassTbl.setName("carClassTbl"); // NOI18N
         carClassTbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(carClassTbl);
@@ -1476,6 +1488,7 @@ public class AdminView extends AbstractView {
     public javax.swing.JTextField getStaffNameTxt() {
         return staffNameTxt;
     }
+
     public javax.swing.JTextField getStaffSurnameTxt() {
         return staffSurnameTxt;
     }

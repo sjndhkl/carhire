@@ -45,7 +45,7 @@ public class Staff extends Person implements DbRecordable {
         this.username = attributes.get("username");
         this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
         this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
-        this.personid = Integer.parseInt(attributes.get("personId"));
+        this.personId = Integer.parseInt(attributes.get("personId"));
     }
 
     private void initStaff() {
@@ -56,7 +56,6 @@ public class Staff extends Person implements DbRecordable {
 
     /**
      * Class constructor
-     * @param personid
      * @param name
      * @param surname
      * @param dateOfBirth
@@ -67,10 +66,10 @@ public class Staff extends Person implements DbRecordable {
      * @param isAdmin
      * @param isChauffeur
      */
-    public Staff(int personid, String name, String surname, String dateOfBirth,
+    public Staff(String name, String surname, String dateOfBirth,
             String email, String address, String phone, String username,
             boolean isAdmin, boolean isChauffeur) {
-        super(personid, name, surname, dateOfBirth, email, address, phone);
+        super(name, surname, dateOfBirth, email, address, phone);
         this.username = username;
         this.isAdmin = isAdmin;
         this.isChauffeur = isChauffeur;

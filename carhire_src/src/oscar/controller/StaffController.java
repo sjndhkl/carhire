@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
 import oscar.persistance.Controller;
-import oscar.persistance.HireUpdatePersonTask;
+import oscar.persistance.HirePersonUpdateTask;
 import oscar.view.StaffView;
 
 /**
@@ -17,7 +17,7 @@ public class StaffController extends Controller {
     private StaffView staffView;
     /*// weather the controller is attached to the admin one
     private boolean passive = false;*/
-    private HireUpdatePersonTask hireUpdatePersonTask;
+    private HirePersonUpdateTask hirePersonUpdateTask;
     private Timer timer;
 
     @Override
@@ -45,7 +45,7 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireToDP());
         
         timer = new Timer();
-        hireUpdatePersonTask = new HireUpdatePersonTask();
+        hirePersonUpdateTask = new HirePersonUpdateTask();
     }
 
     @Override

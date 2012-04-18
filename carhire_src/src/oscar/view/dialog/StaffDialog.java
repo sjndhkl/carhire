@@ -31,6 +31,7 @@ public class StaffDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         saveBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         dateOfBirthLbL = new javax.swing.JLabel();
@@ -38,21 +39,24 @@ public class StaffDialog extends javax.swing.JDialog {
         PhoneLbl = new javax.swing.JLabel();
         emailTxt = new javax.swing.JTextField();
         phoneTxt = new javax.swing.JTextField();
+        dateOfBirthDP = new org.jdesktop.swingx.JXDatePicker();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         addressTA = new javax.swing.JTextArea();
         addressLbl = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        staffNameLbl = new javax.swing.JLabel();
+        nameLbl = new javax.swing.JLabel();
         surnameLbl = new javax.swing.JLabel();
         usernameLbl = new javax.swing.JLabel();
         passwordLbl = new javax.swing.JLabel();
         passwordPwd = new javax.swing.JPasswordField();
         usernameTxt = new javax.swing.JTextField();
         surnameTxt = new javax.swing.JTextField();
-        staffNameTxt = new javax.swing.JTextField();
+        nameTxt = new javax.swing.JTextField();
         cancelBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
+
+        jXDatePicker1.setName("jXDatePicker1"); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Staff");
@@ -61,6 +65,7 @@ public class StaffDialog extends javax.swing.JDialog {
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setName("Staff"); // NOI18N
 
+        saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
         saveBtn.setText("Save");
         saveBtn.setName("saveBtn"); // NOI18N
 
@@ -79,6 +84,8 @@ public class StaffDialog extends javax.swing.JDialog {
 
         phoneTxt.setName("phoneTxt"); // NOI18N
 
+        dateOfBirthDP.setName("dateOfBirthDP"); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -92,14 +99,17 @@ public class StaffDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(phoneTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+                    .addComponent(phoneTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dateOfBirthLbL)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateOfBirthLbL)
+                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailLbl)
@@ -139,14 +149,14 @@ public class StaffDialog extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(addressLbl)
-                .addContainerGap(103, Short.MAX_VALUE))
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                .addContainerGap(93, Short.MAX_VALUE))
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
         );
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        staffNameLbl.setText("Name");
-        staffNameLbl.setName("staffNameLbl"); // NOI18N
+        nameLbl.setText("Name");
+        nameLbl.setName("nameLbl"); // NOI18N
 
         surnameLbl.setText("Surname");
         surnameLbl.setName("surnameLbl"); // NOI18N
@@ -163,7 +173,7 @@ public class StaffDialog extends javax.swing.JDialog {
 
         surnameTxt.setName("surnameTxt"); // NOI18N
 
-        staffNameTxt.setName("staffNameTxt"); // NOI18N
+        nameTxt.setName("nameTxt"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,21 +185,21 @@ public class StaffDialog extends javax.swing.JDialog {
                     .addComponent(passwordLbl)
                     .addComponent(usernameLbl)
                     .addComponent(surnameLbl)
-                    .addComponent(staffNameLbl))
+                    .addComponent(nameLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(passwordPwd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                     .addComponent(usernameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                     .addComponent(surnameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                    .addComponent(staffNameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)))
+                    .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(staffNameLbl)
-                    .addComponent(staffNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameLbl)
+                    .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(surnameLbl)
@@ -205,9 +215,11 @@ public class StaffDialog extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        cancelBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/return.png"))); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.setName("cancelBtn"); // NOI18N
 
+        deleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
         deleteBtn.setText("Delete");
         deleteBtn.setName("deleteBtn"); // NOI18N
 
@@ -222,11 +234,11 @@ public class StaffDialog extends javax.swing.JDialog {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(104, 104, 104)
-                .addComponent(saveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(saveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(deleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addComponent(deleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(cancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                .addComponent(cancelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(108, 108, 108))
         );
         layout.setVerticalGroup(
@@ -286,7 +298,7 @@ public class StaffDialog extends javax.swing.JDialog {
                         System.exit(0);
                     }
                 });
-                dialog.setVisible(true);
+                //dialog.setVisible(true);
             }
         });
     }
@@ -295,6 +307,7 @@ public class StaffDialog extends javax.swing.JDialog {
     private javax.swing.JLabel addressLbl;
     private javax.swing.JTextArea addressTA;
     private javax.swing.JButton cancelBtn;
+    private org.jdesktop.swingx.JXDatePicker dateOfBirthDP;
     private javax.swing.JLabel dateOfBirthLbL;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel emailLbl;
@@ -303,15 +316,142 @@ public class StaffDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane6;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
+    private javax.swing.JLabel nameLbl;
+    private javax.swing.JTextField nameTxt;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JPasswordField passwordPwd;
     private javax.swing.JTextField phoneTxt;
     private javax.swing.JButton saveBtn;
-    private javax.swing.JLabel staffNameLbl;
-    private javax.swing.JTextField staffNameTxt;
     private javax.swing.JLabel surnameLbl;
     private javax.swing.JTextField surnameTxt;
     private javax.swing.JLabel usernameLbl;
     private javax.swing.JTextField usernameTxt;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the addressTA
+     */
+    public javax.swing.JTextArea getAddressTA() {
+        return addressTA;
+    }
+
+    /**
+     * @param addressTA the addressTA to set
+     */
+    public void setAddressTA(javax.swing.JTextArea addressTA) {
+        this.addressTA = addressTA;
+    }
+
+    /**
+     * @return the cancelBtn
+     */
+    public javax.swing.JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    /**
+     * @return the deleteBtn
+     */
+    public javax.swing.JButton getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    /**
+     * @return the emailTxt
+     */
+    public javax.swing.JTextField getEmailTxt() {
+        return emailTxt;
+    }
+
+    /**
+     * @param emailTxt the emailTxt to set
+     */
+    public void setEmailTxt(javax.swing.JTextField emailTxt) {
+        this.emailTxt = emailTxt;
+    }
+
+    /**
+     * @return the passwordPwd
+     */
+    public javax.swing.JPasswordField getPasswordPwd() {
+        return passwordPwd;
+    }
+
+    /**
+     * @param passwordPwd the passwordPwd to set
+     */
+    public void setPasswordPwd(javax.swing.JPasswordField passwordPwd) {
+        this.passwordPwd = passwordPwd;
+    }
+
+    /**
+     * @return the phoneTxt
+     */
+    public javax.swing.JTextField getPhoneTxt() {
+        return phoneTxt;
+    }
+
+    /**
+     * @param phoneTxt the phoneTxt to set
+     */
+    public void setPhoneTxt(javax.swing.JTextField phoneTxt) {
+        this.phoneTxt = phoneTxt;
+    }
+
+    /**
+     * @return the saveBtn
+     */
+    public javax.swing.JButton getSaveBtn() {
+        return saveBtn;
+    }
+
+    /**
+     * @return the staffNameTxt
+     */
+    public javax.swing.JTextField getNameTxt() {
+        return nameTxt;
+    }
+
+    /**
+     * @param staffNameTxt the staffNameTxt to set
+     */
+    public void setNameTxt(javax.swing.JTextField nameTxt) {
+        this.nameTxt = nameTxt;
+    }
+
+    /**
+     * @return the surnameTxt
+     */
+    public javax.swing.JTextField getSurnameTxt() {
+        return surnameTxt;
+    }
+
+    /**
+     * @param surnameTxt the surnameTxt to set
+     */
+    public void setSurnameTxt(javax.swing.JTextField surnameTxt) {
+        this.surnameTxt = surnameTxt;
+    }
+
+    /**
+     * @return the usernameTxt
+     */
+    public javax.swing.JTextField getUsernameTxt() {
+        return usernameTxt;
+    }
+
+    /**
+     * @param usernameTxt the usernameTxt to set
+     */
+    public void setUsernameTxt(javax.swing.JTextField usernameTxt) {
+        this.usernameTxt = usernameTxt;
+    }
+
+    /**
+     * @return the dateOfBirthDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getDateOfBirthDP() {
+        return dateOfBirthDP;
+    }
 }

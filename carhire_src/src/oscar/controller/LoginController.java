@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.Timer;
 import oscar.model.Staff;
 import oscar.persistance.Controller;
-import oscar.persistance.HireUpdatePersonTask;
+import oscar.persistance.HirePersonUpdateTask;
 import oscar.view.LoginView;
 
 /**

@@ -248,7 +248,8 @@ public class StaffView extends AbstractView {
 
             }
         ));
-        jXTable1.setColumnSelectionAllowed(true);
+        jXTable1.setAutoStartEditOnKeyStroke(false);
+        jXTable1.setEditable(false);
         jXTable1.setName("jXTable1"); // NOI18N
         jXTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane9.setViewportView(jXTable1);
@@ -418,6 +419,8 @@ public class StaffView extends AbstractView {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        hireTbl.setAutoStartEditOnKeyStroke(false);
+        hireTbl.setEditable(false);
         hireTbl.setName("hireTbl"); // NOI18N
         jScrollPane8.setViewportView(hireTbl);
 

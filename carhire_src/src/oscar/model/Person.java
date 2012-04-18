@@ -15,7 +15,7 @@ import oscar.util.Utility;
 public class Person extends DependentDbRecord implements DbRecordable {
 
     /** Record id*/
-    protected int personid;
+    protected int personId;
     protected String name;
     protected String surname;
     protected String dateOfBirth;
@@ -42,7 +42,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     }
 
     public int getPersonid() {
-        return personid;
+        return personId;
     }
 
     public String getPhone() {
@@ -62,7 +62,6 @@ public class Person extends DependentDbRecord implements DbRecordable {
 
     /**
      * Class contructor
-     * @param personid record id
      * @param name
      * @param surname
      * @param dateOfBirth
@@ -70,10 +69,9 @@ public class Person extends DependentDbRecord implements DbRecordable {
      * @param address
      * @param phone
      */
-    public Person(int personid, String name, String surname,
+    public Person(String name, String surname,
             String dateOfBirth, String email, String address, String phone) {
         super(TABLE);
-        this.personid = personid;
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
@@ -117,7 +115,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     }
 
     public void setPersonid(int personid) {
-        this.personid = personid;
+        this.personId = personid;
     }
 
     public void setPhone(String phone) {
@@ -136,6 +134,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     @Override
     public boolean add() {
         return this.add(Utility.convertToHashMap(this));
+        //this.personId = this.query(name)
     }
     /*
      * return value for primary key
@@ -152,7 +151,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean delete() {
-        if (this.personid <= 0)
+        if (this.personId <= 0)
             return false;
         return this.deleteBy("personId", this.getPersonid() + "");
     }
@@ -164,7 +163,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean update() {
-        if (this.personid <= 0)
+        if (this.personId <= 0)
             return false;
         return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid() + "");
     }

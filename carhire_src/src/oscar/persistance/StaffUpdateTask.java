@@ -10,7 +10,7 @@ import java.util.TimerTask;
  *
  * @author Draga
  */
-public class StaffUpdateTableTask extends TimerTask{
+public class StaffUpdateTask extends TimerTask{
 
     @Override
     public void run() {

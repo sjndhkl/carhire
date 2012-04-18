@@ -33,8 +33,8 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
             ((JTextField) element).addKeyListener(this);
         else if (element.getClass().getSuperclass().equals(AbstractView.class))
             ((AbstractView) element).setVisible(true);
-        else if (element.getClass().getSuperclass().equals(JDialog.class))
-            ((JDialog) element).setVisible(true);
+        //else if (element.getClass().getSuperclass().equals(JDialog.class))
+        //    ((JDialog) element).setVisible(true);
     }
 
     public void removeAllElement() {
