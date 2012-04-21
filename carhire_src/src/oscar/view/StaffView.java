@@ -151,7 +151,7 @@ public class StaffView extends AbstractView {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(resourceMap.getString("Staff.title")); // NOI18N
         setName("Staff"); // NOI18N
 
