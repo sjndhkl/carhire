@@ -132,7 +132,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
           </Group>
-          <Component id="tabPanel" alignment="1" pref="904" max="32767" attributes="0"/>
+          <Component id="tabPanel" alignment="1" pref="914" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -182,7 +182,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="carSearchPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane9" pref="730" max="32767" attributes="0"/>
+                      <Component id="jScrollPane9" pref="715" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -192,7 +192,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane9" alignment="0" pref="627" max="32767" attributes="0"/>
+                          <Component id="jScrollPane9" alignment="0" pref="610" max="32767" attributes="0"/>
                           <Component id="carSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -365,9 +365,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="personPanel" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="personPanel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="carPanel1" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -383,10 +383,10 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="personPanel" alignment="0" max="32767" attributes="2"/>
+                          <Component id="personPanel" max="32767" attributes="2"/>
                           <Component id="carPanel1" alignment="0" max="32767" attributes="2"/>
                       </Group>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -420,10 +420,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="hirePersonLoadBtn" alignment="0" pref="388" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="hirePersonLoadBtn" alignment="1" pref="478" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="hireNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -435,12 +435,13 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane7" alignment="0" pref="292" max="32767" attributes="0"/>
-                                      <Component id="hireNameTxt" alignment="0" pref="292" max="32767" attributes="0"/>
-                                      <Component id="hireSurnameTxt" alignment="0" pref="292" max="32767" attributes="0"/>
-                                      <Component id="hireDateOfBirthDP" alignment="0" pref="292" max="32767" attributes="0"/>
-                                      <Component id="hirePhoneTxt" alignment="0" pref="292" max="32767" attributes="0"/>
-                                      <Component id="hireEmailTxt" alignment="0" pref="292" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane7" pref="363" max="32767" attributes="0"/>
+                                      <Component id="hireSurnameTxt" alignment="0" pref="363" max="32767" attributes="0"/>
+                                      <Component id="hireDateOfBirthDP" alignment="0" pref="363" max="32767" attributes="0"/>
+                                      <Component id="hirePhoneTxt" alignment="0" pref="363" max="32767" attributes="0"/>
+                                      <Component id="hireEmailTxt" alignment="0" pref="363" max="32767" attributes="0"/>
+                                      <Component id="searchModeCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="hireNameTxt" alignment="1" pref="363" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -454,6 +455,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="hirePersonLoadBtn" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="searchModeCheckBox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hireNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -480,8 +483,8 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="hireAddressLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" alignment="0" pref="336" max="32767" attributes="0"/>
+                              <Component id="hireAddressLbl" min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" min="-2" pref="227" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -577,6 +580,12 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JCheckBox" name="searchModeCheckBox">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" resourceKey="searchModeCheckBox.text"/>
+                    <Property name="name" type="java.lang.String" value="searchModeCheckBox" noResource="true"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="carPanel1">
@@ -596,18 +605,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="hireRefCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="hireRefCodeTxt" pref="255" max="32767" attributes="0"/>
+                          <Component id="hireRefCodeTxt" pref="152" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="hireRefCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jSeparator1" alignment="0" pref="457" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" alignment="0" pref="362" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                  <Component id="jScrollPane8" pref="435" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane8" pref="336" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
@@ -664,7 +673,7 @@
                               <Component id="hireInsuranceCB" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane8" pref="389" max="32767" attributes="0"/>
+                          <Component id="jScrollPane8" pref="347" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>

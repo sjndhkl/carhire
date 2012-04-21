@@ -101,8 +101,8 @@ public class Staff extends Person implements DbRecordable {
     @Override
     public boolean add() {
         try {
-            HashMap<String, HashMap<String, String>> data = Utility.convertToHashMapWithParent(this);
-            return this.addDependent(data);
+            //HashMap<String, HashMap<String, String>> data = Utility.convertToHashMapWithParent(this);
+            return this.addDependent();
         } catch (SQLException ex) {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }

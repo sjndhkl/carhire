@@ -8,13 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
 /**
  *
  * @author sujan
  */
-public abstract class DbRecord {
+public class DbRecord {
     /** Database connection*/
     protected DbConnectable connectionObject;
     /** Table on which the record is stored in the database*/
@@ -185,7 +186,7 @@ public abstract class DbRecord {
      */
     public ArrayList<HashMap<String, String>> findAllBy(String colName, String value, int limit) {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
-                + "='" + value + "' limit 0," + limit);
+                + "= '" + value + "' limit 0," + limit);
         if (records != null
             && records.size() >= 1) {
             return records;    // return row
@@ -193,6 +194,30 @@ public abstract class DbRecord {
 
         return null;
     }
+    
+    
+     /**
+     * returns all the data inside the table depending on column name and value
+     * specified
+     * @param colName column to search in
+     * @param value value to search for
+     * @param limit maximum number of results
+     * @return List of HashMap representing the records
+     */
+    public ArrayList<HashMap<String, String>> findAllLikeBy(String colName, String value, int limit) {
+        ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
+                 +" like '" + value + "' limit 0," + limit);
+        if (records != null
+            && records.size() >= 1) {
+            return records;    // return row
+        }
+
+        return null;
+    }
+    
+    
+    
+    
 
     /**
      * returns all the data inside the table depending on column name, value,
@@ -448,5 +473,53 @@ public abstract class DbRecord {
         return this.nonQueryPk(query);
     }
      
-    public abstract TableModel getTableModel();
+    public TableModel getTableModel(){
+        return new TableModel() {
+
+            @Override
+            public int getRowCount() {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public int getColumnCount() {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public String getColumnName(int i) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public Class<?> getColumnClass(int i) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public boolean isCellEditable(int i, int i1) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public Object getValueAt(int i, int i1) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void setValueAt(Object o, int i, int i1) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void addTableModelListener(TableModelListener tl) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+
+            @Override
+            public void removeTableModelListener(TableModelListener tl) {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+        };
+    }
 }

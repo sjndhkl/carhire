@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.table.TableModel;
+import oscar.util.Utility;
 
 /**
  *
@@ -49,7 +50,8 @@ public class DependentDbRecord extends DbRecord {
      * @return
      * @throws SQLException
      */
-    public boolean addDependent(HashMap<String, HashMap<String, String>> records) throws SQLException {
+    public boolean addDependent() throws SQLException {
+        HashMap<String, HashMap<String, String>> records = Utility.convertToHashMapWithParent(this);
         try {
             this.connectionObject.getConnection().setAutoCommit(false);
             int primaryKeyValue = -1;

@@ -49,7 +49,7 @@ public class CarHireModelTest extends BaseTestCase {
 
     public void testUpdate() {
         Branch model = new Branch();
-        model.setBranchId(10);
+        model.setBranchId(1);
         model.setCountry("Italy");
         model.setLocation("Cagliari");
         assertEquals(true, model.update());

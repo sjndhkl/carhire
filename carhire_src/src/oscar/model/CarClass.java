@@ -12,7 +12,7 @@ import oscar.persistance.DbRecord;
  * Class CarClass representing the classes of the car
  */
 public class CarClass extends DbRecord {
-    private static String TABLE = "carclass";
+    private static String TABLE = "carClass";
     private int carClassId;
     private String name;
     private String description;

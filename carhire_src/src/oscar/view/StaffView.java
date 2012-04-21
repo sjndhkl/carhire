@@ -10,6 +10,7 @@
  */
 package oscar.view;
 
+import javax.swing.JCheckBox;
 import oscar.persistance.AbstractView;
 
 /**
@@ -71,6 +72,7 @@ public class StaffView extends AbstractView {
         hireAddressLbl = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         hireAddressTxt = new javax.swing.JTextArea();
+        searchModeCheckBox = new javax.swing.JCheckBox();
         carPanel1 = new javax.swing.JPanel();
         hireFromLbl = new javax.swing.JLabel();
         hireFromDP = new org.jdesktop.swingx.JXDatePicker();
@@ -262,7 +264,7 @@ public class StaffView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
                 .addContainerGap())
         );
         returnPanelLayout.setVerticalGroup(
@@ -270,7 +272,7 @@ public class StaffView extends AbstractView {
             .addGroup(returnPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(returnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
                     .addComponent(carSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -326,15 +328,18 @@ public class StaffView extends AbstractView {
         hireAddressTxt.setName("hireAddressTxt"); // NOI18N
         jScrollPane7.setViewportView(hireAddressTxt);
 
+        searchModeCheckBox.setText(resourceMap.getString("searchModeCheckBox.text")); // NOI18N
+        searchModeCheckBox.setName("searchModeCheckBox"); // NOI18N
+
         javax.swing.GroupLayout personPanelLayout = new javax.swing.GroupLayout(personPanel);
         personPanel.setLayout(personPanelLayout);
         personPanelLayout.setHorizontalGroup(
             personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
+            .addGroup(personPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                    .addGroup(personPanelLayout.createSequentialGroup()
+                .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personPanelLayout.createSequentialGroup()
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hireNameLbl)
                             .addComponent(hireSurnameLbl)
@@ -344,12 +349,13 @@ public class StaffView extends AbstractView {
                             .addComponent(hireDateOfBirthLbl))
                         .addGap(35, 35, 35)
                         .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                            .addComponent(hireNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                            .addComponent(hireSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                            .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                            .addComponent(hirePhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                            .addComponent(hireEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(hireSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(hireDateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(hirePhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(hireEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                            .addComponent(searchModeCheckBox)
+                            .addComponent(hireNameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         personPanelLayout.setVerticalGroup(
@@ -358,6 +364,8 @@ public class StaffView extends AbstractView {
                 .addContainerGap()
                 .addComponent(hirePersonLoadBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(searchModeCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hireNameLbl)
                     .addComponent(hireNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -380,7 +388,7 @@ public class StaffView extends AbstractView {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(hireAddressLbl)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -446,17 +454,17 @@ public class StaffView extends AbstractView {
                 .addContainerGap()
                 .addComponent(hireRefCodeLbl)
                 .addGap(18, 18, 18)
-                .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(hireRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(hireRefCodeSearchBtn)
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(carPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
                     .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, carPanel1Layout.createSequentialGroup()
                             .addComponent(hireToLbl)
@@ -501,7 +509,7 @@ public class StaffView extends AbstractView {
                     .addComponent(hireChauffeuredCB)
                     .addComponent(hireInsuranceCB))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -517,7 +525,7 @@ public class StaffView extends AbstractView {
                 .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hirePanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(personPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(personPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(carPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(hirePanelLayout.createSequentialGroup()
@@ -529,7 +537,7 @@ public class StaffView extends AbstractView {
         );
         hirePanelLayout.setVerticalGroup(
             hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hirePanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hirePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(personPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -557,7 +565,7 @@ public class StaffView extends AbstractView {
                 .addComponent(usernameLbl)
                 .addGap(18, 18, 18)
                 .addComponent(logoutBtn))
-            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 904, Short.MAX_VALUE)
+            .addComponent(tabPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -652,6 +660,10 @@ public class StaffView extends AbstractView {
      */
     public org.jdesktop.swingx.JXDatePicker getHireDateOfBirthDP() {
         return hireDateOfBirthDP;
+    }
+    
+    public JCheckBox getSearchModeCheckBox(){
+        return this.searchModeCheckBox;
     }
 
     /**
@@ -782,6 +794,7 @@ public class StaffView extends AbstractView {
     private javax.swing.JTextField refCodeTxt2;
     private javax.swing.JButton returnBtn;
     private javax.swing.JPanel returnPanel;
+    private javax.swing.JCheckBox searchModeCheckBox;
     private javax.swing.JLabel surnameLbl2;
     private javax.swing.JTextField surnameTxt2;
     private javax.swing.JTabbedPane tabPanel;

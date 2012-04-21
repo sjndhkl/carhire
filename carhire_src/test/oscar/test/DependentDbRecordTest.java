@@ -45,11 +45,11 @@ public class DependentDbRecordTest extends BaseTestCase {
         //assertEquals(true, person.add() );
     }
 
-    public void disabledTestUtility() {
+    public void testStaffAdd() {
         Staff person = new Staff();
-        person.setPrimaryKey("personId");
+        //person.setPrimaryKey("personId");
         
-        person.setName("Sujan");
+        person.setName("Sujansadsadsadsdasdas");
         person.setSurname("Dhakal");
         person.setDateOfBirth("2011-1-1");
         person.setPhone("2312312");
@@ -60,9 +60,9 @@ public class DependentDbRecordTest extends BaseTestCase {
         person.setIsAdmin("admin");
         person.setPassword("test");
 
-        HashMap<String, HashMap<String, String>> data = Utility.convertToHashMapWithParent(person);
+        //HashMap<String, HashMap<String, String>> data = ;
         try {
-            person.addDependent(data);
+            person.addDependent();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class DependentDbRecordTest extends BaseTestCase {
     }
     
     
-    public void testShouldDisplayStaffRecords(){
+    public void disabledTestShouldDisplayStaffRecords(){
         
         ArrayList<HashMap<String,String>> dependencies = new ArrayList<HashMap<String, String>>();
         
