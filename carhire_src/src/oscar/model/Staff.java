@@ -174,7 +174,7 @@ public class Staff extends Person implements DbRecordable {
     public boolean isIsAdmin() {
         return admin;
     }
-    public boolean getIsAdmin(){
+    public boolean getAdmin(){
         return isIsAdmin();
     }
 
@@ -183,7 +183,7 @@ public class Staff extends Person implements DbRecordable {
     }
     
     
-    public boolean getIsChauffeur(){
+    public boolean getChauffeur(){
         return isIsChauffeur();
     }
 
