@@ -57,7 +57,7 @@ public class DependentDbRecordTest extends BaseTestCase {
         person.setEmail("sujan@dhakal.com");
 
         person.setUsername("sujan");
-        person.setIsAdmin("admin");
+        person.setIsAdmin("1");
         person.setPassword("test");
 
         //HashMap<String, HashMap<String, String>> data = ;

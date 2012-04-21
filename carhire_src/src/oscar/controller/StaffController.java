@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oscar.MVC.Controller;
 import oscar.task.HirePersonUpdateTask;
 import oscar.view.StaffView;
@@ -106,16 +108,18 @@ public class StaffController extends Controller {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getSource().equals(staffView.getHireNameTxt())){
-            
+
            if(!staffView.getSearchModeCheckBox().isSelected()){
                return;
            }
-           
+            try {
+                Thread.sleep(TABLE_FILTERING_DELAY);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(StaffController.class.getName()).log(Level.SEVERE, null, ex);
+            }
            //create a task and schedule
             String query = staffView.getHireNameTxt().getText();
             System.out.println(query);
-        }
        // throw new UnsupportedOperationException("Not supported yet.");
     }
     
