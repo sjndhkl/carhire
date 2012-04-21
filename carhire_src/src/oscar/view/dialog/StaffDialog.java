@@ -40,6 +40,8 @@ public class StaffDialog extends javax.swing.JDialog {
         emailTxt = new javax.swing.JTextField();
         phoneTxt = new javax.swing.JTextField();
         dateOfBirthDP = new org.jdesktop.swingx.JXDatePicker();
+        adminCB = new javax.swing.JCheckBox();
+        chauffeurCB = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         addressTA = new javax.swing.JTextArea();
@@ -86,6 +88,12 @@ public class StaffDialog extends javax.swing.JDialog {
 
         dateOfBirthDP.setName("dateOfBirthDP"); // NOI18N
 
+        adminCB.setText("Admin");
+        adminCB.setName("adminCB"); // NOI18N
+
+        chauffeurCB.setText("Chauffeur");
+        chauffeurCB.setName("chauffeurCB"); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -93,14 +101,20 @@ public class StaffDialog extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dateOfBirthLbL)
-                    .addComponent(emailLbl)
-                    .addComponent(PhoneLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(phoneTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                    .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dateOfBirthLbL)
+                            .addComponent(emailLbl)
+                            .addComponent(PhoneLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                            .addComponent(phoneTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                            .addComponent(dateOfBirthDP, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(adminCB)
+                        .addGap(18, 18, 18)
+                        .addComponent(chauffeurCB)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -118,7 +132,10 @@ public class StaffDialog extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PhoneLbl)
                     .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adminCB)
+                    .addComponent(chauffeurCB)))
         );
 
         jPanel3.setName("jPanel3"); // NOI18N
@@ -149,8 +166,8 @@ public class StaffDialog extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(addressLbl)
-                .addContainerGap(93, Short.MAX_VALUE))
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE))
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
         );
 
         jPanel1.setName("jPanel1"); // NOI18N
@@ -247,7 +264,7 @@ public class StaffDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -306,7 +323,9 @@ public class StaffDialog extends javax.swing.JDialog {
     private javax.swing.JLabel PhoneLbl;
     private javax.swing.JLabel addressLbl;
     private javax.swing.JTextArea addressTA;
+    private javax.swing.JCheckBox adminCB;
     private javax.swing.JButton cancelBtn;
+    private javax.swing.JCheckBox chauffeurCB;
     private org.jdesktop.swingx.JXDatePicker dateOfBirthDP;
     private javax.swing.JLabel dateOfBirthLbL;
     private javax.swing.JButton deleteBtn;
@@ -453,5 +472,19 @@ public class StaffDialog extends javax.swing.JDialog {
      */
     public org.jdesktop.swingx.JXDatePicker getDateOfBirthDP() {
         return dateOfBirthDP;
+    }
+
+    /**
+     * @return the adminCB
+     */
+    public javax.swing.JCheckBox getAdminCB() {
+        return adminCB;
+    }
+
+    /**
+     * @return the chauffeurCB
+     */
+    public javax.swing.JCheckBox getChauffeurCB() {
+        return chauffeurCB;
     }
 }

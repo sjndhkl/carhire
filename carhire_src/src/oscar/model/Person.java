@@ -25,34 +25,6 @@ public class Person extends DependentDbRecord implements DbRecordable {
     /** Database table name*/
     public static String TABLE = "person";
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getPersonid() {
-        return personId;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
     /**
      * Class contructor
      */
@@ -124,6 +96,34 @@ public class Person extends DependentDbRecord implements DbRecordable {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPersonid() {
+        return personId;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getSurname() {
+        return surname;
     }
 
     /**

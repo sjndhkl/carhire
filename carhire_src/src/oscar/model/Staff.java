@@ -23,8 +23,8 @@ public class Staff extends Person implements DbRecordable {
     public static String FK = "personId";
     private String username;
     private String password;
-    private boolean isAdmin;
-    private boolean isChauffeur;
+    private boolean admin;
+    private boolean chauffeur;
 
     public Staff() {
         this.dependencies = new HashMap<String, String>();
@@ -43,8 +43,8 @@ public class Staff extends Person implements DbRecordable {
         this.initStaff();
         HashMap<String, String> attributes = this.findOneBy(colName, value);
         this.username = attributes.get("username");
-        this.isAdmin = (attributes.get("attributes").contains("admin")) ? true : false;
-        this.isChauffeur = (attributes.get("attributes").contains("chauffeur")) ? true : false;
+        this.admin = (attributes.get("admin").contains("1")) ? true : false;
+        this.chauffeur = (attributes.get("chauffeur").contains("1")) ? true : false;
         this.personId = Integer.parseInt(attributes.get("personId"));
     }
 
@@ -63,16 +63,22 @@ public class Staff extends Person implements DbRecordable {
      * @param address
      * @param phone
      * @param username
-     * @param isAdmin
-     * @param isChauffeur
+     * @param admin
+     * @param chauffeur
      */
     public Staff(String name, String surname, String dateOfBirth,
             String email, String address, String phone, String username,
-            boolean isAdmin, boolean isChauffeur) {
+            String password, boolean admin, boolean chauffeur) {
         super(name, surname, dateOfBirth, email, address, phone);
+        initStaff();
         this.username = username;
-        this.isAdmin = isAdmin;
-        this.isChauffeur = isChauffeur;
+        this.admin = admin;
+        this.chauffeur = chauffeur;
+        try {
+            this.password = Utility.encodeSHA256(password);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -128,24 +134,24 @@ public class Staff extends Person implements DbRecordable {
     }
 
     public boolean isAdmin() {
-        return isAdmin;
+        return admin;
     }
 
     @Override
     public TableModel getTableModel() {
-        
-        ArrayList<HashMap<String,String>> dependencies = new ArrayList<HashMap<String, String>>();
-        
-        HashMap<String,String> personDep = new HashMap<String, String>();
-        
+
+        ArrayList<HashMap<String, String>> dependencies = new ArrayList<HashMap<String, String>>();
+
+        HashMap<String, String> personDep = new HashMap<String, String>();
+
         personDep.put("table", "person");
         personDep.put("pk", "personId");
         personDep.put("joinType", "inner join");
-        
+
         //personDep.put("joinTo", "");
         personDep.put("fk", "personId");
         dependencies.add(personDep);
-        
+
         ArrayList<HashMap<String, String>> map = this.queryDependent(dependencies, "*", "*");
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
@@ -154,8 +160,8 @@ public class Staff extends Person implements DbRecordable {
                         row.get("personId"),
                         row.get("name"),
                         row.get("surname"),
-                        (row.get("attributes").contains("admin")) ? true : false,
-                        (row.get("attributes").contains("chauffeur")) ? true : false,
+                        (row.get("admin").contains("1")) ? true : false,
+                        (row.get("chauffeur").contains("1")) ? true : false,
                         row.get("username"),
                         row.get("dateOfBirth"),
                         row.get("email")
@@ -164,19 +170,19 @@ public class Staff extends Person implements DbRecordable {
     }
 
     public boolean isIsAdmin() {
-        return isAdmin;
+        return admin;
     }
 
     public void setIsAdmin(String isAdmin) {
-        this.isAdmin = isAdmin.equals("admin") ? true : false;
+        this.admin = isAdmin.equals("admin") ? true : false;
     }
 
     public boolean isIsChauffeur() {
-        return isChauffeur;
+        return chauffeur;
     }
 
     public void setIsChauffeur(String isChauffeur) {
-        this.isChauffeur = isChauffeur.equals("chauffeur") ? true : false;
+        this.chauffeur = isChauffeur.equals("chauffeur") ? true : false;
     }
 
     public String getUsername() {

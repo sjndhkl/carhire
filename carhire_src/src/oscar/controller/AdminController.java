@@ -2,9 +2,12 @@ package oscar.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oscar.model.Car;
 import oscar.model.CarClass;
 import oscar.model.Person;
@@ -186,19 +189,29 @@ public class AdminController extends Controller {
     public void keyReleased(KeyEvent e) {
     }
 
-    private void actionStaffDlgSave() {
+    private void actionStaffDlgSave(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Person person = new Person(
+        
+        Staff staff = new Staff(
                 staffDialog.getNameTxt().getText(),
                 staffDialog.getSurnameTxt().getText(),
                 dateFormat.format(staffDialog.getDateOfBirthDP().getDate()),
                 staffDialog.getEmailTxt().getText(),
                 staffDialog.getAddressTA().getText(),
-                staffDialog.getPhoneTxt().getText());
-        // TODO: implement failure
-        person.add();
-        //person
-        //Staff staff = new Staff
+                staffDialog.getPhoneTxt().getText(),
+                staffDialog.getUsernameTxt().getText(),
+                new String(staffDialog.getPasswordPwd().getPassword()),
+                staffDialog.getAdminCB().isSelected(),
+                staffDialog.getChauffeurCB().isSelected());
+        try {
+            // TODO: implement failure
+            staff.addDependent();
+            //Staff staff = new Staff
+            //Staff staff = new Staff
+        } catch (SQLException ex) {
+            //TODO: handle error
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void actionStaffDlgCancel() {

@@ -24,8 +24,6 @@ public class LoginController extends Controller {
     public void run() {
         this.setName("Login");
         loginView = new LoginView();
-        /*this.addView(loginView);
-        this.addButtonListener(loginView.getBtnLogin());*/
         this.addElement(loginView);
         this.addElement(loginView.getBtnLogin());
     }

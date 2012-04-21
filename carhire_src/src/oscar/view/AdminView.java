@@ -1146,8 +1146,10 @@ public class AdminView extends AbstractView {
 
         carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
 
+        carClassNameLbl.setText(resourceMap.getString("carClassNameLbl.text")); // NOI18N
         carClassNameLbl.setName("carClassNameLbl"); // NOI18N
 
+        carClassDisplayLbl.setText(resourceMap.getString("carClassDisplayLbl.text")); // NOI18N
         carClassDisplayLbl.setName("carClassDisplayLbl"); // NOI18N
 
         carClassNameTxt.setName("carClassNameTxt"); // NOI18N
@@ -1155,9 +1157,12 @@ public class AdminView extends AbstractView {
         carClassDisplayTxt.setName("carClassDisplayTxt"); // NOI18N
 
         carClassClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        carClassClearBtn.setText(resourceMap.getString("carClassClearBtn.text")); // NOI18N
         carClassClearBtn.setName("carClassClearBtn"); // NOI18N
 
         carClassAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
+        carClassAddBtn.setIcon(resourceMap.getIcon("carClassAddBtn.icon")); // NOI18N
+        carClassAddBtn.setText(resourceMap.getString("carClassAddBtn.text")); // NOI18N
         carClassAddBtn.setName("carClassAddBtn"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
@@ -1172,8 +1177,8 @@ public class AdminView extends AbstractView {
                             .addComponent(carClassNameLbl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(carClassSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(carClassNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(carClassDisplayTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
+                            .addComponent(carClassNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(carClassDisplayTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
                     .addComponent(carClassClearBtn)
                     .addComponent(carClassAddBtn))
                 .addContainerGap())
@@ -1222,7 +1227,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                 .addContainerGap())
         );
         carClassPanelLayout.setVerticalGroup(
