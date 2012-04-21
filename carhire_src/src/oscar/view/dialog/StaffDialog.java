@@ -67,7 +67,7 @@ public class StaffDialog extends javax.swing.JDialog {
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setName("Staff"); // NOI18N
 
-        saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/add.png"))); // NOI18N
+        saveBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/arrow.png"))); // NOI18N
         saveBtn.setText("Save");
         saveBtn.setName("saveBtn"); // NOI18N
 

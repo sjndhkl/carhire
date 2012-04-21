@@ -19,6 +19,7 @@ import oscar.task.StaffUpdateTask;
 import oscar.task.BookingUpdateTask;
 import oscar.task.CarUpdateTask;
 import oscar.task.ClassUpdateTask;
+import oscar.util.Utility;
 import oscar.view.dialog.CarClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;
@@ -104,9 +105,10 @@ public class AdminController extends Controller {
         this.removeAllElement();
         new LoginController().start();
     }
-/*******************************************************************************
+
+    /*******************************************************************************
      *                          STAFF TAB
-*******************************************************************************/
+     *******************************************************************************/
     private void actionStaffClearFields() {
         adminView.getStaffNameTxt().setText("");
         adminView.getStaffSurnameTxt().setText("");
@@ -118,12 +120,12 @@ public class AdminController extends Controller {
         staffDialog.setVisible(true);
     }
 
-/*******************************************************************************
+    /*******************************************************************************
      *                          STAFF DIALOG
-*******************************************************************************/
-    private void actionStaffDlgSave(){
+     *******************************************************************************/
+    private void actionStaffDlgSave() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
+
         Staff staff = new Staff(
                 staffDialog.getNameTxt().getText(),
                 staffDialog.getSurnameTxt().getText(),
@@ -163,9 +165,9 @@ public class AdminController extends Controller {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-/*******************************************************************************
+    /*******************************************************************************
      *                          BOOKING TAB
-*******************************************************************************/
+     *******************************************************************************/
     private void actionBookingDelete() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -176,9 +178,9 @@ public class AdminController extends Controller {
         actionBookingUpdateTable();
     }
 
-/*******************************************************************************
+    /*******************************************************************************
      *                          CAR TAB
-*******************************************************************************/
+     *******************************************************************************/
     private void actionCarClearFields() {
         adminView.getCarBrandTxt().setText("");
         adminView.getCarClassCb().setSelectedIndex(0);
@@ -195,36 +197,27 @@ public class AdminController extends Controller {
         carDialog.setVisible(true);
     }
 
-/*******************************************************************************
+    /*******************************************************************************
      *                          CAR DIALOG
-*******************************************************************************/
+     *******************************************************************************/
     private void actionCarDlgSave() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
+
         Car car = new Car(carDialog.getPlateTxt().getText(),
                 carDialog.getBrandTxt().getText(),
                 carDialog.getModelTxt().getText(),
-                carDialog.getYearTxt().getText(),
-                carDialog.getMilieageTxt().getText(),
-                carDialog.getLastServiceMileageTxt().getText(),
+                Integer.parseInt(carDialog.getYearTxt().getText()),
+                Integer.parseInt(carDialog.getMilieageTxt().getText()),
+                Integer.parseInt(carDialog.getLastServiceMileageTxt().getText()),
                 dateFormat.format(carDialog.getLastServiceDP().getDate()),
                 carDialog.getClassCB().getSelectedIndex(),
                 carDialog.getColorTxt().getText(),
                 carDialog.getBranchCB().getSelectedIndex(),
                 carDialog.getServiceMilesTxt().getText(),
-                carDialog.getServiceMonthTxt().getText(),
-                carDialog.getStatusCB().getSelectedIndex()
-                );
-        try {
-            // TODO: implement failure
-            car.add();
-            actionStaffClearFields();
-            //Staff staff = new Staff
-            //Staff staff = new Staff
-        } catch (SQLException ex) {
-            //TODO: handle error
-            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                Integer.parseInt(carDialog.getServiceMonthTxt().getText()),
+                Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]);
+        car.add(Utility.convertToHashMap(car));
+        actionStaffClearFields();
     }
 
     private void actionCarDlgDelete() {
@@ -242,15 +235,15 @@ public class AdminController extends Controller {
         carDialog.getModelTxt().setText("");
         carDialog.getPlateTxt().setText("");
         carDialog.getServiceMilesTxt().setText("");
-        carDialog.getServiceMonthSpn().setValue(0);
+        carDialog.getServiceMonthTxt().setText("");
         carDialog.getStatusCB().setSelectedIndex(0);
-        carDialog.getYearSpn().setValue(0);
+        carDialog.getYearTxt().setText("");
         carDialog.setVisible(false);
     }
 
-/*******************************************************************************
+    /*******************************************************************************
      *                          CLASS TAB
-*******************************************************************************/
+     *******************************************************************************/
     private void actionClassAdd() {
         // TODO: finish implementation
         this.addElement(new CarClassDialog(adminView, true));
@@ -338,7 +331,7 @@ public class AdminController extends Controller {
     }
 
     private void initStaffDialog() {
-        
+
         staffDialog = new StaffDialog(adminView, true);
         this.addElement(staffDialog);
         // Staff dialog
@@ -348,7 +341,7 @@ public class AdminController extends Controller {
     }
 
     private void initCarDialog() {
-        
+
         carDialog = new CarDialog(adminView, true);
         this.addElement(carDialog);
         // Staff dialog

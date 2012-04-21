@@ -79,7 +79,7 @@
     <Component class="javax.swing.JButton" name="saveBtn">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/oscar/view/resources/add.png"/>
+          <Image iconType="3" name="/oscar/view/resources/arrow.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Save"/>
         <Property name="name" type="java.lang.String" value="saveBtn" noResource="true"/>

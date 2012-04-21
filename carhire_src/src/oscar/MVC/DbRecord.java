@@ -24,7 +24,7 @@ public class DbRecord {
     protected String useTable;
     /** Primary key of the table*/
     protected String primaryKey;
-    protected HashMap<String,String> dependencies;
+    //protected HashMap<String,String> dependencies;
 
     /** Possible type of columns*/
     public enum ColumnType {

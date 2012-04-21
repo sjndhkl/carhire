@@ -16,7 +16,6 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
 
     public static long TABLE_FILTERING_DELAY = 500;
     private ArrayList<Object> elements;
-    private Object View;
 
     public Controller() {
         this.elements = new ArrayList<Object>();
