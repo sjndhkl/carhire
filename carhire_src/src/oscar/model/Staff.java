@@ -32,6 +32,8 @@ public class Staff extends Person implements DbRecordable {
         this.useTable = TABLE;
         this.initStaff();
     }
+    
+    
 
     /**
      * Class constructor

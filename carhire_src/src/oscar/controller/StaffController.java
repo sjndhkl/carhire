@@ -3,6 +3,7 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
 import java.util.Timer;
 import oscar.MVC.Controller;
 import oscar.task.HirePersonUpdateTask;
@@ -107,11 +108,35 @@ public class StaffController extends Controller {
     public void keyReleased(KeyEvent e) {
         if(e.getSource().equals(staffView.getHireNameTxt())){
             
-            //System.out.println(staffView.ge
-            
+           if(!staffView.getSearchModeCheckBox().isSelected()){
+               return;
+           }
+           
+           //create a task and schedule
             String query = staffView.getHireNameTxt().getText();
             System.out.println(query);
         }
        // throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    
+    private HashMap<String,String> getColumns(){
+        HashMap<String,String> columns = new HashMap<String, String>();
+        if(!staffView.getHireNameTxt().getText().equals("")){
+            columns.put("name", staffView.getHireNameTxt().getText());
+        }
+         if(!staffView.getHireSurnameTxt().getText().equals("")){
+            columns.put("surname", staffView.getHireSurnameTxt().getText());
+        }
+        if(!staffView.getHireEmailTxt().getText().equals("")){
+            columns.put("email", staffView.getHireAddressTxt().getText());
+        }
+         if(!staffView.getHireAddressTxt().getText().equals("")){
+            columns.put("address", staffView.getHireAddressTxt().getText());
+        }
+        if(!staffView.getHirePhoneTxt().getText().equals("")){
+            columns.put("phone", staffView.getHirePhoneTxt().getText());
+        }
+        return columns;
     }
 }
