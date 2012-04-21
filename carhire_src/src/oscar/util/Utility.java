@@ -35,11 +35,13 @@ public class Utility {
                 String type = f.getType().getSimpleName();
                 //System.out.println("get"+ucFirst(f.getName()));
                 try {
-                    if (type.equals("String") || type.equals("Boolean")) {
+                   // System.out.println(type);
+                    if (type.equals("String") || type.equals("boolean") ) {
 
                         method = currentClass.getMethod("get" + ucFirst(f.getName()), new Class[]{});
                         Object obj = method.invoke(ob, new Object[]{});
-                        if(type.equals("Boolean"))
+                        
+                        if(type.equals("boolean"))
                         {
                             String value = "0";
                             if((Boolean)obj==true){
