@@ -7,7 +7,7 @@
 package oscar.view;
 
 import javax.swing.ListSelectionModel;
-import oscar.persistance.AbstractView;
+import oscar.MVC.AbstractView;
 
 public class AdminView extends AbstractView {
 

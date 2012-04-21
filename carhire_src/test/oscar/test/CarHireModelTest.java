@@ -2,7 +2,7 @@ package oscar.test;
 
 import java.util.HashMap;
 import oscar.model.Branch;
-import oscar.persistance.DbRecord;
+import oscar.MVC.DbRecord;
 
 /**
  *

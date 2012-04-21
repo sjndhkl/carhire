@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import oscar.controller.AdminController;
 import oscar.controller.StaffController;
 import oscar.model.Staff;
-import oscar.persistance.AbstractView;
+import oscar.MVC.AbstractView;
 
 /**
  *

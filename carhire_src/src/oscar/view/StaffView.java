@@ -10,7 +10,7 @@
  */
 package oscar.view;
 
-import oscar.persistance.AbstractView;
+import oscar.MVC.AbstractView;
 
 /**
  *

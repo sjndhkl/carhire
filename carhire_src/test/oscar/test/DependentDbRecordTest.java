@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import oscar.model.Person;
 import oscar.model.Staff;
-import oscar.persistance.DbRecord;
+import oscar.MVC.DbRecord;
 import oscar.util.Utility;
 
 /**

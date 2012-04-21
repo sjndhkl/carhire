@@ -8,8 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.Timer;
 import oscar.model.Staff;
-import oscar.persistance.Controller;
-import oscar.persistance.HirePersonUpdateTask;
+import oscar.MVC.Controller;
+import oscar.task.HirePersonUpdateTask;
 import oscar.view.LoginView;
 
 /**
