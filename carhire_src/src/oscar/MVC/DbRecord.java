@@ -1,4 +1,4 @@
-package oscar.persistance;
+package oscar.MVC;
 
 //~--- JDK imports ------------------------------------------------------------
 import java.sql.ResultSet;
@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import oscar.persistance.DbConnectable;
+import oscar.persistance.DbConnectionFactory;
 
 /**
  *

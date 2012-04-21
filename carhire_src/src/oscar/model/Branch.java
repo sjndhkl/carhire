@@ -2,7 +2,7 @@ package oscar.model;
 
 import java.util.HashMap;
 import javax.swing.table.TableModel;
-import oscar.persistance.DbRecord;
+import oscar.MVC.DbRecord;
 import oscar.persistance.DbRecordable;
 import oscar.util.Utility;
 

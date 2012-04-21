@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import oscar.persistance.DbRecord;
+import oscar.MVC.DbRecord;
 
 /**
  * @author Stefano

@@ -1,4 +1,5 @@
 package oscar.persistance;
+import oscar.MVC.DbRecord;
 import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;

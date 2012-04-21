@@ -1,4 +1,4 @@
-package oscar.persistance;
+package oscar.MVC;
 
 import javax.swing.JFrame;
 
