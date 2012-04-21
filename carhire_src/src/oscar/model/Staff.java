@@ -133,7 +133,20 @@ public class Staff extends Person implements DbRecordable {
 
     @Override
     public TableModel getTableModel() {
-        ArrayList<HashMap<String, String>> map = this.findAll();
+        
+        ArrayList<HashMap<String,String>> dependencies = new ArrayList<HashMap<String, String>>();
+        
+        HashMap<String,String> personDep = new HashMap<String, String>();
+        
+        personDep.put("table", "person");
+        personDep.put("pk", "personId");
+        personDep.put("joinType", "inner join");
+        
+        //personDep.put("joinTo", "");
+        personDep.put("fk", "personId");
+        dependencies.add(personDep);
+        
+        ArrayList<HashMap<String, String>> map = this.queryDependent(dependencies, "*", "*");
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
         for (HashMap<String, String> row : map)
