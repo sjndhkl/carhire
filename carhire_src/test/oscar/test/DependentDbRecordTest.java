@@ -49,7 +49,7 @@ public class DependentDbRecordTest extends BaseTestCase {
         Staff person = new Staff();
         //person.setPrimaryKey("personId");
         
-        person.setName("Sujansadsadsadsdasdas");
+        person.setName("My Name");
         person.setSurname("Dhakal");
         person.setDateOfBirth("2011-1-1");
         person.setPhone("2312312");

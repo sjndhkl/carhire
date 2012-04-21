@@ -35,12 +35,21 @@ public class Utility {
                 String type = f.getType().getSimpleName();
                 //System.out.println("get"+ucFirst(f.getName()));
                 try {
-                    if (type.equals("String")) {
+                    if (type.equals("String") || type.equals("Boolean")) {
 
                         method = currentClass.getMethod("get" + ucFirst(f.getName()), new Class[]{});
                         Object obj = method.invoke(ob, new Object[]{});
-                        if (obj != null) {
-                            objHashMap.put(f.getName(), obj.toString());
+                        if(type.equals("Boolean"))
+                        {
+                            String value = "0";
+                            if((Boolean)obj==true){
+                                value="1";
+                            }
+                            objHashMap.put(f.getName(), value);
+                        }else{
+                            if (obj != null) {
+                                objHashMap.put(f.getName(), obj.toString());
+                            }
                         }
                     }
                 } catch (Exception ex) {
