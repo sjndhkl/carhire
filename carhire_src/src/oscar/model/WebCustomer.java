@@ -22,7 +22,7 @@ public class WebCustomer extends Person {
 	public WebCustomer(int personid, String name, String surname,
 			String dateOfBirth, String email, String address, String phone,
 			String username, String dateOfRegistration) {
-		super(personid, name, surname, dateOfBirth, email, address, phone);
+		super(name, surname, dateOfBirth, email, address, phone);
 		this.username = username;
 		this.dateOfRegistration = dateOfRegistration;
 	}
