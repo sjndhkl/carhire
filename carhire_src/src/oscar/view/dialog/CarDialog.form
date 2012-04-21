@@ -63,7 +63,7 @@
                   <Component id="rightPanel" min="-2" max="-2" attributes="0"/>
                   <Component id="leftPanel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="saveBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="deleteBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -122,10 +122,10 @@
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="yearTxt" pref="107" max="32767" attributes="0"/>
                       <Component id="classCB" alignment="1" pref="107" max="32767" attributes="2"/>
                       <Component id="modelTxt" alignment="1" pref="107" max="32767" attributes="2"/>
                       <Component id="colorTxt" alignment="1" pref="107" max="32767" attributes="2"/>
-                      <Component id="yearSpn" alignment="1" pref="107" max="32767" attributes="2"/>
                       <Component id="plateTxt" alignment="1" pref="107" max="32767" attributes="2"/>
                       <Component id="statusCB" alignment="1" pref="107" max="32767" attributes="2"/>
                       <Component id="brandTxt" alignment="1" pref="107" max="32767" attributes="2"/>
@@ -167,13 +167,10 @@
                       </Group>
                       <Component id="classCB" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="yearLbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="yearSpn" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="yearLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="yearTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -231,11 +228,6 @@
             <Property name="name" type="java.lang.String" value="colorTxt" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="yearSpn">
-          <Properties>
-            <Property name="name" type="java.lang.String" value="yearSpn" noResource="true"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="colorLbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Color"/>
@@ -289,6 +281,11 @@
             <Property name="name" type="java.lang.String" value="brandTxt" noResource="true"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JTextField" name="yearTxt">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="yearTxt" noResource="true"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="rightPanel">
@@ -309,17 +306,18 @@
                       <Component id="mileageLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="serviceMonthTxt" pref="130" max="32767" attributes="0"/>
                       <Component id="branchCB" alignment="0" pref="130" max="32767" attributes="2"/>
                       <Component id="serviceMilesTxt" alignment="0" pref="130" max="32767" attributes="2"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="lastServiceMileageTxt" alignment="0" pref="129" max="32767" attributes="2"/>
                               <Component id="milieageTxt" alignment="0" pref="129" max="32767" attributes="2"/>
+                              <Component id="lastServiceDP" alignment="0" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="serviceMonthSpn" alignment="1" pref="130" max="32767" attributes="2"/>
                   </Group>
               </Group>
           </Group>
@@ -343,7 +341,10 @@
                       <Component id="lastServiceMileageTxt" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="lastServiceLbl" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lastServiceLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lastServiceDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -352,15 +353,10 @@
                       </Group>
                       <Component id="branchCB" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="serviceMonthLbl" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="serviceMonthSpn" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="serviceMonthLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="serviceMonthTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -375,11 +371,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JSpinner" name="serviceMonthSpn">
-          <Properties>
-            <Property name="name" type="java.lang.String" value="serviceMonthSpn" noResource="true"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="milieageTxt">
           <Properties>
             <Property name="name" type="java.lang.String" value="milieageTxt" noResource="true"/>
@@ -427,6 +418,11 @@
             <Property name="name" type="java.lang.String" value="lastServiceLbl" noResource="true"/>
           </Properties>
         </Component>
+        <Component class="org.jdesktop.swingx.JXDatePicker" name="lastServiceDP">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="lastServiceDP" noResource="true"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JLabel" name="serviceMilesLbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Miles betwen services"/>
@@ -442,6 +438,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Months between services"/>
             <Property name="name" type="java.lang.String" value="serviceMonthLbl" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="serviceMonthTxt">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="serviceMonthTxt" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>

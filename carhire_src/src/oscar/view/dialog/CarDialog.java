@@ -40,7 +40,6 @@ public class CarDialog extends javax.swing.JDialog {
         modelTxt = new javax.swing.JTextField();
         classLbl = new javax.swing.JLabel();
         colorTxt = new javax.swing.JTextField();
-        yearSpn = new javax.swing.JSpinner();
         colorLbl = new javax.swing.JLabel();
         statusCB = new javax.swing.JComboBox();
         statusLbl = new javax.swing.JLabel();
@@ -49,8 +48,8 @@ public class CarDialog extends javax.swing.JDialog {
         brandLbl = new javax.swing.JLabel();
         modelLbl = new javax.swing.JLabel();
         brandTxt = new javax.swing.JTextField();
+        yearTxt = new javax.swing.JTextField();
         rightPanel = new javax.swing.JPanel();
-        serviceMonthSpn = new javax.swing.JSpinner();
         milieageTxt = new javax.swing.JTextField();
         mileageLbl = new javax.swing.JLabel();
         branchCB = new javax.swing.JComboBox();
@@ -58,9 +57,11 @@ public class CarDialog extends javax.swing.JDialog {
         lastServiceMileageTxt = new javax.swing.JTextField();
         lastServiceMileageLbl = new javax.swing.JLabel();
         lastServiceLbl = new javax.swing.JLabel();
+        lastServiceDP = new org.jdesktop.swingx.JXDatePicker();
         serviceMilesLbl = new javax.swing.JLabel();
         serviceMilesTxt = new javax.swing.JTextField();
         serviceMonthLbl = new javax.swing.JLabel();
+        serviceMonthTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -95,8 +96,6 @@ public class CarDialog extends javax.swing.JDialog {
 
         colorTxt.setName("colorTxt"); // NOI18N
 
-        yearSpn.setName("yearSpn"); // NOI18N
-
         colorLbl.setText("Color");
         colorLbl.setName("colorLbl"); // NOI18N
 
@@ -119,6 +118,8 @@ public class CarDialog extends javax.swing.JDialog {
 
         brandTxt.setName("brandTxt"); // NOI18N
 
+        yearTxt.setName("yearTxt"); // NOI18N
+
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
@@ -134,10 +135,10 @@ public class CarDialog extends javax.swing.JDialog {
                     .addComponent(brandLbl))
                 .addGap(18, 18, 18)
                 .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                     .addComponent(classCB, javax.swing.GroupLayout.Alignment.TRAILING, 0, 107, Short.MAX_VALUE)
                     .addComponent(modelTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                     .addComponent(colorTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(yearSpn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                     .addComponent(plateTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                     .addComponent(statusCB, javax.swing.GroupLayout.Alignment.TRAILING, 0, 107, Short.MAX_VALUE)
                     .addComponent(brandTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
@@ -168,12 +169,10 @@ public class CarDialog extends javax.swing.JDialog {
                         .addGap(6, 6, 6)
                         .addComponent(classLbl))
                     .addComponent(classCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(leftPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(yearLbl))
-                    .addComponent(yearSpn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yearLbl)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(leftPanelLayout.createSequentialGroup()
@@ -189,8 +188,6 @@ public class CarDialog extends javax.swing.JDialog {
         );
 
         rightPanel.setName("rightPanel"); // NOI18N
-
-        serviceMonthSpn.setName("serviceMonthSpn"); // NOI18N
 
         milieageTxt.setName("milieageTxt"); // NOI18N
 
@@ -211,6 +208,8 @@ public class CarDialog extends javax.swing.JDialog {
         lastServiceLbl.setText("Date of the last service");
         lastServiceLbl.setName("lastServiceLbl"); // NOI18N
 
+        lastServiceDP.setName("lastServiceDP"); // NOI18N
+
         serviceMilesLbl.setText("Miles betwen services");
         serviceMilesLbl.setName("serviceMilesLbl"); // NOI18N
 
@@ -218,6 +217,8 @@ public class CarDialog extends javax.swing.JDialog {
 
         serviceMonthLbl.setText("Months between services");
         serviceMonthLbl.setName("serviceMonthLbl"); // NOI18N
+
+        serviceMonthTxt.setName("serviceMonthTxt"); // NOI18N
 
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
@@ -232,15 +233,16 @@ public class CarDialog extends javax.swing.JDialog {
                     .addComponent(lastServiceMileageLbl)
                     .addComponent(mileageLbl))
                 .addGap(18, 18, 18)
-                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(branchCB, 0, 130, Short.MAX_VALUE)
-                    .addComponent(serviceMilesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addGroup(rightPanelLayout.createSequentialGroup()
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(serviceMonthTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(branchCB, javax.swing.GroupLayout.Alignment.LEADING, 0, 130, Short.MAX_VALUE)
+                    .addComponent(serviceMilesTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, rightPanelLayout.createSequentialGroup()
                         .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lastServiceMileageTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(milieageTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
-                        .addGap(1, 1, 1))
-                    .addComponent(serviceMonthSpn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))
+                            .addComponent(milieageTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(lastServiceDP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                        .addGap(1, 1, 1))))
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,20 +259,19 @@ public class CarDialog extends javax.swing.JDialog {
                         .addComponent(lastServiceMileageLbl))
                     .addComponent(lastServiceMileageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lastServiceLbl)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lastServiceLbl)
+                    .addComponent(lastServiceDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(rightPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(branchLbl))
                     .addComponent(branchCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rightPanelLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(serviceMonthLbl))
-                    .addGroup(rightPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(serviceMonthSpn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12)
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceMonthLbl)
+                    .addComponent(serviceMonthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(rightPanelLayout.createSequentialGroup()
@@ -308,7 +309,7 @@ public class CarDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBtn)
                     .addComponent(deleteBtn)
@@ -372,6 +373,7 @@ public class CarDialog extends javax.swing.JDialog {
     private javax.swing.JLabel colorLbl;
     private javax.swing.JTextField colorTxt;
     private javax.swing.JButton deleteBtn;
+    private org.jdesktop.swingx.JXDatePicker lastServiceDP;
     private javax.swing.JLabel lastServiceLbl;
     private javax.swing.JLabel lastServiceMileageLbl;
     private javax.swing.JTextField lastServiceMileageTxt;
@@ -387,10 +389,199 @@ public class CarDialog extends javax.swing.JDialog {
     private javax.swing.JLabel serviceMilesLbl;
     private javax.swing.JTextField serviceMilesTxt;
     private javax.swing.JLabel serviceMonthLbl;
-    private javax.swing.JSpinner serviceMonthSpn;
+    private javax.swing.JTextField serviceMonthTxt;
     private javax.swing.JComboBox statusCB;
     private javax.swing.JLabel statusLbl;
     private javax.swing.JLabel yearLbl;
-    private javax.swing.JSpinner yearSpn;
+    private javax.swing.JTextField yearTxt;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the cancelBtn
+     */
+    public javax.swing.JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    /**
+     * @return the deleteBtn
+     */
+    public javax.swing.JButton getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    /**
+     * @return the saveBtn
+     */
+    public javax.swing.JButton getSaveBtn() {
+        return saveBtn;
+    }
+
+    /**
+     * @return the branchCB
+     */
+    public javax.swing.JComboBox getBranchCB() {
+        return branchCB;
+    }
+
+    /**
+     * @param branchCB the branchCB to set
+     */
+    public void setBranchCB(javax.swing.JComboBox branchCB) {
+        this.branchCB = branchCB;
+    }
+
+    /**
+     * @return the brandTxt
+     */
+    public javax.swing.JTextField getBrandTxt() {
+        return brandTxt;
+    }
+
+    /**
+     * @param brandTxt the brandTxt to set
+     */
+    public void setBrandTxt(javax.swing.JTextField brandTxt) {
+        this.brandTxt = brandTxt;
+    }
+
+    /**
+     * @return the classCB
+     */
+    public javax.swing.JComboBox getClassCB() {
+        return classCB;
+    }
+
+    /**
+     * @param classCB the classCB to set
+     */
+    public void setClassCB(javax.swing.JComboBox classCB) {
+        this.classCB = classCB;
+    }
+
+    /**
+     * @return the colorTxt
+     */
+    public javax.swing.JTextField getColorTxt() {
+        return colorTxt;
+    }
+
+    /**
+     * @param colorTxt the colorTxt to set
+     */
+    public void setColorTxt(javax.swing.JTextField colorTxt) {
+        this.colorTxt = colorTxt;
+    }
+
+    /**
+     * @return the lastServiceMileageTxt
+     */
+    public javax.swing.JTextField getLastServiceMileageTxt() {
+        return lastServiceMileageTxt;
+    }
+
+    /**
+     * @param lastServiceMileageTxt the lastServiceMileageTxt to set
+     */
+    public void setLastServiceMileageTxt(javax.swing.JTextField lastServiceMileageTxt) {
+        this.lastServiceMileageTxt = lastServiceMileageTxt;
+    }
+
+    /**
+     * @return the milieageTxt
+     */
+    public javax.swing.JTextField getMilieageTxt() {
+        return milieageTxt;
+    }
+
+    /**
+     * @param milieageTxt the milieageTxt to set
+     */
+    public void setMilieageTxt(javax.swing.JTextField milieageTxt) {
+        this.milieageTxt = milieageTxt;
+    }
+
+    /**
+     * @return the modelTxt
+     */
+    public javax.swing.JTextField getModelTxt() {
+        return modelTxt;
+    }
+
+    /**
+     * @param modelTxt the modelTxt to set
+     */
+    public void setModelTxt(javax.swing.JTextField modelTxt) {
+        this.modelTxt = modelTxt;
+    }
+
+    /**
+     * @return the plateTxt
+     */
+    public javax.swing.JTextField getPlateTxt() {
+        return plateTxt;
+    }
+
+    /**
+     * @param plateTxt the plateTxt to set
+     */
+    public void setPlateTxt(javax.swing.JTextField plateTxt) {
+        this.plateTxt = plateTxt;
+    }
+
+    /**
+     * @return the serviceMilesTxt
+     */
+    public javax.swing.JTextField getServiceMilesTxt() {
+        return serviceMilesTxt;
+    }
+
+    /**
+     * @param serviceMilesTxt the serviceMilesTxt to set
+     */
+    public void setServiceMilesTxt(javax.swing.JTextField serviceMilesTxt) {
+        this.serviceMilesTxt = serviceMilesTxt;
+    }
+
+    /**
+     * @return the serviceMonthSpn
+     */
+    public javax.swing.JTextField getServiceMonthTxt() {
+        return serviceMonthTxt;
+    }
+
+    /**
+     * @return the statusCB
+     */
+    public javax.swing.JComboBox getStatusCB() {
+        return statusCB;
+    }
+
+    /**
+     * @param statusCB the statusCB to set
+     */
+    public void setStatusCB(javax.swing.JComboBox statusCB) {
+        this.statusCB = statusCB;
+    }
+
+    /**
+     * @return the yearSpn
+     */
+    public javax.swing.JTextField getYearTxt() {
+        return yearTxt;
+    }
+
+    /**
+     * @return the lastServiceDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getLastServiceDP() {
+        return lastServiceDP;
+    }
+
+    /**
+     * @param lastServiceDP the lastServiceDP to set
+     */
+    public void setLastServiceDP(org.jdesktop.swingx.JXDatePicker lastServiceDP) {
+        this.lastServiceDP = lastServiceDP;
+    }
 }

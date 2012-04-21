@@ -31,6 +31,7 @@ public class AdminController extends Controller {
 
     private AdminView adminView;
     private StaffDialog staffDialog;
+    private CarDialog carDialog;
     private Timer timer;
     private StaffUpdateTask staffUpdateTask;
     private BookingUpdateTask bookingUpdateTask;
@@ -43,6 +44,7 @@ public class AdminController extends Controller {
 
         initAdminView();
         initStaffDialog();
+        initCarDialog();
 
         // Filter timers
         timer = new Timer();
@@ -84,6 +86,13 @@ public class AdminController extends Controller {
             actionCarClearFields();
         else if (e.getSource().equals(adminView.getCarAddBtn()))
             actionCarAdd();
+        // Car Dialog Tab
+        else if (e.getSource().equals(carDialog.getSaveBtn()))
+            actionCarDlgSave();
+        else if (e.getSource().equals(carDialog.getDeleteBtn()))
+            actionCarDlgDelete();
+        else if (e.getSource().equals(carDialog.getCancelBtn()))
+            actionCarDlgCancel();
         // Class tab
         else if (e.getSource().equals(adminView.getCarClassAddBtn()))
             actionClassAdd();
@@ -95,7 +104,9 @@ public class AdminController extends Controller {
         this.removeAllElement();
         new LoginController().start();
     }
-
+/*******************************************************************************
+     *                          STAFF TAB
+*******************************************************************************/
     private void actionStaffClearFields() {
         adminView.getStaffNameTxt().setText("");
         adminView.getStaffSurnameTxt().setText("");
@@ -107,6 +118,54 @@ public class AdminController extends Controller {
         staffDialog.setVisible(true);
     }
 
+/*******************************************************************************
+     *                          STAFF DIALOG
+*******************************************************************************/
+    private void actionStaffDlgSave(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        Staff staff = new Staff(
+                staffDialog.getNameTxt().getText(),
+                staffDialog.getSurnameTxt().getText(),
+                dateFormat.format(staffDialog.getDateOfBirthDP().getDate()),
+                staffDialog.getEmailTxt().getText(),
+                staffDialog.getAddressTA().getText(),
+                staffDialog.getPhoneTxt().getText(),
+                staffDialog.getUsernameTxt().getText(),
+                new String(staffDialog.getPasswordPwd().getPassword()),
+                staffDialog.getAdminCB().isSelected(),
+                staffDialog.getChauffeurCB().isSelected());
+        try {
+            // TODO: implement failure
+            staff.addDependent();
+            actionStaffClearFields();
+            //Staff staff = new Staff
+            //Staff staff = new Staff
+        } catch (SQLException ex) {
+            //TODO: handle error
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void actionStaffDlgCancel() {
+        staffDialog.getAddressTA().setText("");
+        staffDialog.getDateOfBirthDP().setDate(null);
+        staffDialog.getEmailTxt().setText("");
+        staffDialog.getNameTxt().setText("");
+        staffDialog.getSurnameTxt().setText("");
+        staffDialog.getPasswordPwd().setText("");
+        staffDialog.getUsernameTxt().setText("");
+        staffDialog.getPhoneTxt().setText("");
+        staffDialog.setVisible(false);
+    }
+
+    private void actionStaffDlgDelete() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+/*******************************************************************************
+     *                          BOOKING TAB
+*******************************************************************************/
     private void actionBookingDelete() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -117,6 +176,9 @@ public class AdminController extends Controller {
         actionBookingUpdateTable();
     }
 
+/*******************************************************************************
+     *                          CAR TAB
+*******************************************************************************/
     private void actionCarClearFields() {
         adminView.getCarBrandTxt().setText("");
         adminView.getCarClassCb().setSelectedIndex(0);
@@ -130,9 +192,65 @@ public class AdminController extends Controller {
 
     private void actionCarAdd() {
         // TODO: finish implementation
-        this.addElement(new CarDialog(adminView, true));
+        carDialog.setVisible(true);
     }
 
+/*******************************************************************************
+     *                          CAR DIALOG
+*******************************************************************************/
+    private void actionCarDlgSave() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        Car car = new Car(carDialog.getPlateTxt().getText(),
+                carDialog.getBrandTxt().getText(),
+                carDialog.getModelTxt().getText(),
+                carDialog.getYearTxt().getText(),
+                carDialog.getMilieageTxt().getText(),
+                carDialog.getLastServiceMileageTxt().getText(),
+                dateFormat.format(carDialog.getLastServiceDP().getDate()),
+                carDialog.getClassCB().getSelectedIndex(),
+                carDialog.getColorTxt().getText(),
+                carDialog.getBranchCB().getSelectedIndex(),
+                carDialog.getServiceMilesTxt().getText(),
+                carDialog.getServiceMonthTxt().getText(),
+                carDialog.getStatusCB().getSelectedIndex()
+                );
+        try {
+            // TODO: implement failure
+            car.add();
+            actionStaffClearFields();
+            //Staff staff = new Staff
+            //Staff staff = new Staff
+        } catch (SQLException ex) {
+            //TODO: handle error
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void actionCarDlgDelete() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    private void actionCarDlgCancel() {
+        carDialog.getBranchCB().setSelectedIndex(0);
+        carDialog.getBrandTxt().setText("");
+        carDialog.getClassCB().setSelectedIndex(0);
+        carDialog.getColorTxt().setText("");
+        carDialog.getLastServiceDP().setDate(null);
+        carDialog.getLastServiceMileageTxt().setText("");
+        carDialog.getMilieageTxt().setText("");
+        carDialog.getModelTxt().setText("");
+        carDialog.getPlateTxt().setText("");
+        carDialog.getServiceMilesTxt().setText("");
+        carDialog.getServiceMonthSpn().setValue(0);
+        carDialog.getStatusCB().setSelectedIndex(0);
+        carDialog.getYearSpn().setValue(0);
+        carDialog.setVisible(false);
+    }
+
+/*******************************************************************************
+     *                          CLASS TAB
+*******************************************************************************/
     private void actionClassAdd() {
         // TODO: finish implementation
         this.addElement(new CarClassDialog(adminView, true));
@@ -189,47 +307,6 @@ public class AdminController extends Controller {
     public void keyReleased(KeyEvent e) {
     }
 
-    private void actionStaffDlgSave(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
-        Staff staff = new Staff(
-                staffDialog.getNameTxt().getText(),
-                staffDialog.getSurnameTxt().getText(),
-                dateFormat.format(staffDialog.getDateOfBirthDP().getDate()),
-                staffDialog.getEmailTxt().getText(),
-                staffDialog.getAddressTA().getText(),
-                staffDialog.getPhoneTxt().getText(),
-                staffDialog.getUsernameTxt().getText(),
-                new String(staffDialog.getPasswordPwd().getPassword()),
-                staffDialog.getAdminCB().isSelected(),
-                staffDialog.getChauffeurCB().isSelected());
-        try {
-            // TODO: implement failure
-            staff.addDependent();
-            //Staff staff = new Staff
-            //Staff staff = new Staff
-        } catch (SQLException ex) {
-            //TODO: handle error
-            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void actionStaffDlgCancel() {
-        staffDialog.getAddressTA().setText("");
-        staffDialog.getDateOfBirthDP().setDate(null);
-        staffDialog.getEmailTxt().setText("");
-        staffDialog.getNameTxt().setText("");
-        staffDialog.getSurnameTxt().setText("");
-        staffDialog.getPasswordPwd().setText("");
-        staffDialog.getUsernameTxt().setText("");
-        staffDialog.getPhoneTxt().setText("");
-        staffDialog.setVisible(false);
-    }
-
-    private void actionStaffDlgDelete() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
     private void initAdminView() {
         adminView = new AdminView();
         this.addElement(adminView);
@@ -268,5 +345,15 @@ public class AdminController extends Controller {
         this.addElement(staffDialog.getSaveBtn());
         this.addElement(staffDialog.getDeleteBtn());
         this.addElement(staffDialog.getCancelBtn());
+    }
+
+    private void initCarDialog() {
+        
+        carDialog = new CarDialog(adminView, true);
+        this.addElement(carDialog);
+        // Staff dialog
+        this.addElement(carDialog.getSaveBtn());
+        this.addElement(carDialog.getDeleteBtn());
+        this.addElement(carDialog.getCancelBtn());
     }
 }
