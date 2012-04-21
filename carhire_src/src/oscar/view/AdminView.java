@@ -859,7 +859,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
                 .addContainerGap())
         );
         staffPanelLayout.setVerticalGroup(
@@ -867,7 +867,7 @@ public class AdminView extends AbstractView {
             .addGroup(staffPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -969,7 +969,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                 .addContainerGap())
         );
         bookingPanelLayout.setVerticalGroup(
@@ -978,7 +978,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addGroup(bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1126,7 +1126,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
                 .addContainerGap())
         );
         carPanelLayout.setVerticalGroup(
@@ -1134,7 +1134,7 @@ public class AdminView extends AbstractView {
             .addGroup(carPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addComponent(carSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -1145,10 +1145,8 @@ public class AdminView extends AbstractView {
 
         carClassSearchPanel.setName("carClassSearchPanel"); // NOI18N
 
-        carClassNameLbl.setText(resourceMap.getString("carClassNameLbl.text")); // NOI18N
         carClassNameLbl.setName("carClassNameLbl"); // NOI18N
 
-        carClassDisplayLbl.setText(resourceMap.getString("carClassDisplayLbl.text")); // NOI18N
         carClassDisplayLbl.setName("carClassDisplayLbl"); // NOI18N
 
         carClassNameTxt.setName("carClassNameTxt"); // NOI18N
@@ -1156,12 +1154,9 @@ public class AdminView extends AbstractView {
         carClassDisplayTxt.setName("carClassDisplayTxt"); // NOI18N
 
         carClassClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        carClassClearBtn.setText(resourceMap.getString("carClassClearBtn.text")); // NOI18N
         carClassClearBtn.setName("carClassClearBtn"); // NOI18N
 
         carClassAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
-        carClassAddBtn.setIcon(resourceMap.getIcon("carClassAddBtn.icon")); // NOI18N
-        carClassAddBtn.setText(resourceMap.getString("carClassAddBtn.text")); // NOI18N
         carClassAddBtn.setName("carClassAddBtn"); // NOI18N
 
         javax.swing.GroupLayout carClassSearchPanelLayout = new javax.swing.GroupLayout(carClassSearchPanel);
@@ -1226,7 +1221,7 @@ public class AdminView extends AbstractView {
                 .addContainerGap()
                 .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         carClassPanelLayout.setVerticalGroup(
@@ -1234,7 +1229,7 @@ public class AdminView extends AbstractView {
             .addGroup(carClassPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addComponent(carClassSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -1279,7 +1274,7 @@ public class AdminView extends AbstractView {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 738, Short.MAX_VALUE)
+            .addGap(0, 742, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, 0)
@@ -1288,7 +1283,7 @@ public class AdminView extends AbstractView {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 633, Short.MAX_VALUE)
+            .addGap(0, 635, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, 0)
