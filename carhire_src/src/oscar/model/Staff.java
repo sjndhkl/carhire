@@ -174,9 +174,17 @@ public class Staff extends Person implements DbRecordable {
     public boolean isIsAdmin() {
         return admin;
     }
+    public boolean getIsAdmin(){
+        return isIsAdmin();
+    }
 
     public void setIsAdmin(String isAdmin) {
-        this.admin = isAdmin.equals("admin") ? true : false;
+        this.admin = isAdmin.equals("1") ? true : false;
+    }
+    
+    
+    public boolean getIsChauffeur(){
+        return isIsChauffeur();
     }
 
     public boolean isIsChauffeur() {
@@ -184,8 +192,9 @@ public class Staff extends Person implements DbRecordable {
     }
 
     public void setIsChauffeur(String isChauffeur) {
-        this.chauffeur = isChauffeur.equals("chauffeur") ? true : false;
+        this.chauffeur = isChauffeur.equals("1") ? true : false;
     }
+    
 
     public String getUsername() {
         return username;
