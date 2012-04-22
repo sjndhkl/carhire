@@ -12,6 +12,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import oscar.persistance.DbConnectable;
 import oscar.persistance.DbConnectionFactory;
+import oscar.util.Utility;
 
 /**
  *
@@ -459,6 +460,18 @@ public class DbRecord {
     public boolean add(HashMap<String, String> objHashMap) {
 
         HashMap<String, String> insertParams = this.getInsertParams(objHashMap);
+        String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
+        //System.out.println(query);
+        return this.nonQuery(query);
+    }
+
+    //TODO complete this javadoc
+    /**
+     * 
+     * @return
+     */
+    public boolean add() {
+        HashMap<String, String> insertParams = this.getInsertParams(Utility.convertToHashMap(this));
         String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
         //System.out.println(query);
         return this.nonQuery(query);

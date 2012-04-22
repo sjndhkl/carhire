@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oscar.model.Car;
 import oscar.model.CarClass;
-import oscar.model.Person;
 import oscar.model.Rental;
 import oscar.MVC.Controller;
 import oscar.view.AdminView;
@@ -19,8 +18,7 @@ import oscar.task.StaffUpdateTask;
 import oscar.task.BookingUpdateTask;
 import oscar.task.CarUpdateTask;
 import oscar.task.ClassUpdateTask;
-import oscar.util.Utility;
-import oscar.view.dialog.CarClassDialog;
+import oscar.view.dialog.ClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;
 
@@ -29,23 +27,26 @@ import oscar.view.dialog.StaffDialog;
  * @author schiodin
  */
 public class AdminController extends Controller {
-
+    
     private AdminView adminView;
     private StaffDialog staffDialog;
     private CarDialog carDialog;
+    private ClassDialog classDialog;
     private Timer timer;
     private StaffUpdateTask staffUpdateTask;
     private BookingUpdateTask bookingUpdateTask;
     private CarUpdateTask carUpdateTask;
     private ClassUpdateTask classUpdateTask;
-
+    
     @Override
     public void run() {
         this.setName("Admin");
-
+        
+        // init views and their components
         initAdminView();
         initStaffDialog();
         initCarDialog();
+        initClassDialog();
 
         // Filter timers
         timer = new Timer();
@@ -60,47 +61,55 @@ public class AdminController extends Controller {
         adminView.getCarTbl().setModel(new Car().getTableModel());
         adminView.getCarClassTbl().setModel(new CarClass().getTableModel());
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(adminView.getLogoutBtn()))
+        if (e.getSource().equals(adminView.getLogoutBtn())) {
             actionLogout();
-        // Staff Tab
-        else if (e.getSource().equals(adminView.getStaffClearBtn()))
+        } // Staff Tab
+        else if (e.getSource().equals(adminView.getStaffClearBtn())) {
             actionStaffClearFields();
-        else if (e.getSource().equals(adminView.getStaffAddBtn()))
+        } else if (e.getSource().equals(adminView.getStaffAddBtn())) {
             actionStaffAdd();
-        // Staff Dialog
-        else if (e.getSource().equals(staffDialog.getSaveBtn()))
+        } // Staff Dialog
+        else if (e.getSource().equals(staffDialog.getSaveBtn())) {
             actionStaffDlgSave();
-        else if (e.getSource().equals(staffDialog.getDeleteBtn()))
+        } else if (e.getSource().equals(staffDialog.getDeleteBtn())) {
             actionStaffDlgDelete();
-        else if (e.getSource().equals(staffDialog.getCancelBtn()))
+        } else if (e.getSource().equals(staffDialog.getCancelBtn())) {
             actionStaffDlgCancel();
-        // Booking Tab
-        else if (e.getSource().equals(adminView.getBookingClearBtn()))
+        } // Booking Tab
+        else if (e.getSource().equals(adminView.getBookingClearBtn())) {
             actionBookingClearFields();
-        else if (e.getSource().equals(adminView.getBookingDeleteBtn()))
+        } else if (e.getSource().equals(adminView.getBookingDeleteBtn())) {
             actionBookingDelete();
-        // Car Tab
-        else if (e.getSource().equals(adminView.getCarClearBtn()))
+        } // Car Tab
+        else if (e.getSource().equals(adminView.getCarClearBtn())) {
             actionCarClearFields();
-        else if (e.getSource().equals(adminView.getCarAddBtn()))
+        } else if (e.getSource().equals(adminView.getCarAddBtn())) {
             actionCarAdd();
-        // Car Dialog Tab
-        else if (e.getSource().equals(carDialog.getSaveBtn()))
+        } // Car Dialog
+        else if (e.getSource().equals(carDialog.getSaveBtn())) {
             actionCarDlgSave();
-        else if (e.getSource().equals(carDialog.getDeleteBtn()))
+        } else if (e.getSource().equals(carDialog.getDeleteBtn())) {
             actionCarDlgDelete();
-        else if (e.getSource().equals(carDialog.getCancelBtn()))
+        } else if (e.getSource().equals(carDialog.getCancelBtn())) {
             actionCarDlgCancel();
-        // Class tab
-        else if (e.getSource().equals(adminView.getCarClassAddBtn()))
+        } // Class tab
+        else if (e.getSource().equals(adminView.getCarClassAddBtn())) {
             actionClassAdd();
-        else if (e.getSource().equals(adminView.getCarClassClearBtn()))
+        } else if (e.getSource().equals(adminView.getCarClassClearBtn())) {
             actionClassClearFields();
+        } // Class dialog
+        else if (e.getSource().equals(classDialog.getSaveBtn())) {
+            actionClassDlgSave();
+        } else if (e.getSource().equals(classDialog.getDeleteBtn())) {
+            actionClassDlgDelete();
+        } else if (e.getSource().equals(classDialog.getCancelBtn())) {
+            actionClassDlgCancel();
+        }
     }
-
+    
     private void actionLogout() {
         this.removeAllElement();
         new LoginController().start();
@@ -114,7 +123,7 @@ public class AdminController extends Controller {
         adminView.getStaffSurnameTxt().setText("");
         actionStaffUpdateTable();
     }
-
+    
     private void actionStaffAdd() {
         // TODO: finish implementation
         staffDialog.setVisible(true);
@@ -125,7 +134,7 @@ public class AdminController extends Controller {
      *******************************************************************************/
     private void actionStaffDlgSave() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+        
         Staff staff = new Staff(
                 staffDialog.getNameTxt().getText(),
                 staffDialog.getSurnameTxt().getText(),
@@ -140,7 +149,7 @@ public class AdminController extends Controller {
         try {
             // TODO: implement failure
             staff.addDependent();
-            actionStaffClearFields();
+            actionStaffDlgCancel();
             //Staff staff = new Staff
             //Staff staff = new Staff
         } catch (SQLException ex) {
@@ -148,7 +157,7 @@ public class AdminController extends Controller {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     private void actionStaffDlgCancel() {
         staffDialog.getAddressTA().setText("");
         staffDialog.getDateOfBirthDP().setDate(null);
@@ -158,9 +167,11 @@ public class AdminController extends Controller {
         staffDialog.getPasswordPwd().setText("");
         staffDialog.getUsernameTxt().setText("");
         staffDialog.getPhoneTxt().setText("");
+        staffDialog.getAdminCB().setSelected(false);
+        staffDialog.getChauffeurCB().setSelected(false);
         staffDialog.setVisible(false);
     }
-
+    
     private void actionStaffDlgDelete() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -171,7 +182,7 @@ public class AdminController extends Controller {
     private void actionBookingDelete() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
+    
     private void actionBookingClearFields() {
         adminView.getBookingRefCodeTxt().setText("");
         adminView.getBookingSurnameTxt().setText("");
@@ -191,7 +202,7 @@ public class AdminController extends Controller {
         adminView.getCarYearTxt().setText("");
         actionBookingUpdateTable();
     }
-
+    
     private void actionCarAdd() {
         // TODO: finish implementation
         carDialog.setVisible(true);
@@ -214,16 +225,16 @@ public class AdminController extends Controller {
                 carDialog.getColorTxt().getText(),
                 carDialog.getBranchCB().getSelectedIndex(),
                 carDialog.getServiceMilesTxt().getText(),
-                Integer.parseInt(carDialog.getServiceMonthTxt().getText()),
-                Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]);
-        car.add(Utility.convertToHashMap(car));
-        actionStaffClearFields();
+                Integer.parseInt(carDialog.getServiceMonthTxt().getText())/*,
+                Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]*/);
+        car.add();
+        actionCarDlgCancel();
     }
-
+    
     private void actionCarDlgDelete() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
+    
     private void actionCarDlgCancel() {
         carDialog.getBranchCB().setSelectedIndex(0);
         carDialog.getBrandTxt().setText("");
@@ -246,60 +257,88 @@ public class AdminController extends Controller {
      *******************************************************************************/
     private void actionClassAdd() {
         // TODO: finish implementation
-        this.addElement(new CarClassDialog(adminView, true));
+        classDialog.setVisible(true);
     }
-
+    
     private void actionClassClearFields() {
         adminView.getCarClassDisplayTxt().setText("");
         adminView.getCarClassNameTxt().setText("");
         actionClassUpdateTable();
     }
 
+    /*******************************************************************************
+     *                          CLASS DIALOG
+     *******************************************************************************/
+    private void actionClassDlgSave() {
+        CarClass carClass = new CarClass(
+                classDialog.getNameTxt().getText(),
+                classDialog.getDisplayNameTxt().getText(),
+                classDialog.getDescriptionTA().getText(),
+                Float.parseFloat(classDialog.getPriceTxt().getText()));
+                //classDialog.getPriceTxt().getText());
+        carClass.add();
+        actionClassDlgCancel();
+    }
+    
+    private void actionClassDlgDelete() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+    
+    private void actionClassDlgCancel() {
+        classDialog.getNameTxt().setText("");
+        classDialog.getDisplayNameTxt().setText("");
+        classDialog.getDescriptionTA().setText("");
+        classDialog.getPriceTxt().setText("");
+        actionClassUpdateTable();
+        classDialog.setVisible(false);
+    }
     /*
      * Handle Text Field Listeners calling specific actions
      */
+
     @Override
     public void keyTyped(KeyEvent e) {
         // Staff
         if (e.getSource().equals(adminView.getStaffNameTxt())
-                || e.getSource().equals(adminView.getStaffSurnameTxt()))
+                || e.getSource().equals(adminView.getStaffSurnameTxt())) {
             actionStaffUpdateTable();
-        // Booking
+        } // Booking
         else if (e.getSource().equals(adminView.getBookingRefCodeTxt())
-                || e.getSource().equals(adminView.getBookingSurnameTxt()))
+                || e.getSource().equals(adminView.getBookingSurnameTxt())) {
             actionBookingUpdateTable();
-        // Class
+        } // Class
         else if (e.getSource().equals(adminView.getCarClassDisplayTxt())
-                || e.getSource().equals(adminView.getCarClassNameTxt()))
+                || e.getSource().equals(adminView.getCarClassNameTxt())) {
             actionClassUpdateTable();
+        }
     }
-
+    
     private void actionStaffUpdateTable() {
         staffUpdateTask.cancel();
         staffUpdateTask = new StaffUpdateTask();
         timer.schedule(staffUpdateTask, this.TABLE_FILTERING_DELAY);
     }
-
+    
     private void actionBookingUpdateTable() {
         bookingUpdateTask.cancel();
         bookingUpdateTask = new BookingUpdateTask();
         timer.schedule(bookingUpdateTask, this.TABLE_FILTERING_DELAY);
     }
-
+    
     private void actionClassUpdateTable() {
         classUpdateTask.cancel();
         classUpdateTask = new ClassUpdateTask();
         timer.schedule(classUpdateTask, this.TABLE_FILTERING_DELAY);
     }
-
+    
     @Override
     public void keyPressed(KeyEvent e) {
     }
-
+    
     @Override
     public void keyReleased(KeyEvent e) {
     }
-
+    
     private void initAdminView() {
         adminView = new AdminView();
         this.addElement(adminView);
@@ -329,9 +368,9 @@ public class AdminController extends Controller {
         this.addElement(adminView.getCarClassDisplayTxt());
         this.addElement(adminView.getCarClassNameTxt());
     }
-
+    
     private void initStaffDialog() {
-
+        
         staffDialog = new StaffDialog(adminView, true);
         this.addElement(staffDialog);
         // Staff dialog
@@ -339,14 +378,23 @@ public class AdminController extends Controller {
         this.addElement(staffDialog.getDeleteBtn());
         this.addElement(staffDialog.getCancelBtn());
     }
-
+    
     private void initCarDialog() {
-
+        
         carDialog = new CarDialog(adminView, true);
         this.addElement(carDialog);
         // Staff dialog
         this.addElement(carDialog.getSaveBtn());
         this.addElement(carDialog.getDeleteBtn());
         this.addElement(carDialog.getCancelBtn());
+    }
+
+    private void initClassDialog() {
+        classDialog = new ClassDialog(adminView, true);
+        this.addElement(classDialog);
+        // Staff dialog
+        this.addElement(classDialog.getSaveBtn());
+        this.addElement(classDialog.getDeleteBtn());
+        this.addElement(classDialog.getCancelBtn());
     }
 }

@@ -100,9 +100,11 @@ public class CarDialog extends javax.swing.JDialog {
         colorLbl.setName("colorLbl"); // NOI18N
 
         statusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        statusCB.setEnabled(false);
         statusCB.setName("statusCB"); // NOI18N
 
         statusLbl.setText("Status");
+        statusLbl.setEnabled(false);
         statusLbl.setName("statusLbl"); // NOI18N
 
         plateLbl.setText("Plate");

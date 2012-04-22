@@ -15,7 +15,7 @@ import oscar.util.Utility;
 public class Person extends DependentDbRecord implements DbRecordable {
 
     /** Record id*/
-    protected int personId;
+    private int personId;
     protected String name;
     protected String surname;
     protected String dateOfBirth;
@@ -87,7 +87,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     }
 
     public void setPersonid(int personid) {
-        this.personId = personid;
+        this.setPersonId(personid);
     }
 
     public void setPhone(String phone) {
@@ -115,7 +115,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     }
 
     public int getPersonid() {
-        return personId;
+        return getPersonId();
     }
 
     public String getPhone() {
@@ -151,7 +151,7 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean delete() {
-        if (this.personId <= 0)
+        if (this.getPersonId() <= 0)
             return false;
         return this.deleteBy("personId", this.getPersonid() + "");
     }
@@ -163,8 +163,22 @@ public class Person extends DependentDbRecord implements DbRecordable {
     // TODO implement this operation
     @Override
     public boolean update() {
-        if (this.personId <= 0)
+        if (this.getPersonId() <= 0)
             return false;
         return this.updateBy(Utility.convertToHashMap(this), "personId", this.getPersonid() + "");
+    }
+
+    /**
+     * @return the personId
+     */
+    public int getPersonId() {
+        return personId;
+    }
+
+    /**
+     * @param personId the personId to set
+     */
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
 }

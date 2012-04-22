@@ -14,19 +14,18 @@ import oscar.MVC.DbRecord;
 public class Car extends DbRecord {
     private static String TABLE = "car";
     /** The PK of the table */
-    private String plateNumber;
+    private String plate;
     private String brand;
     private String model;
     private int year;
     private int mileage;
-    private int lastServiceMileage;
+    private int lastServiceMiles;
     private String lastServiceDate;
-    private int carClass;
+    private int classId;
     private String color;
     private int branch;
-    private String servicePeriod;
+    private String serviceMonths;
     private int serviceMiles;
-
     /**
      * Status of the car
      */
@@ -43,7 +42,7 @@ public class Car extends DbRecord {
         /** Unavailable*/
         UNAVAILABLE
     }
-    private CarStatus status;
+    //private CarStatus status;
 
     public Car() {
         super(TABLE);
@@ -67,21 +66,21 @@ public class Car extends DbRecord {
     public Car(String plateNumber, String brand, String model, int year,
             int mileage, int lastServiceMileage, String lastServiceDate,
             int carClass, String color, int branch, String servicePeriod,
-            int serviceMiles, CarStatus status) {
+            int serviceMiles/*, CarStatus status*/) {
         super(TABLE);
-        this.plateNumber = plateNumber;
+        this.plate = plateNumber;
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.mileage = mileage;
-        this.lastServiceMileage = lastServiceMileage;
+        this.lastServiceMiles = lastServiceMileage;
         this.lastServiceDate = lastServiceDate;
-        this.carClass = carClass;
+        this.classId = carClass;
         this.color = color;
         this.branch = branch;
-        this.servicePeriod = servicePeriod;
+        this.serviceMonths = servicePeriod;
         this.serviceMiles = serviceMiles;
-        this.status = status;
+        //this.status = status;
     }
 
     /**
@@ -92,19 +91,19 @@ public class Car extends DbRecord {
         super(TABLE);
         HashMap<String, String> attributes = this.findByPK(PkValue);
         
-        this.plateNumber = PkValue;
+        this.plate = PkValue;
         this.brand = attributes.get("brand");
         this.model = attributes.get("model");
         this.year = Integer.parseInt(attributes.get("year"));
         this.mileage = Integer.parseInt(attributes.get("mileage"));
-        this.lastServiceMileage = Integer.parseInt(attributes.get("lastServiceMileage"));
+        this.lastServiceMiles = Integer.parseInt(attributes.get("lastServiceMileage"));
         this.lastServiceDate = attributes.get("lastServiceDate");
-        this.carClass = Integer.parseInt(attributes.get("carClass"));
+        this.classId = Integer.parseInt(attributes.get("carClass"));
         this.color = attributes.get("color");
         this.branch = Integer.parseInt(attributes.get("branch"));
-        this.servicePeriod = attributes.get("servicePeriod");
+        this.serviceMonths = attributes.get("servicePeriod");
         this.serviceMiles = Integer.parseInt(attributes.get("serviceMiles"));
-        this.status = CarStatus.valueOf(attributes.get("status"));
+        //this.status = CarStatus.valueOf(attributes.get("status"));
     }
 
     @Override
@@ -128,5 +127,194 @@ public class Car extends DbRecord {
                     });
         }
         return model;
+    }
+
+    /**
+     * @return the plateNumber
+     */
+    public String getPlate() {
+        return plate;
+    }
+
+    /**
+     * @param plate the plateNumber to set
+     */
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
+
+    /**
+     * @return the brand
+     */
+    public String getBrand() {
+        return brand;
+    }
+
+    /**
+     * @param brand the brand to set
+     */
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    /**
+     * @return the model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    /**
+     * @param model the model to set
+     */
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * @return the year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * @param year the year to set
+     */
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    /**
+     * @return the mileage
+     */
+    public int getMileage() {
+        return mileage;
+    }
+
+    /**
+     * @param mileage the mileage to set
+     */
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
+
+    /**
+     * @return the lastServiceMileage
+     */
+    public int getLastServiceMiles() {
+        return lastServiceMiles;
+    }
+
+    /**
+     * @param lastServiceMileage the lastServiceMileage to set
+     */	
+    public void setLastServiceMiles(int lastServiceMiles) {
+        this.lastServiceMiles = lastServiceMiles;
+    }
+
+    /**
+     * @return the lastServiceDate
+     */
+    public String getLastServiceDate() {
+        return lastServiceDate;
+    }
+
+    /**
+     * @param lastServiceDate the lastServiceDate to set
+     */
+    public void setLastServiceDate(String lastServiceDate) {
+        this.lastServiceDate = lastServiceDate;
+    }
+
+    /**
+     * @return the carClass
+     */
+    public int getClassId() {
+        return classId;
+    }
+
+    /**
+     * @param carClass the carClass to set
+     */
+    public void setClassId(int classId) {
+        this.classId = classId;
+    }
+
+    /**
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * @param color the color to set
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    /**
+     * @return the branch
+     */
+    public int getBranch() {
+        return branch;
+    }
+
+    /**
+     * @param branch the branch to set
+     */
+    public void setBranch(int branch) {
+        this.branch = branch;
+    }
+    
+    /**
+     * @return the serviceMiles
+     */
+    public int getServiceMiles() {
+        return serviceMiles;
+    }
+
+    /**
+     * @param serviceMiles the serviceMiles to set
+     */
+    public void setServiceMiles(int serviceMiles) {
+        this.serviceMiles = serviceMiles;
+    }
+
+    /**
+     * @return the status
+     */
+    /*public CarStatus getStatus() {
+        return status;
+    }*/
+
+    /**
+     * @param status the status to set
+     */
+    /*public void setStatus(CarStatus status) {
+        this.status = status;
+    }*/
+
+    /**
+     * @return the TABLE
+     */
+    public static String getTABLE() {
+        return TABLE;
+    }
+
+    /**
+     * @return the serviceMonths
+     */
+    public String getServiceMonths() {
+        return serviceMonths;
+    }
+
+    /**
+     * @param serviceMonths the serviceMonths to set
+     */
+    public void setServiceMonths(String serviceMonths) {
+        this.serviceMonths = serviceMonths;
     }
 }

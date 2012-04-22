@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import oscar.model.Car.CarStatus;
 
 /**
  *
@@ -35,20 +36,28 @@ public class Utility {
                 String type = f.getType().getSimpleName();
                 //System.out.println("get"+ucFirst(f.getName()));
                 try {
-                   // System.out.println(type);
-                    if (type.equals("String") || type.equals("boolean") ) {
+                    // System.out.println(type);
+                    if (type.equals("String")
+                            || type.equals("boolean")
+                            || type.equals("float")
+                            || type.equals("int")
+                            /*|| f.getClass().getSimpleName().equals("CarStatus")*/) {
 
                         method = currentClass.getMethod("get" + ucFirst(f.getName()), new Class[]{});
                         Object obj = method.invoke(ob, new Object[]{});
-                        
-                        if(type.equals("boolean"))
-                        {
+
+                        if (type.equals("boolean")) {
                             String value = "0";
-                            if((Boolean)obj==true){
-                                value="1";
+                            if ((Boolean) obj == true) {
+                                value = "1";
                             }
                             objHashMap.put(f.getName(), value);
-                        }else{
+                        /*} else if (f.getClass().getSimpleName().equals("CarStatus")) {
+                            objHashMap.put(f.getName(), Enum.valueOf(CarStatus)
+                            obj.toString()
+                          
+                            );*/
+                        } else {
                             if (obj != null) {
                                 objHashMap.put(f.getName(), obj.toString());
                             }
@@ -112,9 +121,9 @@ public class Utility {
         stringArray[0] = Character.toUpperCase(stringArray[0]);
         return new String(stringArray);
     }
-    
-    public static String encodeSHA256(String password) throws NoSuchAlgorithmException{
-        
+
+    public static String encodeSHA256(String password) throws NoSuchAlgorithmException {
+
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         md.update(password.getBytes());
         byte byteData[] = md.digest();

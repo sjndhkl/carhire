@@ -14,10 +14,10 @@ package oscar.view.dialog;
  *
  * @author schiodin
  */
-public class CarClassDialog extends javax.swing.JDialog {
+public class ClassDialog extends javax.swing.JDialog {
 
     /** Creates new form CarClassDialog */
-    public CarClassDialog(java.awt.Frame parent, boolean modal) {
+    public ClassDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -164,13 +164,13 @@ public class CarClassDialog extends javax.swing.JDialog {
                     break;
                 }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CarClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CarClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CarClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CarClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClassDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -178,7 +178,7 @@ public class CarClassDialog extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                CarClassDialog dialog = new CarClassDialog(new javax.swing.JFrame(), true);
+                ClassDialog dialog = new ClassDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 
                     @Override
@@ -204,4 +204,53 @@ public class CarClassDialog extends javax.swing.JDialog {
     private javax.swing.JTextField priceTxt;
     private javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the cancelBtn
+     */
+    public javax.swing.JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    /**
+     * @return the deleteBtn
+     */
+    public javax.swing.JButton getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    /**
+     * @return the descriptionTA
+     */
+    public javax.swing.JTextArea getDescriptionTA() {
+        return descriptionTA;
+    }
+
+    /**
+     * @return the displayNameTxt
+     */
+    public javax.swing.JTextField getDisplayNameTxt() {
+        return displayNameTxt;
+    }
+
+    /**
+     * @return the nameTxt
+     */
+    public javax.swing.JTextField getNameTxt() {
+        return nameTxt;
+    }
+
+    /**
+     * @return the priceTxt
+     */
+    public javax.swing.JTextField getPriceTxt() {
+        return priceTxt;
+    }
+
+    /**
+     * @return the saveBtn
+     */
+    public javax.swing.JButton getSaveBtn() {
+        return saveBtn;
+    }
 }

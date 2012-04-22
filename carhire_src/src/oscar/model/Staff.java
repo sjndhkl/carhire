@@ -27,8 +27,8 @@ public class Staff extends Person implements DbRecordable {
     private boolean chauffeur;
 
     public Staff() {
-        this.dependencies = new HashMap<String, String>();
-        this.dependencies.put("person", "personId");
+        //this.dependencies = new HashMap<String, String>();
+        //this.dependencies.put("person", "personId");
         this.useTable = TABLE;
         this.initStaff();
     }
@@ -47,7 +47,7 @@ public class Staff extends Person implements DbRecordable {
         this.username = attributes.get("username");
         this.admin = (attributes.get("admin").contains("1")) ? true : false;
         this.chauffeur = (attributes.get("chauffeur").contains("1")) ? true : false;
-        this.personId = Integer.parseInt(attributes.get("personId"));
+        this.setPersonId(Integer.parseInt(attributes.get("personId")));
     }
 
     private void initStaff() {
