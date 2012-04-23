@@ -5,22 +5,24 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.event.ListSelectionEvent;
-import org.jdesktop.swingx.JXTable;
 import oscar.model.Car;
 import oscar.model.CarClass;
 import oscar.model.Rental;
 import oscar.MVC.Controller;
+import oscar.model.Person;
 import oscar.view.AdminView;
 import oscar.model.Staff;
 import oscar.task.StaffUpdateTask;
 import oscar.task.BookingUpdateTask;
 import oscar.task.CarUpdateTask;
 import oscar.task.ClassUpdateTask;
+import oscar.util.Utility;
 import oscar.view.dialog.ClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;
@@ -40,6 +42,9 @@ public class AdminController extends Controller {
     private BookingUpdateTask bookingUpdateTask;
     private CarUpdateTask carUpdateTask;
     private ClassUpdateTask classUpdateTask;
+    // staff editing variables
+    private boolean editingStaff = false;
+    private String editingStaffId;
 
     @Override
     public void run() {
@@ -59,7 +64,7 @@ public class AdminController extends Controller {
         classUpdateTask = new ClassUpdateTask();
 
         // Set up the tables
-        adminView.getStaffTbl().setModel(new Staff().getTableModel());
+        updateStaffTbl();
         adminView.getBookingTbl().setModel(new Rental().getTableModel());
         adminView.getCarTbl().setModel(new Car().getTableModel());
         adminView.getCarClassTbl().setModel(new CarClass().getTableModel());
@@ -130,6 +135,7 @@ public class AdminController extends Controller {
     private void actionStaffDlgSave() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+        // Make a new staff out of dialog fields
         Staff staff = new Staff(
                 staffDialog.getNameTxt().getText(),
                 staffDialog.getSurnameTxt().getText(),
@@ -141,16 +147,24 @@ public class AdminController extends Controller {
                 new String(staffDialog.getPasswordPwd().getPassword()),
                 staffDialog.getAdminCB().isSelected(),
                 staffDialog.getChauffeurCB().isSelected());
-        try {
-            // TODO: implement failure
-            staff.addDependent();
-            actionStaffDlgCancel();
-            //Staff staff = new Staff
-            //Staff staff = new Staff
-        } catch (SQLException ex) {
-            //TODO: handle error
-            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        if (editingStaff)
+            try {
+                staff.updateDependentBy(Utility.convertToHashMapWithParent(staff), "personId", editingStaffId);
+                actionStaffDlgCancel();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        else
+            try {
+                // TODO: implement failure
+                staff.addDependent();
+                actionStaffDlgCancel();
+            } catch (SQLException ex) {
+                //TODO: handle error
+                Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        updateStaffTbl();
     }
 
     private void actionStaffDlgCancel() {
@@ -165,10 +179,14 @@ public class AdminController extends Controller {
         staffDialog.getAdminCB().setSelected(false);
         staffDialog.getChauffeurCB().setSelected(false);
         staffDialog.setVisible(false);
+        editingStaff = false;
     }
 
     private void actionStaffDlgDelete() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        Staff staff = new Staff();
+        staff.deleteBy("personId", editingStaffId);
+        actionStaffDlgCancel();
+        updateStaffTbl();
     }
 
     /*******************************************************************************
@@ -327,14 +345,43 @@ public class AdminController extends Controller {
     public void mouseClicked(MouseEvent e) {
         // Staff table
         if (e.getSource().equals(adminView.getStaffTbl()))
-            System.out.println(adminView.getStaffTbl().getSelectedRow());
+            actionStaffSelectRow(adminView.getStaffTbl().getSelectedRow());
+    }
+
+    private void actionStaffSelectRow(int selectedRow) {
+        editingStaffId = (String) adminView.getStaffTbl().getValueAt(selectedRow, 0);
+        // Set staff editing mode true
+        editingStaff = true;
+        HashMap<String, String> staffRecord = new Staff().findByPK(editingStaffId);
+        HashMap<String, String> personRecord = new Person().findByPK(editingStaffId);
+
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        staffDialog.getAddressTA().setText(personRecord.get("address"));
+        try {
+            staffDialog.getDateOfBirthDP().setDate(df.parse(personRecord.get("dateOfBirth")));
+        } catch (ParseException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        staffDialog.getEmailTxt().setText(personRecord.get("email"));
+        staffDialog.getNameTxt().setText(personRecord.get("name"));
+        staffDialog.getSurnameTxt().setText(personRecord.get("surname"));
+        //staffDialog.getPasswordPwd().setText(record.get("password"));
+        staffDialog.getPasswordPwd().setText("");
+        staffDialog.getUsernameTxt().setText(staffRecord.get("username"));
+        staffDialog.getPhoneTxt().setText(personRecord.get("phone"));
+        staffDialog.getAdminCB().setSelected((staffRecord.get("admin").contains("1")) ? true : false);
+        staffDialog.getChauffeurCB().setSelected((staffRecord.get("chauffeur").contains("1")) ? true : false);
+        // shows the dialog
+        staffDialog.setVisible(true);
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {}
+    public void keyPressed(KeyEvent e) {
+    }
 
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+    }
 
     private void initAdminView() {
         adminView = new AdminView();
@@ -410,5 +457,9 @@ public class AdminController extends Controller {
 
     @Override
     public void mouseExited(MouseEvent e) {
+    }
+
+    private void updateStaffTbl() {
+        adminView.getStaffTbl().setModel(new Staff().getTableModel());
     }
 }

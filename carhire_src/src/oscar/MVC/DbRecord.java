@@ -393,14 +393,14 @@ public class DbRecord {
      * @param objHashMap
      * @return
      */
-    protected String getUpdateParams(HashMap<String, String> objHashMap) {
+    protected String getUpdateParams(HashMap<String, String> objHashMap, String excludedColumn) {
         String updateString = "";
+        objHashMap.remove(excludedColumn);
         int num_cols = objHashMap.size();
         int i = 1;
         for (String key : objHashMap.keySet()) {
-
             updateString += key + " = '" + objHashMap.get(key) + "'";
-            if (i != num_cols) {
+            if (i != num_cols ) {
                 updateString += ",";
             }
 
@@ -418,7 +418,7 @@ public class DbRecord {
      */
     public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
 
-        String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap) + " where " + colName + " = '" + value + "'";
+        String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap, null) + " where " + colName + " = '" + value + "'";
 
         return this.nonQuery(query);
     }
