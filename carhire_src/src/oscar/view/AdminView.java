@@ -7,6 +7,7 @@
 package oscar.view;
 
 import javax.swing.ListSelectionModel;
+import org.jdesktop.swingx.JXTable;
 import oscar.MVC.AbstractView;
 
 public class AdminView extends AbstractView {
@@ -16,13 +17,13 @@ public class AdminView extends AbstractView {
         initComponents();
         // TODO: fix the selection..........
         staffTbl.setSelectionMode(
-                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                ListSelectionModel.SINGLE_SELECTION);
         bookingTbl.setSelectionMode(
-                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                ListSelectionModel.SINGLE_SELECTION);
         carTbl.setSelectionMode(
-                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                ListSelectionModel.SINGLE_SELECTION);
         carClassTbl.setSelectionMode(
-                ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                ListSelectionModel.SINGLE_SELECTION);
         //this.setVisible(true);
     }
 

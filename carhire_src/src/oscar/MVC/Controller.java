@@ -2,17 +2,19 @@ package oscar.MVC;
 
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
  *
  * @author schiodin
  */
-public abstract class Controller extends Thread implements ActionListener, KeyListener {
+public abstract class Controller extends Thread implements ActionListener, KeyListener, MouseListener {
 
     public static long TABLE_FILTERING_DELAY = 500;
     private ArrayList<Object> elements;
@@ -30,6 +32,8 @@ public abstract class Controller extends Thread implements ActionListener, KeyLi
             ((JComboBox) element).addActionListener(this);
         else if (element.getClass().equals(JTextField.class))
             ((JTextField) element).addKeyListener(this);
+        else if (element.getClass().getSuperclass().equals(JTable.class))
+            ((JTable) element).addMouseListener(this);
         else if (element.getClass().getSuperclass().equals(AbstractView.class))
             ((AbstractView) element).setVisible(true);
         //else if (element.getClass().getSuperclass().equals(JDialog.class))

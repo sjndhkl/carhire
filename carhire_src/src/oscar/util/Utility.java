@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package oscar.util;
 
 import java.lang.reflect.Field;
@@ -12,7 +8,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import oscar.model.Car.CarStatus;
 
 /**
  *

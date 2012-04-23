@@ -135,10 +135,6 @@ public class Staff extends Person implements DbRecordable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
-
     @Override
     public TableModel getTableModel() {
 
@@ -171,23 +167,23 @@ public class Staff extends Person implements DbRecordable {
         return model;
     }
 
-    public boolean isIsAdmin() {
+    public boolean isAdmin() {
         return admin;
     }
+    
     public boolean getAdmin(){
-        return isIsAdmin();
+        return isAdmin();
     }
 
     public void setIsAdmin(String isAdmin) {
         this.admin = isAdmin.equals("1") ? true : false;
     }
-    
-    
+        
     public boolean getChauffeur(){
-        return isIsChauffeur();
+        return isChauffeur();
     }
 
-    public boolean isIsChauffeur() {
+    public boolean isChauffeur() {
         return chauffeur;
     }
 
