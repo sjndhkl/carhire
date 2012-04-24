@@ -8,12 +8,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.ComboBoxModel;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import oscar.model.OscarComboBoxModel;
+import oscar.model.OscarComboBoxModelItem;
 import oscar.persistance.DbConnectable;
 import oscar.persistance.DbConnectionFactory;
 import oscar.util.Utility;
@@ -265,15 +267,17 @@ public class DbRecord {
     public ComboBoxModel getComboModel(String valueColumn,String selectionText){
         OscarComboBoxModel ocbm = new OscarComboBoxModel();
         
-        HashMap<Integer,String> data = new HashMap<Integer, String>();
-        data.put(0,selectionText);
+        List<OscarComboBoxModelItem> data = new ArrayList<OscarComboBoxModelItem>();
+        data.add(new OscarComboBoxModelItem(0, selectionText));
+        
         String sql ="select "+this.getPrimaryKey()+","+valueColumn+" from "+this.useTable;
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             
             while (rs.next()) {
-                data.put(rs.getInt(1), rs.getString(2));
+                OscarComboBoxModelItem  item = new OscarComboBoxModelItem(rs.getInt(1), rs.getString(2));
+                data.add(item);
             }
 
             stmt.close();

@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
+import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.task.HirePersonUpdateTask;
 import oscar.view.StaffView;
@@ -89,7 +90,8 @@ public class StaffController extends Controller {
     private void actionHire() {
         //throw new UnsupportedOperationException("Not yet implemented");
         System.out.println(this.personId);
-        System.out.println(staffView.getHireClassCB());
+        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();
+        System.out.println(item.Id);
     }
 
     private void actionHireSearchRefCode() {
