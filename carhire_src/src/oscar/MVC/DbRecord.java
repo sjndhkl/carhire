@@ -6,7 +6,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -107,14 +106,14 @@ public class DbRecord {
 
         return result;
     }
-    
+
     public ArrayList<HashMap<String,String>> queryDependent(ArrayList<HashMap<String,String>> dependencies,String colName,String value){
         //ArrayList<HashMap<String,String>> records = new ArrayList<HashMap<String, String>>();
         String joins = "";
         String selections=this.useTable+".*,";
         int i=1;
         for(HashMap<String,String> tableInfo:dependencies){
-            
+
            if(i<dependencies.size()){
                 selections += tableInfo.get("table")+".*" +",";
             }else{
@@ -127,7 +126,7 @@ public class DbRecord {
            joins += tableInfo.get("joinType")+ " "+tableInfo.get("table") +" on "+joinTo+"."+tableInfo.get("fk")+" = "+tableInfo.get("table")+"."+tableInfo.get("pk")+" ";
            i++;
         }
-        
+
         String sql = "";
         if(colName.equals("*") && value.equals("*")){
             sql = "select "+selections+" from "+this.useTable+" "+joins;
@@ -135,12 +134,12 @@ public class DbRecord {
             sql = "select "+selections+" from "+this.useTable+" "+joins+" where "+colName+" = '"+value+"'";
         }
         return this.query(sql);
-        
+
     }
-    
-    
-    
-    
+
+
+
+
 
     /**
      * Count the record of this table
@@ -201,8 +200,8 @@ public class DbRecord {
 
         return null;
     }
-    
-    
+
+
      /**
      * returns all the data inside the table depending on column name and value
      * specified
@@ -219,12 +218,12 @@ public class DbRecord {
             return records;    // return row
         }
         */
-        
-        Set<String> cols = records.keySet();       
+
+        Set<String> cols = records.keySet();
         String query = "select * from " + this.useTable + " where ";
         int i = 0;
         for(String col:cols){
-            
+
             query += col+" LIKE '"+records.get(col)+"%'";
             if(i<cols.size()-1){
                 query += " AND ";
@@ -234,12 +233,12 @@ public class DbRecord {
         System.out.println(query);
         return this.query(query);
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 
     /**
      * returns all the data inside the table depending on column name, value,
@@ -260,18 +259,18 @@ public class DbRecord {
 
         return null;
     }
-    
-    
+
+
     public ComboBoxModel getComboModel(String valueColumn,String selectionText){
         OscarComboBoxModel ocbm = new OscarComboBoxModel();
-        
+
         HashMap<Integer,String> data = new HashMap<Integer, String>();
         data.put(0,selectionText);
         String sql ="select "+this.getPrimaryKey()+","+valueColumn+" from "+this.useTable;
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
+
             while (rs.next()) {
                 data.put(rs.getInt(1), rs.getString(2));
             }
@@ -282,7 +281,7 @@ public class DbRecord {
             System.out.println(ex.getMessage());
         }
         ocbm.setData(data);
-        
+
         return ocbm;
     }
 
@@ -302,12 +301,12 @@ public class DbRecord {
      * @return List of HashMap representing the records
      */
     public HashMap<String, String> findByPK(String value) {
-        
+
             return this.findOneBy(this.getPrimaryKey(), value);
 
     }
-    
-    
+
+
     public String getPrimaryKey(){
         String PK="";
         try {
@@ -332,7 +331,7 @@ public class DbRecord {
      * @return
      */
     /*public boolean populate () {
-    
+
     return true;
     }*/
     /**
@@ -381,16 +380,16 @@ public class DbRecord {
 
         return status;
     }
-    
+
     public int nonQueryPk(String sql) {
-        
+
         try {
             Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
             stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getInt(1);
-                    
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -433,7 +432,7 @@ public class DbRecord {
 
     // TODO complete the javadoc of this method
     /**
-     * 
+     *
      * @param objHashMap
      * @return
      */
@@ -462,14 +461,14 @@ public class DbRecord {
      */
     public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
 
-        String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap, null) + " where " + colName + " = '" + value + "'";
+        String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap, colName) + " where " + colName + " = '" + value + "'";
 
         return this.nonQuery(query);
     }
 
     // TODO complete the javadoc
     /**
-     * 
+     *
      * @param objHashMap
      * @return
      */
@@ -497,7 +496,7 @@ public class DbRecord {
 
     //TODO complete this javadoc
     /**
-     * 
+     *
      * @param objHashMap
      * @return
      */
@@ -511,7 +510,7 @@ public class DbRecord {
 
     //TODO complete this javadoc
     /**
-     * 
+     *
      * @return
      */
     public boolean add() {
@@ -520,7 +519,7 @@ public class DbRecord {
         //System.out.println(query);
         return this.nonQuery(query);
     }
-    
+
     /*
      * adds record and returns last insert id of PK
      */
@@ -531,7 +530,7 @@ public class DbRecord {
         //System.out.println(query);
         return this.nonQueryPk(query);
     }
-     
+
     public TableModel getTableModel(){
         return new TableModel() {
 

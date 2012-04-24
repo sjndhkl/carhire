@@ -8,14 +8,14 @@ import oscar.MVC.DbRecord;
 
 /**
  * @author Stefano
- * 
+ *
  * Class CarClass representing the classes of the car
  */
 public class CarClass extends DbRecord {
     private static String TABLE = "carClass";
     private int classId;
     private String displayName;
-    private String className;
+    private String name;
     private String description;
     private float price;
 
@@ -23,15 +23,15 @@ public class CarClass extends DbRecord {
         super(TABLE);
     }
     /**
-     * @param carClassId
+     * @param displayName
      * @param name
      * @param description
      * @param price
      */
-    public CarClass(String className, String displayName, String description, float price) {
+    public CarClass(String name, String displayName, String description, float price) {
         super(TABLE);
         this.displayName = displayName;
-        this.className = className;
+        this.name = name;
         this.description = description;
         this.price = price;
     }
@@ -45,8 +45,8 @@ public class CarClass extends DbRecord {
         this.useTable = TABLE;
         HashMap<String, String> attributes = this.findByPK(PkValue);
 
-        this.className = PkValue;
-        this.className = attributes.get("name");
+        this.classId = Integer.parseInt(PkValue);
+        this.name = attributes.get("name");
         this.description = attributes.get("description");
         this.price = Integer.parseInt(attributes.get("price"));
         //this.price = attributes.get("price");
@@ -56,10 +56,11 @@ public class CarClass extends DbRecord {
     public TableModel getTableModel() {
         ArrayList<HashMap<String, String>> map = this.findAll();
         DefaultTableModel model = new DefaultTableModel(
-                new Object[]{"Name", "Display name", "description", "price"}, 0);
+                new Object[]{"Id", "Name", "displayName", "description", "price"}, 0);
         for (HashMap<String, String> row : map)
             model.addRow(new Object[]{
-                        row.get("className"),
+                        row.get("classId"),
+                        row.get("name"),
                         row.get("displayName"),
                         row.get("description"),
                         row.get("price"),
@@ -112,15 +113,15 @@ public class CarClass extends DbRecord {
     /**
      * @return the className
      */
-    public String getClassName() {
-        return className;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param className the className to set
+     * @param name the className to set
      */
-    public void setClassName(String className) {
-        this.className = className;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**

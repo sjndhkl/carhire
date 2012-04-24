@@ -1528,7 +1528,7 @@ public class AdminView extends AbstractView {
     /**
      * @return the carClassTbl
      */
-    public org.jdesktop.swingx.JXTable getCarClassTbl() {
+    public org.jdesktop.swingx.JXTable getClassTbl() {
         return carClassTbl;
     }
 
