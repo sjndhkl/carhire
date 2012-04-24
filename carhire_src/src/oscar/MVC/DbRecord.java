@@ -6,10 +6,14 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import javax.swing.ComboBoxModel;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import oscar.model.OscarComboBoxModel;
 import oscar.persistance.DbConnectable;
 import oscar.persistance.DbConnectionFactory;
 import oscar.util.Utility;
@@ -207,16 +211,31 @@ public class DbRecord {
      * @param limit maximum number of results
      * @return List of HashMap representing the records
      */
-    public ArrayList<HashMap<String, String>> findAllLikeBy(String colName, String value, int limit) {
-        ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
-                 +" like '" + value + "' limit 0," + limit);
+    public ArrayList<HashMap<String, String>> findAllLike(HashMap<String,String> records, int limit) {
+       /* ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
+        //         +" like '" + value + "' limit 0," + limit);
         if (records != null
             && records.size() >= 1) {
             return records;    // return row
         }
-
-        return null;
+        */
+        
+        Set<String> cols = records.keySet();       
+        String query = "select * from " + this.useTable + " where ";
+        int i = 0;
+        for(String col:cols){
+            
+            query += col+" LIKE '"+records.get(col)+"%'";
+            if(i<cols.size()-1){
+                query += " AND ";
+            }
+            i++;
+        }
+        System.out.println(query);
+        return this.query(query);
     }
+    
+    
     
     
     
@@ -240,6 +259,31 @@ public class DbRecord {
         }
 
         return null;
+    }
+    
+    
+    public ComboBoxModel getComboModel(String valueColumn,String selectionText){
+        OscarComboBoxModel ocbm = new OscarComboBoxModel();
+        
+        HashMap<Integer,String> data = new HashMap<Integer, String>();
+        data.put(0,selectionText);
+        String sql ="select "+this.getPrimaryKey()+","+valueColumn+" from "+this.useTable;
+        try {
+            Statement stmt = this.connectionObject.getConnection().createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while (rs.next()) {
+                data.put(rs.getInt(1), rs.getString(2));
+            }
+
+            stmt.close();
+            this.connectionObject.closeConnection();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        ocbm.setData(data);
+        
+        return ocbm;
     }
 
     /**
