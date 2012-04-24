@@ -1,6 +1,7 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,10 +12,14 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.plaf.basic.BasicMenuUI.ChangeHandler;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
+import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.task.HirePersonUpdateTask;
+import oscar.util.TableModelHelper;
 import oscar.view.StaffView;
 
 /**
@@ -60,6 +65,27 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireRefCodeTxt());
         this.addElement(staffView.getHireSurnameTxt());
         this.addElement(staffView.getHireToDP());
+        
+        /**
+         * Action Listener for the Combobox
+         * When someone selects a CarClass the cars in the selected carclass would appear
+         */
+        staffView.getHireClassCB().addActionListener (new ActionListener () {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox)e.getSource()).getSelectedItem();
+                if(item.Id>0){
+                    ArrayList<HashMap<String,String>> data = new CarClass().getCars(item.Id);
+                    if(data != null){
+                        staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number","Brand","Model"}, new Object[]{"plate","brand","model"}));
+                    }
+                }else{
+                    //clear
+                }
+                
+            }
+        });
+
 
         timer = new Timer();
         hirePersonUpdateTask = new HirePersonUpdateTask();
@@ -89,7 +115,9 @@ public class StaffController extends Controller {
     private void actionHire() {
         //throw new UnsupportedOperationException("Not yet implemented");
         System.out.println(this.personId);
-        System.out.println(staffView.getHireClassCB());
+        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();
+        
+        System.out.println(item.Id);
     }
 
     private void actionHireSearchRefCode() {

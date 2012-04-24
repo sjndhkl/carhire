@@ -5,6 +5,7 @@ import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import oscar.MVC.DbRecord;
+import oscar.util.TableModelHelper;
 
 /**
  * @author Stefano
@@ -55,6 +56,7 @@ public class CarClass extends DbRecord {
     @Override
     public TableModel getTableModel() {
         ArrayList<HashMap<String, String>> map = this.findAll();
+<<<<<<< HEAD
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "displayName", "description", "price"}, 0);
         for (HashMap<String, String> row : map)
@@ -65,7 +67,20 @@ public class CarClass extends DbRecord {
                         row.get("description"),
                         row.get("price"),
                     });
+=======
+        Object[] displayColumns = new Object[]{"Name", "Display name", "description", "price"};
+        Object[] columnNames = new Object[]{"className","displayName","description","price"};
+        TableModel model = TableModelHelper.getTableModel(map, displayColumns, columnNames);
+>>>>>>> ad2aa6aff42e6875dfedd281c0f5d04dd8447e0c
         return model;
+    }
+    
+    
+    public ArrayList<HashMap<String, String>> getCars(int classId){
+        
+        String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate group by rental.carPlate) is NULL";
+        return this.query(query);
+        
     }
 
     /**

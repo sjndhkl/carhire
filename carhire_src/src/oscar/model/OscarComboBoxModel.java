@@ -4,8 +4,7 @@
  */
 package oscar.model;
 
-import java.util.HashMap;
-import java.util.Set;
+import java.util.List;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 
@@ -13,24 +12,24 @@ import javax.swing.ComboBoxModel;
  *
  * @author sujan
  */
-public class OscarComboBoxModel<Integer,String> extends AbstractListModel implements ComboBoxModel {
+public class OscarComboBoxModel extends AbstractListModel implements ComboBoxModel {
     
-    private HashMap<Integer,String> map;
+    private List<OscarComboBoxModelItem> list;
     
-    private Integer selection = null;
+    private OscarComboBoxModelItem selection = null;
 
-    public void setData(HashMap<Integer,String> map){
-        this.map = map;
+    public void setData(List<OscarComboBoxModelItem> list){
+        this.list = list;
     } 
 
     @Override
     public int getSize() {
-        return map.size();
+        return list.size();
     }
 
     @Override
     public void setSelectedItem(Object o) {
-        this.selection = (Integer)o;
+        this.selection = (OscarComboBoxModelItem)o;
     }
 
     @Override
@@ -40,18 +39,7 @@ public class OscarComboBoxModel<Integer,String> extends AbstractListModel implem
 
     @Override
     public Object getElementAt(int i) {
-        Integer key = this.positionToKey(this.map.keySet(), i);
-        if(key!=null)
-            return this.map.get(key);
-        return null;
-    }
-    
-    private Integer positionToKey(Set<Integer> set,int pos){
-        Integer[] array_set = (Integer[]) set.toArray();
-        if(array_set.length>0){
-            return array_set[pos];
-        }
-        return null;
+        return list.get(i);
     }
     
 }
