@@ -1,7 +1,6 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -12,7 +11,6 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jdesktop.application.ResourceMap;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.Person;
@@ -91,6 +89,7 @@ public class StaffController extends Controller {
     private void actionHire() {
         //throw new UnsupportedOperationException("Not yet implemented");
         System.out.println(this.personId);
+        System.out.println(staffView.getHireClassCB());
     }
 
     private void actionHireSearchRefCode() {
