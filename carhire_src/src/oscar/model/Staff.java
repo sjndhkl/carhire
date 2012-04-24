@@ -32,8 +32,6 @@ public class Staff extends Person implements DbRecordable {
         this.useTable = TABLE;
         this.initStaff();
     }
-    
-    
 
     /**
      * Class constructor
@@ -135,9 +133,19 @@ public class Staff extends Person implements DbRecordable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public boolean isAdmin() {
-        return admin;
-    }
+   /* @Override
+    public boolean updateDependentBy(HashMap<String, HashMap<String, String>> records, String colName, String value) throws SQLException {
+       HashMap<String, String> staffRecord = records.get("oscar.model.Staff");
+       String plainPassword = staffRecord.remove("password");
+       String encryptedPassword = new String();
+        try {
+            encryptedPassword = Utility.encodeSHA256(plainPassword);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        staffRecord.put("password", encryptedPassword);
+        return super.updateDependentBy(records, colName, value);
+    }*/
 
     @Override
     public TableModel getTableModel() {
@@ -171,30 +179,29 @@ public class Staff extends Person implements DbRecordable {
         return model;
     }
 
-    public boolean isIsAdmin() {
+    public boolean isAdmin() {
         return admin;
     }
-    public boolean getAdmin(){
-        return isIsAdmin();
+
+    public boolean getAdmin() {
+        return isAdmin();
     }
 
     public void setIsAdmin(String isAdmin) {
         this.admin = isAdmin.equals("1") ? true : false;
     }
-    
-    
-    public boolean getChauffeur(){
-        return isIsChauffeur();
+
+    public boolean getChauffeur() {
+        return isChauffeur();
     }
 
-    public boolean isIsChauffeur() {
+    public boolean isChauffeur() {
         return chauffeur;
     }
 
     public void setIsChauffeur(String isChauffeur) {
         this.chauffeur = isChauffeur.equals("1") ? true : false;
     }
-    
 
     public String getUsername() {
         return username;

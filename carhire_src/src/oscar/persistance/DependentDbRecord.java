@@ -103,7 +103,7 @@ public class DependentDbRecord extends DbRecord {
                 Field f = cls.getDeclaredField("TABLE");
                 Object table = f.get(null);
                 //HashMap<String, String> insertParamSecondary = this.getInsertParams(records.get(className));
-                String query = "update " + this.useTable + " set " + this.getUpdateParams(records.get(className)) + " where " + colName + " = '" + value + "'";
+                String query = "update " + table.toString() + " set " + this.getUpdateParams(records.get(className), colName) + " where " + colName + " = '" + value + "'";
                 Statement stmt = this.connectionObject.getConnection().createStatement();
                 int status = stmt.executeUpdate(query);
             }
