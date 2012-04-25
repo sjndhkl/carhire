@@ -179,6 +179,38 @@ public class Staff extends Person implements DbRecordable {
         return model;
     }
 
+    @Override
+    public TableModel getTableModel(HashMap<String, String> filters) {
+
+        ArrayList<HashMap<String, String>> dependencies = new ArrayList<HashMap<String, String>>();
+
+        HashMap<String, String> personDep = new HashMap<String, String>();
+
+        personDep.put("table", "person");
+        personDep.put("pk", "personId");
+        personDep.put("joinType", "inner join");
+
+        //personDep.put("joinTo", "");
+        personDep.put("fk", "personId");
+        dependencies.add(personDep);
+
+       // ArrayList<HashMap<String, String>> map = this.queryDependentLike (filters, dependencies, "*", "*");
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
+        /*for (HashMap<String, String> row : map)
+            model.addRow(new Object[]{
+                        row.get("personId"),
+                        row.get("name"),
+                        row.get("surname"),
+                        (row.get("admin").contains("1")) ? true : false,
+                        (row.get("chauffeur").contains("1")) ? true : false,
+                        row.get("username"),
+                        row.get("dateOfBirth"),
+                        row.get("email")
+                    });*/
+        return model;
+    }
+
     public boolean isAdmin() {
         return admin;
     }

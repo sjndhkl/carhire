@@ -68,6 +68,22 @@ public class CarClass extends DbRecord {
                     });
         return model;
     }
+
+    @Override
+    public TableModel getTableModel(HashMap<String, String> filters) {
+        ArrayList<HashMap<String, String>> map = this.findAllLike(filters);
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Id", "Name", "displayName", "description", "price"}, 0);
+        for (HashMap<String, String> row : map)
+            model.addRow(new Object[]{
+                        row.get("classId"),
+                        row.get("name"),
+                        row.get("displayName"),
+                        row.get("description"),
+                        row.get("price"),
+                    });
+        return model;
+    }
     
     
     public ArrayList<HashMap<String, String>> getCars(int classId){

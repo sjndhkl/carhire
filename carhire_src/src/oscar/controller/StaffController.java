@@ -174,7 +174,7 @@ public class StaffController extends Controller {
         if (this.lastRequest == false && !foundAndFilled) {
             //find the record
             this.lastRequest = true;
-            ArrayList<HashMap<String, String>> records = new Person().findAllLike(this.getColumns(), 0);
+            ArrayList<HashMap<String, String>> records = new Person().findAllLike(this.getColumns());
             if (records != null) {
                 if (records.size() == 1) {
                     this.populateFields(records.get(0));
@@ -271,27 +271,17 @@ public class StaffController extends Controller {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseClicked(MouseEvent e) {}
 
     @Override
-    public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mousePressed(MouseEvent e) {}
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseEntered(MouseEvent e) {}
 
     @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseExited(MouseEvent e) {}
 }

@@ -212,7 +212,7 @@ public class DbRecord {
      * @param limit maximum number of results
      * @return List of HashMap representing the records
      */
-    public ArrayList<HashMap<String, String>> findAllLike(HashMap<String,String> records, int limit) {
+    public ArrayList<HashMap<String, String>> findAllLike(HashMap<String,String> records) {
        /* ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
         //         +" like '" + value + "' limit 0," + limit);
         if (records != null
@@ -539,52 +539,10 @@ public class DbRecord {
     }
 
     public TableModel getTableModel(){
-        return new TableModel() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
-            @Override
-            public int getRowCount() {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public int getColumnCount() {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public String getColumnName(int i) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public Class<?> getColumnClass(int i) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public boolean isCellEditable(int i, int i1) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public Object getValueAt(int i, int i1) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public void setValueAt(Object o, int i, int i1) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public void addTableModelListener(TableModelListener tl) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-
-            @Override
-            public void removeTableModelListener(TableModelListener tl) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-        };
+    public TableModel getTableModel(HashMap<String, String> filters){
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

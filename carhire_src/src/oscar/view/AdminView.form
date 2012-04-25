@@ -1581,6 +1581,7 @@
                     <Component class="javax.swing.JLabel" name="statusLbl">
                       <Properties>
                         <Property name="text" type="java.lang.String" resourceKey="statusLbl.text"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                         <Property name="name" type="java.lang.String" value="statusLbl" noResource="true"/>
                       </Properties>
                     </Component>
@@ -1632,6 +1633,7 @@
                             <StringItem index="3" value="Item 4"/>
                           </StringArray>
                         </Property>
+                        <Property name="enabled" type="boolean" value="false"/>
                         <Property name="name" type="java.lang.String" value="carStatusCB" noResource="true"/>
                       </Properties>
                     </Component>

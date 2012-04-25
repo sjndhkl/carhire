@@ -1006,6 +1006,7 @@ public class AdminView extends AbstractView {
         colorLbl.setName("colorLbl"); // NOI18N
 
         statusLbl.setText(resourceMap.getString("statusLbl.text")); // NOI18N
+        statusLbl.setEnabled(false);
         statusLbl.setName("statusLbl"); // NOI18N
 
         carPlateTxt.setName("carPlateTxt"); // NOI18N
@@ -1022,6 +1023,7 @@ public class AdminView extends AbstractView {
         carColorTxt.setName("carColorTxt"); // NOI18N
 
         carStatusCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        carStatusCB.setEnabled(false);
         carStatusCB.setName("carStatusCB"); // NOI18N
 
         carAddBtn.setAction(actionMap.get("carDialog")); // NOI18N
