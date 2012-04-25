@@ -265,16 +265,13 @@ public class DbRecord {
 
     public ComboBoxModel getComboModel(String valueColumn,String selectionText){
         OscarComboBoxModel ocbm = new OscarComboBoxModel();
-<<<<<<< HEAD
 
-        HashMap<Integer,String> data = new HashMap<Integer, String>();
-        data.put(0,selectionText);
-=======
+        //HashMap<Integer,String> data = new HashMap<Integer, String>();
+        //data.put(0,selectionText);
         
         List<OscarComboBoxModelItem> data = new ArrayList<OscarComboBoxModelItem>();
         data.add(new OscarComboBoxModelItem(0, selectionText));
         
->>>>>>> ad2aa6aff42e6875dfedd281c0f5d04dd8447e0c
         String sql ="select "+this.getPrimaryKey()+","+valueColumn+" from "+this.useTable;
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
@@ -413,7 +410,7 @@ public class DbRecord {
      * @return the success of the query
      */
     public boolean deleteBy(String colName, String value) {
-        return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
+        return this.nonQuery("delete from " + this.useTable + " where " + colName + "='" + value + "'");
     }
 
     /**

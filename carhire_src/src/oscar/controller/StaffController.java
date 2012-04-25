@@ -38,13 +38,23 @@ public class StaffController extends Controller {
     private boolean lastRequest = false;
     private boolean foundAndFilled = false;
     private int personId;
+    private boolean hasParent = false;
+
+    StaffController() {
+        super();
+    }
+
+    StaffController(boolean hasParent) {
+        this.hasParent = hasParent;
+    }
 
     @Override
     public void run() {
         this.setName("Staff");
         staffView = new StaffView();
         this.addElement(staffView);
-        this.addElement(staffView.getLogoutBtn());
+        if(hasParent)
+            staffView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         // Hire tab
         staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName","---- select car class ---"));
         staffView.getHireClassCB().setSelectedIndex(0);
@@ -93,10 +103,7 @@ public class StaffController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(staffView.getLogoutBtn())) {
-            actionLogout();
-        } //Hire tab
-        else if (e.getSource().equals(staffView.getHireBtn())) {
+        if (e.getSource().equals(staffView.getHireBtn())) {
             actionHire();
         } else if (e.getSource().equals(staffView.getHireClearBtn())) {
             actionHireClearFields();

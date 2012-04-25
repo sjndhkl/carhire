@@ -76,8 +76,8 @@ public class AdminController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(adminView.getLogoutBtn()))
-            actionLogout();
+        if (e.getSource().equals(adminView.getOpenStaffBtn()))
+            actionOpenStaff();
         // Staff Tab
         else if (e.getSource().equals(adminView.getStaffClearBtn()))
             actionStaffClearFields();
@@ -121,9 +121,8 @@ public class AdminController extends Controller {
             actionClassDlgCancel();
     }
 
-    private void actionLogout() {
-        this.removeAllElement();
-        new LoginController().start();
+    private void actionOpenStaff() {
+        new StaffController(true).start();
     }
 
     /*******************************************************************************
@@ -460,14 +459,6 @@ public class AdminController extends Controller {
         classDialog.setVisible(true);
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-    }
-
     private void updateStaffTbl() {
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
     }
@@ -487,7 +478,7 @@ public class AdminController extends Controller {
     private void initAdminView() {
         adminView = new AdminView();
         this.addElement(adminView);
-        this.addElement(adminView.getLogoutBtn());
+        this.addElement(adminView.getOpenStaffBtn());
         // Staff tab
         this.addElement(adminView.getStaffClearBtn());
         this.addElement(adminView.getStaffAddBtn());
@@ -548,18 +539,20 @@ public class AdminController extends Controller {
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-    }
+    public void mousePressed(MouseEvent e) {}
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-    }
+    public void mouseEntered(MouseEvent e) {}
 
     @Override
-    public void mouseExited(MouseEvent e) {
-    }
+    public void mouseExited(MouseEvent e) {}
+
+    @Override
+    public void keyPressed(KeyEvent e) {}
+
+    @Override
+    public void keyReleased(KeyEvent e) {}
 }
