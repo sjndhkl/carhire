@@ -424,7 +424,6 @@ public class StaffView extends AbstractView {
             }
         ));
         hireTbl.setAutoStartEditOnKeyStroke(false);
-        hireTbl.setEditable(false);
         hireTbl.setName("hireTbl"); // NOI18N
         jScrollPane8.setViewportView(hireTbl);
 
@@ -454,7 +453,7 @@ public class StaffView extends AbstractView {
                 .addGap(18, 18, 18)
                 .addComponent(hireRefCodeSearchBtn)
                 .addContainerGap())
-            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
             .addGroup(carPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(carPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -519,25 +518,25 @@ public class StaffView extends AbstractView {
             hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hirePanelLayout.createSequentialGroup()
                 .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hirePanelLayout.createSequentialGroup()
+                    .addGroup(hirePanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(personPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(carPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(carPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(hirePanelLayout.createSequentialGroup()
                         .addGap(279, 279, 279)
                         .addComponent(hireClearBtn)
                         .addGap(18, 18, 18)
                         .addComponent(hireBtn)))
-                .addContainerGap())
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         hirePanelLayout.setVerticalGroup(
             hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hirePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(personPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(carPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(carPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(personPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(24, 24, 24)
                 .addGroup(hirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hireBtn)

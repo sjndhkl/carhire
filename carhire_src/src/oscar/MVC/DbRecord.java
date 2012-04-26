@@ -235,11 +235,18 @@ public class DbRecord {
         System.out.println(query);
         return this.query(query);
     }
-
-
-
-
-
+    
+    public String getSingleValue(String colName,String col,String value){
+        ArrayList<HashMap<String,String>> records = this.query("select "+colName+" from " + this.useTable + " "+col+" = '"+value+"' limit 1");
+        System.out.println("select "+colName+" from " + this.useTable + " where "+col+"= '"+value+"' limit 1");
+        if(records !=null){
+        HashMap<String,String> record = records.get(0);
+        return record.get(colName);   
+        }else{
+            return "";
+        }
+        
+    }
 
 
     /**

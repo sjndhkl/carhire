@@ -26,6 +26,94 @@ public class Rental extends DbRecord implements DbRecordable  {
     private float amountPaid;
     private boolean isBooking;
     private float depositAmount;
+    private boolean isChauffeur;
+    private boolean isInsured;
+    private int rentalId;
+
+    public boolean getIsChauffeur() {
+        return isChauffeur;
+    }
+
+    public void setIsChauffeur(boolean isChauffeur) {
+        this.isChauffeur = isChauffeur;
+    }
+
+    public boolean getIsInsured() {
+        return isInsured;
+    }
+
+    public void setIsInsured(boolean isInsured) {
+        this.isInsured = isInsured;
+    }
+    
+
+    public float getAmountPaid() {
+        return amountPaid;
+    }
+
+    public void setAmountPaid(float amountPaid) {
+        this.amountPaid = amountPaid;
+    }
+
+    public String getCarPlateNumber() {
+        return carPlateNumber;
+    }
+
+    public void setCarPlateNumber(String carPlateNumber) {
+        this.carPlateNumber = carPlateNumber;
+    }
+
+    public int getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
+    }
+
+    public float getDepositAmount() {
+        return depositAmount;
+    }
+
+    public void setDepositAmount(float depositAmount) {
+        this.depositAmount = depositAmount;
+    }
+
+    public String getEndDateTime() {
+        return endDateTime;
+    }
+
+    public void setEndDateTime(String endDateTime) {
+        this.endDateTime = endDateTime;
+    }
+
+    public boolean isIsBooking() {
+        return isBooking;
+    }
+
+    public void setIsBooking(boolean isBooking) {
+        this.isBooking = isBooking;
+    }
+
+    public int getRentalId() {
+        return rentalId;
+    }
+
+    public void setRentalId(int rentalId) {
+        this.rentalId = rentalId;
+    }
+
+    public String getStartDatetime() {
+        return startDatetime;
+    }
+
+    public void setStartDatetime(String startDatetime) {
+        this.startDatetime = startDatetime;
+    }
+    
+    
+    
+    
     
     public Rental() {
         super(TABLE);

@@ -5,6 +5,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -128,5 +130,33 @@ public class Utility {
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
         return sb.toString();
+    }
+    
+    public static String generateReferenceKey(){
+        String referenceKey = "";
+        try {
+            String time = encodeSHA256(System.currentTimeMillis()+"");
+            referenceKey = time.substring(0, 10);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Utility.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return referenceKey;
+    }
+    
+    public static int dateDifference(Date d2,Date d1){
+        
+        int days = 0;
+        
+        Calendar cl = Calendar.getInstance();
+        Calendar cl2 = Calendar.getInstance();
+        
+        cl.set(d1.getYear(),d1.getMonth(), d1.getDay());
+        cl2.set(d2.getYear(),d2.getMonth(), d2.getDay());
+        
+        int diff = (int) (cl.getTimeInMillis() - cl2.getTimeInMillis());
+        
+        days = diff / (24 * 60 * 60 * 1000);
+        
+        return days;
     }
 }
