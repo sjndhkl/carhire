@@ -109,7 +109,7 @@ public class Branch extends DbRecord implements DbRecordable {
     }
 
     @Override
-    public TableModel getTableModel() {
+    public TableModel getTableModel(HashMap<String, String> filters) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

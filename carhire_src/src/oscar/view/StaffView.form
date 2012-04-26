@@ -126,6 +126,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" attributes="0">
               <EmptySpace pref="756" max="32767" attributes="0"/>
               <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
@@ -135,30 +136,21 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="tabPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="16" max="32767" attributes="0"/>
+=======
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="tabPanel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> de9423374ccd28b9f367540171a62c461b30784a
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="logoutBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="usernameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="tabPanel" pref="677" max="32767" attributes="0"/>
-          </Group>
+          <Component id="tabPanel" alignment="1" pref="716" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="logoutBtn">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" resourceKey="logoutBtn.icon"/>
-        <Property name="text" type="java.lang.String" resourceKey="logoutBtn.text"/>
-        <Property name="name" type="java.lang.String" value="logoutBtn" noResource="true"/>
-      </Properties>
-    </Component>
     <Container class="javax.swing.JTabbedPane" name="tabPanel">
       <Properties>
         <Property name="name" type="java.lang.String" value="tabPanel" noResource="true"/>
@@ -185,7 +177,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="carSearchPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="jScrollPane9" pref="748" max="32767" attributes="0"/>
+=======
+                      <Component id="jScrollPane9" pref="735" max="32767" attributes="0"/>
+>>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -195,7 +191,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane9" alignment="0" pref="622" max="32767" attributes="0"/>
+                          <Component id="jScrollPane9" alignment="0" pref="666" max="32767" attributes="0"/>
                           <Component id="carSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -367,11 +363,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="personPanel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="carPanel1" min="-2" max="-2" attributes="0"/>
+=======
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="personPanel" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="carPanel1" max="32767" attributes="0"/>
+>>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
@@ -430,7 +434,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                                   <Component id="searchModeCheckBox" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="267" max="32767" attributes="0"/>
+                                  <EmptySpace pref="288" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -443,12 +447,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane7" pref="375" max="32767" attributes="0"/>
-                                      <Component id="hireSurnameTxt" alignment="0" pref="375" max="32767" attributes="0"/>
-                                      <Component id="hireDateOfBirthDP" alignment="0" pref="375" max="32767" attributes="0"/>
-                                      <Component id="hirePhoneTxt" alignment="0" pref="375" max="32767" attributes="0"/>
-                                      <Component id="hireEmailTxt" alignment="0" pref="375" max="32767" attributes="0"/>
-                                      <Component id="hireNameTxt" alignment="1" pref="375" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane7" pref="394" max="32767" attributes="0"/>
+                                      <Component id="hireSurnameTxt" alignment="0" pref="394" max="32767" attributes="0"/>
+                                      <Component id="hireDateOfBirthDP" alignment="0" pref="394" max="32767" attributes="0"/>
+                                      <Component id="hirePhoneTxt" alignment="0" pref="394" max="32767" attributes="0"/>
+                                      <Component id="hireEmailTxt" alignment="0" pref="394" max="32767" attributes="0"/>
+                                      <Component id="hireNameTxt" alignment="1" pref="394" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -459,41 +463,41 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="hirePersonLoadBtn" min="-2" pref="33" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="searchModeCheckBox" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hireNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireSurnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hireSurnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireDateOfBirthLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hireDateOfBirthDP" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hireEmailLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hireEmailTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hirePhoneLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hirePhoneTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="hireAddressLbl" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="227" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" pref="227" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -612,7 +616,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="hireRefCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Component id="hireRefCodeTxt" pref="171" max="32767" attributes="0"/>
+=======
+                          <Component id="hireRefCodeTxt" pref="168" max="32767" attributes="0"/>
+>>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="hireRefCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -623,7 +631,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+<<<<<<< HEAD
                                   <Component id="jScrollPane8" pref="355" max="32767" attributes="0"/>
+=======
+                                  <Component id="jScrollPane8" pref="348" max="32767" attributes="0"/>
+>>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
@@ -680,7 +692,7 @@
                               <Component id="hireInsuranceCB" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane8" pref="359" max="32767" attributes="0"/>
+                          <Component id="jScrollPane8" pref="428" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -802,17 +814,5 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="usernameLbl">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" resourceKey="usernameLbl.icon"/>
-        <Property name="text" type="java.lang.String" resourceKey="usernameLbl.text"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-            <EmptyBorder/>
-          </Border>
-        </Property>
-        <Property name="name" type="java.lang.String" value="usernameLbl" noResource="true"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>

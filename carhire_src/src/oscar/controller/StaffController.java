@@ -41,13 +41,23 @@ public class StaffController extends Controller {
     private boolean lastRequest = false;
     private boolean foundAndFilled = false;
     private int personId;
+    private boolean hasParent = false;
+
+    StaffController() {
+        super();
+    }
+
+    StaffController(boolean hasParent) {
+        this.hasParent = hasParent;
+    }
 
     @Override
     public void run() {
         this.setName("Staff");
         staffView = new StaffView();
         this.addElement(staffView);
-        this.addElement(staffView.getLogoutBtn());
+        if(hasParent)
+            staffView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         // Hire tab
         
         staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName","---- select car class ---"));
@@ -100,10 +110,7 @@ public class StaffController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(staffView.getLogoutBtn())) {
-            actionLogout();
-        } //Hire tab
-        else if (e.getSource().equals(staffView.getHireBtn())) {
+        if (e.getSource().equals(staffView.getHireBtn())) {
             actionHire();
         } else if (e.getSource().equals(staffView.getHireClearBtn())) {
             actionHireClearFields();
@@ -218,7 +225,7 @@ public class StaffController extends Controller {
         if (this.lastRequest == false && !foundAndFilled) {
             //find the record
             this.lastRequest = true;
-            ArrayList<HashMap<String, String>> records = new Person().findAllLike(this.getColumns(), 0);
+            ArrayList<HashMap<String, String>> records = new Person().findAllLike(this.getColumns());
             if (records != null) {
                 if (records.size() == 1) {
                     this.populateFields(records.get(0));
@@ -315,26 +322,17 @@ public class StaffController extends Controller {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-    }
+    public void mouseClicked(MouseEvent e) {}
 
     @Override
-    public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mousePressed(MouseEvent e) {}
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseEntered(MouseEvent e) {}
 
     @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public void mouseExited(MouseEvent e) {}
 }

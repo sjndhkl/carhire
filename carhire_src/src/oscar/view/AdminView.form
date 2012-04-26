@@ -1054,12 +1054,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="tabPanel" alignment="1" pref="722" max="32767" attributes="0"/>
+                      <Component id="tabPanel" pref="722" max="32767" attributes="0"/>
+                      <Component id="openStaffBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -1068,13 +1064,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <Component id="openStaffBtn" min="-2" pref="29" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="logoutBtn" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="usernameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="tabPanel" pref="566" max="32767" attributes="0"/>
+                  <Component id="tabPanel" pref="589" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1117,7 +1109,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane5" alignment="0" pref="516" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" alignment="0" pref="539" max="32767" attributes="0"/>
                               <Component id="carClassSearchPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1278,7 +1270,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="carClassSearchPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" alignment="0" pref="516" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="539" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1457,7 +1449,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane3" alignment="0" pref="516" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" alignment="0" pref="539" max="32767" attributes="0"/>
                               <Component id="carSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1589,6 +1581,7 @@
                     <Component class="javax.swing.JLabel" name="statusLbl">
                       <Properties>
                         <Property name="text" type="java.lang.String" resourceKey="statusLbl.text"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                         <Property name="name" type="java.lang.String" value="statusLbl" noResource="true"/>
                       </Properties>
                     </Component>
@@ -1640,6 +1633,7 @@
                             <StringItem index="3" value="Item 4"/>
                           </StringArray>
                         </Property>
+                        <Property name="enabled" type="boolean" value="false"/>
                         <Property name="name" type="java.lang.String" value="carStatusCB" noResource="true"/>
                       </Properties>
                     </Component>
@@ -1723,7 +1717,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane4" alignment="0" pref="516" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" alignment="0" pref="539" max="32767" attributes="0"/>
                               <Component id="carClassSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1856,22 +1850,11 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="logoutBtn">
+        <Component class="javax.swing.JButton" name="openStaffBtn">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/oscar/view/resources/logout.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" resourceKey="logoutBtn.text"/>
-            <Property name="name" type="java.lang.String" value="logoutBtn" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="usernameLbl">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/oscar/view/resources/user.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" resourceKey="usernameLbl.text"/>
-            <Property name="name" type="java.lang.String" value="usernameLbl" noResource="true"/>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="openStaffBtn.icon"/>
+            <Property name="text" type="java.lang.String" resourceKey="openStaffBtn.text"/>
+            <Property name="name" type="java.lang.String" value="openStaffBtn" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>

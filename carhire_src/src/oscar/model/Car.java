@@ -129,6 +129,29 @@ public class Car extends DbRecord {
         return model;
     }
 
+    @Override
+    public TableModel getTableModel(HashMap<String, String> filters) {
+        ArrayList<HashMap<String, String>> map = this.findAllLike(filters);
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Plate", "Brand", "Model", "Year", "Miles",
+                    "Last service miles", "Last service date", "Class", "Color", "Branch"}, 0);
+        for (HashMap<String, String> row : map) {
+            model.addRow(new Object[]{
+                        row.get("plate"),
+                        row.get("brand"),
+                        row.get("model"),
+                        row.get("year"),
+                        row.get("mileage"),
+                        row.get("lastServiceMiles"),
+                        row.get("lastServiceDate"),
+                        row.get("className"),
+                        row.get("color"),
+                        row.get("branch"),
+                    });
+        }
+        return model;
+    }
+
     /**
      * @return the plateNumber
      */
