@@ -127,54 +127,37 @@ public class StaffController extends Controller {
     }
 
     private void actionHire() {
-        //throw new UnsupportedOperationException("Not yet implemented");
-        
-        //System.out.println(this.personId);
         
         OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();   
-        
-        
         //System.out.println(item.Id);
         int row  = staffView.getHireTbl().getSelectedRow();
         String plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
-        
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date startDate = staffView.getHireFromDP().getDate();
         Date endDate = staffView.getHireToDP().getDate();
-        
-        System.out.append(item.Id+"");
-        String priceForClass = new CarClass().getSingleValue("price","classId",item.Id+"");
-        double priceOfClass = Double.parseDouble(priceForClass);
-        
-        //System.out.println("Price for Class : "+priceForClass);
-        // String startDate = df.format();
-        // String endDate = df.format(staffView.getHireToDP().getDate());
-        
+        String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
+        double priceOfClass = Double.parseDouble(_priceFromDb_str);
         int days = Utility.dateDifference(startDate, endDate);
-        double amountPaid = 0;
-        if(days>=1){
-            amountPaid = priceOfClass * days;
-        }
-        //System.out.println("Days :"+days+" - Price: "+amountPaid);
-        
-        double deposit = 10 * amountPaid;
+        double amountPaid = priceOfClass * days;       
+        double deposit = 10 * priceOfClass;
         
         
         Rental rental = new Rental();
+        
         rental.setCustomerid(this.personId);
         rental.setDepositAmount((float)deposit);
         rental.setStartDatetime(df.format(startDate));
         rental.setEndDateTime(df.format(endDate));
-        rental.setCarPlateNumber(plateNumber);
+        rental.setCarPlate(plateNumber);
         rental.setAmountPaid((float)amountPaid);
-        //rental.setIsBooking(lastRequest);
-        
         rental.setIsBooking(false);
         rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
         rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
+        rental.setReferenceCode(Utility.generateReferenceKey());
         
-        
-        System.out.println(Utility.generateReferenceKey());
+        if(rental.add()){
+            System.out.println("ok added the rental data");
+        }
         
     }
 

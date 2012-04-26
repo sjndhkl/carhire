@@ -6,6 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import oscar.MVC.DbRecord;
 import oscar.persistance.DbRecordable;
+import oscar.util.Utility;
 
 /**
  * @author Stefano
@@ -21,14 +22,23 @@ public class Rental extends DbRecord implements DbRecordable  {
     private String referenceCode;
     private String startDatetime;
     private String endDateTime;
-    private String carPlateNumber;
+    private String carPlate;
     private int customerid;
     private float amountPaid;
     private boolean isBooking;
     private float depositAmount;
     private boolean isChauffeur;
     private boolean isInsured;
+
+    public String getReferenceCode() {
+        return referenceCode;
+    }
+
+    public void setReferenceCode(String referenceCode) {
+        this.referenceCode = referenceCode;
+    }
     private int rentalId;
+    
 
     public boolean getIsChauffeur() {
         return isChauffeur;
@@ -55,12 +65,12 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.amountPaid = amountPaid;
     }
 
-    public String getCarPlateNumber() {
-        return carPlateNumber;
+    public String getCarPlate() {
+        return carPlate;
     }
 
-    public void setCarPlateNumber(String carPlateNumber) {
-        this.carPlateNumber = carPlateNumber;
+    public void setCarPlate(String carPlateNumber) {
+        this.carPlate = carPlateNumber;
     }
 
     public int getCustomerid() {
@@ -87,7 +97,7 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.endDateTime = endDateTime;
     }
 
-    public boolean isIsBooking() {
+    public boolean getIsBooking() {
         return isBooking;
     }
 
@@ -136,7 +146,7 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.referenceCode = referenceCode;
         this.startDatetime = startDatetime;
         this.endDateTime = endDateTime;
-        this.carPlateNumber = carPlateNumber;
+        this.carPlate = carPlateNumber;
         this.customerid = customerid;
         this.amountPaid = amountPaid;
         this.isBooking = isBooking;
@@ -145,7 +155,8 @@ public class Rental extends DbRecord implements DbRecordable  {
 
     @Override
     public boolean add() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        HashMap<String,String> record = Utility.convertToHashMap(this);
+        return super.add(record);
     }
 
     @Override

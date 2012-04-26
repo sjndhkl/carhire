@@ -28,6 +28,8 @@ public class DependentDbRecordTest extends BaseTestCase {
         person.setPhone("2312312");
         person.setAddress("This is address");
         person.setEmail("sujan@dhakal.com");
+        
+        assertEquals(true, person.add());
 
         /*Staff staff = new Staff();
         staff.setAddress("test@test.com");
@@ -41,7 +43,7 @@ public class DependentDbRecordTest extends BaseTestCase {
         // HashMap<String,String> record = new HashMap<String, String>();
         //record.put("email", "test@test.com");
         //Utility.fill(record, person);
-        System.out.println(person.addPk());
+       // System.out.println(person.addPk());
         //assertEquals(true, person.add() );
     }
 
@@ -62,7 +64,7 @@ public class DependentDbRecordTest extends BaseTestCase {
 
         //HashMap<String, HashMap<String, String>> data = ;
         try {
-            person.addDependent();
+           assertEquals(true, person.addDependent());
         } catch (Exception e) {
             e.printStackTrace();
         }
