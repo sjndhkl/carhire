@@ -3,6 +3,7 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,8 +19,10 @@ import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
+import oscar.model.Rental;
 import oscar.task.HirePersonUpdateTask;
 import oscar.util.TableModelHelper;
+import oscar.util.Utility;
 import oscar.view.StaffView;
 
 /**
@@ -46,6 +49,7 @@ public class StaffController extends Controller {
         this.addElement(staffView);
         this.addElement(staffView.getLogoutBtn());
         // Hire tab
+        
         staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName","---- select car class ---"));
         staffView.getHireClassCB().setSelectedIndex(0);
         
@@ -85,6 +89,9 @@ public class StaffController extends Controller {
                 
             }
         });
+        
+       // staffView.getHireTbl().addMouseListener(this);
+        
 
 
         timer = new Timer();
@@ -114,10 +121,54 @@ public class StaffController extends Controller {
 
     private void actionHire() {
         //throw new UnsupportedOperationException("Not yet implemented");
-        System.out.println(this.personId);
-        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();
         
-        System.out.println(item.Id);
+        //System.out.println(this.personId);
+        
+        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();   
+        
+        
+        //System.out.println(item.Id);
+        int row  = staffView.getHireTbl().getSelectedRow();
+        String plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
+        
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date startDate = staffView.getHireFromDP().getDate();
+        Date endDate = staffView.getHireToDP().getDate();
+        
+        System.out.append(item.Id+"");
+        String priceForClass = new CarClass().getSingleValue("price","classId",item.Id+"");
+        double priceOfClass = Double.parseDouble(priceForClass);
+        
+        //System.out.println("Price for Class : "+priceForClass);
+        // String startDate = df.format();
+        // String endDate = df.format(staffView.getHireToDP().getDate());
+        
+        int days = Utility.dateDifference(startDate, endDate);
+        double amountPaid = 0;
+        if(days>=1){
+            amountPaid = priceOfClass * days;
+        }
+        //System.out.println("Days :"+days+" - Price: "+amountPaid);
+        
+        double deposit = 10 * amountPaid;
+        
+        
+        Rental rental = new Rental();
+        rental.setCustomerid(this.personId);
+        rental.setDepositAmount((float)deposit);
+        rental.setStartDatetime(df.format(startDate));
+        rental.setEndDateTime(df.format(endDate));
+        rental.setCarPlateNumber(plateNumber);
+        rental.setAmountPaid((float)amountPaid);
+        //rental.setIsBooking(lastRequest);
+        
+        rental.setIsBooking(false);
+        rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
+        rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
+        
+        
+        System.out.println(Utility.generateReferenceKey());
+        
     }
 
     private void actionHireSearchRefCode() {
@@ -265,7 +316,6 @@ public class StaffController extends Controller {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
