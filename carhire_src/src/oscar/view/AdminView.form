@@ -1097,7 +1097,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="carClassSearchPanel1" min="-2" pref="138" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" pref="549" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1128,21 +1128,22 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="staffClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffAddBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="staffSurnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="staffNameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="staffNameTxt" alignment="0" pref="68" max="32767" attributes="1"/>
-                                          <Component id="staffSurnameTxt" alignment="0" pref="68" max="32767" attributes="1"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="staffSurnameTxt" max="32767" attributes="1"/>
+                                          <Component id="staffNameTxt" alignment="0" pref="70" max="32767" attributes="3"/>
                                       </Group>
+                                      <EmptySpace min="42" pref="42" max="42" attributes="0"/>
                                   </Group>
-                                  <Component id="staffClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="staffAddBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1151,12 +1152,12 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="staffNameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="staffSurnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="staffSurnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="staffNameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="staffSurnameLbl" min="-2" max="-2" attributes="0"/>
+                                  <Component id="staffSurnameTxt" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="staffClearBtn" min="-2" max="-2" attributes="0"/>
@@ -1240,14 +1241,14 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="bookingPanel">
+            <Container class="javax.swing.JPanel" name="rentalPanel">
               <Properties>
-                <Property name="name" type="java.lang.String" value="bookingPanel" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="rentalPanel" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Bookings">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="bookingPanel.TabConstraints.tabTitle"/>
+                  <JTabbedPaneConstraints tabName="Rental">
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="rentalPanel.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -1257,9 +1258,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="carClassSearchPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" pref="505" max="32767" attributes="0"/>
+                          <Component id="rentalSearchPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" pref="509" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1269,7 +1270,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="carClassSearchPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rentalSearchPanel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" alignment="0" pref="539" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1278,9 +1279,9 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="carClassSearchPanel2">
+                <Container class="javax.swing.JPanel" name="rentalSearchPanel">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="carClassSearchPanel2" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="rentalSearchPanel" noResource="true"/>
                   </Properties>
 
                   <Layout>
@@ -1289,20 +1290,19 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="refCodeLbl" min="-2" max="-2" attributes="0"/>
                                           <Component id="surnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="refCodeLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="bookingRefCodeTxt" pref="107" max="32767" attributes="2"/>
-                                          <Component id="bookingSurnameTxt" alignment="0" pref="107" max="32767" attributes="2"/>
+                                          <Component id="rentalRefCodeTxt" pref="105" max="32767" attributes="2"/>
+                                          <Component id="rentalSurnameTxt" alignment="0" pref="105" max="32767" attributes="2"/>
                                       </Group>
                                   </Group>
-                                  <Component id="rentalDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="returnDateLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="bookingClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="bookingDeleteBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rentalClearBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rentalDeleteBtn" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1311,26 +1311,19 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="refCodeLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="surnameLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rentalDateLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="returnDateLbl" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="bookingRefCodeTxt" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="bookingSurnameTxt" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rentalRefCodeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="refCodeLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rentalSurnameTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="surnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="bookingClearBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="rentalClearBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="bookingDeleteBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="rentalDeleteBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1342,9 +1335,9 @@
                         <Property name="name" type="java.lang.String" value="refCodeLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="bookingRefCodeTxt">
+                    <Component class="javax.swing.JTextField" name="rentalRefCodeTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="bookingRefCodeTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="rentalRefCodeTxt" noResource="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="surnameLbl">
@@ -1353,39 +1346,27 @@
                         <Property name="name" type="java.lang.String" value="surnameLbl" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="bookingSurnameTxt">
+                    <Component class="javax.swing.JTextField" name="rentalSurnameTxt">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="bookingSurnameTxt" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="rentalSurnameTxt" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="rentalDateLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="rentalDateLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="rentalDateLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="returnDateLbl">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" resourceKey="returnDateLbl.text"/>
-                        <Property name="name" type="java.lang.String" value="returnDateLbl" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="bookingClearBtn">
+                    <Component class="javax.swing.JButton" name="rentalClearBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/clean.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="bookingClearBtn.text"/>
-                        <Property name="name" type="java.lang.String" value="bookingClearBtn" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="rentalClearBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="rentalClearBtn" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="bookingDeleteBtn">
+                    <Component class="javax.swing.JButton" name="rentalDeleteBtn">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/oscar/view/resources/delete.png"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" resourceKey="bookingDeleteBtn.text"/>
-                        <Property name="name" type="java.lang.String" value="bookingDeleteBtn" noResource="true"/>
+                        <Property name="text" type="java.lang.String" resourceKey="rentalDeleteBtn.text"/>
+                        <Property name="name" type="java.lang.String" value="rentalDeleteBtn" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -1400,7 +1381,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="org.jdesktop.swingx.JXTable" name="bookingTbl">
+                    <Component class="org.jdesktop.swingx.JXTable" name="rentalTbl">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="0" rowCount="0"/>
@@ -1410,7 +1391,7 @@
                           <TableColumnModel selectionModel="1"/>
                         </Property>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="name" type="java.lang.String" value="bookingTbl" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="rentalTbl" noResource="true"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                         </Property>

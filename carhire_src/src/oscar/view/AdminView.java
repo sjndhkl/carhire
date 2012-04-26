@@ -17,7 +17,7 @@ public class AdminView extends AbstractView {
         
         staffTbl.setSelectionMode(
                 ListSelectionModel.SINGLE_SELECTION);
-        bookingTbl.setSelectionMode(
+        rentalTbl.setSelectionMode(
                 ListSelectionModel.SINGLE_SELECTION);
         carTbl.setSelectionMode(
                 ListSelectionModel.SINGLE_SELECTION);
@@ -119,18 +119,16 @@ public class AdminView extends AbstractView {
         staffClearBtn = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         staffTbl = new org.jdesktop.swingx.JXTable();
-        bookingPanel = new javax.swing.JPanel();
-        carClassSearchPanel2 = new javax.swing.JPanel();
+        rentalPanel = new javax.swing.JPanel();
+        rentalSearchPanel = new javax.swing.JPanel();
         refCodeLbl = new javax.swing.JLabel();
-        bookingRefCodeTxt = new javax.swing.JTextField();
+        rentalRefCodeTxt = new javax.swing.JTextField();
         surnameLbl = new javax.swing.JLabel();
-        bookingSurnameTxt = new javax.swing.JTextField();
-        rentalDateLbl = new javax.swing.JLabel();
-        returnDateLbl = new javax.swing.JLabel();
-        bookingClearBtn = new javax.swing.JButton();
-        bookingDeleteBtn = new javax.swing.JButton();
+        rentalSurnameTxt = new javax.swing.JTextField();
+        rentalClearBtn = new javax.swing.JButton();
+        rentalDeleteBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        bookingTbl = new org.jdesktop.swingx.JXTable();
+        rentalTbl = new org.jdesktop.swingx.JXTable();
         carPanel = new javax.swing.JPanel();
         carSearchPanel = new javax.swing.JPanel();
         plateLbl = new javax.swing.JLabel();
@@ -802,16 +800,17 @@ public class AdminView extends AbstractView {
             carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
                 .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(staffClearBtn)
+                    .addComponent(staffAddBtn)
                     .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
                         .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(staffSurnameLbl)
                             .addComponent(staffNameLbl))
                         .addGap(18, 18, 18)
-                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(staffNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                            .addComponent(staffSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
-                    .addComponent(staffClearBtn)
-                    .addComponent(staffAddBtn))
+                        .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(staffSurnameTxt)
+                            .addComponent(staffNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)))
                 .addContainerGap())
         );
         carClassSearchPanel1Layout.setVerticalGroup(
@@ -819,11 +818,11 @@ public class AdminView extends AbstractView {
             .addGroup(carClassSearchPanel1Layout.createSequentialGroup()
                 .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(staffNameLbl)
-                    .addComponent(staffSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(staffSurnameLbl)
                     .addComponent(staffNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(carClassSearchPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(staffSurnameLbl)
+                    .addComponent(staffSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(staffClearBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -856,7 +855,7 @@ public class AdminView extends AbstractView {
             staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(staffPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(carClassSearchPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
                 .addContainerGap())
@@ -873,79 +872,66 @@ public class AdminView extends AbstractView {
 
         tabPanel.addTab(resourceMap.getString("staffPanel.TabConstraints.tabTitle"), staffPanel); // NOI18N
 
-        bookingPanel.setName("bookingPanel"); // NOI18N
+        rentalPanel.setName("rentalPanel"); // NOI18N
 
-        carClassSearchPanel2.setName("carClassSearchPanel2"); // NOI18N
+        rentalSearchPanel.setName("rentalSearchPanel"); // NOI18N
 
         refCodeLbl.setText(resourceMap.getString("refCodeLbl.text")); // NOI18N
         refCodeLbl.setName("refCodeLbl"); // NOI18N
 
-        bookingRefCodeTxt.setName("bookingRefCodeTxt"); // NOI18N
+        rentalRefCodeTxt.setName("rentalRefCodeTxt"); // NOI18N
 
         surnameLbl.setText(resourceMap.getString("surnameLbl.text")); // NOI18N
         surnameLbl.setName("surnameLbl"); // NOI18N
 
-        bookingSurnameTxt.setName("bookingSurnameTxt"); // NOI18N
+        rentalSurnameTxt.setName("rentalSurnameTxt"); // NOI18N
 
-        rentalDateLbl.setText(resourceMap.getString("rentalDateLbl.text")); // NOI18N
-        rentalDateLbl.setName("rentalDateLbl"); // NOI18N
+        rentalClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
+        rentalClearBtn.setText(resourceMap.getString("rentalClearBtn.text")); // NOI18N
+        rentalClearBtn.setName("rentalClearBtn"); // NOI18N
 
-        returnDateLbl.setText(resourceMap.getString("returnDateLbl.text")); // NOI18N
-        returnDateLbl.setName("returnDateLbl"); // NOI18N
+        rentalDeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
+        rentalDeleteBtn.setText(resourceMap.getString("rentalDeleteBtn.text")); // NOI18N
+        rentalDeleteBtn.setName("rentalDeleteBtn"); // NOI18N
 
-        bookingClearBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/clean.png"))); // NOI18N
-        bookingClearBtn.setText(resourceMap.getString("bookingClearBtn.text")); // NOI18N
-        bookingClearBtn.setName("bookingClearBtn"); // NOI18N
-
-        bookingDeleteBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oscar/view/resources/delete.png"))); // NOI18N
-        bookingDeleteBtn.setText(resourceMap.getString("bookingDeleteBtn.text")); // NOI18N
-        bookingDeleteBtn.setName("bookingDeleteBtn"); // NOI18N
-
-        javax.swing.GroupLayout carClassSearchPanel2Layout = new javax.swing.GroupLayout(carClassSearchPanel2);
-        carClassSearchPanel2.setLayout(carClassSearchPanel2Layout);
-        carClassSearchPanel2Layout.setHorizontalGroup(
-            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(surnameLbl)
-                            .addComponent(refCodeLbl))
-                        .addGap(18, 18, 18)
-                        .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bookingRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                            .addComponent(bookingSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))
-                    .addComponent(rentalDateLbl)
-                    .addComponent(returnDateLbl)
-                    .addComponent(bookingClearBtn)
-                    .addComponent(bookingDeleteBtn))
+        javax.swing.GroupLayout rentalSearchPanelLayout = new javax.swing.GroupLayout(rentalSearchPanel);
+        rentalSearchPanel.setLayout(rentalSearchPanelLayout);
+        rentalSearchPanelLayout.setHorizontalGroup(
+            rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rentalSearchPanelLayout.createSequentialGroup()
+                .addGroup(rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rentalSearchPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(refCodeLbl)
+                            .addComponent(surnameLbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rentalRefCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(rentalSurnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)))
+                    .addComponent(rentalClearBtn)
+                    .addComponent(rentalDeleteBtn))
                 .addContainerGap())
         );
-        carClassSearchPanel2Layout.setVerticalGroup(
-            carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                .addGroup(carClassSearchPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addComponent(refCodeLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(surnameLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rentalDateLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(returnDateLbl))
-                    .addGroup(carClassSearchPanel2Layout.createSequentialGroup()
-                        .addComponent(bookingRefCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bookingSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(bookingClearBtn)
+        rentalSearchPanelLayout.setVerticalGroup(
+            rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rentalSearchPanelLayout.createSequentialGroup()
+                .addGroup(rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rentalRefCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refCodeLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookingDeleteBtn))
+                .addGroup(rentalSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rentalSurnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(surnameLbl))
+                .addGap(18, 18, 18)
+                .addComponent(rentalClearBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rentalDeleteBtn))
         );
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
-        bookingTbl.setModel(new javax.swing.table.DefaultTableModel(
+        rentalTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -953,35 +939,35 @@ public class AdminView extends AbstractView {
 
             }
         ));
-        bookingTbl.setAutoStartEditOnKeyStroke(false);
-        bookingTbl.setEditable(false);
-        bookingTbl.setName("bookingTbl"); // NOI18N
-        bookingTbl.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(bookingTbl);
-        bookingTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        rentalTbl.setAutoStartEditOnKeyStroke(false);
+        rentalTbl.setEditable(false);
+        rentalTbl.setName("rentalTbl"); // NOI18N
+        rentalTbl.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(rentalTbl);
+        rentalTbl.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        javax.swing.GroupLayout bookingPanelLayout = new javax.swing.GroupLayout(bookingPanel);
-        bookingPanel.setLayout(bookingPanelLayout);
-        bookingPanelLayout.setHorizontalGroup(
-            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookingPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout rentalPanelLayout = new javax.swing.GroupLayout(rentalPanel);
+        rentalPanel.setLayout(rentalPanelLayout);
+        rentalPanelLayout.setHorizontalGroup(
+            rentalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rentalPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                .addComponent(rentalSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        bookingPanelLayout.setVerticalGroup(
-            bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookingPanelLayout.createSequentialGroup()
+        rentalPanelLayout.setVerticalGroup(
+            rentalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rentalPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bookingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(carClassSearchPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(rentalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rentalSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        tabPanel.addTab(resourceMap.getString("bookingPanel.TabConstraints.tabTitle"), bookingPanel); // NOI18N
+        tabPanel.addTab(resourceMap.getString("rentalPanel.TabConstraints.tabTitle"), rentalPanel); // NOI18N
 
         carPanel.setName("carPanel"); // NOI18N
 
@@ -1334,12 +1320,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel PhoneDlgLbl;
     private javax.swing.JLabel addressDlgLbl;
     private javax.swing.JTextArea addressDlgTA;
-    private javax.swing.JButton bookingClearBtn;
-    private javax.swing.JButton bookingDeleteBtn;
-    private javax.swing.JPanel bookingPanel;
-    private javax.swing.JTextField bookingRefCodeTxt;
-    private javax.swing.JTextField bookingSurnameTxt;
-    private org.jdesktop.swingx.JXTable bookingTbl;
     private javax.swing.JComboBox branchCB;
     private javax.swing.JLabel branchDlgLbl;
     private javax.swing.JLabel brandDlgLbl;
@@ -1361,7 +1341,6 @@ public class AdminView extends AbstractView {
     private javax.swing.JPanel carClassPanel;
     private javax.swing.JPanel carClassSearchPanel;
     private javax.swing.JPanel carClassSearchPanel1;
-    private javax.swing.JPanel carClassSearchPanel2;
     private org.jdesktop.swingx.JXTable carClassTbl;
     private javax.swing.JButton carClearBtn;
     private javax.swing.JTextField carColorTxt;
@@ -1426,8 +1405,13 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel priceDlgLbl;
     private javax.swing.JTextField priceDlgTxt;
     private javax.swing.JLabel refCodeLbl;
-    private javax.swing.JLabel rentalDateLbl;
-    private javax.swing.JLabel returnDateLbl;
+    private javax.swing.JButton rentalClearBtn;
+    private javax.swing.JButton rentalDeleteBtn;
+    private javax.swing.JPanel rentalPanel;
+    private javax.swing.JTextField rentalRefCodeTxt;
+    private javax.swing.JPanel rentalSearchPanel;
+    private javax.swing.JTextField rentalSurnameTxt;
+    private org.jdesktop.swingx.JXTable rentalTbl;
     private javax.swing.JButton saveDlgBtn;
     private javax.swing.JButton saveDlgBtn1;
     private javax.swing.JButton saveDlgBtn2;
@@ -1500,17 +1484,17 @@ public class AdminView extends AbstractView {
     }
 
     /**
-     * @return the bookingsTbl
+     * @return the rentalsTbl
      */
-    public org.jdesktop.swingx.JXTable getBookingTbl() {
-        return bookingTbl;
+    public org.jdesktop.swingx.JXTable getRentalTbl() {
+        return rentalTbl;
     }
 
     /**
-     * @param bookingsTbl the bookingsTbl to set
+     * @param rentalsTbl the rentalsTbl to set
      */
-    public void setBookingsTbl(org.jdesktop.swingx.JXTable bookingsTbl) {
-        this.bookingTbl = bookingsTbl;
+    public void setRentalsTbl(org.jdesktop.swingx.JXTable rentalsTbl) {
+        this.rentalTbl = rentalsTbl;
     }
 
     /**
@@ -1528,31 +1512,31 @@ public class AdminView extends AbstractView {
     }
 
     /**
-     * @return the bookingRefCodeTxt
+     * @return the rentalRefCodeTxt
      */
-    public javax.swing.JTextField getBookingRefCodeTxt() {
-        return bookingRefCodeTxt;
+    public javax.swing.JTextField getRentalRefCodeTxt() {
+        return rentalRefCodeTxt;
     }
 
     /**
-     * @return the bookingSurnameTxt
+     * @return the rentalSurnameTxt
      */
-    public javax.swing.JTextField getBookingSurnameTxt() {
-        return bookingSurnameTxt;
+    public javax.swing.JTextField getRentalSurnameTxt() {
+        return rentalSurnameTxt;
     }
 
     /**
-     * @return the bookingClearBtn
+     * @return the rentalClearBtn
      */
-    public javax.swing.JButton getBookingClearBtn() {
-        return bookingClearBtn;
+    public javax.swing.JButton getRentalClearBtn() {
+        return rentalClearBtn;
     }
 
     /**
-     * @return the bookingDeleteBtn
+     * @return the rentalDeleteBtn
      */
-    public javax.swing.JButton getBookingDeleteBtn() {
-        return bookingDeleteBtn;
+    public javax.swing.JButton getRentalDeleteBtn() {
+        return rentalDeleteBtn;
     }
 
     /**
@@ -1645,4 +1629,9 @@ public class AdminView extends AbstractView {
     public javax.swing.JTextField getCarClassNameTxt() {
         return carClassNameTxt;
     }
+    
+    public void setLoadingVisible(boolean visible){
+    
+    }
+            
 }
