@@ -35,10 +35,7 @@ public class AdminController extends Controller {
     private CarDialog carDialog;
     private ClassDialog classDialog;
     private Timer timer;
-    /*private StaffUpdateTask staffUpdateTask;
-    private BookingUpdateTask bookingUpdateTask;
-    private CarUpdateTask carUpdateTask;
-    private ClassUpdateTask classUpdateTask;*/
+    private HashMap<String, String> filters;
     private TableUpdateTask tableUpdateTask;
     // dialog editing variables
     private boolean editingStaff = false;
@@ -64,7 +61,7 @@ public class AdminController extends Controller {
 
         // Set up the tables
         updateStaffTbl();
-        updateBookingTbl();
+        updateRentalTbl();
         updateCarTbl();
         updateClassTbl();
     }
@@ -85,11 +82,11 @@ public class AdminController extends Controller {
             actionStaffDlgDelete();
         else if (e.getSource().equals(staffDialog.getCancelBtn()))
             actionStaffDlgCancel();
-        // Booking Tab
-        else if (e.getSource().equals(adminView.getBookingClearBtn()))
-            actionBookingClearFields();
-        else if (e.getSource().equals(adminView.getBookingDeleteBtn()))
-            actionBookingDelete();
+        // Rental Tab
+        else if (e.getSource().equals(adminView.getRentalClearBtn()))
+            actionRentalClearFields();
+        else if (e.getSource().equals(adminView.getRentalDeleteBtn()))
+            actionRentalDelete();
         // Car Tab
         else if (e.getSource().equals(adminView.getCarClearBtn()))
             actionCarClearFields();
@@ -198,17 +195,17 @@ public class AdminController extends Controller {
     /*******************************************************************************
      *                          BOOKING TAB
      *******************************************************************************/
-    private void actionBookingDelete() {
-        int selectedRow = adminView.getBookingTbl().getSelectedRow();
-        String bookingId = (String) adminView.getBookingTbl().getValueAt(selectedRow, 0);
-        new Rental().deleteBy("rentalId", bookingId);
-        updateBookingTbl();
+    private void actionRentalDelete() {
+        int selectedRow = adminView.getRentalTbl().getSelectedRow();
+        String rentalId = (String) adminView.getRentalTbl().getValueAt(selectedRow, 0);
+        new Rental().deleteBy("rentalId", rentalId);
+        updateRentalTbl();
     }
 
-    private void actionBookingClearFields() {
-        adminView.getBookingRefCodeTxt().setText("");
-        adminView.getBookingSurnameTxt().setText("");
-        actionBookingUpdateTable();
+    private void actionRentalClearFields() {
+        adminView.getRentalRefCodeTxt().setText("");
+        adminView.getRentalSurnameTxt().setText("");
+        actionRentalUpdateTable();
     }
 
     /*******************************************************************************
@@ -222,7 +219,7 @@ public class AdminController extends Controller {
         adminView.getCarPlateTxt().setText("");
         adminView.getCarStatusCB().setSelectedIndex(0);
         adminView.getCarYearTxt().setText("");
-        actionBookingUpdateTable();
+        actionRentalUpdateTable();
     }
 
     private void actionCarAdd() {
@@ -339,16 +336,16 @@ public class AdminController extends Controller {
      */
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
         // Staff
         if (e.getSource().equals(adminView.getStaffNameTxt())
                 || e.getSource().equals(adminView.getStaffSurnameTxt()))
             actionStaffUpdateTable();
-        // Booking
-        else if (e.getSource().equals(adminView.getBookingRefCodeTxt())
-                || e.getSource().equals(adminView.getBookingSurnameTxt()))
-            actionBookingUpdateTable();
-        // Booking
+        // Rental
+        else if (e.getSource().equals(adminView.getRentalRefCodeTxt())
+                || e.getSource().equals(adminView.getRentalSurnameTxt()))
+            actionRentalUpdateTable();
+        // Rental
         else if (e.getSource().equals(adminView.getCarBrandTxt())
                 || e.getSource().equals(adminView.getCarClassCb())
                 || e.getSource().equals(adminView.getCarColorTxt())
@@ -363,28 +360,54 @@ public class AdminController extends Controller {
     }
 
     private void actionStaffUpdateTable() {
-        /*staffUpdateTask.cancel();
-        staffUpdateTask = new StaffUpdateTask();
-        timer.schedule(staffUpdateTask, this.TABLE_FILTERING_DELAY);*/
+        tableUpdateTask.cancel();
+        filters = new HashMap<String, String>();
+
+        if (!adminView.getStaffNameTxt().getText().isEmpty())
+            filters.put("name", adminView.getStaffNameTxt().getText());
+        if (!adminView.getStaffSurnameTxt().getText().isEmpty())
+            filters.put("surname", adminView.getStaffSurnameTxt().getText());
+        if (!filters.isEmpty()) {
+            tableUpdateTask = new TableUpdateTask(adminView.getStaffTbl(), filters, new Staff());
+            timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
+        } else
+            updateStaffTbl();
     }
 
-    private void actionBookingUpdateTable() {
-        /*bookingUpdateTask.cancel();
-        bookingUpdateTask = new BookingUpdateTask();
-        timer.schedule(bookingUpdateTask, this.TABLE_FILTERING_DELAY);*/
+    private void actionRentalUpdateTable() {
+        tableUpdateTask.cancel();
+        filters = new HashMap<String, String>();
+
+        if (!adminView.getRentalRefCodeTxt().getText().isEmpty())
+            filters.put("referenceCode", adminView.getRentalRefCodeTxt().getText());
+        if (!adminView.getRentalSurnameTxt().getText().isEmpty())
+            filters.put("surname", adminView.getRentalSurnameTxt().getText());
+        if (!filters.isEmpty()) {
+            tableUpdateTask = new TableUpdateTask(adminView.getRentalTbl(), filters, new Rental());
+            timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
+        } else
+            updateRentalTbl();
     }
 
     private void actionClassUpdateTable() {
-        /*classUpdateTask.cancel();
-        classUpdateTask = new ClassUpdateTask();
-        timer.schedule(classUpdateTask, this.TABLE_FILTERING_DELAY);*/
+        tableUpdateTask.cancel();
+        filters = new HashMap<String, String>();
+
+        if (!adminView.getCarClassDisplayTxt().getText().isEmpty())
+            filters.put("displayName", adminView.getCarClassDisplayTxt().getText());
+        if (!adminView.getCarClassNameTxt().getText().isEmpty())
+            filters.put("name", adminView.getCarClassNameTxt().getText());
+        if (!filters.isEmpty()) {
+            tableUpdateTask = new TableUpdateTask(adminView.getClassTbl(), filters, new CarClass());
+            timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
+        } else
+            updateClassTbl();
     }
 
     private void actionCarUpdateTable() {
         tableUpdateTask.cancel();
-        HashMap<String, String> filters = new HashMap<String, String>();
-        String text = adminView.getCarPlateTxt().getText();
-        boolean empty = text.isEmpty();
+        filters = new HashMap<String, String>();
+
         if (!adminView.getCarPlateTxt().getText().isEmpty())
             filters.put("plate", adminView.getCarPlateTxt().getText());
         if (!adminView.getCarBrandTxt().getText().isEmpty())
@@ -400,8 +423,7 @@ public class AdminController extends Controller {
         if (!filters.isEmpty()) {
             tableUpdateTask = new TableUpdateTask(adminView.getCarTbl(), filters, new Car());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
-        }
-        else
+        } else
             updateCarTbl();
     }
 
@@ -448,7 +470,7 @@ public class AdminController extends Controller {
     private void actionCarSelectRow(int selectedRow) {
         editingCarId = (String) adminView.getCarTbl().getValueAt(selectedRow, 0);
         DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-        // Set staff editing mode true
+        // Set car editing mode true
         editingCar = true;
         HashMap<String, String> carRecord = new Car().findByPK(editingCarId);
 
@@ -475,8 +497,7 @@ public class AdminController extends Controller {
 
     private void actionClassSelectRow(int selectedRow) {
         editingClassId = (String) adminView.getClassTbl().getValueAt(selectedRow, 0);
-        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-        // Set staff editing mode true
+        // Set class editing mode true
         editingClass = true;
         HashMap<String, String> classRecord = new CarClass().findByPK(editingClassId);
 
@@ -493,8 +514,8 @@ public class AdminController extends Controller {
         adminView.getStaffTbl().setModel(new Staff().getTableModel());
     }
 
-    private void updateBookingTbl() {
-        adminView.getBookingTbl().setModel(new Rental().getTableModel());
+    private void updateRentalTbl() {
+        adminView.getRentalTbl().setModel(new Rental().getTableModel());
     }
 
     private void updateCarTbl() {
@@ -515,12 +536,12 @@ public class AdminController extends Controller {
         this.addElement(adminView.getStaffSurnameTxt());
         this.addElement(adminView.getStaffNameTxt());
         this.addElement(adminView.getStaffTbl());
-        // Booking tab
-        this.addElement(adminView.getBookingRefCodeTxt());
-        this.addElement(adminView.getBookingSurnameTxt());
-        this.addElement(adminView.getBookingClearBtn());
-        this.addElement(adminView.getBookingDeleteBtn());
-        this.addElement(adminView.getBookingTbl());
+        // Rental tab
+        this.addElement(adminView.getRentalRefCodeTxt());
+        this.addElement(adminView.getRentalSurnameTxt());
+        this.addElement(adminView.getRentalClearBtn());
+        this.addElement(adminView.getRentalDeleteBtn());
+        this.addElement(adminView.getRentalTbl());
         // Car tab
         this.addElement(adminView.getCarAddBtn());
         this.addElement(adminView.getCarClearBtn());
@@ -589,6 +610,6 @@ public class AdminController extends Controller {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {
     }
 }

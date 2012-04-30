@@ -24,6 +24,7 @@ import oscar.util.Utility;
  * @author sujan
  */
 public class DbRecord {
+
     /** Database connection*/
     protected DbConnectable connectionObject;
     /** Table on which the record is stored in the database*/
@@ -34,6 +35,7 @@ public class DbRecord {
 
     /** Possible type of columns*/
     public enum ColumnType {
+
         /** String type */
         STRING,
         /** Integer type*/
@@ -92,9 +94,8 @@ public class DbRecord {
             while (rs.next()) {
                 HashMap<String, String> row = new HashMap<String, String>();
 
-                for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                for (int i = 1; i <= metaData.getColumnCount(); i++)
                     row.put(metaData.getColumnName(i), rs.getString(i));
-                }
 
                 result.add(row);
             }
@@ -109,39 +110,70 @@ public class DbRecord {
         return result;
     }
 
-    public ArrayList<HashMap<String,String>> queryDependent(ArrayList<HashMap<String,String>> dependencies,String colName,String value){
-        //ArrayList<HashMap<String,String>> records = new ArrayList<HashMap<String, String>>();
+    public ArrayList<HashMap<String, String>> queryDependentLike(ArrayList<HashMap<String, String>> dependencies,
+            HashMap<String, String> filters, String colName, String value) {
         String joins = "";
-        String selections=this.useTable+".*,";
-        int i=1;
-        for(HashMap<String,String> tableInfo:dependencies){
+        String selections = this.useTable + ".*,";
+        int i = 1;
+        for (HashMap<String, String> tableInfo : dependencies) {
 
-           if(i<dependencies.size()){
-                selections += tableInfo.get("table")+".*" +",";
-            }else{
-                selections += tableInfo.get("table")+".*";
-            }
-           String joinTo = tableInfo.get("joinTo");
-           if(joinTo == null){
-               joinTo = this.useTable;
-           }
-           joins += tableInfo.get("joinType")+ " "+tableInfo.get("table") +" on "+joinTo+"."+tableInfo.get("fk")+" = "+tableInfo.get("table")+"."+tableInfo.get("pk")+" ";
-           i++;
+            if (i < dependencies.size())
+                selections += tableInfo.get("table") + ".*" + ",";
+            else
+                selections += tableInfo.get("table") + ".*";
+            String joinTo = tableInfo.get("joinTo");
+            if (joinTo == null)
+                joinTo = this.useTable;
+            joins += tableInfo.get("joinType") + " " + tableInfo.get("table") + " on " + joinTo + "." + tableInfo.get("fk") + " = " + tableInfo.get("table") + "." + tableInfo.get("pk") + " ";
+            i++;
         }
 
         String sql = "";
-        if(colName.equals("*") && value.equals("*")){
-            sql = "select "+selections+" from "+this.useTable+" "+joins;
-        }else{
-            sql = "select "+selections+" from "+this.useTable+" "+joins+" where "+colName+" = '"+value+"'";
+        if (colName.equals("*") && value.equals("*"))
+            sql = "select " + selections + " from " + this.useTable + " " + joins;
+        else
+            sql = "select " + selections + " from " + this.useTable + " " + joins + " where " + colName + " = '" + value + "'";
+        
+        sql += " WHERE ";
+        Set<String> cols = filters.keySet();
+        i = 0;
+        for (String col : cols) {
+
+            sql += col + " LIKE '%" + filters.get(col) + "%'";
+            if (i < cols.size() - 1)
+                sql += " AND ";
+            i++;
         }
+        
+        return this.query(sql);
+    }
+
+    public ArrayList<HashMap<String, String>> queryDependent(ArrayList<HashMap<String, String>> dependencies,
+            String colName, String value) {
+        String joins = "";
+        String selections = this.useTable + ".*,";
+        int i = 1;
+        for (HashMap<String, String> tableInfo : dependencies) {
+
+            if (i < dependencies.size())
+                selections += tableInfo.get("table") + ".*" + ",";
+            else
+                selections += tableInfo.get("table") + ".*";
+            String joinTo = tableInfo.get("joinTo");
+            if (joinTo == null)
+                joinTo = this.useTable;
+            joins += tableInfo.get("joinType") + " " + tableInfo.get("table") + " on " + joinTo + "." + tableInfo.get("fk") + " = " + tableInfo.get("table") + "." + tableInfo.get("pk") + " ";
+            i++;
+        }
+
+        String sql = "";
+        if (colName.equals("*") && value.equals("*"))
+            sql = "select " + selections + " from " + this.useTable + " " + joins;
+        else
+            sql = "select " + selections + " from " + this.useTable + " " + joins + " where " + colName + " = '" + value + "'";
         return this.query(sql);
 
     }
-
-
-
-
 
     /**
      * Count the record of this table
@@ -150,9 +182,8 @@ public class DbRecord {
     public int count() {
         ArrayList<HashMap<String, String>> rs = this.query("select count(*) as count from " + this.useTable);
 
-        for (HashMap<String, String> row : rs) {
+        for (HashMap<String, String> row : rs)
             return Integer.parseInt(row.get("count"));
-        }
         return 0;
     }
 
@@ -196,15 +227,13 @@ public class DbRecord {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
                 + "= '" + value + "' limit 0," + limit);
         if (records != null
-            && records.size() >= 1) {
-            return records;    // return row
-        }
+                && records.size() >= 1)
+            return records; // return row
 
         return null;
     }
 
-
-     /**
+    /**
      * returns all the data inside the table depending on column name and value
      * specified
      * @param colName column to search in
@@ -212,29 +241,38 @@ public class DbRecord {
      * @param limit maximum number of results
      * @return List of HashMap representing the records
      */
-    public ArrayList<HashMap<String, String>> findAllLike(HashMap<String,String> records) {
-       /* ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
+    public ArrayList<HashMap<String, String>> findAllLike(HashMap<String, String> records) {
+        /* ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
         //         +" like '" + value + "' limit 0," + limit);
         if (records != null
-            && records.size() >= 1) {
-            return records;    // return row
+        && records.size() >= 1) {
+        return records;    // return row
         }
-        */
+         */
 
         Set<String> cols = records.keySet();
         String query = "select * from " + this.useTable + " where ";
         int i = 0;
-        for(String col:cols){
+        for (String col : cols) {
 
-            query += col+" LIKE '"+records.get(col)+"%'";
-            if(i<cols.size()-1){
+            query += col + " LIKE '" + records.get(col) + "%'";
+            if (i < cols.size() - 1)
                 query += " AND ";
-            }
             i++;
         }
         //System.out.println(query);
         return this.query(query);
     }
+
+    public String getSingleValue(String colName, String col, String value) {
+        ArrayList<HashMap<String, String>> records = this.query("select " + colName + " from " + this.useTable + " " + col + " = '" + value + "' limit 1");
+        System.out.println("select " + colName + " from " + this.useTable + " where " + col + "= '" + value + "' limit 1");
+        if (records != null) {
+            HashMap<String, String> record = records.get(0);
+            return record.get(colName);
+        } else
+            return "";
+/*=======
     
     public String getSingleValue(String colName,String col,String value){
         ArrayList<HashMap<String,String>> records = this.query("select "+colName+" from " + this.useTable + " where "+col+"='"+value+"' limit 1");
@@ -246,7 +284,9 @@ public class DbRecord {
         }
         
     }
+>>>>>>> ceaf19c09c8bc20d98fb81ebe4c8379f50baadcf*/
 
+    }
 
     /**
      * returns all the data inside the table depending on column name, value,
@@ -261,30 +301,28 @@ public class DbRecord {
         ArrayList<HashMap<String, String>> records = this.query("select * from " + this.useTable + " where " + colName
                 + " = " + value + " limit " + startAt + "," + limit);
 
-        if (records.size() > 1) {
-            return records;    // return row
-        }
+        if (records.size() > 1)
+            return records; // return row
 
         return null;
     }
 
-
-    public ComboBoxModel getComboModel(String valueColumn,String selectionText){
+    public ComboBoxModel getComboModel(String valueColumn, String selectionText) {
         OscarComboBoxModel ocbm = new OscarComboBoxModel();
 
         //HashMap<Integer,String> data = new HashMap<Integer, String>();
         //data.put(0,selectionText);
-        
+
         List<OscarComboBoxModelItem> data = new ArrayList<OscarComboBoxModelItem>();
         data.add(new OscarComboBoxModelItem(0, selectionText));
-        
-        String sql ="select "+this.getPrimaryKey()+","+valueColumn+" from "+this.useTable;
+
+        String sql = "select " + this.getPrimaryKey() + "," + valueColumn + " from " + this.useTable;
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                OscarComboBoxModelItem  item = new OscarComboBoxModelItem(rs.getInt(1), rs.getString(2));
+                OscarComboBoxModelItem item = new OscarComboBoxModelItem(rs.getInt(1), rs.getString(2));
                 data.add(item);
             }
 
@@ -315,13 +353,12 @@ public class DbRecord {
      */
     public HashMap<String, String> findByPK(String value) {
 
-            return this.findOneBy(this.getPrimaryKey(), value);
+        return this.findOneBy(this.getPrimaryKey(), value);
 
     }
 
-
-    public String getPrimaryKey(){
-        String PK="";
+    public String getPrimaryKey() {
+        String PK = "";
         try {
             Statement stmt = this.connectionObject.getConnection().createStatement();
             // TODO: make the database name softcoded
@@ -344,7 +381,7 @@ public class DbRecord {
      * @return
      */
     /*public boolean populate () {
-
+    
     return true;
     }*/
     /**
@@ -401,7 +438,7 @@ public class DbRecord {
 
         try {
             Statement stmt = this.connectionObject.getConnection().prepareStatement(sql);
-            stmt.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getInt(1);
@@ -459,9 +496,8 @@ public class DbRecord {
         int i = 1;
         for (String key : objHashMap.keySet()) {
             updateString += key + " = '" + objHashMap.get(key) + "'";
-            if (i != num_cols ) {
+            if (i != num_cols)
                 updateString += ",";
-            }
 
             i++;
         }
@@ -539,7 +575,7 @@ public class DbRecord {
     /*
      * adds record and returns last insert id of PK
      */
-     public int addPk(HashMap<String, String> objHashMap) {
+    public int addPk(HashMap<String, String> objHashMap) {
 
         HashMap<String, String> insertParams = this.getInsertParams(objHashMap);
         String query = "insert into " + this.useTable + "(" + insertParams.get("cols") + ") values(" + insertParams.get("values") + ")";
@@ -547,11 +583,11 @@ public class DbRecord {
         return this.nonQueryPk(query);
     }
 
-    public TableModel getTableModel(){
+    public TableModel getTableModel() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public TableModel getTableModel(HashMap<String, String> filters){
+    public TableModel getTableModel(HashMap<String, String> filters) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

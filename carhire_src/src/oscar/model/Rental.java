@@ -171,18 +171,32 @@ public class Rental extends DbRecord implements DbRecordable  {
 
     @Override
     public TableModel getTableModel() {
-        ArrayList<HashMap<String, String>> map = this.findAll();
+        
+        ArrayList<HashMap<String, String>> dependencies = new ArrayList<HashMap<String, String>>();
+
+        HashMap<String, String> customerDep = new HashMap<String, String>();
+
+        customerDep.put("table", "person");
+        customerDep.put("pk", "personId");
+        customerDep.put("joinType", "join");
+
+        //personDep.put("joinTo", "");
+        customerDep.put("fk", "customerId");
+        dependencies.add(customerDep);
+
+        ArrayList<HashMap<String, String>> map = this.queryDependent(dependencies, "*", "*");
+        
         DefaultTableModel model = new DefaultTableModel(
-                new Object[]{"Id", "Start", "End", "Chauffeur", "Insurance"}, 0);
+                new Object[]{"Id", "Ref. code", "Surname", "Start", "End", "Chauffeur", "Insurance"}, 0);
         for (HashMap<String, String> row : map) {
             model.addRow(new Object[]{
                         row.get("rentalId"),
+                        row.get("referenceCode"),
+                        row.get("surname"),
                         row.get("startDatetime"),
                         row.get("endDatetime"),
                         (row.get("isInsured").contains("1")) ? true : false,
                         (row.get("isChauffeur").contains("1")) ? true : false,
-                        //row.get("isInsured"),
-                        //row.get("isChauffeur"),
                     });
         }
         return model;
@@ -190,18 +204,35 @@ public class Rental extends DbRecord implements DbRecordable  {
 
     @Override
     public TableModel getTableModel(HashMap<String, String> filters) {
-        ArrayList<HashMap<String, String>> map = this.findAllLike(filters);
+        
+        ArrayList<HashMap<String, String>> dependencies = new ArrayList<HashMap<String, String>>();
+
+        HashMap<String, String> customerDep = new HashMap<String, String>();
+
+        customerDep.put("table", "person");
+        customerDep.put("pk", "personId");
+        customerDep.put("joinType", "join");
+
+        //personDep.put("joinTo", "");
+        customerDep.put("fk", "customerId");
+        dependencies.add(customerDep);
+
+        ArrayList<HashMap<String, String>> map = this.queryDependentLike(dependencies, filters, "*", "*");
+        
+        
+        
+        
         DefaultTableModel model = new DefaultTableModel(
-                new Object[]{"Id", "Start", "End", "Chauffeur", "Insurance"}, 0);
+                new Object[]{"Id", "Ref. code", "Surname", "Start", "End", "Chauffeur", "Insurance"}, 0);
         for (HashMap<String, String> row : map) {
             model.addRow(new Object[]{
                         row.get("rentalId"),
+                        row.get("referenceCode"),
+                        row.get("surname"),
                         row.get("startDatetime"),
                         row.get("endDatetime"),
                         (row.get("isInsured").contains("1")) ? true : false,
                         (row.get("isChauffeur").contains("1")) ? true : false,
-                        //row.get("isInsured"),
-                        //row.get("isChauffeur"),
                     });
         }
         return model;

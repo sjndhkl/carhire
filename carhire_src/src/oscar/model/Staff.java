@@ -194,10 +194,10 @@ public class Staff extends Person implements DbRecordable {
         personDep.put("fk", "personId");
         dependencies.add(personDep);
 
-       // ArrayList<HashMap<String, String>> map = this.queryDependentLike (filters, dependencies, "*", "*");
+        ArrayList<HashMap<String, String>> map = this.queryDependentLike (dependencies, filters, "*", "*");
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
-        /*for (HashMap<String, String> row : map)
+        for (HashMap<String, String> row : map)
             model.addRow(new Object[]{
                         row.get("personId"),
                         row.get("name"),
@@ -207,7 +207,7 @@ public class Staff extends Person implements DbRecordable {
                         row.get("username"),
                         row.get("dateOfBirth"),
                         row.get("email")
-                    });*/
+                    });
         return model;
     }
 
