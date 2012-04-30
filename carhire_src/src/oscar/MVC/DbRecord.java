@@ -232,7 +232,7 @@ public class DbRecord {
             }
             i++;
         }
-        System.out.println(query);
+        //System.out.println(query);
         return this.query(query);
     }
     
@@ -383,6 +383,9 @@ public class DbRecord {
             Statement stmt = this.connectionObject.getConnection().createStatement();
 
             queryStatus = stmt.executeUpdate(sql);
+            
+           // System.out.println(sql);
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -416,7 +419,7 @@ public class DbRecord {
      * @return the success of the query
      */
     public boolean deleteBy(String colName, String value) {
-        return this.nonQuery("delete from " + this.useTable + " where " + colName + "='" + value + "'");
+        return this.nonQuery("delete from " + this.useTable + " where " + colName + " = " + value);
     }
 
     /**

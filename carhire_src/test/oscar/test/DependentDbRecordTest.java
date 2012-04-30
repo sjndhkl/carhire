@@ -62,21 +62,11 @@ public class DependentDbRecordTest extends BaseTestCase {
         person.setIsAdmin("1");
         person.setPassword("test");
 
-        //HashMap<String, HashMap<String, String>> data = ;
         try {
            assertEquals(true, person.addDependent());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        /*
-        for(String s: data.keySet()){
-        System.out.println(s);
-        HashMap<String,String> map = data.get(s);
-        this.printHashMap(map);
-        
-        }*/
-
-
 
     }
     
