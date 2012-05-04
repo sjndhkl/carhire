@@ -23,6 +23,9 @@ public class CarClass extends DbRecord {
     private String description;
     private float price;
 
+    /**
+     * 
+     */
     public CarClass() {
         super(TABLE);
     }
@@ -56,6 +59,10 @@ public class CarClass extends DbRecord {
         //this.price = attributes.get("price");
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public TableModel getTableModel() {
         ArrayList<HashMap<String, String>> map = this.findAll();
@@ -72,6 +79,11 @@ public class CarClass extends DbRecord {
         return model;
     }
 
+    /**
+     * 
+     * @param filters
+     * @return
+     */
     @Override
     public TableModel getTableModel(HashMap<String, String> filters) {
         ArrayList<HashMap<String, String>> map = this.findAllLike(filters);
@@ -88,11 +100,10 @@ public class CarClass extends DbRecord {
         return model;
     }
     
-    
     public ArrayList<HashMap<String, String>> getCars(int classId,Date startDate,Date endDate){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate and ( rental.startDateTime >= '"+df.format(startDate) +"' AND rental.endDateTime <= '"+df.format(endDate) +"'   ) group by rental.carPlate) is NULL";
-        System.out.println(query);
+        //System.out.println(query);
         return this.query(query);
         
     }

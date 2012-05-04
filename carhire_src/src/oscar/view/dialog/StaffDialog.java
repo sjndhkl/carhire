@@ -16,7 +16,10 @@ package oscar.view.dialog;
  */
 public class StaffDialog extends javax.swing.JDialog {
 
-    /** Creates new form StaffDialog */
+    /** Creates new form StaffDialog
+     * @param parent
+     * @param modal  
+     */
     public StaffDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -433,7 +436,7 @@ public class StaffDialog extends javax.swing.JDialog {
     }
 
     /**
-     * @param staffNameTxt the staffNameTxt to set
+     * @param nameTxt 
      */
     public void setNameTxt(javax.swing.JTextField nameTxt) {
         this.nameTxt = nameTxt;

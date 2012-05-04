@@ -17,6 +17,11 @@ import java.util.logging.Logger;
  */
 public class Utility {
 
+    /**
+     * 
+     * @param ob
+     * @return
+     */
     public static HashMap<String, String> convertToHashMap(Object ob) {
         Class currentClass = ob.getClass();
         return hashMap(currentClass, ob);
@@ -69,6 +74,11 @@ public class Utility {
         return objHashMap;
     }
 
+    /**
+     * 
+     * @param ob
+     * @return
+     */
     public static HashMap<String, HashMap<String, String>> convertToHashMapWithParent(Object ob) {
         Class currentClass = ob.getClass();
         Class parentClass = currentClass.getSuperclass();
@@ -78,6 +88,11 @@ public class Utility {
         return allHashMaps;
     }
 
+    /**
+     * 
+     * @param hashMap
+     * @param ob
+     */
     public static void fillDependent(HashMap<String, HashMap<String, String>> hashMap, Object ob) {
 
         Class currentClass = ob.getClass();
@@ -99,6 +114,11 @@ public class Utility {
         }
     }
 
+    /**
+     * 
+     * @param hashMap
+     * @param ob
+     */
     public static void fill(HashMap<String, String> hashMap, Object ob) {
         Class currentClass = ob.getClass();
         Method method = null;
@@ -113,12 +133,23 @@ public class Utility {
         }
     }
 
+    /**
+     * 
+     * @param str
+     * @return
+     */
     public static String ucFirst(String str) {
         char[] stringArray = str.toCharArray();
         stringArray[0] = Character.toUpperCase(stringArray[0]);
         return new String(stringArray);
     }
 
+    /**
+     * 
+     * @param password
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
     public static String encodeSHA256(String password) throws NoSuchAlgorithmException {
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -132,6 +163,10 @@ public class Utility {
         return sb.toString();
     }
     
+    /**
+     * 
+     * @return
+     */
     public static String generateReferenceKey(){
         String referenceKey = "";
         try {
@@ -143,6 +178,12 @@ public class Utility {
         return referenceKey;
     }
     
+    /**
+     * 
+     * @param d2
+     * @param d1
+     * @return
+     */
     public static int dateDifference(Date d2,Date d1){
         
         int days = 0;

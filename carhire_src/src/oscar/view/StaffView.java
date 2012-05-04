@@ -640,6 +640,10 @@ public class StaffView extends AbstractView {
         return hireDateOfBirthDP;
     }
     
+    /**
+     * 
+     * @return
+     */
     public JCheckBox getSearchModeCheckBox(){
         return this.searchModeCheckBox;
     }

@@ -16,7 +16,10 @@ package oscar.view.dialog;
  */
 public class CarDialog extends javax.swing.JDialog {
 
-    /** Creates new form CarDialog */
+    /** Creates new form CarDialog
+     * @param parent the parent frame
+     * @param modal whether it should block the parent frame
+     */
     public CarDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();

@@ -18,12 +18,11 @@ import oscar.MVC.Controller;
 import oscar.model.Person;
 import oscar.view.AdminView;
 import oscar.model.Staff;
-import oscar.task.TableUpdateTask;
+import oscar.util.TableUpdateTask;
 import oscar.util.Utility;
 import oscar.view.dialog.ClassDialog;
 import oscar.view.dialog.CarDialog;
 import oscar.view.dialog.StaffDialog;
-import oscar.util.Validator;
 
 /**
  *
@@ -31,14 +30,18 @@ import oscar.util.Validator;
  */
 public class AdminController extends Controller {
 
+    // Views and dialogs
     private AdminView adminView;
     private StaffDialog staffDialog;
     private CarDialog carDialog;
     private ClassDialog classDialog;
+    // Timer to update tables
     private Timer timer;
+    // Filters to apply to queries
     private HashMap<String, String> filters;
+    // The runnable that update the tables
     private TableUpdateTask tableUpdateTask;
-    // dialog editing variables
+    // dialogs editing variables
     private boolean editingStaff = false;
     private String editingStaffId;
     private boolean editingCar = false;
@@ -69,49 +72,51 @@ public class AdminController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(adminView.getOpenStaffBtn()))
+        // Open staff view button
+        if (e.getSource().equals(adminView.getOpenStaffBtn())) {
             actionOpenStaff();
-        // Staff Tab
-        else if (e.getSource().equals(adminView.getStaffClearBtn()))
+        } // Staff Tab
+        else if (e.getSource().equals(adminView.getStaffClearBtn())) {
             actionStaffClearFields();
-        else if (e.getSource().equals(adminView.getStaffAddBtn()))
+        } else if (e.getSource().equals(adminView.getStaffAddBtn())) {
             actionStaffAdd();
-        // Staff Dialog
-        else if (e.getSource().equals(staffDialog.getSaveBtn()))
+        } // Staff Dialog
+        else if (e.getSource().equals(staffDialog.getSaveBtn())) {
             actionStaffDlgSave();
-        else if (e.getSource().equals(staffDialog.getDeleteBtn()))
+        } else if (e.getSource().equals(staffDialog.getDeleteBtn())) {
             actionStaffDlgDelete();
-        else if (e.getSource().equals(staffDialog.getCancelBtn()))
+        } else if (e.getSource().equals(staffDialog.getCancelBtn())) {
             actionStaffDlgCancel();
-        // Rental Tab
-        else if (e.getSource().equals(adminView.getRentalClearBtn()))
+        } // Rental Tab
+        else if (e.getSource().equals(adminView.getRentalClearBtn())) {
             actionRentalClearFields();
-        else if (e.getSource().equals(adminView.getRentalDeleteBtn()))
+        } else if (e.getSource().equals(adminView.getRentalDeleteBtn())) {
             actionRentalDelete();
-        // Car Tab
-        else if (e.getSource().equals(adminView.getCarClearBtn()))
+        } // Car Tab
+        else if (e.getSource().equals(adminView.getCarClearBtn())) {
             actionCarClearFields();
-        else if (e.getSource().equals(adminView.getCarAddBtn()))
+        } else if (e.getSource().equals(adminView.getCarAddBtn())) {
             actionCarAdd();
-        // Car Dialog
-        else if (e.getSource().equals(carDialog.getSaveBtn()))
+        } // Car Dialog
+        else if (e.getSource().equals(carDialog.getSaveBtn())) {
             actionCarDlgSave();
-        else if (e.getSource().equals(carDialog.getDeleteBtn()))
+        } else if (e.getSource().equals(carDialog.getDeleteBtn())) {
             actionCarDlgDelete();
-        else if (e.getSource().equals(carDialog.getCancelBtn()))
+        } else if (e.getSource().equals(carDialog.getCancelBtn())) {
             actionCarDlgCancel();
-        // Class tab
-        else if (e.getSource().equals(adminView.getCarClassAddBtn()))
+        } // Class tab
+        else if (e.getSource().equals(adminView.getCarClassAddBtn())) {
             actionClassAdd();
-        else if (e.getSource().equals(adminView.getCarClassClearBtn()))
+        } else if (e.getSource().equals(adminView.getCarClassClearBtn())) {
             actionClassClearFields();
-        // Class dialog
-        else if (e.getSource().equals(classDialog.getSaveBtn()))
+        } // Class dialog
+        else if (e.getSource().equals(classDialog.getSaveBtn())) {
             actionClassDlgSave();
-        else if (e.getSource().equals(classDialog.getDeleteBtn()))
+        } else if (e.getSource().equals(classDialog.getDeleteBtn())) {
             actionClassDlgDelete();
-        else if (e.getSource().equals(classDialog.getCancelBtn()))
+        } else if (e.getSource().equals(classDialog.getCancelBtn())) {
             actionClassDlgCancel();
+        }
     }
 
     private void actionOpenStaff() {
@@ -122,12 +127,14 @@ public class AdminController extends Controller {
      *                          STAFF TAB
      *******************************************************************************/
     private void actionStaffClearFields() {
+        //clear fields and reset the table records
         adminView.getStaffNameTxt().setText("");
         adminView.getStaffSurnameTxt().setText("");
         actionStaffUpdateTable();
     }
 
     private void actionStaffAdd() {
+        // Disable the delete button and show the dialog to add a record
         staffDialog.getDeleteBtn().setEnabled(false);
         staffDialog.setVisible(true);
     }
@@ -151,14 +158,16 @@ public class AdminController extends Controller {
                 staffDialog.getAdminCB().isSelected(),
                 staffDialog.getChauffeurCB().isSelected());
 
-        if (editingStaff)
+        //if we are editing a record
+        if (editingStaff) {
             try {
                 staff.updateDependentBy(Utility.convertToHashMapWithParent(staff), "personId", editingStaffId);
                 actionStaffDlgCancel();
             } catch (SQLException ex) {
                 Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        else
+        } //else, if we are creating a new record
+        else {
             try {
                 // TODO: implement failure
                 staff.addDependent();
@@ -167,10 +176,12 @@ public class AdminController extends Controller {
                 //TODO: handle error
                 Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
         updateStaffTbl();
     }
 
     private void actionStaffDlgCancel() {
+        // resets all fields, close the dialog and set editing mode to false
         staffDialog.getAddressTA().setText("");
         staffDialog.getDateOfBirthDP().setDate(null);
         staffDialog.getEmailTxt().setText("");
@@ -204,6 +215,7 @@ public class AdminController extends Controller {
     }
 
     private void actionRentalClearFields() {
+        // Make a new staff out of dialog fields
         adminView.getRentalRefCodeTxt().setText("");
         adminView.getRentalSurnameTxt().setText("");
         actionRentalUpdateTable();
@@ -213,6 +225,7 @@ public class AdminController extends Controller {
      *                          CAR TAB
      *******************************************************************************/
     private void actionCarClearFields() {
+        // Make a new staff out of dialog fields
         adminView.getCarBrandTxt().setText("");
         adminView.getCarClassCb().setSelectedIndex(0);
         adminView.getCarColorTxt().setText("");
@@ -224,6 +237,7 @@ public class AdminController extends Controller {
     }
 
     private void actionCarAdd() {
+        // Disable the delete button and show the dialog to add a record
         carDialog.getDeleteBtn().setEnabled(false);
         carDialog.setVisible(true);
     }
@@ -233,7 +247,6 @@ public class AdminController extends Controller {
      *******************************************************************************/
     private void actionCarDlgSave() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         Car car = new Car(carDialog.getPlateTxt().getText(),
                 carDialog.getBrandTxt().getText(),
                 carDialog.getModelTxt().getText(),
@@ -248,11 +261,12 @@ public class AdminController extends Controller {
                 Integer.parseInt(carDialog.getServiceMonthTxt().getText())/*,
                 Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]*/);
 
-
-        if (editingCar)
+        //if we are editing a record
+        if (editingCar) {
             car.updateBy(Utility.convertToHashMap(car), "Plate", editingCarId);
-        else
+        } else { //else, if we are creating a new record
             car.add();
+        }
         actionCarDlgCancel();
         updateCarTbl();
     }
@@ -265,6 +279,7 @@ public class AdminController extends Controller {
     }
 
     private void actionCarDlgCancel() {
+        // resets all fields, close the dialog and set editing mode to false
         carDialog.getBranchCB().setSelectedIndex(0);
         carDialog.getBrandTxt().setText("");
         carDialog.getClassCB().setSelectedIndex(0);
@@ -287,11 +302,13 @@ public class AdminController extends Controller {
      *                          CLASS TAB
      *******************************************************************************/
     private void actionClassAdd() {
+        // Disable the delete button and show the dialog to add a record
         classDialog.getDeleteBtn().setEnabled(false);
         classDialog.setVisible(true);
     }
 
     private void actionClassClearFields() {
+        // Make a new staff out of dialog fields
         adminView.getCarClassDisplayTxt().setText("");
         adminView.getCarClassNameTxt().setText("");
         actionClassUpdateTable();
@@ -307,10 +324,12 @@ public class AdminController extends Controller {
                 classDialog.getDescriptionTA().getText(),
                 Float.parseFloat(classDialog.getPriceTxt().getText()));
 
-        if (editingClass)
+        //if we are editing a record
+        if (editingClass) {
             carClass.updateBy(Utility.convertToHashMap(carClass), "classId", editingClassId);
-        else
+        } else { //else, if we are creating a new record
             carClass.add();
+        }
         actionClassDlgCancel();
         updateClassTbl();
     }
@@ -323,6 +342,7 @@ public class AdminController extends Controller {
     }
 
     private void actionClassDlgCancel() {
+        // resets all fields, close the dialog and set editing mode to false
         classDialog.getNameTxt().setText("");
         classDialog.getDisplayNameTxt().setText("");
         classDialog.getDescriptionTA().setText("");
@@ -340,105 +360,125 @@ public class AdminController extends Controller {
     public void keyReleased(KeyEvent e) {
         // Staff
         if (e.getSource().equals(adminView.getStaffNameTxt())
-                || e.getSource().equals(adminView.getStaffSurnameTxt()))
+                || e.getSource().equals(adminView.getStaffSurnameTxt())) {
             actionStaffUpdateTable();
-        // Rental
+        } // Rental
         else if (e.getSource().equals(adminView.getRentalRefCodeTxt())
-                || e.getSource().equals(adminView.getRentalSurnameTxt()))
+                || e.getSource().equals(adminView.getRentalSurnameTxt())) {
             actionRentalUpdateTable();
-        // Rental
+        } // Rental
         else if (e.getSource().equals(adminView.getCarBrandTxt())
                 || e.getSource().equals(adminView.getCarClassCb())
                 || e.getSource().equals(adminView.getCarColorTxt())
                 || e.getSource().equals(adminView.getCarModelTxt())
                 || e.getSource().equals(adminView.getCarYearTxt())
-                || e.getSource().equals(adminView.getCarPlateTxt()))
+                || e.getSource().equals(adminView.getCarPlateTxt())) {
             actionCarUpdateTable();
-        // Class
+        } // Class
         else if (e.getSource().equals(adminView.getCarClassDisplayTxt())
-                || e.getSource().equals(adminView.getCarClassNameTxt()))
+                || e.getSource().equals(adminView.getCarClassNameTxt())) {
             actionClassUpdateTable();
+        }
     }
 
     private void actionStaffUpdateTable() {
         tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
-        if (!adminView.getStaffNameTxt().getText().isEmpty())
+        if (!adminView.getStaffNameTxt().getText().isEmpty()) {
             filters.put("name", adminView.getStaffNameTxt().getText());
-        if (!adminView.getStaffSurnameTxt().getText().isEmpty())
+        }
+        if (!adminView.getStaffSurnameTxt().getText().isEmpty()) {
             filters.put("surname", adminView.getStaffSurnameTxt().getText());
+        }
         if (!filters.isEmpty()) {
             tableUpdateTask = new TableUpdateTask(adminView.getStaffTbl(), filters, new Staff());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
-        } else
+        } else {
             updateStaffTbl();
+        }
     }
 
     private void actionRentalUpdateTable() {
         tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
-        if (!adminView.getRentalRefCodeTxt().getText().isEmpty())
+        if (!adminView.getRentalRefCodeTxt().getText().isEmpty()) {
             filters.put("referenceCode", adminView.getRentalRefCodeTxt().getText());
-        if (!adminView.getRentalSurnameTxt().getText().isEmpty())
+        }
+        if (!adminView.getRentalSurnameTxt().getText().isEmpty()) {
             filters.put("surname", adminView.getRentalSurnameTxt().getText());
+        }
         if (!filters.isEmpty()) {
             tableUpdateTask = new TableUpdateTask(adminView.getRentalTbl(), filters, new Rental());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
-        } else
+        } else {
             updateRentalTbl();
+        }
     }
 
     private void actionClassUpdateTable() {
         tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
-        if (!adminView.getCarClassDisplayTxt().getText().isEmpty())
+        if (!adminView.getCarClassDisplayTxt().getText().isEmpty()) {
             filters.put("displayName", adminView.getCarClassDisplayTxt().getText());
-        if (!adminView.getCarClassNameTxt().getText().isEmpty())
+        }
+        if (!adminView.getCarClassNameTxt().getText().isEmpty()) {
             filters.put("name", adminView.getCarClassNameTxt().getText());
+        }
         if (!filters.isEmpty()) {
             tableUpdateTask = new TableUpdateTask(adminView.getClassTbl(), filters, new CarClass());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
-        } else
+        } else {
             updateClassTbl();
+        }
     }
 
     private void actionCarUpdateTable() {
         tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
-        if (!adminView.getCarPlateTxt().getText().isEmpty())
+        if (!adminView.getCarPlateTxt().getText().isEmpty()) {
             filters.put("plate", adminView.getCarPlateTxt().getText());
-        if (!adminView.getCarBrandTxt().getText().isEmpty())
+        }
+        if (!adminView.getCarBrandTxt().getText().isEmpty()) {
             filters.put("brand", adminView.getCarBrandTxt().getText());
-        if (!adminView.getCarModelTxt().getText().isEmpty())
+        }
+        if (!adminView.getCarModelTxt().getText().isEmpty()) {
             filters.put("model", adminView.getCarModelTxt().getText());
-        if (!adminView.getCarYearTxt().getText().isEmpty())
+        }
+        if (!adminView.getCarYearTxt().getText().isEmpty()) {
             filters.put("year", adminView.getCarYearTxt().getText());
-        if (adminView.getCarClassCb().getSelectedIndex() != 0)
+        }
+        if (adminView.getCarClassCb().getSelectedIndex() != 0) {
             filters.put("class", Integer.toString(adminView.getCarClassCb().getSelectedIndex()));
-        if (!adminView.getCarColorTxt().getText().isEmpty())
+        }
+        if (!adminView.getCarColorTxt().getText().isEmpty()) {
             filters.put("color", adminView.getCarColorTxt().getText());
+        }
         if (!filters.isEmpty()) {
             tableUpdateTask = new TableUpdateTask(adminView.getCarTbl(), filters, new Car());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
-        } else
+        } else {
             updateCarTbl();
+        }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         // Staff table
-        if (e.getSource().equals(adminView.getStaffTbl()))
+        if (e.getSource().equals(adminView.getStaffTbl())) {
             actionStaffSelectRow(adminView.getStaffTbl().getSelectedRow());
+        }
         // car table
-        if (e.getSource().equals(adminView.getCarTbl()))
+        if (e.getSource().equals(adminView.getCarTbl())) {
             actionCarSelectRow(adminView.getCarTbl().getSelectedRow());
+        }
         // class table
-        if (e.getSource().equals(adminView.getClassTbl()))
+        if (e.getSource().equals(adminView.getClassTbl())) {
             actionClassSelectRow(adminView.getClassTbl().getSelectedRow());
+        }
     }
 
     private void actionStaffSelectRow(int selectedRow) {

@@ -3,10 +3,8 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.util.HashMap;
 import oscar.model.Staff;
 import oscar.MVC.Controller;
-import oscar.util.ValidationPopup;
 import oscar.view.LoginView;
 
 /**

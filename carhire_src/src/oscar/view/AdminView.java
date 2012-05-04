@@ -9,6 +9,10 @@ package oscar.view;
 import javax.swing.ListSelectionModel;
 import oscar.MVC.AbstractView;
 
+/**
+ * 
+ * @author Draga
+ */
 public class AdminView extends AbstractView {
 
     /** Creates new form AdminView */
@@ -1311,10 +1315,6 @@ public class AdminView extends AbstractView {
             }
         });
     }
-
-    public javax.swing.JButton getOpenStaffBtn() {
-        return openStaffBtn;
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Extendsbtn;
     private javax.swing.JLabel PhoneDlgLbl;
@@ -1444,194 +1444,127 @@ public class AdminView extends AbstractView {
     private javax.swing.JLabel yearLbl;
     // End of variables declaration//GEN-END:variables
 
-    /**
-     * @return the staffTbl
-     */
+    public javax.swing.JButton getOpenStaffBtn() {
+        return openStaffBtn;
+    }
+    
     public org.jdesktop.swingx.JXTable getStaffTbl() {
         return staffTbl;
     }
-
+    
     public javax.swing.JButton getStaffAddBtn() {
         return staffAddBtn;
     }
-
+    
     public javax.swing.JButton getStaffClearBtn() {
         return staffClearBtn;
     }
-
+    
     public javax.swing.JTextField getStaffNameTxt() {
         return staffNameTxt;
     }
-
+    
     public javax.swing.JTextField getStaffSurnameTxt() {
         return staffSurnameTxt;
     }
-
+    
     public javax.swing.JDialog getCarClassDialog() {
         return carClassDialog;
     }
-
+    
     public javax.swing.JDialog getCarDialog() {
         return carDialog;
     }
-
+    
     public javax.swing.JDialog getExtensionDlg() {
         return extensionDlg;
     }
-
+    
     public javax.swing.JDialog getStaffDialog() {
         return staffDialog;
     }
-
-    /**
-     * @return the rentalsTbl
-     */
+    
     public org.jdesktop.swingx.JXTable getRentalTbl() {
         return rentalTbl;
     }
-
-    /**
-     * @param rentalsTbl the rentalsTbl to set
-     */
+    
     public void setRentalsTbl(org.jdesktop.swingx.JXTable rentalsTbl) {
         this.rentalTbl = rentalsTbl;
     }
-
-    /**
-     * @return the carClassTbl
-     */
+    
     public org.jdesktop.swingx.JXTable getClassTbl() {
         return carClassTbl;
     }
-
-    /**
-     * @return the carTbl
-     */
+    
     public org.jdesktop.swingx.JXTable getCarTbl() {
         return carTbl;
     }
-
-    /**
-     * @return the rentalRefCodeTxt
-     */
+    
     public javax.swing.JTextField getRentalRefCodeTxt() {
         return rentalRefCodeTxt;
     }
-
-    /**
-     * @return the rentalSurnameTxt
-     */
+    
     public javax.swing.JTextField getRentalSurnameTxt() {
         return rentalSurnameTxt;
     }
-
-    /**
-     * @return the rentalClearBtn
-     */
+    
     public javax.swing.JButton getRentalClearBtn() {
         return rentalClearBtn;
     }
-
-    /**
-     * @return the rentalDeleteBtn
-     */
+    
     public javax.swing.JButton getRentalDeleteBtn() {
         return rentalDeleteBtn;
     }
-
-    /**
-     * @return the carAddBtn
-     */
+    
     public javax.swing.JButton getCarAddBtn() {
         return carAddBtn;
     }
-
-    /**
-     * @return the carBrandTxt
-     */
+    
     public javax.swing.JTextField getCarBrandTxt() {
         return carBrandTxt;
     }
-
-    /**
-     * @return the carClassCb
-     */
+    
     public javax.swing.JComboBox getCarClassCb() {
         return carClassCb;
     }
-
-    /**
-     * @return the carClearBtn
-     */
+    
     public javax.swing.JButton getCarClearBtn() {
         return carClearBtn;
     }
-
-    /**
-     * @return the carColorTxt
-     */
+    
     public javax.swing.JTextField getCarColorTxt() {
         return carColorTxt;
     }
-
-    /**
-     * @return the carModelTxt
-     */
+    
     public javax.swing.JTextField getCarModelTxt() {
         return carModelTxt;
     }
-
-    /**
-     * @return the carPlateTxt
-     */
+    
     public javax.swing.JTextField getCarPlateTxt() {
         return carPlateTxt;
     }
-
-    /**
-     * @return the carStatusCB
-     */
+    
     public javax.swing.JComboBox getCarStatusCB() {
         return carStatusCB;
     }
-
-    /**
-     * @return the carYearTxt
-     */
+    
     public javax.swing.JTextField getCarYearTxt() {
         return carYearTxt;
     }
-
-    /**
-     * @return the carClassAddBtn
-     */
+    
     public javax.swing.JButton getCarClassAddBtn() {
         return carClassAddBtn;
     }
-
-    /**
-     * @return the carClassClearBtn
-     */
+    
     public javax.swing.JButton getCarClassClearBtn() {
         return carClassClearBtn;
     }
-
-    /**
-     * @return the carClassDisplayTxt
-     */
+    
     public javax.swing.JTextField getCarClassDisplayTxt() {
         return carClassDisplayTxt;
     }
-
-    /**
-     * @return the carClassNameTxt
-     */
+    
     public javax.swing.JTextField getCarClassNameTxt() {
         return carClassNameTxt;
-    }
-    
-    public void setLoadingVisible(boolean visible){
-    
-    }
-            
+    }            
 }

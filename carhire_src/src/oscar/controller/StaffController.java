@@ -3,7 +3,6 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,14 +13,11 @@ import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
-import javax.swing.plaf.basic.BasicMenuUI.ChangeHandler;
-import javax.swing.table.TableModel;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.model.Rental;
-import oscar.task.HirePersonUpdateTask;
 import oscar.util.TableModelHelper;
 import oscar.util.Utility;
 import oscar.view.StaffView;
@@ -31,14 +27,11 @@ import oscar.view.StaffView;
  * @author Draga
  */
 public class StaffController extends Controller {
+    // Views and dialogs
 
     private StaffView staffView;
-    /*// weather the controller is attached to the admin one
-    private boolean passive = false;*/
-    private HirePersonUpdateTask hirePersonUpdateTask;
+    // Timer to update tables
     private Timer timer;
-    
-    
     private boolean lastRequest = false;
     private boolean foundAndFilled = false;
     private int personId;
@@ -59,13 +52,14 @@ public class StaffController extends Controller {
         this.setName("Staff");
         staffView = new StaffView();
         this.addElement(staffView);
-        if(hasParent)
+        if (hasParent) {
             staffView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        }
         // Hire tab
-        
-        staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName","---- select car class ---"));
+
+        staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName", "---- select car class ---"));
         staffView.getHireClassCB().setSelectedIndex(0);
-        
+
         this.addElement(staffView.getHireAddressTxt());
         this.addElement(staffView.getHireBtn());
         this.addElement(staffView.getHireChauffeuredCB());
@@ -82,12 +76,13 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireRefCodeTxt());
         this.addElement(staffView.getHireSurnameTxt());
         this.addElement(staffView.getHireToDP());
-        
+
         /**
          * Action Listener for the Combobox
          * When someone selects a CarClass the cars in the selected carclass would appear
          */
-        staffView.getHireClassCB().addActionListener (new ActionListener () {
+        staffView.getHireClassCB().addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox)e.getSource()).getSelectedItem();
@@ -99,16 +94,10 @@ public class StaffController extends Controller {
                         staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number","Brand","Model"}, new Object[]{"plate","brand","model"}));
                     }
                 }
-                
+
             }
         });
-        
-       // staffView.getHireTbl().addMouseListener(this);
-        
-
-
         timer = new Timer();
-        hirePersonUpdateTask = new HirePersonUpdateTask();
     }
 
     @Override
@@ -123,7 +112,7 @@ public class StaffController extends Controller {
             actionHireSearchRefCode();
         }
     }
-
+    
     private void actionLogout() {
         new LoginController().start();
         this.removeAllElement();
@@ -203,7 +192,6 @@ public class StaffController extends Controller {
             else{
                    System.out.append("");
             }
-        
     }
 
     private void actionHireSearchRefCode() {
@@ -296,18 +284,18 @@ public class StaffController extends Controller {
         staffView.getHirePhoneTxt().setEnabled(status);
         this.setButtonStatus(!status);
     }
-    
-    private void setButtonStatus(boolean status){
-        
-       org.jdesktop.application.ResourceMap resourceMap =  org.jdesktop.application.Application.getInstance().getContext().getResourceMap(StaffView.class);
-        
-        if(status){
+
+    private void setButtonStatus(boolean status) {
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(StaffView.class);
+
+        if (status) {
             staffView.getHirePersonLoadBtn().setIcon(resourceMap.getIcon("hirePersonLoadBtnActive.icon"));
-        }else{
+        } else {
             staffView.getHirePersonLoadBtn().setIcon(resourceMap.getIcon("hirePersonLoadBtn.icon"));
         }
         staffView.getHirePersonLoadBtn().setEnabled(status);
-        
+
     }
 
     private void populateFields(HashMap<String, String> data,boolean withHireFields) {
@@ -391,17 +379,22 @@ public class StaffController extends Controller {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+    }
 
     @Override
-    public void mousePressed(MouseEvent e) {}
+    public void mousePressed(MouseEvent e) {
+    }
 
     @Override
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {
+    }
 
     @Override
-    public void mouseEntered(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {
+    }
 
     @Override
-    public void mouseExited(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {
+    }
 }

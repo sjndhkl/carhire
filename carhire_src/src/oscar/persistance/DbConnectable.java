@@ -6,8 +6,15 @@ package oscar.persistance;
  */
 public interface DbConnectable {
 
+    /**
+     * 
+     * @return
+     */
     java.sql.Connection getConnection();
     
+    /**
+     * 
+     */
     void closeConnection();
     
 }

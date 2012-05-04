@@ -10,9 +10,20 @@ package oscar.model;
  */
 public class OscarComboBoxModelItem {
     
+    /**
+     * 
+     */
     public int Id;
+    /**
+     * 
+     */
     public String DisplayValue;
     
+    /**
+     * 
+     * @param id
+     * @param displayValue
+     */
     public OscarComboBoxModelItem(int id,String displayValue){
         this.Id = id;
         this.DisplayValue = displayValue;

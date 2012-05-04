@@ -16,7 +16,10 @@ package oscar.view.dialog;
  */
 public class ExtensionDialog extends javax.swing.JDialog {
 
-    /** Creates new form ExtensionDialog */
+    /** Creates new form ExtensionDialog
+     * @param parent
+     * @param modal  
+     */
     public ExtensionDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
