@@ -99,6 +99,9 @@ public class Rental extends DbRecord implements DbRecordable  {
     public void setAmountPaid(float amountPaid) {
         this.amountPaid = amountPaid;
     }
+    public void setAmountPaid(String amountPaid) {
+        this.amountPaid = Float.parseFloat(amountPaid);
+    }
 
     /**
      * 
@@ -146,6 +149,9 @@ public class Rental extends DbRecord implements DbRecordable  {
      */
     public void setDepositAmount(float depositAmount) {
         this.depositAmount = depositAmount;
+    }
+     public void setDepositAmount(String depositAmount) {
+        this.depositAmount = Float.parseFloat(depositAmount);
     }
 
     /**

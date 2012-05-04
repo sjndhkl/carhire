@@ -13,6 +13,7 @@ import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.OscarComboBoxModelItem;
@@ -172,19 +173,25 @@ public class StaffController extends Controller {
                         
                         if(this.rentalId==-1){
                                 if(rental.add()){
-                                    System.out.println("ok added the rental data");
+                                    //System.out.println("ok added the rental data");
+                                    JOptionPane.showMessageDialog(staffView, "Hiring was Successful", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
                                     this.actionHireClearFields();
                                 }else{
-                                    System.out.println("failed");
+                                    JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
+
                                 }
                         }else{
                             
                             rental.setRentalId(this.rentalId);
+                            rental.setDepositAmount(this._rental_ref.getDepositAmount());
+                            rental.setAmountPaid(this._rental_ref.getAmountPaid());
                             if(rental.update()){
-                                 System.out.println("ok update the rental data");
+                                  
+                                JOptionPane.showMessageDialog(staffView, "Hiring was Successful From a Booking Information", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
                                  this.actionHireClearFields();
                             }else{
-                                System.out.println("failed update");
+                                JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
+
                             }
                             
                         }
@@ -200,11 +207,18 @@ public class StaffController extends Controller {
         if(!refCode.equals("")){
             
             HashMap<String,String> record = new Rental().getRentalRecordByReferenceNumber(refCode);
-            Utility.fill(record, this._rental_ref);
-            this.populateFields(record, true);
+            if(record==null){
+                 JOptionPane.showMessageDialog(staffView, "Reference Code '"+refCode+"' was Not Found", "Search Response", JOptionPane.ERROR_MESSAGE);
+
+            }else{
+                this._rental_ref = new Rental();
+                Utility.fill(record, this._rental_ref);
+                this.populateFields(record, true);
+            }
             
         }else{
-            System.out.print("Please Provide a Reference Code");
+           JOptionPane.showMessageDialog(staffView, "Please provide Reference Code", "Search Response", JOptionPane.ERROR_MESSAGE);
+
         }
     }
 
@@ -233,6 +247,7 @@ public class StaffController extends Controller {
         this.foundAndFilled = false;
         this.personId = 0;
         this.rentalId = -1;
+        this._rental_ref=null;
     }
 
     @Override

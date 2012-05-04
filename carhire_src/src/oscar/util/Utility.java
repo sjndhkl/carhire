@@ -120,6 +120,8 @@ public class Utility {
      * @param ob
      */
     public static void fill(HashMap<String, String> hashMap, Object ob) {
+        if(hashMap==null)
+            return;
         Class currentClass = ob.getClass();
         Method method = null;
         for (String key : hashMap.keySet()) {
@@ -128,7 +130,8 @@ public class Utility {
                 method.invoke(ob, new Object[]{hashMap.get(key)});
 
             } catch (Exception ex) {
-                Logger.getLogger(currentClass.getName()).log(Level.SEVERE, null, ex);
+                ex.getMessage();
+                //Logger.getLogger(currentClass.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
