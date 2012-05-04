@@ -18,6 +18,10 @@ public class OscarComboBoxModel extends AbstractListModel implements ComboBoxMod
     
     private OscarComboBoxModelItem selection = null;
 
+    /**
+     * 
+     * @param list
+     */
     public void setData(List<OscarComboBoxModelItem> list){
         this.list = list;
     } 

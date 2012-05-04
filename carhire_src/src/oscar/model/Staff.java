@@ -20,12 +20,18 @@ public class Staff extends Person implements DbRecordable {
 
     /** Database table name*/
     public static String TABLE = "staff";
+    /**
+     * 
+     */
     public static String FK = "personId";
     private String username;
     private String password;
     private boolean admin;
     private boolean chauffeur;
 
+    /**
+     * 
+     */
     public Staff() {
         //this.dependencies = new HashMap<String, String>();
         //this.dependencies.put("person", "personId");
@@ -35,7 +41,8 @@ public class Staff extends Person implements DbRecordable {
 
     /**
      * Class constructor
-     * @param username
+     * @param colName 
+     * @param value 
      */
     public Staff(String colName, String value) {
         //super(colName,value);
@@ -63,6 +70,7 @@ public class Staff extends Person implements DbRecordable {
      * @param address
      * @param phone
      * @param username
+     * @param password 
      * @param admin
      * @param chauffeur
      */
@@ -85,7 +93,6 @@ public class Staff extends Person implements DbRecordable {
      *
      * @param password inputed password
      * @return whether the password match the one in the database
-     * @throws NoSuchAlgorithmException
      */
     public boolean authorize(String password) {
         HashMap<String, String> hm = this.findOneBy("username", this.username);
@@ -147,6 +154,10 @@ public class Staff extends Person implements DbRecordable {
         return super.updateDependentBy(records, colName, value);
     }*/
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public TableModel getTableModel() {
 
@@ -179,6 +190,11 @@ public class Staff extends Person implements DbRecordable {
         return model;
     }
 
+    /**
+     * 
+     * @param filters
+     * @return
+     */
     @Override
     public TableModel getTableModel(HashMap<String, String> filters) {
 
@@ -211,42 +227,82 @@ public class Staff extends Person implements DbRecordable {
         return model;
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean isAdmin() {
         return admin;
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean getAdmin() {
         return isAdmin();
     }
 
+    /**
+     * 
+     * @param isAdmin
+     */
     public void setIsAdmin(String isAdmin) {
         this.admin = isAdmin.equals("1") ? true : false;
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean getChauffeur() {
         return isChauffeur();
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean isChauffeur() {
         return chauffeur;
     }
 
+    /**
+     * 
+     * @param isChauffeur
+     */
     public void setIsChauffeur(String isChauffeur) {
         this.chauffeur = isChauffeur.equals("1") ? true : false;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * 
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * 
+     * @param password
+     */
     public void setPassword(String password) {
         try {
             this.password = Utility.encodeSHA256(password);

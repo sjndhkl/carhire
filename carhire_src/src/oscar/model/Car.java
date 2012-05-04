@@ -44,6 +44,9 @@ public class Car extends DbRecord {
     }
     //private CarStatus status;
 
+    /**
+     * 
+     */
     public Car() {
         super(TABLE);
     }
@@ -61,7 +64,6 @@ public class Car extends DbRecord {
      * @param branch
      * @param servicePeriod
      * @param serviceMiles
-     * @param status
      */
     public Car(String plateNumber, String brand, String model, int year,
             int mileage, int lastServiceMileage, String lastServiceDate,
@@ -106,6 +108,10 @@ public class Car extends DbRecord {
         //this.status = CarStatus.valueOf(attributes.get("status"));
     }
 
+    /**
+     * 
+     * @return
+     */
     @Override
     public TableModel getTableModel() {
         ArrayList<HashMap<String, String>> map = this.findAll();
@@ -129,6 +135,11 @@ public class Car extends DbRecord {
         return model;
     }
 
+    /**
+     * 
+     * @param filters
+     * @return
+     */
     @Override
     public TableModel getTableModel(HashMap<String, String> filters) {
         ArrayList<HashMap<String, String>> map = this.findAllLike(filters);
@@ -230,7 +241,7 @@ public class Car extends DbRecord {
     }
 
     /**
-     * @param lastServiceMileage the lastServiceMileage to set
+     * @param lastServiceMiles 
      */	
     public void setLastServiceMiles(int lastServiceMiles) {
         this.lastServiceMiles = lastServiceMiles;
@@ -258,7 +269,7 @@ public class Car extends DbRecord {
     }
 
     /**
-     * @param carClass the carClass to set
+     * @param classId 
      */
     public void setClassId(int classId) {
         this.classId = classId;

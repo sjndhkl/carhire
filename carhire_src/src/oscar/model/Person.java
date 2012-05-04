@@ -16,11 +16,29 @@ public class Person extends DependentDbRecord implements DbRecordable {
 
     /** Record id*/
     private int personId;
+    /**
+     * 
+     */
     protected String name;
+    /**
+     * 
+     */
     protected String surname;
+    /**
+     * 
+     */
     protected String dateOfBirth;
+    /**
+     * 
+     */
     protected String email;
+    /**
+     * 
+     */
     protected String address;
+    /**
+     * 
+     */
     protected String phone;
     /** Database table name*/
     public static String TABLE = "person";
@@ -54,7 +72,8 @@ public class Person extends DependentDbRecord implements DbRecordable {
 
     /**
      * Class constructor
-     * @param PkValue Value of the primary key
+     * @param colName 
+     * @param value  
      */
     public Person(String colName, String value) {
         super(TABLE);
@@ -63,6 +82,10 @@ public class Person extends DependentDbRecord implements DbRecordable {
         Utility.fill(attributes, this);
     }
 
+    /**
+     * 
+     * @param PkValue
+     */
     public Person(int PkValue) {
         super(TABLE);
         HashMap<String, String> attributes = this.findByPK(Integer.toString(PkValue));
@@ -70,58 +93,114 @@ public class Person extends DependentDbRecord implements DbRecordable {
     }
 
     /* Setters and getters */
+    /**
+     * 
+     * @param address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     * 
+     * @param dateOfBirth
+     */
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
+    /**
+     * 
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * 
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 
+     * @param personid
+     */
     public void setPersonid(int personid) {
         this.setPersonId(personid);
     }
 
+    /**
+     * 
+     * @param phone
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * 
+     * @param surname
+     */
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getPersonid() {
         return getPersonId();
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getSurname() {
         return surname;
     }
@@ -140,6 +219,10 @@ public class Person extends DependentDbRecord implements DbRecordable {
      * return value for primary key
      */
 
+    /**
+     * 
+     * @return
+     */
     public int addPk() {
         return this.addPk(Utility.convertToHashMap(this));
     }

@@ -54,6 +54,7 @@ public class DbRecord {
     /**
      *  Constructor of the class
      * @param table table where the record is stored
+     * @param PkValue  
      */
     // TODO: Complete this implementation
     public DbRecord(String table, String PkValue) {
@@ -110,6 +111,14 @@ public class DbRecord {
         return result;
     }
 
+    /**
+     * 
+     * @param dependencies
+     * @param filters
+     * @param colName
+     * @param value
+     * @return
+     */
     public ArrayList<HashMap<String, String>> queryDependentLike(ArrayList<HashMap<String, String>> dependencies,
             HashMap<String, String> filters, String colName, String value) {
         String joins = "";
@@ -148,6 +157,13 @@ public class DbRecord {
         return this.query(sql);
     }
 
+    /**
+     * 
+     * @param dependencies
+     * @param colName
+     * @param value
+     * @return
+     */
     public ArrayList<HashMap<String, String>> queryDependent(ArrayList<HashMap<String, String>> dependencies,
             String colName, String value) {
         String joins = "";
@@ -236,9 +252,7 @@ public class DbRecord {
     /**
      * returns all the data inside the table depending on column name and value
      * specified
-     * @param colName column to search in
-     * @param value value to search for
-     * @param limit maximum number of results
+     * @param records 
      * @return List of HashMap representing the records
      */
     public ArrayList<HashMap<String, String>> findAllLike(HashMap<String, String> records) {
@@ -264,6 +278,13 @@ public class DbRecord {
         return this.query(query);
     }
 
+    /**
+     * 
+     * @param colName
+     * @param col
+     * @param value
+     * @return
+     */
     public String getSingleValue(String colName, String col, String value) {
         ArrayList<HashMap<String, String>> records = this.query("select " + colName + " from " + this.useTable + " " + col + " = '" + value + "' limit 1");
         System.out.println("select " + colName + " from " + this.useTable + " where " + col + "= '" + value + "' limit 1");
@@ -307,6 +328,12 @@ public class DbRecord {
         return null;
     }
 
+    /**
+     * 
+     * @param valueColumn
+     * @param selectionText
+     * @return
+     */
     public ComboBoxModel getComboModel(String valueColumn, String selectionText) {
         OscarComboBoxModel ocbm = new OscarComboBoxModel();
 
@@ -357,6 +384,10 @@ public class DbRecord {
 
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getPrimaryKey() {
         String PK = "";
         try {
@@ -434,6 +465,11 @@ public class DbRecord {
         return status;
     }
 
+    /**
+     * 
+     * @param sql
+     * @return
+     */
     public int nonQueryPk(String sql) {
 
         try {
@@ -487,6 +523,7 @@ public class DbRecord {
     /**
      *
      * @param objHashMap
+     * @param excludedColumn 
      * @return
      */
     protected String getUpdateParams(HashMap<String, String> objHashMap, String excludedColumn) {
@@ -575,6 +612,11 @@ public class DbRecord {
     /*
      * adds record and returns last insert id of PK
      */
+    /**
+     * 
+     * @param objHashMap
+     * @return
+     */
     public int addPk(HashMap<String, String> objHashMap) {
 
         HashMap<String, String> insertParams = this.getInsertParams(objHashMap);
@@ -583,10 +625,19 @@ public class DbRecord {
         return this.nonQueryPk(query);
     }
 
+    /**
+     * 
+     * @return
+     */
     public TableModel getTableModel() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     * @param filters
+     * @return
+     */
     public TableModel getTableModel(HashMap<String, String> filters) {
         throw new UnsupportedOperationException("Not supported yet.");
     }

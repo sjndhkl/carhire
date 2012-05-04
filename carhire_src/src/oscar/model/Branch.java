@@ -1,7 +1,6 @@
 package oscar.model;
 
 import java.util.HashMap;
-import javax.swing.table.TableModel;
 import oscar.MVC.DbRecord;
 import oscar.persistance.DbRecordable;
 import oscar.util.Utility;
@@ -15,33 +14,8 @@ public class Branch extends DbRecord implements DbRecordable {
     private int branchId;
     private String location;
     private String country;
+    //the name of the table in the DB
     private static String TABLE = "branch";
-    
-    /*
-     * Setter and getters
-     */
-    public int getBranchId() {
-        return branchId;
-    }
-    public void setBranchId(int branchId) {
-        this.branchId = branchId;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     /**
      * setup constructor
@@ -67,8 +41,8 @@ public class Branch extends DbRecord implements DbRecordable {
     /**
      * Class constructor
      * @param branchId branch id
-     * @param location location 
-     * @param country country
+     * @param location location of the branch
+     * @param country country of the branch
      */
     public Branch(int branchId, String location, String country) {
         super(TABLE);
@@ -76,7 +50,6 @@ public class Branch extends DbRecord implements DbRecordable {
         this.location = location;
         this.country = country;
     }
-
  
     /**
      * add record
@@ -107,10 +80,30 @@ public class Branch extends DbRecord implements DbRecordable {
             return false;
        return this.updateBy(Utility.convertToHashMap(this), "branchId", this.getBranchId()+"");
     }
-
-    @Override
-    public TableModel getTableModel(HashMap<String, String> filters) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    
+    /*
+     * Setter and getters
+     */
+    public int getBranchId() {
+        return branchId;
+    }
+    public void setBranchId(int branchId) {
+        this.branchId = branchId;
     }
 
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getCountry() {
+        return country;
+    }
 }

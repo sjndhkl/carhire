@@ -3,7 +3,6 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,13 +13,11 @@ import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
-import javax.swing.plaf.basic.BasicMenuUI.ChangeHandler;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.model.Rental;
-import oscar.task.HirePersonUpdateTask;
 import oscar.util.TableModelHelper;
 import oscar.util.Utility;
 import oscar.view.StaffView;
@@ -30,17 +27,15 @@ import oscar.view.StaffView;
  * @author Draga
  */
 public class StaffController extends Controller {
+    // Views and dialogs
 
     private StaffView staffView;
-    /*// weather the controller is attached to the admin one
-    private boolean passive = false;*/
-    private HirePersonUpdateTask hirePersonUpdateTask;
+    // Timer to update tables
     private Timer timer;
-    
-    
     private boolean lastRequest = false;
     private boolean foundAndFilled = false;
     private int personId;
+    // if another Frame started this one
     private boolean hasParent = false;
 
     StaffController() {
@@ -56,13 +51,14 @@ public class StaffController extends Controller {
         this.setName("Staff");
         staffView = new StaffView();
         this.addElement(staffView);
-        if(hasParent)
+        if (hasParent) {
             staffView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        }
         // Hire tab
-        
-        staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName","---- select car class ---"));
+
+        staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName", "---- select car class ---"));
         staffView.getHireClassCB().setSelectedIndex(0);
-        
+
         this.addElement(staffView.getHireAddressTxt());
         this.addElement(staffView.getHireBtn());
         this.addElement(staffView.getHireChauffeuredCB());
@@ -79,33 +75,28 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireRefCodeTxt());
         this.addElement(staffView.getHireSurnameTxt());
         this.addElement(staffView.getHireToDP());
-        
+
         /**
          * Action Listener for the Combobox
          * When someone selects a CarClass the cars in the selected carclass would appear
          */
-        staffView.getHireClassCB().addActionListener (new ActionListener () {
+        staffView.getHireClassCB().addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox)e.getSource()).getSelectedItem();
-                if(item.Id>0){
-                    ArrayList<HashMap<String,String>> data = new CarClass().getCars(item.Id);
-                    if(data != null){
-                        staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number","Brand","Model"}, new Object[]{"plate","brand","model"}));
+                OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox) e.getSource()).getSelectedItem();
+                if (item.Id > 0) {
+                    ArrayList<HashMap<String, String>> data = new CarClass().getCars(item.Id);
+                    if (data != null) {
+                        staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number", "Brand", "Model"}, new Object[]{"plate", "brand", "model"}));
                     }
-                }else{
+                } else {
                     //clear
                 }
-                
+
             }
         });
-        
-       // staffView.getHireTbl().addMouseListener(this);
-        
-
-
         timer = new Timer();
-        hirePersonUpdateTask = new HirePersonUpdateTask();
     }
 
     @Override
@@ -121,44 +112,39 @@ public class StaffController extends Controller {
         }
     }
 
-    private void actionLogout() {
-        new LoginController().start();
-        this.removeAllElement();
-    }
-
     private void actionHire() {
-        
-        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();   
+
+        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();
         //System.out.println(item.Id);
-        int row  = staffView.getHireTbl().getSelectedRow();
+        int row = staffView.getHireTbl().getSelectedRow();
         String plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date startDate = staffView.getHireFromDP().getDate();
         Date endDate = staffView.getHireToDP().getDate();
-        String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
+        String _priceFromDb_str = new CarClass().getSingleValue("price", "classId", item.Id + "");
         double priceOfClass = Double.parseDouble(_priceFromDb_str);
         int days = Utility.dateDifference(startDate, endDate);
-        double amountPaid = priceOfClass * days;       
+        double amountPaid = priceOfClass * days;
         double deposit = 10 * priceOfClass;
-        
-        
+
+
         Rental rental = new Rental();
-        
+
         rental.setCustomerid(this.personId);
-        rental.setDepositAmount((float)deposit);
+        rental.setDepositAmount((float) deposit);
         rental.setStartDatetime(df.format(startDate));
         rental.setEndDateTime(df.format(endDate));
         rental.setCarPlate(plateNumber);
-        rental.setAmountPaid((float)amountPaid);
+        rental.setAmountPaid((float) amountPaid);
         rental.setIsBooking(false);
         rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
         rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
         rental.setReferenceCode(Utility.generateReferenceKey());
-        
-        if(rental.add()){
+
+        if (rental.add()) {
             System.out.println("ok added the rental data");
         }
-        
+
     }
 
     private void actionHireSearchRefCode() {
@@ -238,18 +224,18 @@ public class StaffController extends Controller {
         staffView.getHirePhoneTxt().setEnabled(status);
         this.setButtonStatus(!status);
     }
-    
-    private void setButtonStatus(boolean status){
-        
-       org.jdesktop.application.ResourceMap resourceMap =  org.jdesktop.application.Application.getInstance().getContext().getResourceMap(StaffView.class);
-        
-        if(status){
+
+    private void setButtonStatus(boolean status) {
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(StaffView.class);
+
+        if (status) {
             staffView.getHirePersonLoadBtn().setIcon(resourceMap.getIcon("hirePersonLoadBtnActive.icon"));
-        }else{
+        } else {
             staffView.getHirePersonLoadBtn().setIcon(resourceMap.getIcon("hirePersonLoadBtn.icon"));
         }
         staffView.getHirePersonLoadBtn().setEnabled(status);
-        
+
     }
 
     private void populateFields(HashMap<String, String> data) {
@@ -305,17 +291,22 @@ public class StaffController extends Controller {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+    }
 
     @Override
-    public void mousePressed(MouseEvent e) {}
+    public void mousePressed(MouseEvent e) {
+    }
 
     @Override
-    public void mouseReleased(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {
+    }
 
     @Override
-    public void mouseEntered(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {
+    }
 
     @Override
-    public void mouseExited(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {
+    }
 }

@@ -6,10 +6,22 @@ package oscar.persistance;;
  */
 public interface DbRecordable {
 
+    /**
+     * 
+     * @return
+     */
     boolean add();
     
+    /**
+     * 
+     * @return
+     */
     boolean delete();
     
+    /**
+     * 
+     * @return
+     */
     boolean update();
     
 }

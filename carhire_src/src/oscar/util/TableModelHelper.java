@@ -15,6 +15,13 @@ import javax.swing.table.TableModel;
  */
 public class TableModelHelper {
     
+    /**
+     * 
+     * @param map
+     * @param displayColumns
+     * @param columnNames
+     * @return
+     */
     public static TableModel getTableModel(ArrayList<HashMap<String, String>> map,Object[] displayColumns,Object[] columnNames){
         
         DefaultTableModel model = new DefaultTableModel(displayColumns, 0);

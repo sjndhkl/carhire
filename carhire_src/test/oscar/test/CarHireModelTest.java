@@ -3,6 +3,8 @@ package oscar.test;
 import java.util.HashMap;
 import oscar.model.Branch;
 import oscar.MVC.DbRecord;
+import oscar.util.ValidationPopup;
+import oscar.view.LoginView;
 
 /**
  *
@@ -59,5 +61,18 @@ public class CarHireModelTest extends BaseTestCase {
         Branch model = new Branch();
         model.setBranchId(12);
         assertEquals(false, model.delete());
+    }
+    
+    public void testValidationErrorPopup() {
+        LoginView loginView = new LoginView();
+        loginView.setVisible(true);
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+        hashMap.put("key", "error message");
+        hashMap.put("key2", "error message");
+        hashMap.put("k3ey", "error message");
+        hashMap.put("ke4y", "error message");
+        hashMap.put("ke5y", "error message");
+        ValidationPopup.popup(hashMap, loginView);
+        assertEquals(true, true);
     }
 }

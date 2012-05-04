@@ -173,7 +173,7 @@ public class LoginView extends AbstractView {
     }
 
     /**
-     * @param txtPassword the txtPassword to set
+     * @param password 
      */
     public void setPassword(String password) {
         this.txtPassword.setText(password);

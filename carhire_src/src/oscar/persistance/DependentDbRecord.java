@@ -15,11 +15,11 @@ import oscar.util.Utility;
  * @author sujan
  */
 public class DependentDbRecord extends DbRecord {
-    //SELECT COLUMN_NAME from information_schema.KEY_COLUMN_USAGE where constraint_name = "PRIMARY" and table_name = "branch" and table_schema="carhire"
-
-    /** The table that depends to others*/
+    /** The table that depends to others */
     protected String dependentTable;
+    /** the primary key of the table it depends on */
     protected String dependentTablePK;
+    /** the foreign key that reference the other table */
     protected String foreignKey;
 
     /**
@@ -30,6 +30,13 @@ public class DependentDbRecord extends DbRecord {
         super(table);
     }
 
+    /**
+     * 
+     * @param table the table of the model in the DB
+     * @param dependentTable The table that depends to others
+     * @param dependentTablePK the primary key of the table it depends on
+     * @param foreignKey the foreign key that reference the other table
+     */
     public DependentDbRecord(String table, String dependentTable, String dependentTablePK, String foreignKey) {
         super(table);
         this.dependentTable = dependentTable;
@@ -39,16 +46,15 @@ public class DependentDbRecord extends DbRecord {
 
     /**
      * Table name setter
-     * @param table table name
+     * @param key primary key
      */
     public void setPrimaryKey(String key) {
         this.primaryKey = key;
     }
 
     /**
-     * 
-     * @param records
-     * @return
+     * Add a dependendency
+     * @return whether successful
      * @throws SQLException
      */
     public boolean addDependent() throws SQLException {
@@ -93,6 +99,11 @@ public class DependentDbRecord extends DbRecord {
 
     /**
      * the colName must be present in both the table;
+     * @param records 
+     * @param colName 
+     * @param value
+     * @return
+     * @throws SQLException  
      */
     public boolean updateDependentBy(HashMap<String, HashMap<String, String>> records, String colName, String value) throws SQLException {
         try {
@@ -117,6 +128,12 @@ public class DependentDbRecord extends DbRecord {
         return true;
     }
 
+    /**
+     * 
+     * @param colName
+     * @param value
+     * @return
+     */
     public List findDependentBy(String colName, String value) {
         if (this.useTable.equals("")) {
             System.out.println("Foreign Key Not Set OR table not Specified");
@@ -135,10 +152,5 @@ public class DependentDbRecord extends DbRecord {
         personDep.put("fk", "personId");
         dependencies.add(personDep);
         return this.queryDependent(dependencies, colName, value);
-    }
-
-    @Override
-    public TableModel getTableModel(HashMap<String, String> filters) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

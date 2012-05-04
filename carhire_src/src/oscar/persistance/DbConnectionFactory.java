@@ -8,6 +8,9 @@ public class DbConnectionFactory {
     
     /** Databse types*/
     public enum Database{
+        /**
+         * 
+         */
         MYSQL
     }
     
