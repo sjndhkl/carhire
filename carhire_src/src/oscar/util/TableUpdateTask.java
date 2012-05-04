@@ -11,10 +11,11 @@ import oscar.MVC.DbRecord;
  * @author schiodin
  */
 public class TableUpdateTask extends TimerTask {
+
     /** the table to query */
     private JXTable table;
     /** the hashmap of filters as column -> filter */
-    private HashMap<String,String> filters;
+    private HashMap<String, String> filters;
     /** the model to ask the filtered table model to set into model */
     private DbRecord model;
 
@@ -32,7 +33,9 @@ public class TableUpdateTask extends TimerTask {
 
     @Override
     public void run() {
-        TableModel tableModel = model.getTableModel(filters);
-        table.setModel(tableModel);
+        if (table != null && filters != null && model != null) {
+            TableModel tableModel = model.getTableModel(filters);
+            table.setModel(tableModel);
+        }
     }
 }

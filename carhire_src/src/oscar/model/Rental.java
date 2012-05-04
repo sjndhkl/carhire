@@ -220,10 +220,6 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.startDatetime = startDatetime;
     }
     
-    
-    
-    
-    
     /**
      * 
      */
@@ -381,11 +377,12 @@ public class Rental extends DbRecord implements DbRecordable  {
         }
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         try{
-        if(Utility.dateDifference(df.parse(this.startDatetime), df.parse(this.startDatetime)) < 0){
-            errors.put("Start and End Date","should not be Empty or Conflicting");
+            
+        if(Utility.dateDifference(df.parse(this.startDatetime), df.parse(this.endDateTime)) < 0){
+            errors.put("Start and End Date","should not be Conflicting");
         }
         }catch(Exception e){
-            
+            errors.put("Start and End Date","should be valid date");
         }
         if(this.customerid<=0){
             errors.put("Customer ID","should not be Null/Empty");

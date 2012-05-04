@@ -102,7 +102,7 @@ public class CarClass extends DbRecord {
     
     public ArrayList<HashMap<String, String>> getCars(int classId,Date startDate,Date endDate){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate and ( rental.startDateTime >= '"+df.format(startDate) +"' AND rental.endDateTime <= '"+df.format(endDate) +"'   ) group by rental.carPlate) is NULL";
+        String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate and (  (rental.startDateTime between '"+df.format(startDate) +"' AND '"+df.format(endDate) +"') OR ( rental.endDateTime between '"+df.format(startDate) +"' AND '"+df.format(endDate) +"')   ) group by rental.carPlate) is NULL";
         //System.out.println(query);
         return this.query(query);
         

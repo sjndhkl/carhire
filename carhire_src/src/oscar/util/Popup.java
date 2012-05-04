@@ -9,7 +9,7 @@ import oscar.view.dialog.ErrorDialog;
  *
  * @author Draga
  */
-public abstract class ValidationPopup {
+public abstract class Popup {
 
     public static void popup(HashMap<String, String> errors, JFrame frame) {
         String errorString = "<html>";
@@ -19,7 +19,15 @@ public abstract class ValidationPopup {
             errorString += "<br />";
         }
         errorString += "</html>";
-        System.out.println(errorString);
+
+        ErrorDialog errorDialog = new ErrorDialog(frame, true);
+        errorDialog.getMessageLbl().setText(errorString);
+        errorDialog.setVisible(true);
+    }
+    
+    public static void popup(String message, JFrame frame) {
+        String errorString = "<html>";
+        errorString += "</html>";
 
         ErrorDialog errorDialog = new ErrorDialog(frame, true);
         errorDialog.getMessageLbl().setText(errorString);

@@ -1,7 +1,6 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -12,7 +11,6 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
 import oscar.model.Car;
 import oscar.model.CarClass;
 import oscar.model.Rental;
@@ -265,8 +263,7 @@ public class AdminController extends Controller {
                 carDialog.getColorTxt().getText(),
                 carDialog.getBranchCB().getSelectedIndex(),
                 carDialog.getServiceMilesTxt().getText(),
-                Integer.parseInt(carDialog.getServiceMonthTxt().getText())/*,
-                Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]*/);
+                Integer.parseInt(carDialog.getServiceMonthTxt().getText()));
 
         //if we are editing a record
         if (editingCar) {
@@ -389,7 +386,6 @@ public class AdminController extends Controller {
     }
 
     private void actionStaffUpdateTable() {
-        tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
         if (!adminView.getStaffNameTxt().getText().isEmpty()) {
@@ -399,6 +395,7 @@ public class AdminController extends Controller {
             filters.put("surname", adminView.getStaffSurnameTxt().getText());
         }
         if (!filters.isEmpty()) {
+            tableUpdateTask.cancel();
             tableUpdateTask = new TableUpdateTask(adminView.getStaffTbl(), filters, new Staff());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
         } else {
@@ -407,7 +404,6 @@ public class AdminController extends Controller {
     }
 
     private void actionRentalUpdateTable() {
-        tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
         if (!adminView.getRentalRefCodeTxt().getText().isEmpty()) {
@@ -417,6 +413,7 @@ public class AdminController extends Controller {
             filters.put("surname", adminView.getRentalSurnameTxt().getText());
         }
         if (!filters.isEmpty()) {
+            tableUpdateTask.cancel();
             tableUpdateTask = new TableUpdateTask(adminView.getRentalTbl(), filters, new Rental());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
         } else {
@@ -425,7 +422,6 @@ public class AdminController extends Controller {
     }
 
     private void actionClassUpdateTable() {
-        tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
         if (!adminView.getCarClassDisplayTxt().getText().isEmpty()) {
@@ -435,6 +431,7 @@ public class AdminController extends Controller {
             filters.put("name", adminView.getCarClassNameTxt().getText());
         }
         if (!filters.isEmpty()) {
+            tableUpdateTask.cancel();
             tableUpdateTask = new TableUpdateTask(adminView.getClassTbl(), filters, new CarClass());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
         } else {
@@ -443,7 +440,6 @@ public class AdminController extends Controller {
     }
 
     private void actionCarUpdateTable() {
-        tableUpdateTask.cancel();
         filters = new HashMap<String, String>();
 
         if (!adminView.getCarPlateTxt().getText().isEmpty()) {
@@ -466,6 +462,7 @@ public class AdminController extends Controller {
             filters.put("color", adminView.getCarColorTxt().getText());
         }
         if (!filters.isEmpty()) {
+            tableUpdateTask.cancel();
             tableUpdateTask = new TableUpdateTask(adminView.getCarTbl(), filters, new Car());
             timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
         } else {
