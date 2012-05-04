@@ -126,7 +126,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Group type="102" attributes="0">
               <EmptySpace pref="756" max="32767" attributes="0"/>
               <Component id="usernameLbl" min="-2" max="-2" attributes="0"/>
@@ -134,13 +133,8 @@
               <Component id="logoutBtn" min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <Component id="tabPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-=======
-          <Group type="102" alignment="0" attributes="0">
               <Component id="tabPanel" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
->>>>>>> de9423374ccd28b9f367540171a62c461b30784a
           </Group>
       </Group>
     </DimensionLayout>
@@ -177,11 +171,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="carSearchPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-<<<<<<< HEAD
-                      <Component id="jScrollPane9" pref="748" max="32767" attributes="0"/>
-=======
                       <Component id="jScrollPane9" pref="735" max="32767" attributes="0"/>
->>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -363,19 +353,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="personPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="carPanel1" min="-2" max="-2" attributes="0"/>
-=======
+
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="personPanel" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="carPanel1" max="32767" attributes="0"/>
->>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
@@ -616,11 +599,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="hireRefCodeLbl" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-<<<<<<< HEAD
-                          <Component id="hireRefCodeTxt" pref="171" max="32767" attributes="0"/>
-=======
                           <Component id="hireRefCodeTxt" pref="168" max="32767" attributes="0"/>
->>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="hireRefCodeSearchBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -631,11 +610,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-<<<<<<< HEAD
-                                  <Component id="jScrollPane8" pref="355" max="32767" attributes="0"/>
-=======
                                   <Component id="jScrollPane8" pref="348" max="32767" attributes="0"/>
->>>>>>> de9423374ccd28b9f367540171a62c461b30784a
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="1">
