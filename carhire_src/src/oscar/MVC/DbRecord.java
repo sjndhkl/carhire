@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.ComboBoxModel;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import oscar.model.OscarComboBoxModel;
 import oscar.model.OscarComboBoxModelItem;
@@ -286,8 +285,8 @@ public class DbRecord {
      * @return
      */
     public String getSingleValue(String colName, String col, String value) {
-        ArrayList<HashMap<String, String>> records = this.query("select " + colName + " from " + this.useTable + " " + col + " = '" + value + "' limit 1");
-        System.out.println("select " + colName + " from " + this.useTable + " where " + col + "= '" + value + "' limit 1");
+        ArrayList<HashMap<String, String>> records = this.query("select " + colName + " from " + this.useTable + " where " + col + " = '" + value + "' limit 1");
+        //System.out.println("select " + colName + " from " + this.useTable + " where " + col + "= '" + value + "' limit 1");
         if (records != null) {
             HashMap<String, String> record = records.get(0);
             return record.get(colName);
@@ -551,7 +550,7 @@ public class DbRecord {
     public boolean updateBy(HashMap<String, String> objHashMap, String colName, String value) {
 
         String query = "update " + this.useTable + " set " + this.getUpdateParams(objHashMap, colName) + " where " + colName + " = '" + value + "'";
-
+        System.out.println(query);
         return this.nonQuery(query);
     }
 

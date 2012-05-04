@@ -99,6 +99,9 @@ public class Rental extends DbRecord implements DbRecordable  {
     public void setAmountPaid(float amountPaid) {
         this.amountPaid = amountPaid;
     }
+    public void setAmountPaid(String amountPaid) {
+        this.amountPaid = Float.parseFloat(amountPaid);
+    }
 
     /**
      * 
@@ -146,6 +149,9 @@ public class Rental extends DbRecord implements DbRecordable  {
      */
     public void setDepositAmount(float depositAmount) {
         this.depositAmount = depositAmount;
+    }
+     public void setDepositAmount(String depositAmount) {
+        this.depositAmount = Float.parseFloat(depositAmount);
     }
 
     /**
@@ -242,6 +248,19 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.isBooking = isBooking;
         this.depositAmount = depositAmount;
     }
+    
+    public HashMap<String,String> getRentalRecordByReferenceNumber(String referenceNumber){
+        HashMap<String,String> record = null;
+        
+        String sql = "select person.*,rental.* from rental inner join person on person.personId = rental.customerId where rental.isBooking = 1 and rental.referenceCode = '"+referenceNumber+"'";
+        ArrayList<HashMap<String,String>> records = this.query(sql);
+        if(records!=null){
+            if(records.size()>0){
+                return records.get(0);
+            }
+        }
+        return record;
+    }
 
     @Override
     public boolean add() {
@@ -255,7 +274,7 @@ public class Rental extends DbRecord implements DbRecordable  {
      */
     @Override
     public boolean delete() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return false;
     }
 
     /**
@@ -264,7 +283,8 @@ public class Rental extends DbRecord implements DbRecordable  {
      */
     @Override
     public boolean update() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        HashMap<String,String> record = Utility.convertToHashMap(this);
+        return super.updateBy(record, "rentalId", this.rentalId+"");
     }
 
     /**

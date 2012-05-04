@@ -1,6 +1,9 @@
 package oscar.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -97,15 +100,10 @@ public class CarClass extends DbRecord {
         return model;
     }
     
-    
-    /**
-     * 
-     * @param classId
-     * @return
-     */
-    public ArrayList<HashMap<String, String>> getCars(int classId){
-        
-        String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate group by rental.carPlate) is NULL";
+    public ArrayList<HashMap<String, String>> getCars(int classId,Date startDate,Date endDate){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String query ="select car.* from car inner join "+this.useTable+" on car.classId = "+this.useTable+".classId where car.classId = '"+classId+"' and (select count(*) from rental where car.plate = rental.carPlate and ( rental.startDateTime >= '"+df.format(startDate) +"' AND rental.endDateTime <= '"+df.format(endDate) +"'   ) group by rental.carPlate) is NULL";
+        //System.out.println(query);
         return this.query(query);
         
     }
