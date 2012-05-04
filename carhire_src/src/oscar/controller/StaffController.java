@@ -32,6 +32,7 @@ import oscar.view.dialog.ExtensionDialog;
  */
 public class StaffController extends Controller {
     // Views and dialogs
+
     private StaffView staffView;
     private ExtensionDialog extensionDialog;
     // Timer to update tables
@@ -47,7 +48,6 @@ public class StaffController extends Controller {
     private int rentalId = -1;
     private boolean hasParent = false;
     // dialogs editing variables
-    private boolean editingReturn = false;
     private String editingReturnId;
 
     StaffController(boolean hasParent) {
@@ -66,7 +66,11 @@ public class StaffController extends Controller {
 
         staffView.getHireClassCB().setModel(new CarClass().getComboModel("displayName", "---- select car class ---"));
         staffView.getHireClassCB().setSelectedIndex(0);
-
+        extensionDialog = new ExtensionDialog(staffView, true);
+        this.addElement(extensionDialog);
+        this.addElement(extensionDialog.getjButton1());
+        this.addElement(extensionDialog.getExtendsbtn());
+        this.addElement(extensionDialog);
         this.addElement(staffView.getHireAddressTxt());
         this.addElement(staffView.getHireBtn());
         this.addElement(staffView.getHireChauffeuredCB());
@@ -83,7 +87,7 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireRefCodeTxt());
         this.addElement(staffView.getHireSurnameTxt());
         this.addElement(staffView.getHireToDP());
-        
+
         this.addElement(staffView.getSurnameTxt2());
         this.addElement(staffView.getPlateTxt3());
         this.addElement(staffView.getRefCodeTxt2());
@@ -97,13 +101,13 @@ public class StaffController extends Controller {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox)e.getSource()).getSelectedItem();
-                if(item.Id>=0){
+                OscarComboBoxModelItem item = (OscarComboBoxModelItem) ((JComboBox) e.getSource()).getSelectedItem();
+                if (item.Id >= 0) {
                     Date startDate = staffView.getHireFromDP().getDate();
                     Date endDate = staffView.getHireToDP().getDate();
-                    ArrayList<HashMap<String,String>> data = new CarClass().getCars(item.Id,startDate,endDate);
-                    if(data != null){
-                        staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number","Brand","Model"}, new Object[]{"plate","brand","model"}));
+                    ArrayList<HashMap<String, String>> data = new CarClass().getCars(item.Id, startDate, endDate);
+                    if (data != null) {
+                        staffView.getHireTbl().setModel(TableModelHelper.getTableModel(data, new Object[]{"Plate Number", "Brand", "Model"}, new Object[]{"plate", "brand", "model"}));
                     }
                 }
 
@@ -117,6 +121,7 @@ public class StaffController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Hire tab
         if (e.getSource().equals(staffView.getHireBtn())) {
             actionHire();
         } else if (e.getSource().equals(staffView.getHireClearBtn())) {
@@ -125,113 +130,118 @@ public class StaffController extends Controller {
             actionHireLoadPerson();
         } else if (e.getSource().equals(staffView.getHireRefCodeSearchBtn())) {
             actionHireSearchRefCode();
+        } // extension dialog
+        else if (e.getSource().equals(extensionDialog.getExtendsbtn())) {
+            actionExtensionDlgExtend();
+        } else if (e.getSource().equals(extensionDialog.getjButton1())) {
+            actionExtensionDlgCancel();
         }
     }
-    
+
     private void actionLogout() {
         new LoginController().start();
         this.removeAllElement();
     }
-/**
+
+    /**
      * Add a Rental Data
      */
     private void actionHire() {
 
-            if(this.personId<=0){
-                //add the customer and get the id
+        if (this.personId <= 0) {
+            //add the customer and get the id
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            Person person = new Person();
+            person.setAddress(staffView.getHireAddressTxt().getText());
+            person.setName(staffView.getHireNameTxt().getText());
+            person.setSurname(staffView.getHireSurnameTxt().getText());
+            person.setEmail(staffView.getHireEmailTxt().getText());
+            person.setPhone(staffView.getHirePhoneTxt().getText());
+            person.setDateOfBirth(df.format(staffView.getHireDateOfBirthDP().getDate()));
+            this.personId = person.addPk();
+
+        }
+
+        if (this.personId > 0) {
+            OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();
+            //System.out.println(this.rentalId);
+            String plateNumber = "";
+            if (item.Id > 0) {
+                int row = staffView.getHireTbl().getSelectedRow();
+                plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
+            }
+            Rental rental = new Rental();
+
+            if (this.rentalId == -1) {
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                Person person = new Person();
-                person.setAddress(staffView.getHireAddressTxt().getText());
-                person.setName( staffView.getHireNameTxt().getText());
-                person.setSurname(staffView.getHireSurnameTxt().getText());
-                person.setEmail(  staffView.getHireEmailTxt().getText());
-                person.setPhone(staffView.getHirePhoneTxt().getText());
-                person.setDateOfBirth(df.format(staffView.getHireDateOfBirthDP().getDate()));
-                this.personId = person.addPk();
+                Date startDate = staffView.getHireFromDP().getDate();
+                Date endDate = staffView.getHireToDP().getDate();
+                String _priceFromDb_str = new CarClass().getSingleValue("price", "classId", item.Id + "");
+                double priceOfClass = Double.parseDouble(_priceFromDb_str);
+                int days = Utility.dateDifference(startDate, endDate);
+                double amountPaid = priceOfClass * days;
+                double deposit = 10 * priceOfClass;
+                rental.setDepositAmount((float) deposit);
+                rental.setAmountPaid((float) amountPaid);
+                rental.setStartDatetime(df.format(startDate));
+                rental.setEndDateTime(df.format(endDate));
+                rental.setReferenceCode(Utility.generateReferenceKey());
+            }
+            rental.setIsBooking(false);
+            rental.setCustomerid(this.personId);
+            if (item.Id > 0) {
+                rental.setCarPlate(plateNumber);
+            }
+
+            rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
+            rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
+
+            if (this.rentalId == -1) {
+                if (rental.add()) {
+                    //System.out.println("ok added the rental data");
+                    JOptionPane.showMessageDialog(staffView, "Hiring was Successful", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
+                    this.actionHireClearFields();
+                } else {
+                    JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
+
+                }
+            } else {
+
+                rental.setRentalId(this.rentalId);
+                rental.setDepositAmount(this._rental_ref.getDepositAmount());
+                rental.setAmountPaid(this._rental_ref.getAmountPaid());
+                if (rental.update()) {
+
+                    JOptionPane.showMessageDialog(staffView, "Hiring was Successful From a Booking Information", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
+                    this.actionHireClearFields();
+                } else {
+                    JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
+
+                }
 
             }
-            
-            if(this.personId>0){
-                        OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();   
-                        //System.out.println(this.rentalId);
-                        String plateNumber = "";
-                        if(item.Id>0){
-                         int row  = staffView.getHireTbl().getSelectedRow();
-                         plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
-                        }
-                        Rental rental = new Rental();
-                        
-                        if(this.rentalId==-1){
-                                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                                Date startDate = staffView.getHireFromDP().getDate();
-                                Date endDate = staffView.getHireToDP().getDate();
-                                String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
-                                double priceOfClass = Double.parseDouble(_priceFromDb_str);
-                                int days = Utility.dateDifference(startDate, endDate);
-                                double amountPaid = priceOfClass * days;       
-                                double deposit = 10 * priceOfClass;
-                                rental.setDepositAmount((float)deposit);
-                                rental.setAmountPaid((float)amountPaid);
-                                rental.setStartDatetime(df.format(startDate));
-                                rental.setEndDateTime(df.format(endDate));
-                                rental.setReferenceCode(Utility.generateReferenceKey());
-                        }
-                        rental.setIsBooking(false);
-                        rental.setCustomerid(this.personId);
-                         if(item.Id>0){
-                                rental.setCarPlate(plateNumber);
-                         }
-                        
-                        rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
-                        rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
-                        
-                        if(this.rentalId==-1){
-                                if(rental.add()){
-                                    //System.out.println("ok added the rental data");
-                                    JOptionPane.showMessageDialog(staffView, "Hiring was Successful", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
-                                    this.actionHireClearFields();
-                                }else{
-                                    JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
-
-                                }
-                        }else{
-                            
-                            rental.setRentalId(this.rentalId);
-                            rental.setDepositAmount(this._rental_ref.getDepositAmount());
-                            rental.setAmountPaid(this._rental_ref.getAmountPaid());
-                            if(rental.update()){
-                                  
-                                JOptionPane.showMessageDialog(staffView, "Hiring was Successful From a Booking Information", "Hiring Response", JOptionPane.INFORMATION_MESSAGE);
-                                 this.actionHireClearFields();
-                            }else{
-                                JOptionPane.showMessageDialog(staffView, "Hiring Failed", "Hiring Response", JOptionPane.ERROR_MESSAGE);
-
-                            }
-                            
-                        }
-            }
-            else{
-                   System.out.append("");
-            }
+        } else {
+            System.out.append("");
+        }
     }
 
     private void actionHireSearchRefCode() {
-        
-        String refCode = staffView.getHireRefCodeTxt().getText();
-        if(!refCode.equals("")){
-            
-            HashMap<String,String> record = new Rental().getRentalRecordByReferenceNumber(refCode);
-            if(record==null){
-                 JOptionPane.showMessageDialog(staffView, "Reference Code '"+refCode+"' was Not Found", "Search Response", JOptionPane.ERROR_MESSAGE);
 
-            }else{
+        String refCode = staffView.getHireRefCodeTxt().getText();
+        if (!refCode.equals("")) {
+
+            HashMap<String, String> record = new Rental().getRentalRecordByReferenceNumber(refCode);
+            if (record == null) {
+                JOptionPane.showMessageDialog(staffView, "Reference Code '" + refCode + "' was Not Found", "Search Response", JOptionPane.ERROR_MESSAGE);
+
+            } else {
                 this._rental_ref = new Rental();
                 Utility.fill(record, this._rental_ref);
                 this.populateFields(record, true);
             }
-            
-        }else{
-           JOptionPane.showMessageDialog(staffView, "Please provide Reference Code", "Search Response", JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            JOptionPane.showMessageDialog(staffView, "Please provide Reference Code", "Search Response", JOptionPane.ERROR_MESSAGE);
 
         }
     }
@@ -254,14 +264,14 @@ public class StaffController extends Controller {
         staffView.getHireRefCodeTxt().setText("");
         staffView.getHireSurnameTxt().setText("");
         staffView.getHireTbl().removeAll();
-       // staffView.getHireTbl().setModel(null);
+        // staffView.getHireTbl().setModel(null);
         this.setEditablePersonFields(true);
         staffView.getHireNameTxt().requestFocusInWindow();
         this.lastRequest = false;
         this.foundAndFilled = false;
         this.personId = 0;
         this.rentalId = -1;
-        this._rental_ref=null;
+        this._rental_ref = null;
     }
 
     @Override
@@ -293,7 +303,7 @@ public class StaffController extends Controller {
             ArrayList<HashMap<String, String>> records = new Person().findAllLike(this.getColumns());
             if (records != null) {
                 if (records.size() == 1) {
-                    this.populateFields(records.get(0),false);
+                    this.populateFields(records.get(0), false);
                 } else {
                     this.setButtonStatus(false);
                 }
@@ -334,12 +344,13 @@ public class StaffController extends Controller {
 
     }
 
-    private void populateFields(HashMap<String, String> data,boolean withHireFields) {
-        if(data==null)
+    private void populateFields(HashMap<String, String> data, boolean withHireFields) {
+        if (data == null) {
             return;
-        try{
+        }
+        try {
             this.personId = Integer.parseInt(data.get("personId"));
-        }catch(Exception ex){
+        } catch (Exception ex) {
             this.personId = 0;
         }
         staffView.getHireNameTxt().setText(data.get("name"));
@@ -349,24 +360,24 @@ public class StaffController extends Controller {
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             Date dateOfBirth = df.parse(data.get("dateOfBirth"));
             staffView.getHireDateOfBirthDP().setDate(dateOfBirth);
-            
-            if(withHireFields){
-                
+
+            if (withHireFields) {
+
                 Date startDate = df.parse(data.get("startDatetime"));
                 Date endDate = df.parse(data.get("endDatetime"));
-                
+
                 staffView.getHireFromDP().setDate(startDate);
                 staffView.getHireToDP().setDate(endDate);
-                try{
+                try {
                     this.rentalId = Integer.parseInt(data.get("rentalId"));
-                }catch(Exception e){
+                } catch (Exception e) {
                     this.rentalId = -1;
                 }
-                
-                if("1".equals(data.get("isChauffeur").toString())){
+
+                if ("1".equals(data.get("isChauffeur").toString())) {
                     staffView.getHireChauffeuredCB().setSelected(true);
                 }
-                
+
             }
 
         } catch (Exception e) {
@@ -377,9 +388,8 @@ public class StaffController extends Controller {
         staffView.getHireAddressTxt().setText(data.get("address"));
 
         staffView.getHirePhoneTxt().setText(data.get("phone"));
-        
-        if(withHireFields){
-            
+
+        if (withHireFields) {
         }
 
         foundAndFilled = true; //to stop the searching process
@@ -465,23 +475,38 @@ public class StaffController extends Controller {
     }
 
     private void actionExtensionSelectRow(int selectedRow) {
-        
+
         editingReturnId = (String) staffView.getjXTable1().getValueAt(selectedRow, 0);
-        // Set staff editing mode true
-        editingReturn = true;
         HashMap<String, String> rentalRecord = new Rental().findByPK(editingReturnId);
 
-        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd hh:mm");
         try {
-            String substring = rentalRecord.get("endDatetime").substring(0, 10);
+            String substring = rentalRecord.get("endDatetime").substring(0, 16);
             Date parse = df.parse(substring);
-            extensionDialog.getOldDateDP().setEnabled(true);
             extensionDialog.getOldDateDP().setDate(parse);
-            extensionDialog.getOldDateDP().setEnabled(false);
         } catch (ParseException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
         // shows the dialog
         extensionDialog.setVisible(true);
+    }
+
+    private void actionExtensionDlgExtend() {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = extensionDialog.getNewDateDP().getDate();
+        String query = "update rental set endDatetime='"
+                + df.format(extensionDialog.getNewDateDP().getDate())
+                + "' where rentalId='"
+                + editingReturnId
+                + "'";
+        new Rental().nonQuery(query);
+        actionExtensionDlgCancel();
+        updateRentalTbl();
+    }
+
+    private void actionExtensionDlgCancel() {
+        extensionDialog.getNewDateDP().setDate(null);
+        extensionDialog.getOldDateDP().setDate(null);
+        extensionDialog.setVisible(false);
     }
 }

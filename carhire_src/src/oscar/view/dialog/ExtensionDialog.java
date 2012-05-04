@@ -174,4 +174,18 @@ public class ExtensionDialog extends javax.swing.JDialog {
     public org.jdesktop.swingx.JXDatePicker getOldDateDP() {
         return oldDateDP;
     }
+
+    /**
+     * @return the Extendsbtn
+     */
+    public javax.swing.JButton getExtendsbtn() {
+        return Extendsbtn;
+    }
+
+    /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
 }

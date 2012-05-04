@@ -1,7 +1,6 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -12,7 +11,6 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
 import oscar.model.Car;
 import oscar.model.CarClass;
 import oscar.model.Rental;
@@ -265,8 +263,7 @@ public class AdminController extends Controller {
                 carDialog.getColorTxt().getText(),
                 carDialog.getBranchCB().getSelectedIndex(),
                 carDialog.getServiceMilesTxt().getText(),
-                Integer.parseInt(carDialog.getServiceMonthTxt().getText())/*,
-                Car.CarStatus.values()[carDialog.getStatusCB().getSelectedIndex()]*/);
+                Integer.parseInt(carDialog.getServiceMonthTxt().getText()));
 
         //if we are editing a record
         if (editingCar) {
