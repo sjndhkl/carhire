@@ -212,10 +212,6 @@ public class Rental extends DbRecord implements DbRecordable  {
         this.startDatetime = startDatetime;
     }
     
-    
-    
-    
-    
     /**
      * 
      */

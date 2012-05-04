@@ -3,7 +3,7 @@ package oscar.test;
 import java.util.HashMap;
 import oscar.model.Branch;
 import oscar.MVC.DbRecord;
-import oscar.util.ValidationPopup;
+import oscar.util.Popup;
 import oscar.view.LoginView;
 
 /**
@@ -72,7 +72,7 @@ public class CarHireModelTest extends BaseTestCase {
         hashMap.put("k3ey", "error message");
         hashMap.put("ke4y", "error message");
         hashMap.put("ke5y", "error message");
-        ValidationPopup.popup(hashMap, loginView);
+        Popup.popup(hashMap, loginView);
         assertEquals(true, true);
     }
 }

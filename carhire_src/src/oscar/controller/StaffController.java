@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.MouseEvent;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
@@ -19,8 +20,10 @@ import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.model.Rental;
 import oscar.util.TableModelHelper;
+import oscar.util.TableUpdateTask;
 import oscar.util.Utility;
 import oscar.view.StaffView;
+import oscar.view.dialog.ExtensionDialog;
 
 /**
  *
@@ -28,19 +31,22 @@ import oscar.view.StaffView;
  */
 public class StaffController extends Controller {
     // Views and dialogs
-
     private StaffView staffView;
+    private ExtensionDialog extensionDialog;
     // Timer to update tables
     private Timer timer;
+    // The runnable that update the tables
+    private TableUpdateTask tableUpdateTask;
+    // Filters to apply to queries
+    private HashMap<String, String> filters;
     private boolean lastRequest = false;
     private boolean foundAndFilled = false;
     private int personId;
     // if another Frame started this one
     private boolean hasParent = false;
-
-    StaffController() {
-        super();
-    }
+    // dialogs editing variables
+    private boolean editingReturn = false;
+    private String editingReturnId;
 
     StaffController(boolean hasParent) {
         this.hasParent = hasParent;
@@ -75,6 +81,11 @@ public class StaffController extends Controller {
         this.addElement(staffView.getHireRefCodeTxt());
         this.addElement(staffView.getHireSurnameTxt());
         this.addElement(staffView.getHireToDP());
+        
+        this.addElement(staffView.getSurnameTxt2());
+        this.addElement(staffView.getPlateTxt3());
+        this.addElement(staffView.getRefCodeTxt2());
+        this.addElement(staffView.getjXTable1());
 
         /**
          * Action Listener for the Combobox
@@ -97,6 +108,9 @@ public class StaffController extends Controller {
             }
         });
         timer = new Timer();
+        tableUpdateTask = new TableUpdateTask(null, null, null);
+
+        updateRentalTbl();
     }
 
     @Override
@@ -186,6 +200,13 @@ public class StaffController extends Controller {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+        // extend tab
+        if (e.getSource().equals(staffView.getSurnameTxt2())
+                || e.getSource().equals(staffView.getPlateTxt3())
+                || e.getSource().equals(staffView.getRefCodeTxt2())) {
+            actionExtendUpdateTable();
+        }
 
         if (!staffView.getSearchModeCheckBox().isSelected()) {
             return;
@@ -292,6 +313,10 @@ public class StaffController extends Controller {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        // extension table
+        if (e.getSource().equals(staffView.getjXTable1())) {
+            actionExtensionSelectRow(staffView.getjXTable1().getSelectedRow());
+        }
     }
 
     @Override
@@ -308,5 +333,52 @@ public class StaffController extends Controller {
 
     @Override
     public void mouseExited(MouseEvent e) {
+    }
+
+    private void updateRentalTbl() {
+        staffView.getjXTable1().setModel(new Rental().getTableModel());
+    }
+
+    private void actionExtendUpdateTable() {
+        filters = new HashMap<String, String>();
+
+        if (!staffView.getSurnameTxt2().getText().isEmpty()) {
+            filters.put("surname", staffView.getSurnameTxt2().getText());
+        }
+        if (!staffView.getRefCodeTxt2().getText().isEmpty()) {
+            filters.put("model", staffView.getRefCodeTxt2().getText());
+        }
+        if (!staffView.getPlateTxt3().getText().isEmpty()) {
+            filters.put("carPlate", staffView.getPlateTxt3().getText());
+        }
+
+        if (!filters.isEmpty()) {
+            tableUpdateTask.cancel();
+            tableUpdateTask = new TableUpdateTask(staffView.getjXTable1(), filters, new Rental());
+            timer.schedule(tableUpdateTask, this.TABLE_FILTERING_DELAY);
+        } else {
+            updateRentalTbl();
+        }
+    }
+
+    private void actionExtensionSelectRow(int selectedRow) {
+        
+        editingReturnId = (String) staffView.getjXTable1().getValueAt(selectedRow, 0);
+        // Set staff editing mode true
+        editingReturn = true;
+        HashMap<String, String> rentalRecord = new Rental().findByPK(editingReturnId);
+
+        DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+        try {
+            String substring = rentalRecord.get("endDatetime").substring(0, 10);
+            Date parse = df.parse(substring);
+            extensionDialog.getOldDateDP().setEnabled(true);
+            extensionDialog.getOldDateDP().setDate(parse);
+            extensionDialog.getOldDateDP().setEnabled(false);
+        } catch (ParseException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // shows the dialog
+        extensionDialog.setVisible(true);
     }
 }

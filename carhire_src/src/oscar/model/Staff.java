@@ -8,7 +8,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import oscar.persistance.DbRecordable;
+import oscar.util.Popup;
 import oscar.util.Utility;
 
 /**
@@ -94,16 +96,24 @@ public class Staff extends Person implements DbRecordable {
      * @param password inputed password
      * @return whether the password match the one in the database
      */
-    public boolean authorize(String password) {
+    public boolean authorize(String password, JFrame frame) {
         HashMap<String, String> hm = this.findOneBy("username", this.username);
+
+        if (hm.isEmpty()) {
+            Popup.popup("Username or password are wrong", frame);
+            return false;
+        }
+
         String inputPassword = "";
         try {
             inputPassword = Utility.encodeSHA256(password);
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (hm.get("password").equals(inputPassword))
+        if (hm.get("password").equals(inputPassword)) {
             return true;
+        }
+        Popup.popup("Username or password are wrong", frame);
         return false;
     }
 
@@ -140,20 +150,19 @@ public class Staff extends Person implements DbRecordable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-   /* @Override
+    /* @Override
     public boolean updateDependentBy(HashMap<String, HashMap<String, String>> records, String colName, String value) throws SQLException {
-       HashMap<String, String> staffRecord = records.get("oscar.model.Staff");
-       String plainPassword = staffRecord.remove("password");
-       String encryptedPassword = new String();
-        try {
-            encryptedPassword = Utility.encodeSHA256(plainPassword);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        staffRecord.put("password", encryptedPassword);
-        return super.updateDependentBy(records, colName, value);
+    HashMap<String, String> staffRecord = records.get("oscar.model.Staff");
+    String plainPassword = staffRecord.remove("password");
+    String encryptedPassword = new String();
+    try {
+    encryptedPassword = Utility.encodeSHA256(plainPassword);
+    } catch (NoSuchAlgorithmException ex) {
+    Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    staffRecord.put("password", encryptedPassword);
+    return super.updateDependentBy(records, colName, value);
     }*/
-
     /**
      * 
      * @return
@@ -176,7 +185,7 @@ public class Staff extends Person implements DbRecordable {
         ArrayList<HashMap<String, String>> map = this.queryDependent(dependencies, "*", "*");
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
-        for (HashMap<String, String> row : map)
+        for (HashMap<String, String> row : map) {
             model.addRow(new Object[]{
                         row.get("personId"),
                         row.get("name"),
@@ -187,6 +196,7 @@ public class Staff extends Person implements DbRecordable {
                         row.get("dateOfBirth"),
                         row.get("email")
                     });
+        }
         return model;
     }
 
@@ -210,10 +220,10 @@ public class Staff extends Person implements DbRecordable {
         personDep.put("fk", "personId");
         dependencies.add(personDep);
 
-        ArrayList<HashMap<String, String>> map = this.queryDependentLike (dependencies, filters, "*", "*");
+        ArrayList<HashMap<String, String>> map = this.queryDependentLike(dependencies, filters, "*", "*");
         DefaultTableModel model = new DefaultTableModel(
                 new Object[]{"Id", "Name", "Surname", "Admin", "Chauffeur", "Username", "Date of birth", "email"}, 0);
-        for (HashMap<String, String> row : map)
+        for (HashMap<String, String> row : map) {
             model.addRow(new Object[]{
                         row.get("personId"),
                         row.get("name"),
@@ -224,6 +234,7 @@ public class Staff extends Person implements DbRecordable {
                         row.get("dateOfBirth"),
                         row.get("email")
                     });
+        }
         return model;
     }
 

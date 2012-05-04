@@ -3,10 +3,8 @@ package oscar.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.util.HashMap;
 import oscar.model.Staff;
 import oscar.MVC.Controller;
-import oscar.util.ValidationPopup;
 import oscar.view.LoginView;
 
 /**
@@ -34,7 +32,7 @@ public class LoginController extends Controller {
 
     private void login() {
         Staff staff = new Staff("username", loginView.getUsername());
-        if (staff.authorize(loginView.getPassword())) {
+        if (staff.authorize(loginView.getPassword(), loginView)) {
             System.out.println("this is logged");
             // clear the password field
             loginView.setPassword("");
@@ -44,7 +42,7 @@ public class LoginController extends Controller {
             if (staff.isAdmin())
                 new AdminController().start();
             else
-                new StaffController().start();
+                new StaffController(false).start();
         }
     }
 

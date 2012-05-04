@@ -160,4 +160,18 @@ public class ExtensionDialog extends javax.swing.JDialog {
     private org.jdesktop.swingx.JXDatePicker oldDateDP;
     private javax.swing.JLabel oldDateLbl;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the newDateDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getNewDateDP() {
+        return newDateDP;
+    }
+
+    /**
+     * @return the oldDateDP
+     */
+    public org.jdesktop.swingx.JXDatePicker getOldDateDP() {
+        return oldDateDP;
+    }
 }

@@ -780,4 +780,32 @@ public class StaffView extends AbstractView {
     private javax.swing.JTextField surnameTxt2;
     private javax.swing.JTabbedPane tabPanel;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the jXTable1
+     */
+    public org.jdesktop.swingx.JXTable getjXTable1() {
+        return jXTable1;
+    }
+
+    /**
+     * @return the plateTxt3
+     */
+    public javax.swing.JTextField getPlateTxt3() {
+        return plateTxt3;
+    }
+
+    /**
+     * @return the refCodeTxt2
+     */
+    public javax.swing.JTextField getRefCodeTxt2() {
+        return refCodeTxt2;
+    }
+
+    /**
+     * @return the surnameTxt2
+     */
+    public javax.swing.JTextField getSurnameTxt2() {
+        return surnameTxt2;
+    }
 }
