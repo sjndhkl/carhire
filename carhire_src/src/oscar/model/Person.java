@@ -264,4 +264,28 @@ public class Person extends DependentDbRecord implements DbRecordable {
     public void setPersonId(int personId) {
         this.personId = personId;
     }
+    
+    
+    public HashMap<String,String> validate(){
+        HashMap<String,String> errors = new HashMap<String, String>();
+        if("".equals(this.name) || this.name==null){
+            errors.put("Name","should not be empty");
+        }
+        if("".equals(this.surname) || this.surname==null){
+            errors.put("Surname","should not be empty");
+        }
+        if("".equals(this.phone) || this.phone==null){
+            errors.put("Phone","should not be empty");
+        }
+        if(this.dateOfBirth==null){
+            errors.put("Date of Birth","should not be Null");
+        }
+        if("".equals(this.email) || this.email==null){
+            errors.put("Email","should not be empty");
+        }
+        if("".equals(this.address) || this.address==null){
+            errors.put("Address","should not be empty");
+        }
+        return errors;
+    }
 }

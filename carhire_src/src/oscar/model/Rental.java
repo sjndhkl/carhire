@@ -1,5 +1,7 @@
 package oscar.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
@@ -368,4 +370,28 @@ public class Rental extends DbRecord implements DbRecordable  {
         }
         return model;
     }
+    
+    public HashMap<String,String> validate(){
+        HashMap<String,String> errors = new HashMap<String, String>();
+        if("".equals(this.carPlate) || this.carPlate==null){
+            errors.put("Car Plate","should not be empty");
+        }
+        if("".equals(this.referenceCode) || this.referenceCode==null){
+            errors.put("Reference Code","should not be empty");
+        }
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        try{
+        if(Utility.dateDifference(df.parse(this.startDatetime), df.parse(this.startDatetime)) < 0){
+            errors.put("Start and End Date","should not be Empty or Conflicting");
+        }
+        }catch(Exception e){
+            
+        }
+        if(this.customerid<=0){
+            errors.put("Customer ID","should not be Null/Empty");
+        }
+        return errors;
+    }
+    
+    
 }

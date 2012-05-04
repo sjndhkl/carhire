@@ -310,4 +310,21 @@ public class Staff extends Person implements DbRecordable {
             Logger.getLogger(Staff.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public HashMap<String,String> validate(boolean withParent){
+        HashMap<String,String> errors = null;
+        if(withParent)
+            errors = super.validate();
+        else
+            errors = new HashMap<String, String>();
+        if("".equals(this.password)){
+            errors.put("Password","should not be empty");
+        }
+        if("".equals(this.username)){
+            errors.put("Username","should not be empty");
+        }
+        return errors;
+    }
+    
+    
 }

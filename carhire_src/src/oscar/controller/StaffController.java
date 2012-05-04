@@ -21,6 +21,7 @@ import oscar.model.Person;
 import oscar.model.Rental;
 import oscar.util.TableModelHelper;
 import oscar.util.Utility;
+import oscar.util.ValidationPopup;
 import oscar.view.StaffView;
 
 /**
@@ -125,14 +126,25 @@ public class StaffController extends Controller {
 
             if(this.personId<=0){
                 //add the customer and get the id
+                 Person person = new Person();
+                try{
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                Person person = new Person();
+               
                 person.setAddress(staffView.getHireAddressTxt().getText());
                 person.setName( staffView.getHireNameTxt().getText());
                 person.setSurname(staffView.getHireSurnameTxt().getText());
                 person.setEmail(  staffView.getHireEmailTxt().getText());
                 person.setPhone(staffView.getHirePhoneTxt().getText());
                 person.setDateOfBirth(df.format(staffView.getHireDateOfBirthDP().getDate()));
+                }catch(Exception e){
+                    
+                }
+                HashMap<String,String> errors = person.validate();
+                            if(errors.size()>0){
+                                ValidationPopup.popup(errors, staffView);
+                                return;
+                            }
+                
                 this.personId = person.addPk();
 
             }
@@ -141,25 +153,36 @@ public class StaffController extends Controller {
                         OscarComboBoxModelItem item = (OscarComboBoxModelItem) this.staffView.getHireClassCB().getSelectedItem();   
                         //System.out.println(this.rentalId);
                         String plateNumber = "";
+                        try{
                         if(item.Id>0){
                          int row  = staffView.getHireTbl().getSelectedRow();
                          plateNumber = (String) staffView.getHireTbl().getValueAt(row, 0);
                         }
+                        }catch(Exception e){
+                            plateNumber = "-1";
+                        }
                         Rental rental = new Rental();
                         
                         if(this.rentalId==-1){
+                            try{
                                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                                 Date startDate = staffView.getHireFromDP().getDate();
                                 Date endDate = staffView.getHireToDP().getDate();
-                                String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
-                                double priceOfClass = Double.parseDouble(_priceFromDb_str);
-                                int days = Utility.dateDifference(startDate, endDate);
-                                double amountPaid = priceOfClass * days;       
-                                double deposit = 10 * priceOfClass;
-                                rental.setDepositAmount((float)deposit);
-                                rental.setAmountPaid((float)amountPaid);
+                                if(item.Id>0){
+                                    String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
+                                    double priceOfClass = Double.parseDouble(_priceFromDb_str);
+                                    int days = Utility.dateDifference(startDate, endDate);
+                                    double amountPaid = priceOfClass * days;       
+                                    double deposit = 10 * priceOfClass;
+                                    rental.setDepositAmount((float)deposit);
+                                    rental.setAmountPaid((float)amountPaid);
+                                }
                                 rental.setStartDatetime(df.format(startDate));
                                 rental.setEndDateTime(df.format(endDate));
+                            }catch(Exception e){
+                                rental.setEndDateTime(null);
+                                rental.setStartDatetime(null);
+                            }
                                 rental.setReferenceCode(Utility.generateReferenceKey());
                         }
                         rental.setIsBooking(false);
@@ -170,6 +193,13 @@ public class StaffController extends Controller {
                         
                         rental.setIsChauffeur(staffView.getHireChauffeuredCB().isSelected());
                         rental.setIsInsured(staffView.getHireInsuranceCB().isSelected());
+                        
+                        
+                        HashMap<String,String> errors = rental.validate();
+                            if(errors.size()>0){
+                                ValidationPopup.popup(errors, staffView);
+                                return;
+                            }
                         
                         if(this.rentalId==-1){
                                 if(rental.add()){

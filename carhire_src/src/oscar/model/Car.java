@@ -351,4 +351,24 @@ public class Car extends DbRecord {
     public void setServiceMonths(String serviceMonths) {
         this.serviceMonths = serviceMonths;
     }
+    
+    public HashMap<String,String> validate(){
+        HashMap<String,String> errors = new HashMap<String, String>();
+        if("".equals(this.brand)){
+            errors.put("Brand","should not be empty");
+        }
+        if(this.branch>0){
+            errors.put("Branch","must be assigned");
+        }
+        if(this.classId>0){
+            errors.put("Class","should be selected");
+        }
+        if("".equals(this.plate)){
+            errors.put("Plate Number","should be provided");
+        }
+        if("".equals(this.color)){
+            errors.put("Color","must be specified");
+        }
+        return errors;
+    }
 }
