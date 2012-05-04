@@ -1,6 +1,7 @@
 package oscar.controller;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -11,10 +12,12 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import oscar.model.Car;
 import oscar.model.CarClass;
 import oscar.model.Rental;
 import oscar.MVC.Controller;
+import oscar.model.OscarComboBoxModelItem;
 import oscar.model.Person;
 import oscar.view.AdminView;
 import oscar.model.Staff;
@@ -72,6 +75,10 @@ public class AdminController extends Controller {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //car class search
+        if(e.getSource().equals(adminView.getCarClassCb())){
+            actionCarUpdateTable();
+        }
         // Open staff view button
         if (e.getSource().equals(adminView.getOpenStaffBtn())) {
             actionOpenStaff();
@@ -452,7 +459,8 @@ public class AdminController extends Controller {
             filters.put("year", adminView.getCarYearTxt().getText());
         }
         if (adminView.getCarClassCb().getSelectedIndex() != 0) {
-            filters.put("class", Integer.toString(adminView.getCarClassCb().getSelectedIndex()));
+             OscarComboBoxModelItem item = (OscarComboBoxModelItem) adminView.getCarClassCb().getSelectedItem();
+            filters.put("classId", Integer.toString(item.Id));
         }
         if (!adminView.getCarColorTxt().getText().isEmpty()) {
             filters.put("color", adminView.getCarColorTxt().getText());
@@ -584,6 +592,9 @@ public class AdminController extends Controller {
         this.addElement(adminView.getRentalDeleteBtn());
         this.addElement(adminView.getRentalTbl());
         // Car tab
+        adminView.getCarClassCb().setModel(new CarClass().getComboModel("displayName", "----"));
+        adminView.getCarClassCb().setSelectedIndex(0);
+         
         this.addElement(adminView.getCarAddBtn());
         this.addElement(adminView.getCarClearBtn());
         this.addElement(adminView.getCarBrandTxt());
@@ -593,12 +604,14 @@ public class AdminController extends Controller {
         this.addElement(adminView.getCarPlateTxt());
         this.addElement(adminView.getCarStatusCB());
         this.addElement(adminView.getCarTbl());
+
         // Class tab
         this.addElement(adminView.getCarClassAddBtn());
         this.addElement(adminView.getCarClassClearBtn());
         this.addElement(adminView.getCarClassDisplayTxt());
         this.addElement(adminView.getCarClassNameTxt());
         this.addElement(adminView.getClassTbl());
+        
     }
 
     private void initStaffDialog() {
