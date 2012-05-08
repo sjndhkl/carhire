@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 
 /**
  *
@@ -189,18 +191,9 @@ public class Utility {
      */
     public static int dateDifference(Date d2,Date d1){
         
-        int days = 0;
-        
-        Calendar cl = Calendar.getInstance();
-        Calendar cl2 = Calendar.getInstance();
-        
-        cl.set(d1.getYear(),d1.getMonth(), d1.getDay());
-        cl2.set(d2.getYear(),d2.getMonth(), d2.getDay());
-        
-        int diff = (int) (cl.getTimeInMillis() - cl2.getTimeInMillis());
-        
-        days = diff / (24 * 60 * 60 * 1000);
-        
-        return days;
+        LocalDate start = new LocalDate(d1);
+        LocalDate end = new LocalDate(d2);
+        Days days = Days.daysBetween(end, start);
+        return days.getDays();
     }
 }

@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 import oscar.MVC.Controller;
 import oscar.model.CarClass;
 import oscar.model.OscarComboBoxModelItem;
@@ -196,8 +198,10 @@ public class StaffController extends Controller {
                                 if(item.Id>0){
                                     String _priceFromDb_str = new CarClass().getSingleValue("price","classId",item.Id+"");
                                     double priceOfClass = Double.parseDouble(_priceFromDb_str);
-                                    int days = Utility.dateDifference(startDate, endDate);
-                                    double amountPaid = priceOfClass * days;       
+                                    LocalDate d1 = new LocalDate(startDate);
+                                    LocalDate d2 = new LocalDate(endDate);
+                                    Days days = Days.daysBetween(d2, d1);
+                                    double amountPaid = priceOfClass * days.getDays();       
                                     double deposit = 10 * priceOfClass;
                                     rental.setDepositAmount((float)deposit);
                                     rental.setAmountPaid((float)amountPaid);
